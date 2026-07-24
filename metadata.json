@@ -1,0 +1,6 @@
+{
+  "name": "Gala Rodríguez Echebarrieta - Nutrición Clínica & E-Health",
+  "description": "Sitio web profesional para Gala Rodríguez Echebarrieta (Nutricionista por la Universidad de Navarra con más de 20 años de experiencia en entornos sanitarios y experta en disfagia y nutrición enteral). Servicios online, blog Substack, catálogo de apps desarrolladas y selector de paleta de colores clínicas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

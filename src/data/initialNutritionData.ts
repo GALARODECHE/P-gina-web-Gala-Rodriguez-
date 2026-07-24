@@ -1,0 +1,363 @@
+import {
+  NutritionistProfile,
+  NutritionService,
+  NutritionApp,
+  BlogPost,
+  TestimonialItem,
+  InstagramPostPreview,
+} from '../types';
+
+export const initialProfile: NutritionistProfile = {
+  name: 'Gala Rodríguez Echebarrieta',
+  title: 'Nutricionista & Experta en Disfagia y Nutrición Enteral',
+  colegiadorNumber: 'Univ. de Navarra | MBA Gestión Sanitaria',
+  bio: 'Nutricionista por la Universidad de Navarra con más de 20 años de experiencia en entornos sanitarios y experta en disfagia y nutrición enteral.',
+  extendedBio: 'Nutricionista por la Universidad de Navarra con más de 20 años de experiencia en entornos sanitarios y alta especialización clínica. Experta en disfagia, soporte nutricional enteral (adulto y pediatría), reeducación alimentaria y soluciones e-health para el seguimiento clínico de pacientes.',
+  avatarUrl: 'https://images.unsplash.com/photo-1594824813566-78a933f2c00f?auto=format&fit=crop&w=600&q=80',
+  email: 'echebarrieta@gmail.com',
+  phone: '697 166 126',
+  whatsappNumber: '+34697166126',
+  location: 'Madrid, Cuenca, Ávila y Toledo / Consulta Online',
+  instagramUrl: 'https://instagram.com/nutricion_ehealth',
+  facebookUrl: 'https://facebook.com/nutricion_ehealth',
+  substackUrl: 'https://nutricionyehealth.substack.com',
+  themeColor: 'teal',
+};
+
+export const initialCareerTimeline = [
+  {
+    company: 'ALTER – Línea Adubén',
+    role: 'Delegada Especialista en Nutrición Enteral Adulto',
+    period: 'Marzo 2025 – Febrero 2026',
+    location: 'Madrid y Cuenca',
+    description: 'Gestión integral de hospitales y centros sanitarios. Trabajo transversal con Oncología, Nefrología, Medicina Interna, Cirugía, Neurología y Farmacia Hospitalaria.',
+    tags: ['Nutrición Enteral', 'Hospitales', 'Farmacia Hospitalaria', 'Oncología'],
+  },
+  {
+    company: 'DANONE NUTRICIA',
+    role: 'Delegada Especialista Hospitalaria',
+    period: 'Julio 2022 – Marzo 2025',
+    location: 'Comunidad de Madrid y Zona Centro',
+    description: 'Gestión de cuentas hospitalarias y seguimiento estratégico. Introducción y posicionamiento de productos de nutrición enteral y organización de sesiones clínicas.',
+    tags: ['Danone Nutricia', 'Nutrición Clínica', 'Cuentas Clave', 'Sesiones Clínicas'],
+  },
+  {
+    company: 'LABORATORIOS ORDESA',
+    role: 'Delegada Especialista en Nutrición Enteral Adulto',
+    period: 'Enero 2015 – Julio 2022',
+    location: 'Madrid, Ávila y Cuenca',
+    description: 'Gestión integral de centros hospitalarios. Formación técnica y científica a especialistas sanitarios, negociación y fidelización.',
+    tags: ['Ordesa', 'Nutrición Enteral', 'Formación Científica', 'Fidelización'],
+  },
+  {
+    company: 'ABBOTT LABORATORIES',
+    role: 'Delegada Especialista en Nutrición Enteral Adulto y Pediatría',
+    period: 'Febrero 2009 – Mayo 2014',
+    location: 'Madrid y Toledo',
+    description: 'Gestión estratégica de hospitales y especialistas en pediatría y nutrición enteral adulto. Formación clínica y desarrollo comercial.',
+    tags: ['Abbott', 'Pediatría', 'Nutrición Enteral', 'Formación Clínica'],
+  },
+  {
+    company: 'MEDITERRÁNEA DE CATERING',
+    role: 'Coordinadora Departamento de Nutrición',
+    period: 'Abril 2008 – Febrero 2009',
+    location: 'España',
+    description: 'Coordinación del departamento de Nutrición. Supervisión de calibración de menús, protocolos nutricionales y calidad.',
+    tags: ['Calibración Menús', 'Calidad Nutricional', 'Protocolos'],
+  },
+  {
+    company: 'HOSPITAL DE LA ZARZUELA',
+    role: 'Nutricionista',
+    period: 'Enero 2005 – Noviembre 2006',
+    location: 'Madrid',
+    description: 'Planificación y supervisión de dietas hospitalarias. Adaptación nutricional individualizada para pacientes de hospitalización.',
+    tags: ['Dietas Hospitalarias', 'Evaluación Paciente', 'Nutrición Clínica'],
+  },
+];
+
+export const initialServices: NutritionService[] = [
+  {
+    id: 's-prim',
+    title: 'Primera Consulta Clínica Especializada',
+    subtitle: 'Disfagia, Nutrición Enteral & Clínica',
+    price: '85€',
+    period: 'Sesión Inicial 60 min (Online)',
+    isPopular: false,
+    description: 'Análisis clínico riguroso en formato online por graduada por Univ. de Navarra con 20+ años de experiencia. Estudio de analíticas, adaptación en disfagia/enteral y diseño de pauta 100% personalizada.',
+    features: [
+      'Sesión individual online de 60 minutos',
+      'Análisis profundo de analíticas e historial médico',
+      'Adaptación de texturas, suplementación o pauta enteral',
+      'Acceso completo e ilimitado a mis Apps de Nutrición',
+      'Guía clínica personalizada y lista de sustituciones',
+    ],
+    idealFor: 'Pacientes que requieren valoración experta en disfagia, nutrición enteral o clínica integral.',
+    ctaText: 'Contratar Primera Consulta',
+    category: 'Consulta',
+  },
+  {
+    id: 's-pack',
+    title: 'Programa Clínico Integral 3 Meses',
+    subtitle: 'El tratamiento más rentable y completo',
+    price: '220€',
+    period: '3 meses (Ahorro +25%)',
+    isPopular: true,
+    popularBadge: 'RECOMENDADO & MÁS COMPLETO',
+    description: 'Acompañamiento especializado continuo diseñado para garantizar la adherencia, reeducación nutricional y adaptación progresiva durante 12 semanas.',
+    features: [
+      '1ª Consulta Clínica de Valoración Completa (60 min)',
+      '5 Consultas de Seguimiento Quincenales (30 min)',
+      'Soporte prioritario por WhatsApp/Email en <24h',
+      'Ajustes ilimitados de pauta, texturas y menús',
+      'Acceso VIP permanente a mis Apps desarrolladas',
+      'Dossier exclusivo de recetas adaptadas e hidratación',
+    ],
+    idealFor: 'Pacientes que buscan máxima adherencia, seguimiento clínico continuo y apoyo estrecho.',
+    ctaText: 'Quiero el Programa 3 Meses',
+    category: 'Programa',
+  },
+  {
+    id: 's-seg',
+    title: 'Bono Seguimiento Mensual Clínico',
+    subtitle: 'Supervisión continua para consolidar resultados',
+    price: '55€',
+    period: 'Mensual',
+    isPopular: false,
+    description: 'Acompañamiento para pacientes que han realizado la primera consulta y requieren revisiones periódicas para ajustar objetivos y pautas.',
+    features: [
+      '2 Sesiones de revisión clínica al mes (30 min)',
+      'Ajuste de menús, calorías, volumen y nutrientes',
+      'Soporte por chat privado para dudas del día a día',
+      'Mantenimiento de licencias en las Apps de Nutrición',
+    ],
+    idealFor: 'Pacientes actuales en proceso de consolidación de hábitos y supervisión nutricional.',
+    ctaText: 'Renovar Seguimiento',
+    category: 'Seguimiento',
+  },
+];
+
+export const initialApps: NutritionApp[] = [
+  {
+    id: 'app-nutrivision',
+    name: 'NutriVision',
+    tagline: 'Análisis visual inteligente de platos y seguimiento clínico de texturas',
+    description: 'Solución e-health para el reconocimiento fotográfico de alimentos, estimación nutricional instantánea y adaptación clínica en disfagia y nutrición enteral.',
+    fullDescription: 'NutriVision es mi aplicación insignia e-health diseñada para conectar la fotografía de las comidas de los pacientes con el análisis clínico en consulta. Permite evaluar la composición nutricional de cada plato en segundos, validar la viscosidad/consistencia recomendada para pacientes con disfagia y enviar el diario fotográfico en tiempo real a la historia clínica del paciente.',
+    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    iconName: 'Eye',
+    tags: ['Reconocimiento Visual', 'Viscosidad Disfagia', 'E-Health Clínica', 'React Native'],
+    appStoreUrl: 'https://apple.com',
+    playStoreUrl: 'https://google.com',
+    webAppUrl: '#',
+    usersCount: '+12,000 Pacientes',
+    rating: 4.9,
+    features: [
+      'Análisis fotográfico instantáneo del plato de comida',
+      'Evaluación de textura y consistencia adaptada a disfagia',
+      'Diario visual sincronizado directamente con la consulta',
+      'Informe clínico de ingesta e hidratación acumulada',
+    ],
+  },
+  {
+    id: 'app-macro',
+    name: 'NutriMacro Pro',
+    tagline: 'Calculadora de macronutrientes y diario nutricional inteligente',
+    description: 'App móvil y web desarrollada para registrar comidas fácilmente, calcular tus necesidades calóricas según tu actividad y entender tus macronutrientes sin obsesiones.',
+    fullDescription: 'NutriMacro Pro es una herramienta diseñada con base científica para simplificar el registro nutricional. Permite escanear códigos de barras, crear platos personalizados, calcular necesidades energéticas según fórmula de Harris-Benedict/Katch-McArdle adaptada, y sincronizar datos directamente con tu nutricionista.',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    iconName: 'Calculator',
+    tags: ['React Native', 'TypeScript', 'Algoritmos Nutricionales', 'Sincronización Cloud'],
+    appStoreUrl: 'https://apple.com',
+    playStoreUrl: 'https://google.com',
+    webAppUrl: '#',
+    usersCount: '+15,000 Usuarios',
+    rating: 4.9,
+    features: [
+      'Cálculo automático de calorías y proteína por kg',
+      'Lector de código de barras para alimentos',
+      'Base de datos verificada por nutricionistas',
+      'Generador de gráficos de tendencia y saciedad',
+    ],
+  },
+  {
+    id: 'app-recetas',
+    name: 'Recetario NutriFit',
+    tagline: 'Recetas saludables clasificadas por tiempo, macros y alergias',
+    description: 'Encuentra qué cocinar con lo que tienes en la nevera. Recetas diseñadas por nutricionistas con información de macronutrientes y pasos claros.',
+    fullDescription: 'Diseñé esta app para responder a la pregunta diaria de mis pacientes: "¿Qué preparo hoy para cenar?". Filtra por tiempo de preparación (menos de 15 min), tipo de dieta (vegetariana, keto, alta en proteína, sin gluten) y genera la lista de compras del supermercado automáticamente.',
+    imageUrl: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80',
+    iconName: 'ChefHat',
+    tags: ['Next.js', 'PWA', 'Tailwind CSS', 'Filtro Dinámico'],
+    appStoreUrl: 'https://apple.com',
+    playStoreUrl: 'https://google.com',
+    webAppUrl: '#',
+    usersCount: '+28,000 Descargas',
+    rating: 4.8,
+    features: [
+      'Buscador inteligente según ingredientes disponibles',
+      'Desglose exacto de calorías, proteína, carbohidratos y grasas',
+      'Modo cocina con temporizadores y pasos ilustrados',
+      'Exportación directa de lista de la compra',
+    ],
+  },
+  {
+    id: 'app-habitos',
+    name: 'Diario de Alimentación Consciente',
+    tagline: 'Registro de saciedad, hambre emocional y bienestar digestivo',
+    description: 'Un enfoque cualitativo para conectar con tus señales de hambre y saciedad sin contar calorías de forma obsesiva.',
+    fullDescription: 'Creada para complementar la consulta de reeducación alimentaria. Registra niveles de hambre pre y post comida, escala de energía, síntomas digestivos y emociones asociadas.',
+    imageUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+    iconName: 'HeartPulse',
+    tags: ['React', 'HealthKit', 'Nutrición Psicológica'],
+    appStoreUrl: 'https://apple.com',
+    playStoreUrl: 'https://google.com',
+    usersCount: '+8,500 Pacientes',
+    rating: 5.0,
+    features: [
+      'Escala visual de hambre y saciedad (1 al 10)',
+      'Registro de digestión y síntomas gastrointestinales',
+      'Recordatorio amigable de hidratación',
+      'Informe mensual descargable para tu nutricionista',
+    ],
+  },
+];
+
+export const initialPosts: BlogPost[] = [
+  {
+    id: 'post-1',
+    title: 'Cómo calcular tu déficit calórico sin obsesionarte con la báscula',
+    category: 'Nutrición Clínica',
+    summary: 'Aprende las claves para perder grasa de manera saludable y sostenible. Descubre por qué el peso fluctuante es normal y cómo medir tu progreso real.',
+    content: `Perder grasa corporal no se trata de comer lo mínimo posible ni de eliminar grupos de alimentos. En este artículo profundizamos en cómo estructurar un déficit calórico moderado (15-20%) preservando tu masa muscular y tu salud hormonal.
+
+### 1. El peso no lo es todo
+La báscula fluctúa por retención de líquidos, ingesta de sodio, estrés, glucógeno muscular y tránsito digestivo. Utiliza fotos de progreso, medidas con cinta antropométrica y tus niveles de energía.
+
+### 2. Prioriza la proteína
+Asegura entre 1.6g y 2.2g de proteína por kilo de peso corporal para mantenerte saciado/a y proteger la masa muscular durante el proceso.
+
+### 3. Utiliza la app NutriMacro Pro
+En mi aplicación gratuita puedes ingresar tus datos para estimar tu gasto energético diario (TDEE) ajustado a tu nivel de actividad real.`,
+    coverImage: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80',
+    publishDate: '18 Jul 2026',
+    readTime: '5 min de lectura',
+    substackUrl: 'https://nutricionyehealth.substack.com/p/deficit-calorico-saludable',
+    isFeatured: true,
+    likesCount: 142,
+  },
+  {
+    id: 'post-2',
+    title: 'Mitos del Ayuno Intermitente: Lo que dice la evidencia científica actual',
+    category: 'Mitos Alimentarios',
+    summary: 'Desmontamos los mitos más populares sobre el ayuno 16/8. ¿Realmente acelera el metabolismo o simplemente es una herramienta de adherencia?',
+    content: `El ayuno intermitente se ha popularizado enormemente, pero existen muchas falsas promesas alrededor de él. Analizamos los estudios clínicos más recientes.
+
+El ayuno no es una "varita mágica" para quemar grasa por sí solo; su principal efectividad radica en que ayuda a muchas personas a reducir la ventana de ingesta y, por tanto, a controlar el total calórico diario sin sentir restricción excesiva.`,
+    coverImage: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=800&q=80',
+    publishDate: '10 Jul 2026',
+    readTime: '7 min de lectura',
+    substackUrl: 'https://nutricionyehealth.substack.com/p/mitos-ayuno-intermitente',
+    isFeatured: false,
+    likesCount: 98,
+  },
+  {
+    id: 'post-3',
+    title: '5 Desayunos ricos en proteína y fibra listos en menos de 5 minutos',
+    category: 'Recetas Saludables',
+    summary: 'Recetas rápidas, deliciosas y saciantes para empezar tus mañanas con energía estable sin picos de glucosa.',
+    content: `Si por las mañanas tienes poco tiempo, estas 5 opciones te permitirán desayunar bien sin complicaciones.
+
+1. **Porridge proteico de avena nocturna**: Avena, queso batido 0%, semillas de chía y frutos rojos.
+2. **Tostada de pan de masa madre con huevo revuelto y aguacate**.
+3. **Smoothie denso verde proteico**: Espinacas, proteína en polvo de vainilla, plátano congelado y bebida de almendras.`,
+    coverImage: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
+    publishDate: '02 Jul 2026',
+    readTime: '4 min de lectura',
+    substackUrl: 'https://nutricionyehealth.substack.com/p/desayunos-proteicos-rapidos',
+    isFeatured: false,
+    likesCount: 215,
+  },
+  {
+    id: 'post-4',
+    title: 'Por qué desarrollé mis propias Apps de Nutrición para mis pacientes',
+    category: 'E-Health & Apps',
+    summary: 'Reflexión sobre el papel de la tecnología en la consulta de nutrición y cómo las herramientas digitales mejoran la adherencia a largo plazo.',
+    content: `Durante años en consulta detecté que muchas aplicaciones comerciales de conteo de calorías eran frías, llenas de datos erróneos cargados por usuarios y promovían conductas obsesivas.
+
+Decidí aprender desarrollo de software para crear herramientas que combinen rigurosidad técnica, privacidad de datos y una interfaz amable enfocada en la salud integral.`,
+    coverImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    publishDate: '24 Jun 2026',
+    readTime: '6 min de lectura',
+    substackUrl: 'https://nutricionyehealth.substack.com/p/por-que-desarrolle-mis-apps',
+    isFeatured: true,
+    likesCount: 180,
+  },
+];
+
+export const initialTestimonials: TestimonialItem[] = [
+  {
+    id: 't-1',
+    name: 'Laura Fernández',
+    role: 'Paciente Consulta Online',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    comment: 'Llevaba años haciendo dietas restrictivas que me cansaban al mes. Con María aprendí a comer sin culpa, a organizar mis menús y además el uso de su app de recetas me hace la vida facilísima.',
+    rating: 5,
+    serviceUsed: 'Pack Transformación 3 Meses',
+    verifiedPatient: true,
+  },
+  {
+    id: 't-2',
+    name: 'Carlos Mendoza',
+    role: 'Deportista & Usuario de NutriMacro Pro',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    comment: 'La combinación de su asesoría en nutrición deportiva con la app NutriMacro es increíble. Logré mejorar mis marcas de carrera y bajar un 4% de grasa corporal sin perder fuerza.',
+    rating: 5,
+    serviceUsed: 'Seguimiento Deportivo + App',
+    verifiedPatient: true,
+  },
+  {
+    id: 't-3',
+    name: 'Elena Gómez',
+    role: 'Lectora de Substack & Paciente',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+    comment: 'Sigo sus artículos semanales en Substack religiosamente. La claridad con la que explica la ciencia detrás de la nutrición me dio la confianza para agendar mi primera consulta online.',
+    rating: 5,
+    serviceUsed: 'Primera Consulta Online',
+    verifiedPatient: true,
+  },
+];
+
+export const initialInstagramFeed: InstagramPostPreview[] = [
+  {
+    id: 'ig-1',
+    caption: '🥗 ¿Verduras congeladas vs frescas? Te cuento qué dice la evidencia sobre sus nutrientes.',
+    imageUrl: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80',
+    likes: 842,
+    comments: 53,
+    permalink: 'https://instagram.com/nutricion_ehealth',
+  },
+  {
+    id: 'ig-2',
+    caption: '📱 ¡Nueva actualización en NutriMacro Pro! Ahora puedes escanear alimentos aún más rápido.',
+    imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80',
+    likes: 1205,
+    comments: 94,
+    permalink: 'https://instagram.com/nutricion_ehealth',
+  },
+  {
+    id: 'ig-3',
+    caption: '🥑 Grasas saludables que no deben faltar en tu menú semanal. Guarda esta lista.',
+    imageUrl: 'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80',
+    likes: 950,
+    comments: 38,
+    permalink: 'https://instagram.com/nutricion_ehealth',
+  },
+  {
+    id: 'ig-4',
+    caption: '✍️ Nuevo artículo publicado en mi Substack: "Mitos del déficit calórico". Enlace en bio.',
+    imageUrl: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=80',
+    likes: 670,
+    comments: 29,
+    permalink: 'https://instagram.com/nutricion_ehealth',
+  },
+];
