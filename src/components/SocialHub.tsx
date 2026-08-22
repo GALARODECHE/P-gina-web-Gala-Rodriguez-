@@ -12,20 +12,20 @@ export const SocialHub: React.FC<SocialHubProps> = ({
   profile,
   instagramPosts,
 }) => {
-  const theme = themeStyles[profile.themeColor || 'emerald'];
+  const theme = themeStyles[profile.themeColor || 'teal'];
 
   return (
-    <section id="redes" className="py-16 sm:py-24 bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800">
+    <section id="redes" className="py-16 sm:py-24 border-b border-stone-200/80 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-200 border border-rose-200 dark:border-rose-800">
-            <Share2 className="w-4 h-4 text-rose-500" />
-            <span>Comunidad & Redes Sociales</span>
+          <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge}`}>
+            <Share2 className="w-3.5 h-3.5" />
+            <span>Comunidad & Canales Clínicos</span>
           </span>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-700 dark:text-slate-200 tracking-tight">
             Toda mi actividad digital en un solo lugar
           </h2>
 
@@ -126,7 +126,7 @@ export const SocialHub: React.FC<SocialHubProps> = ({
         {/* Instagram Post Feed Preview Grid */}
         <div className="mt-12 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <h3 className="text-lg font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
               <Instagram className="w-5 h-5 text-pink-500" />
               <span>Últimas Publicaciones de Instagram</span>
             </h3>

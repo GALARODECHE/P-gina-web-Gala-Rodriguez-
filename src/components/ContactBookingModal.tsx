@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, CheckCircle2, MessageCircle, Send, ShieldCheck } from 'lucide-react';
+import { X, Calendar, CheckCircle2, MessageCircle, Send, Video, ShieldCheck } from 'lucide-react';
 import { NutritionistProfile, NutritionService, BookingRequest } from '../types';
 import { themeStyles } from '../utils/theme';
 
@@ -26,8 +26,7 @@ export const ContactBookingModal: React.FC<ContactBookingModalProps> = ({
   const [clientName, setClientName] = useState('');
   const [clientEmail, setClientEmail] = useState('');
   const [clientPhone, setClientPhone] = useState('');
-  const [primaryGoal, setPrimaryGoal] = useState('Perder grasa / Recomposición corporal');
-  const [modality, setModality] = useState<'Formato Online' | 'Acompañamiento Chat' | 'Presencial'>('Formato Online');
+  const [primaryGoal, setPrimaryGoal] = useState('Disfagia / Nutrición Enteral / Clínica');
   const [notes, setNotes] = useState(initialCalcDetails || '');
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -43,7 +42,7 @@ export const ContactBookingModal: React.FC<ContactBookingModalProps> = ({
   };
 
   const handleWhatsAppRedirect = () => {
-    const text = `Hola ${profile.name}, me gustaría reservar el plan "${currentService?.title || 'Consulta'}". %0A%0AMis datos:%0A- Nombre: ${clientName}%0A- Email: ${clientEmail}%0A- Teléfono: ${clientPhone}%0A- Objetivo: ${primaryGoal}%0A- Modalidad: ${modality}%0A- Notas: ${notes}`;
+    const text = `Hola ${profile.name}, me gustaría reservar cita para el plan "${currentService?.title || 'Consulta Online'}". %0A%0AMis datos:%0A- Nombre: ${clientName}%0A- Email: ${clientEmail}%0A- Teléfono: ${clientPhone}%0A- Objetivo Clínico: ${primaryGoal}%0A- Modalidad: Consulta 100% Online (Videollamada segura)%0A- Notas: ${notes}`;
     const cleanNumber = profile.whatsappNumber.replace(/\+/g, '');
     window.open(`https://wa.me/${cleanNumber}?text=${text}`, '_blank');
   };
@@ -68,10 +67,10 @@ export const ContactBookingModal: React.FC<ContactBookingModalProps> = ({
 
             <div className="space-y-2">
               <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white">
-                ¡Solicitud Registrada con Éxito!
+                ¡Solicitud de Cita Online Registrada!
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto">
-                Gracias {clientName}. Te responderé en un plazo máximo de 24 horas a {clientEmail} para coordinar el horario de tu sesión.
+                Gracias {clientName}. Te responderé en un plazo máximo de 24 horas a {clientEmail} con el enlace de videollamada segura y las opciones de horario.
               </p>
             </div>
 
@@ -95,18 +94,29 @@ export const ContactBookingModal: React.FC<ContactBookingModalProps> = ({
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 <span className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-300">
                   <Calendar className="w-5 h-5" />
                 </span>
                 <div>
-                  <h3 className="text-xl font-extrabold text-slate-900 dark:text-white">
-                    Reserva de Cita Nutricional Online
+                  <h3 className="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+                    <span>Reserva de Cita Nutricional</span>
+                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
+                      100% Online
+                    </span>
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400">
-                    Acompañamiento por {profile.name} ({profile.colegiadorNumber})
+                    Atención directa por {profile.name} ({profile.colegiadorNumber})
                   </p>
                 </div>
+              </div>
+
+              {/* Online Exclusivity Badge */}
+              <div className="mt-3 p-3 rounded-xl bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800/60 flex items-center gap-2.5 text-xs text-teal-900 dark:text-teal-200">
+                <Video className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
+                <span>
+                  <strong>Servicio 100% Online:</strong> Consultas por videollamada cifrada y seguimiento clínico digital desde cualquier lugar, con total comodidad.
+                </span>
               </div>
             </div>
 
@@ -176,27 +186,22 @@ export const ContactBookingModal: React.FC<ContactBookingModalProps> = ({
 
               <div>
                 <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
-                  Modalidad Preferida
+                  Modalidad de Consulta
                 </label>
-                <select
-                  value={modality}
-                  onChange={(e) => setModality(e.target.value as any)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                >
-                  <option value="Formato Online">Consulta Formato Online</option>
-                  <option value="Acompañamiento Chat">Acompañamiento Chat Privado</option>
-                  <option value="Presencial">Consulta Presencial (Madrid)</option>
-                </select>
+                <div className="px-3.5 py-2.5 rounded-xl border border-teal-200 dark:border-teal-800 bg-teal-50/70 dark:bg-teal-950/50 text-xs sm:text-sm font-semibold text-teal-800 dark:text-teal-300 flex items-center gap-2">
+                  <Video className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                  <span>100% Online (Videollamada segura)</span>
+                </div>
               </div>
             </div>
 
             <div>
               <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
-                ¿Cuál es tu objetivo nutricional principal?
+                ¿Cuál es el motivo principal de la consulta o patología?
               </label>
               <input
                 type="text"
-                placeholder="Ej: Perder 8kg de grasa, solucionar digestiones pesadas, etc."
+                placeholder="Ej: Disfagia, soporte oncológico, nutrición enteral, digestiones..."
                 value={primaryGoal}
                 onChange={(e) => setPrimaryGoal(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -205,7 +210,7 @@ export const ContactBookingModal: React.FC<ContactBookingModalProps> = ({
 
             <div>
               <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
-                Notas / Métricas de Calculadora
+                Notas adicionales (analíticas recientes, medicación o disponibilidad horaria)
               </label>
               <textarea
                 rows={3}
@@ -221,7 +226,7 @@ export const ContactBookingModal: React.FC<ContactBookingModalProps> = ({
                 type="submit"
                 className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs sm:text-sm shadow-lg transition-all flex items-center justify-center gap-2 active:scale-95 ${theme.primary}`}
               >
-                <span>Confirmar Solicitud de Reserva</span>
+                <span>Solicitar Cita Online</span>
                 <Send className="w-4 h-4" />
               </button>
             </div>

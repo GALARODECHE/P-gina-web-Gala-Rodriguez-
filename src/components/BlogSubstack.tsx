@@ -20,7 +20,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
   const [subscriberEmail, setSubscriberEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const theme = themeStyles[profile.themeColor || 'emerald'];
+  const theme = themeStyles[profile.themeColor || 'teal'];
 
   const categories = ['Todos', ...Array.from(new Set(posts.map((p) => p.category)))];
 
@@ -40,17 +40,17 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
   };
 
   return (
-    <section id="blog" className="py-16 sm:py-24 bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800">
+    <section id="blog" className="py-16 sm:py-24 border-b border-stone-200/80 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800">
-            <BookOpen className="w-4 h-4 text-amber-600" />
-            <span>Blog & Substack Unificado</span>
+          <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge}`}>
+            <BookOpen className="w-3.5 h-3.5" />
+            <span>Blog & Substack Clínico</span>
           </span>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-700 dark:text-slate-200 tracking-tight">
             Divulgación Nutricional Basada en la Ciencia
           </h2>
 
@@ -65,7 +65,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
             <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
               Boletín Semanal Gratuito
             </span>
-            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-700 dark:text-slate-200">
               Recibe mis nuevos artículos de Substack en tu correo
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
@@ -171,7 +171,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors line-clamp-2">
+                  <h3 className="text-lg font-bold text-slate-700 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
 

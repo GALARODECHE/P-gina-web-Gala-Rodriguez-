@@ -19,19 +19,19 @@ export const ThemeColorPicker: React.FC<ThemeColorPickerProps> = ({
   const [activeTab, setActiveTab] = React.useState<'bg' | 'accent'>('bg');
 
   const accentOptions: { key: ThemeColorKey; name: string; colorBg: string }[] = [
-    { key: 'teal', name: 'Teal Clínico', colorBg: 'bg-teal-600' },
-    { key: 'navy', name: 'Azul Sanitario', colorBg: 'bg-sky-600' },
-    { key: 'slate', name: 'Gris Platino', colorBg: 'bg-slate-700' },
-    { key: 'sage', name: 'Salvia Orgánica', colorBg: 'bg-emerald-600' },
-    { key: 'amber', name: 'Coral / Cálido', colorBg: 'bg-amber-600' },
+    { key: 'teal', name: 'Verde Salvia & Esmeralda', colorBg: 'bg-emerald-700' },
+    { key: 'navy', name: 'Azul Sanitario Sereno', colorBg: 'bg-sky-700' },
+    { key: 'slate', name: 'Grafito & Platino', colorBg: 'bg-slate-900' },
+    { key: 'sage', name: 'Oliva & Eucalipto', colorBg: 'bg-teal-700' },
+    { key: 'amber', name: 'Tierra & Terracota', colorBg: 'bg-amber-700' },
   ];
 
   const bgOptions: { key: BgThemeKey; name: string; desc: string; preview: string }[] = [
-    { key: 'default', name: 'Gris Neutro', desc: 'Fondo estándar equilibrado', preview: 'bg-slate-200' },
-    { key: 'pure-white', name: 'Blanco Puro', desc: 'Fondo totalmente blanco', preview: 'bg-white border border-slate-300' },
-    { key: 'warm-cream', name: 'Crema / Marfil', desc: 'Tono cálido descansado', preview: 'bg-[#f5f0e6]' },
-    { key: 'soft-mint', name: 'Menta / Salvia', desc: 'Matiz verde fresco', preview: 'bg-[#e2f0e8]' },
-    { key: 'cool-sky', name: 'Azul Hielo', desc: 'Tono azul claro limpio', preview: 'bg-[#e0f2fe]' },
+    { key: 'default', name: 'Blanco Lindo Clínico', desc: 'Blanco marfil despejado y luminoso', preview: 'bg-[#fafaf9] border border-stone-300' },
+    { key: 'pure-white', name: 'Blanco Puro', desc: 'Fondo 100% blanco minimalista', preview: 'bg-white border border-slate-300' },
+    { key: 'warm-cream', name: 'Crema & Marfil Cálido', desc: 'Tono marfil relajante', preview: 'bg-[#fbf9f5] border border-[#e8e2d8]' },
+    { key: 'soft-mint', name: 'Verde Salvia Suave', desc: 'Ligerísimo matiz salvia orgánico', preview: 'bg-[#f5f9f7] border border-[#d6e7df]' },
+    { key: 'cool-sky', name: 'Azul Hielo Sanitario', desc: 'Tono azul claro limpio', preview: 'bg-[#f3f8fc] border border-[#d2e4f2]' },
   ];
 
   return (
@@ -51,21 +51,21 @@ export const ThemeColorPicker: React.FC<ThemeColorPickerProps> = ({
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-72 p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl z-50 space-y-3 animate-in fade-in zoom-in-95">
-            <div className="px-1 pb-2 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <div className="absolute right-0 mt-2 w-72 p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-stone-200 dark:border-slate-800 shadow-xl z-50 space-y-3 animate-in fade-in zoom-in-95">
+            <div className="px-1 pb-2 border-b border-stone-100 dark:border-slate-800 flex items-center justify-between">
               <div>
                 <p className="text-xs font-bold text-slate-900 dark:text-white">Diseño & Paleta de Colores</p>
-                <p className="text-[10px] text-slate-500">Personaliza el fondo y los tonos de la web</p>
+                <p className="text-[10px] text-stone-500 dark:text-slate-400">Personaliza el fondo y los tonos de la web</p>
               </div>
             </div>
 
             {/* Selector Tabs */}
-            <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 text-xs font-medium">
+            <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-stone-100 dark:bg-slate-800 text-xs font-medium">
               <button
                 onClick={() => setActiveTab('bg')}
                 className={`py-1.5 px-2 rounded-lg flex items-center justify-center gap-1.5 transition-all ${
                   activeTab === 'bg'
-                    ? 'bg-white dark:bg-slate-900 text-teal-700 dark:text-teal-300 font-bold shadow-sm'
+                    ? 'bg-white dark:bg-slate-900 text-emerald-800 dark:text-teal-300 font-bold shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
                 }`}
               >
@@ -76,7 +76,7 @@ export const ThemeColorPicker: React.FC<ThemeColorPickerProps> = ({
                 onClick={() => setActiveTab('accent')}
                 className={`py-1.5 px-2 rounded-lg flex items-center justify-center gap-1.5 transition-all ${
                   activeTab === 'accent'
-                    ? 'bg-white dark:bg-slate-900 text-teal-700 dark:text-teal-300 font-bold shadow-sm'
+                    ? 'bg-white dark:bg-slate-900 text-emerald-800 dark:text-teal-300 font-bold shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
                 }`}
               >

@@ -22,11 +22,11 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
   const [activeTab, setActiveTab] = useState<'branding' | 'theme' | 'sections' | 'contact'>('branding');
 
   const themeOptions: { id: WebsiteConfig['themeColor']; label: string; bg: string }[] = [
-    { id: 'indigo', label: 'Azul Índigo', bg: 'bg-indigo-600' },
-    { id: 'emerald', label: 'Verde Esmeralda', bg: 'bg-emerald-600' },
-    { id: 'amber', label: 'Ámbar Cálido', bg: 'bg-amber-600' },
-    { id: 'rose', label: 'Rosa Elegante', bg: 'bg-rose-600' },
-    { id: 'slate', label: 'Gris Moderno', bg: 'bg-slate-900' },
+    { id: 'teal', label: 'Verde Salvia & Esmeralda', bg: 'bg-emerald-700' },
+    { id: 'navy', label: 'Azul Sanitario Sereno', bg: 'bg-sky-700' },
+    { id: 'slate', label: 'Grafito & Platino', bg: 'bg-slate-900' },
+    { id: 'sage', label: 'Oliva & Eucalipto', bg: 'bg-teal-700' },
+    { id: 'amber', label: 'Tierra & Terracota', bg: 'bg-amber-700' },
   ];
 
   const handleTextChange = (field: keyof WebsiteConfig, value: string) => {

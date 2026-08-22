@@ -13,7 +13,7 @@ export const defaultConfig: WebsiteConfig = {
   email: 'contacto@novastudio.dev',
   phone: '+34 912 345 678',
   location: 'Madrid, España / Remoto',
-  themeColor: 'indigo',
+  themeColor: 'teal',
   showServices: true,
   showPortfolio: true,
   showAbout: true,

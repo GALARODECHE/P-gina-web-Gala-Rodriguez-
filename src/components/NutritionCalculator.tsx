@@ -46,17 +46,17 @@ export const NutritionCalculator: React.FC<NutritionCalculatorProps> = ({
   };
 
   return (
-    <section id="calculadora" className="py-16 sm:py-24 bg-slate-50/80 dark:bg-slate-900/80 border-t border-slate-200/80 dark:border-slate-800">
+    <section id="calculadora" className="py-16 sm:py-24 border-b border-stone-200/80 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800">
-            <Calculator className="w-4 h-4 text-emerald-600" />
-            <span>Herramienta Interactiva Gratuita</span>
+          <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge}`}>
+            <Calculator className="w-3.5 h-3.5" />
+            <span>Herramienta Interactiva</span>
           </span>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-700 dark:text-slate-200 tracking-tight">
             Calculadora de Necesidades Energéticas & Macros
           </h2>
 

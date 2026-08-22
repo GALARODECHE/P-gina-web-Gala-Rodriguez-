@@ -8,17 +8,17 @@ interface TestimonialsSectionProps {
 
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials }) => {
   return (
-    <section className="py-16 sm:py-24 bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800">
+    <section className="py-16 sm:py-24 border-b border-stone-200/80 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800">
-            <Quote className="w-4 h-4 text-emerald-600" />
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-50 text-emerald-900 border border-emerald-200/90 dark:bg-emerald-950/80 dark:text-emerald-200 dark:border-emerald-800">
+            <Quote className="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400" />
             <span>Opiniones Reales de Pacientes</span>
           </span>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-700 dark:text-slate-200 tracking-tight">
             Historias de Cambio de Hábitos & Salud
           </h2>
 
@@ -57,7 +57,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
                 />
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <h4 className="font-bold text-sm text-slate-900 dark:text-white">{t.name}</h4>
+                    <h4 className="font-bold text-sm text-slate-700 dark:text-slate-200">{t.name}</h4>
                     {t.verifiedPatient && (
                       <ShieldCheck className="w-4 h-4 text-emerald-500" title="Paciente Verificado/a" />
                     )}

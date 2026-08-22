@@ -52,7 +52,7 @@ export const Contact: React.FC<ContactProps> = ({ config, preselectedSubject }) 
           <span className={`inline-block px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase ${theme.badge}`}>
             Contacto
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-700 dark:text-slate-200 tracking-tight">
             ¿Listo para empezar tu proyecto?
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300">
@@ -66,7 +66,7 @@ export const Contact: React.FC<ContactProps> = ({ config, preselectedSubject }) 
           <div className="lg:col-span-5 space-y-6">
             
             <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="text-xl font-bold text-slate-700 dark:text-slate-200">
                 Información de contacto
               </h3>
 

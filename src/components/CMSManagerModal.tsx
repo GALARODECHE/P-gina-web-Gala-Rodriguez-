@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Settings, Plus, Edit2, Trash2, Save, BookOpen, Smartphone, DollarSign, User, CheckCircle2, Palette } from 'lucide-react';
+import { X, Settings, Plus, Edit2, Trash2, Save, BookOpen, Smartphone, DollarSign, User, CheckCircle2, Palette, Upload } from 'lucide-react';
 import { NutritionistProfile, NutritionService, NutritionApp, BlogPost } from '../types';
 
 interface CMSManagerModalProps {
@@ -402,24 +402,35 @@ export const CMSManagerModal: React.FC<CMSManagerModalProps> = ({
                     key={service.id}
                     className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3"
                   >
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
                       <div>
                         <label className="block text-[11px] font-semibold text-slate-500 mb-0.5">Título Servicio</label>
                         <input
                           type="text"
                           value={service.title}
                           onChange={(e) => handleServiceChange(service.id, 'title', e.target.value)}
-                          className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-bold"
+                          className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-bold text-xs"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-[11px] font-semibold text-slate-500 mb-0.5">Precio</label>
+                        <label className="block text-[11px] font-semibold text-slate-500 mb-0.5">Precio Estándar</label>
                         <input
                           type="text"
                           value={service.price}
                           onChange={(e) => handleServiceChange(service.id, 'price', e.target.value)}
-                          className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-extrabold text-emerald-600"
+                          className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-extrabold text-emerald-600 text-xs"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-semibold text-slate-500 mb-0.5">Precio Anual (-15% Dto.)</label>
+                        <input
+                          type="text"
+                          value={service.annualPrice || ''}
+                          onChange={(e) => handleServiceChange(service.id, 'annualPrice', e.target.value)}
+                          placeholder="Ej: 425€"
+                          className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-extrabold text-emerald-700 dark:text-emerald-400 text-xs"
                         />
                       </div>
 
@@ -429,7 +440,7 @@ export const CMSManagerModal: React.FC<CMSManagerModalProps> = ({
                           type="text"
                           value={service.period}
                           onChange={(e) => handleServiceChange(service.id, 'period', e.target.value)}
-                          className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"
+                          className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs"
                         />
                       </div>
                     </div>
@@ -547,6 +558,68 @@ export const CMSManagerModal: React.FC<CMSManagerModalProps> = ({
           {/* TAB 4: PROFILE & SOCIAL */}
           {activeTab === 'profile' && (
             <form onSubmit={handleProfileSubmit} className="space-y-4">
+              
+              {/* Photo & Identity header with file upload */}
+              <div className="p-5 rounded-2xl bg-stone-50 dark:bg-slate-800/80 border border-stone-200 dark:border-slate-700 space-y-4">
+                <div className="flex flex-col sm:flex-row items-center gap-4">
+                  <div className="relative group shrink-0">
+                    <img
+                      src={editableProfile.avatarUrl}
+                      alt={editableProfile.name}
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover ring-2 ring-stone-300 dark:ring-slate-600 shadow-sm"
+                    />
+                  </div>
+                  <div className="flex-1 w-full space-y-2">
+                    <label className="block text-xs font-bold text-slate-800 dark:text-slate-100">
+                      Fotografía Profesional (Tu Foto Real)
+                    </label>
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <label className="cursor-pointer inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shadow-sm transition-colors">
+                        <Upload className="w-4 h-4" />
+                        <span>Subir archivo desde mi ordenador / móvil</span>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          onChange={(e) => {
+                            const file = e.target.files?.[0];
+                            if (file) {
+                              const reader = new FileReader();
+                              reader.onload = (event) => {
+                                if (event.target?.result) {
+                                  setEditableProfile({
+                                    ...editableProfile,
+                                    avatarUrl: event.target.result as string,
+                                  });
+                                }
+                              };
+                              reader.readAsDataURL(file);
+                            }
+                          }}
+                        />
+                      </label>
+                    </div>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                      Formatos soportados: PNG, JPG, JPEG, WEBP. Selecciona tu foto <span className="font-semibold text-slate-700 dark:text-slate-200">"Imagen Gala trabajo.png"</span> para cargarla directamente.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-2 border-t border-stone-200/70 dark:border-slate-700/70">
+                  <label className="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">
+                    O introduce directamente la URL web de tu imagen:
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={editableProfile.avatarUrl}
+                    onChange={(e) => setEditableProfile({ ...editableProfile, avatarUrl: e.target.value })}
+                    placeholder="https://... o data:image/..."
+                    className="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-mono"
+                  />
+                </div>
+              </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-semibold mb-1">Tu Nombre Profesional *</label>
@@ -560,7 +633,7 @@ export const CMSManagerModal: React.FC<CMSManagerModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold mb-1">Nº Colegiado/a *</label>
+                  <label className="block text-xs font-semibold mb-1">Nº Colegiado/a o Titulación *</label>
                   <input
                     type="text"
                     required
@@ -610,6 +683,119 @@ export const CMSManagerModal: React.FC<CMSManagerModalProps> = ({
                     onChange={(e) => setEditableProfile({ ...editableProfile, substackUrl: e.target.value })}
                     className="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800"
                   />
+                </div>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-teal-50/50 dark:bg-slate-800/80 border border-teal-200 dark:border-slate-700 space-y-3">
+                <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <Smartphone className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                  <span>Edición de las 4 Tarjetas Destacadas (Cajas Alrededor de Apps)</span>
+                </h4>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  {/* Stat 1 */}
+                  <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 space-y-1.5">
+                    <span className="font-bold text-teal-700 dark:text-teal-300">Caja Destacada 1</span>
+                    <input
+                      type="text"
+                      placeholder="Ej: +20 Años"
+                      value={editableProfile.stat1Number || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat1Number: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Ej: Entornos Sanitarios"
+                      value={editableProfile.stat1Label || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat1Label: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Ej: Nutrición enteral y disfagia"
+                      value={editableProfile.stat1Subtext || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat1Subtext: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                  </div>
+
+                  {/* Stat 2 */}
+                  <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 space-y-1.5">
+                    <span className="font-bold text-indigo-700 dark:text-indigo-300">Caja Destacada 2</span>
+                    <input
+                      type="text"
+                      placeholder="Ej: Multinacionales"
+                      value={editableProfile.stat2Number || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat2Number: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Ej: Empresas Sanitarias"
+                      value={editableProfile.stat2Label || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat2Label: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Ej: ALTER, Danone Nutricia, Ordesa, Abbott"
+                      value={editableProfile.stat2Subtext || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat2Subtext: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                  </div>
+
+                  {/* Stat 3 */}
+                  <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 space-y-1.5">
+                    <span className="font-bold text-amber-700 dark:text-amber-300">Caja Destacada 3</span>
+                    <input
+                      type="text"
+                      placeholder="Ej: Univ. Navarra"
+                      value={editableProfile.stat3Number || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat3Number: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Ej: Nutrición & Dietética"
+                      value={editableProfile.stat3Label || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat3Label: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Ej: Graduada por la Univ. de Navarra"
+                      value={editableProfile.stat3Subtext || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat3Subtext: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                  </div>
+
+                  {/* Stat 4 */}
+                  <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 space-y-1.5">
+                    <span className="font-bold text-teal-700 dark:text-teal-300">Caja Destacada 4</span>
+                    <input
+                      type="text"
+                      placeholder="Ej: 3 Apps"
+                      value={editableProfile.stat4Number || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat4Number: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Ej: Desarrollo E-Health"
+                      value={editableProfile.stat4Label || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat4Label: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Ej: Herramientas propias de seguimiento"
+                      value={editableProfile.stat4Subtext || ''}
+                      onChange={(e) => setEditableProfile({ ...editableProfile, stat4Subtext: e.target.value })}
+                      className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                    />
+                  </div>
                 </div>
               </div>
 

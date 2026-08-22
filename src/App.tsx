@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { RatesAndServices } from './components/RatesAndServices';
+import { InstitutionalConsulting } from './components/InstitutionalConsulting';
 import { AppsSection } from './components/AppsSection';
 import { BlogSubstack } from './components/BlogSubstack';
 import { NutritionCalculator } from './components/NutritionCalculator';
@@ -36,7 +37,13 @@ export default function App() {
     const saved = localStorage.getItem('nutri_profile');
     if (saved) {
       const parsed = JSON.parse(saved);
-      return { ...parsed, title: initialProfile.title, bio: initialProfile.bio, extendedBio: initialProfile.extendedBio };
+      return {
+        ...initialProfile,
+        ...parsed,
+        avatarUrl: parsed.avatarUrl && !parsed.avatarUrl.includes('unsplash') ? parsed.avatarUrl : initialProfile.avatarUrl,
+        location: parsed.location && parsed.location !== 'Madrid, Cuenca, Ávila y Toledo / Consulta Online' ? parsed.location : initialProfile.location,
+        colegiadorNumber: parsed.colegiadorNumber && !parsed.colegiadorNumber.includes('MBA') ? parsed.colegiadorNumber : initialProfile.colegiadorNumber,
+      };
     }
     return initialProfile;
   });
@@ -44,26 +51,38 @@ export default function App() {
   const [services, setServices] = useState<NutritionService[]>(() => {
     const saved = localStorage.getItem('nutri_services');
     if (!saved) return initialServices;
-    const parsed: NutritionService[] = JSON.parse(saved);
-    return parsed
-      .filter((s) => s.id !== 's-val')
-      .map((s) => {
-        const fresh = initialServices.find((i) => i.id === s.id);
-        if (fresh) {
-          return { ...s, title: fresh.title, period: fresh.period, description: fresh.description, ctaText: fresh.ctaText, price: fresh.price };
+    try {
+      const parsed: NutritionService[] = JSON.parse(saved);
+      // Reset if cache lacks annualPrice or has old WhatsApp/App features
+      const needsFreshReset = parsed.some(p => !p.annualPrice || p.features.some(f => f.includes('WhatsApp') || f.includes('Apps')));
+      if (needsFreshReset) {
+        localStorage.setItem('nutri_services', JSON.stringify(initialServices));
+        return initialServices;
+      }
+      return initialServices.map((fresh) => {
+        const found = parsed.find((p) => p.id === fresh.id);
+        if (found) {
+          return { ...fresh, ...found };
         }
-        return s;
+        return fresh;
       });
+    } catch {
+      return initialServices;
+    }
   });
 
   const [apps, setApps] = useState<NutritionApp[]>(() => {
     const saved = localStorage.getItem('nutri_apps');
     if (!saved) return initialApps;
-    const parsed: NutritionApp[] = JSON.parse(saved);
-    // Ensure all items in initialApps are present in parsed array
-    const existingIds = new Set(parsed.map((a) => a.id));
-    const missing = initialApps.filter((i) => !existingIds.has(i.id));
-    return missing.length > 0 ? [...missing, ...parsed] : parsed;
+    try {
+      const parsed: NutritionApp[] = JSON.parse(saved);
+      // Ensure all items in initialApps are present in parsed array
+      const existingIds = new Set(parsed.map((a) => a.id));
+      const missing = initialApps.filter((i) => !existingIds.has(i.id));
+      return missing.length > 0 ? [...missing, ...parsed] : parsed;
+    } catch {
+      return initialApps;
+    }
   });
 
   const [posts, setPosts] = useState<BlogPost[]>(() => {
@@ -72,10 +91,17 @@ export default function App() {
   });
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    return (
-      localStorage.getItem('theme_mode') === 'dark' ||
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    );
+    // Default strictly to false (clean light medical aesthetic)
+    try {
+      const saved = localStorage.getItem('theme_mode');
+      if (saved === 'dark') {
+        // Clear previous dark mode preference to honor user's request for light theme
+        localStorage.setItem('theme_mode', 'light');
+      }
+    } catch {
+      // ignore storage errors
+    }
+    return false;
   });
 
   // Modal States
@@ -101,6 +127,11 @@ export default function App() {
   const handleSaveProfile = (newProfile: NutritionistProfile) => {
     setProfile(newProfile);
     localStorage.setItem('nutri_profile', JSON.stringify(newProfile));
+  };
+
+  const handleUpdateAvatar = (newAvatarUrl: string) => {
+    const updated = { ...profile, avatarUrl: newAvatarUrl };
+    handleSaveProfile(updated);
   };
 
   const handleSelectThemeColor = (color: ThemeColorKey) => {
@@ -171,6 +202,10 @@ export default function App() {
             const el = document.getElementById('tarifas');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
+          onExploreInstitutions={() => {
+            const el = document.getElementById('instituciones');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
           onExploreApps={() => {
             const el = document.getElementById('apps');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -179,6 +214,7 @@ export default function App() {
             const freeService = services.find((s) => s.id === 's-val') || services[0];
             handleOpenBookingWithService(freeService);
           }}
+          onUpdateAvatar={handleUpdateAvatar}
         />
 
         {/* Rates & Online Services Section (Tarifas Estudiadas) */}
@@ -187,6 +223,26 @@ export default function App() {
           services={services}
           onSelectPlan={(service) => handleOpenBookingWithService(service)}
           onOpenCMS={() => setIsCMSOpen(true)}
+        />
+
+        {/* Institutional Consulting & Training (Residencias, Colegios, Centros de Día, Asociaciones) */}
+        <InstitutionalConsulting
+          profile={profile}
+          onOpenBooking={(topic) => {
+            const customService: NutritionService = {
+              id: 'inst-custom',
+              title: topic,
+              subtitle: 'Servicios a Instituciones & Colectividades',
+              price: 'A Medida / Suscripción',
+              period: 'Mensual o Por Proyecto',
+              description: 'Asesoría técnica para residencias, centros de día, colegios o asociaciones.',
+              features: ['Revisión de menús basales y adaptados', 'Talleres y ponencias', 'Cumplimiento normativo e informe oficial'],
+              idealFor: 'Instituciones y colectividades sanitarias/educativas',
+              ctaText: 'Solicitar Propuesta',
+              category: 'Consulta',
+            };
+            handleOpenBookingWithService(customService);
+          }}
         />
 
         {/* Developed Apps Section (Apps Propias) */}
@@ -217,7 +273,10 @@ export default function App() {
         />
 
         {/* About & Methodology */}
-        <AboutSection profile={profile} />
+        <AboutSection
+          profile={profile}
+          onUpdateAvatar={handleUpdateAvatar}
+        />
 
         {/* Patient Testimonials */}
         <TestimonialsSection testimonials={initialTestimonials} />

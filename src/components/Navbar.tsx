@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Settings, Moon, Sun, Apple, Calendar, ShieldCheck, Palette, Layout } from 'lucide-react';
+import { Menu, X, Settings, Moon, Sun, Calendar, ShieldCheck, Palette, Layout } from 'lucide-react';
 import { NutritionistProfile, ThemeColorKey } from '../types';
 import { BgThemeKey, themeStyles } from '../utils/theme';
 import { ThemeColorPicker } from './ThemeColorPicker';
@@ -28,12 +28,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { id: 'hero', label: 'Inicio' },
-    { id: 'tarifas', label: 'Tarifas & Servicios' },
+    { id: 'tarifas', label: 'Tarifas Pacientes' },
+    { id: 'instituciones', label: 'Instituciones & Charlas' },
     { id: 'apps', label: 'Mis Apps' },
     { id: 'blog', label: 'Blog & Substack' },
     { id: 'calculadora', label: 'Calculadora' },
-    { id: 'redes', label: 'Redes & Comunidad' },
-    { id: 'sobre-mi', label: 'Sobre Mí & CV' },
+    { id: 'redes', label: 'Redes' },
+    { id: 'sobre-mi', label: 'Sobre Mí' },
   ];
 
   const handleNavClick = (id: string) => {
@@ -55,12 +56,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="flex items-center gap-3 text-left focus:outline-none group"
             id="brand-logo-btn"
           >
-            <div className={`w-10 h-10 rounded-xl bg-gradient-to-tr ${theme.accentGradient} flex items-center justify-center text-white shadow-md transition-transform group-hover:scale-105`}>
-              <Apple className="w-5 h-5 fill-current" />
+            <div className="relative shrink-0">
+              <img
+                src={profile.avatarUrl}
+                alt={profile.name}
+                referrerPolicy="no-referrer"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-stone-200 dark:ring-slate-700 shadow-sm transition-transform group-hover:scale-105"
+              />
+              <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-900" title="Disponible para Consulta Online" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white group-hover:opacity-90">
+                <span className="font-bold text-base sm:text-lg tracking-tight text-slate-700 dark:text-slate-200 group-hover:opacity-90">
                   {profile.name}
                 </span>
                 <span className={`hidden lg:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold ${theme.badge}`}>
