@@ -19,7 +19,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
           </span>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-700 dark:text-slate-200 tracking-tight">
-            Historias de Cambio de Hábitos & Salud
+            Historias de Cambio de Hábitos y Salud
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300">

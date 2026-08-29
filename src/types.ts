@@ -17,6 +17,8 @@ export interface NutritionService {
   idealFor: string;
   ctaText: string;
   category: 'Consulta' | 'Seguimiento' | 'Pack' | 'Gratuito' | 'Programa';
+  stripePaymentUrl?: string;
+  paymentNotice?: string;
 }
 
 export interface WebsiteConfig extends Partial<NutritionistProfile> {
@@ -79,6 +81,7 @@ export interface NutritionApp {
   description: string;
   fullDescription: string;
   imageUrl: string;
+  iconUrl?: string;
   iconName: string;
   tags: string[];
   appStoreUrl?: string;
@@ -92,7 +95,7 @@ export interface NutritionApp {
 export interface BlogPost {
   id: string;
   title: string;
-  category: 'Nutrición Clínica' | 'Mitos Alimentarios' | 'Recetas Saludables' | 'E-Health & Apps' | 'Rendimiento Deportivo' | 'Hábitos';
+  category: string;
   summary: string;
   content: string;
   coverImage: string;
@@ -133,9 +136,15 @@ export interface NutritionistProfile {
   phone: string;
   whatsappNumber: string;
   location: string;
+  websiteUrl?: string;
+  websiteDomain?: string;
   instagramUrl: string;
   facebookUrl: string;
   substackUrl: string;
+  linkedinUrl?: string;
+  bizumPaymentPhone?: string;
+  ibanAccount?: string;
+  stripePaymentBaseUrl?: string;
   themeColor: 'teal' | 'navy' | 'slate' | 'sage' | 'amber';
   bgTheme?: 'default' | 'pure-white' | 'warm-cream' | 'soft-mint' | 'cool-sky';
   stat1Number?: string;

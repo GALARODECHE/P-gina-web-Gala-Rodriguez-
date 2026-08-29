@@ -67,9 +67,9 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                 {post.readTime}
               </span>
               <span>•</span>
-              <span className="flex items-center gap-1 text-rose-500 font-semibold">
-                <Heart className="w-3.5 h-3.5 fill-current" />
-                {post.likesCount || 100} Me Gusta
+              <span className="text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1">
+                <BookOpen className="w-3.5 h-3.5" />
+                Substack Oficial
               </span>
             </div>
           </div>

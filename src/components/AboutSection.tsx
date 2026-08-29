@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
-import { Award, Briefcase, GraduationCap, CheckCircle2, Building2, Stethoscope, ShieldCheck, ChevronRight, Camera } from 'lucide-react';
+import { Award, Briefcase, GraduationCap, CheckCircle2, Building2, Stethoscope, ShieldCheck, ChevronRight } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { initialCareerTimeline } from '../data/initialNutritionData';
 import { themeStyles } from '../utils/theme';
 
 interface AboutSectionProps {
   profile: NutritionistProfile;
-  onUpdateAvatar?: (url: string) => void;
 }
 
-export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAvatar }) => {
+export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
   const theme = themeStyles[profile.themeColor || 'teal'];
   const [activeTab, setActiveTab] = useState<'profile' | 'experience' | 'education'>('experience');
 
   const specialties = [
-    'Manejo Clínico de la Disfagia & Deglución',
-    'Nutrición Enteral Adulto & Pediátrica',
-    'Oncología Médica y Radioterápica',
-    'Nefrología y Medicina Interna',
-    'Cirugía, Neurología y Geriatría',
-    'Gestión de Cuentas Hospitalarias',
-    'Farmacia Hospitalaria & Fórmulas',
-    'Desarrollo de Soluciones E-Health',
+    'Soporte Nutricional',
+    'Dietoterapia Clínica',
+    'Adaptación de Menús',
+    'Geriatría',
+    'Disfagia',
+    'Salud de la Mujer',
+    'Desarrollo de Soluciones Clínicas E-Health',
+    'Soporte Nutricional Oncológico (Quimioterapia y Radioterapia)',
+    'Nutrición Enteral Adulto y Pediátrica',
+    'Reeducación Nutricional y Estilo de Vida',
   ];
 
   const academicList = [
@@ -29,54 +30,65 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAva
       degree: 'Diplomatura en Nutrición Humana y Dietética',
       institution: 'Universidad de Navarra',
       status: 'Titulación Oficial Sanitaria',
-      badge: 'Grado Universitario',
-      description: 'Formación clínica integral, dietoterapia, bioquímica nutricional y fisiopatología aplicada.',
-    },
-    {
-      degree: 'Licenciatura en Farmacia',
-      institution: 'Universidad de Navarra',
-      status: '3 Cursos Académicos Superados',
-      badge: 'Ciencias de la Salud',
-      description: 'Sólida base en farmacología, interacciones fármaco-nutriente, formulación y fisiología humana.',
+      badge: 'Diplomada Universitaria',
+      description: 'Formación clínica integral, dietoterapia, bioquímica nutricional, fisiopatología aplicada y nutrición clínica.',
     },
   ];
 
   const certifiedCoursesList = [
     {
-      title: 'Manejo Clínico y Soporte Nutricional en Disfagia Orofaríngea',
-      institution: 'Formación Sanitaria Especializada',
-      area: 'Disfagia & Nutrición Enteral',
-      description: 'Evaluación clínica de la deglución, prevención de broncoaspiración y pautas de hidratación segura.',
+      title: 'Avances en Disfagia Orofaríngea en el nuevo entorno clínico',
+      institution: 'Formación Sanitaria Especializada · 10 horas',
+      area: 'Disfagia y Deglución',
+      description: 'Abordaje clínico avanzado, diagnóstico y adaptación de texturas y viscosidades en disfagia orofaríngea.',
     },
     {
-      title: 'Especialización en Nutrición en el Paciente Oncológico',
-      institution: 'Sociedad Española de Nutrición Clínica (SENPE / AEDN)',
-      area: 'Oncología Médica & Radioterápica',
-      description: 'Abordaje de la caquexia tumoral, soporte nutricional durante quimioterapia y radioterapia.',
+      title: 'XX Edición de la Jornada de actualización en Nutrición: "Nutrición y piel: Evidencia científica y aplicación práctica"',
+      institution: 'Universidad de Navarra · 5 horas',
+      area: 'Nutrición y Dermatología',
+      description: 'Evidencia científica y aplicación práctica del impacto nutricional en la salud dérmica y cutánea.',
     },
     {
-      title: 'Estandarización de Texturas y Dietas Terapéuticas (IDDSI)',
-      institution: 'International Dysphagia Diet Standardisation Initiative',
-      area: 'Seguridad Deglutoria',
-      description: 'Calibración y verificación práctica de niveles 0 a 7 en alimentos y líquidos adaptados.',
+      title: 'Monográfico de Nutrición y Menopausia',
+      institution: 'Academia AIZEA · 5 horas',
+      area: 'Salud de la Mujer y Menopausia',
+      description: 'Abordaje dietético, metabólico y de estilo de vida en la etapa de perimenopausia y menopausia.',
     },
     {
-      title: 'Nutrición Enteral y Artificial en Geriatría y Patología Neurológica',
-      institution: 'Formación Médica Continuada',
-      area: 'Geriatría & Neurología',
-      description: 'Manejo de sondas, gastrostomías (PEG), fórmulas enterales específicas y prevención de desnutrición.',
+      title: 'La cocina como aliada en la nutrición clínica: descubre el mundo de las texturas',
+      institution: 'Barcelona',
+      area: 'Texturas y Gastronomía Clínica',
+      description: 'Técnicas de modificación y adecuación de texturas para la alimentación segura y apetecible en nutrición clínica.',
     },
     {
-      title: 'Farmacoterapia Nutricional e Interacciones en Pacientes Polimedicados',
-      institution: 'Especialización Clínica',
-      area: 'Farmacia & Nutrición',
-      description: 'Optimización de absorción de micronutrientes y prevención de incompatibilidades fármaco-dieta.',
+      title: 'Ponente en: I Curso teórico-práctico de Nutrición para Enfermería Geriátrica',
+      institution: 'Ponencia / Docencia Sanitaria Especializada',
+      area: 'Docencia y Geriatría',
+      description: 'Impartición docente orientada a la valoración del estado nutricional y cuidados dietéticos en el paciente anciano.',
     },
     {
-      title: 'Soluciones Digitales, Telemedicina y E-Health en Consulta Nutricional',
-      institution: 'Desarrollo Tecnológico Aplicado a Salud',
-      area: 'E-Health & Software Clínico',
-      description: 'Diseño de protocolos y herramientas digitales para la monitorización remota y adherencia de pacientes.',
+      title: 'I Curso Nestlé Nutrition para residencias geriátricas: "El anciano y su entorno"',
+      institution: 'Nestlé Nutrition · Madrid',
+      area: 'Geriatría y Residencias',
+      description: 'Estrategias de valoración geriátrica, prevención de desnutrición y optimización del soporte alimentario.',
+    },
+    {
+      title: 'Intervención nutricional y Asesoramiento dietético en la Insuficiencia renal crónica',
+      institution: 'Universidad de Navarra',
+      area: 'Nefrología y Dietoterapia',
+      description: 'Manejo dietoterápico integral, control de electrolitos, balance proteico y pautas en patología renal crónica.',
+    },
+    {
+      title: 'Nutrición y Dietética: Últimas perspectivas',
+      institution: 'Universidad Complutense · 100 horas lectivas',
+      area: 'Nutrición Clínica Avanzada',
+      description: 'Actualización científica integral en dietoterapia, metabolismo, nutrición avanzada y práctica clínica.',
+    },
+    {
+      title: 'Aula Nestlé de actualidad en Nutrición: Las Proteínas',
+      institution: 'Aula Nestlé · Madrid',
+      area: 'Proteínas y Metabolismo',
+      description: 'Actualización sobre el metabolismo proteico, requerimientos específicos y soporte en estados catabólicos.',
     },
   ];
 
@@ -99,36 +111,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAva
               <span className="absolute bottom-1 right-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-600 text-white shadow-xs ring-2 ring-white dark:ring-slate-800 z-10">
                 Activa Online
               </span>
-
-              {onUpdateAvatar && (
-                <label className="absolute inset-0 rounded-full bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white cursor-pointer text-xs font-bold gap-1">
-                  <Camera className="w-5 h-5" />
-                  <span>Subir Foto</span>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={(e) => {
-                      const file = e.target.files?.[0];
-                      if (file) {
-                        const reader = new FileReader();
-                        reader.onload = (evt) => {
-                          if (evt.target?.result) {
-                            onUpdateAvatar(evt.target.result as string);
-                          }
-                        };
-                        reader.readAsDataURL(file);
-                      }
-                    }}
-                  />
-                </label>
-              )}
             </div>
 
             <div className="space-y-3 text-center md:text-left flex-1">
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-stone-100 dark:bg-slate-700 text-stone-700 dark:text-slate-200">
                 <Stethoscope className="w-3.5 h-3.5" />
-                <span>Nutricionista Clínica & Sanitaria</span>
+                <span>Diplomada en Nutrición Humana y Dietética</span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
@@ -141,13 +129,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAva
 
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 pt-1 text-xs">
                 <span className={`px-2.5 py-1 rounded-lg font-bold ${theme.badge}`}>
-                  Graduada por la Univ. de Navarra
+                  Diplomada por la Univ. de Navarra
                 </span>
                 <span className="px-2.5 py-1 rounded-lg font-semibold bg-stone-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200">
                   +20 Años en Entornos Sanitarios
                 </span>
                 <span className="px-2.5 py-1 rounded-lg font-semibold bg-stone-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200">
-                  Experta en Disfagia & Nutrición Enteral
+                  Experta en Salud de la Mujer, Disfagia y Oncología
                 </span>
               </div>
             </div>
@@ -179,7 +167,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAva
               }`}
             >
               <Award className="w-4 h-4" />
-              <span>Competencias & Especialidades</span>
+              <span>Competencias y Especialidades</span>
             </button>
 
             <button
@@ -233,7 +221,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAva
                   </div>
                   <div className="p-3.5 rounded-2xl bg-stone-50 dark:bg-slate-900 border border-stone-200/80 dark:border-slate-700/70">
                     <p className="font-bold text-slate-700 dark:text-slate-200 text-sm">ABBOTT LABORATORIES</p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Adulto & Pediatría</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Adulto y Pediatría</p>
                   </div>
                   <div className="p-3.5 rounded-2xl bg-stone-50 dark:bg-slate-900 border border-stone-200/80 dark:border-slate-700/70">
                     <p className="font-bold text-slate-700 dark:text-slate-200 text-sm">MEDITERRÁNEA DE CATERING</p>
@@ -261,7 +249,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAva
                 {profile.extendedBio}
               </p>
               <div className="pt-3 border-t border-stone-100 dark:border-slate-700 space-y-2 text-xs">
-                <p className="font-bold text-slate-700 dark:text-slate-200">Empresas & Entidades Sanitarias:</p>
+                <p className="font-bold text-slate-700 dark:text-slate-200">Empresas y Entidades Sanitarias:</p>
                 <div className="flex flex-wrap gap-1.5 text-slate-700 dark:text-slate-300">
                   <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 dark:bg-slate-700 font-medium">Abbott Laboratories</span>
                   <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 dark:bg-slate-700 font-medium">Danone Nutricia</span>
@@ -299,20 +287,25 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAva
                 <GraduationCap className="w-4 h-4 text-teal-600 dark:text-teal-400" />
                 <span>Titulaciones Universitarias Oficiales</span>
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 max-w-2xl">
                 {academicList.map((item, idx) => (
                   <div
                     key={idx}
                     className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-800 border border-stone-200 dark:border-slate-700 shadow-xs space-y-3 flex flex-col justify-between"
                   >
                     <div className="space-y-2">
-                      <span className={`inline-block px-2.5 py-0.5 rounded text-[10px] font-bold ${theme.badge}`}>
-                        {item.badge}
-                      </span>
-                      <h4 className="text-base font-bold text-slate-900 dark:text-white leading-snug">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className={`inline-block px-2.5 py-0.5 rounded text-[10px] font-bold ${theme.badge}`}>
+                          {item.badge}
+                        </span>
+                        <span className="text-xs font-bold text-teal-700 dark:text-teal-400">
+                          {item.status}
+                        </span>
+                      </div>
+                      <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
                         {item.degree}
                       </h4>
-                      <p className="text-xs font-semibold text-slate-600 dark:text-slate-300">
+                      <p className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">
                         {item.institution}
                       </p>
                       <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed pt-1">
@@ -320,8 +313,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAva
                       </p>
                     </div>
                     <div className="pt-3 border-t border-stone-100 dark:border-slate-700/60 flex items-center justify-between text-xs">
-                      <span className="text-slate-500 dark:text-slate-400">Acreditación:</span>
-                      <span className="font-bold text-slate-800 dark:text-slate-200">{item.status}</span>
+                      <span className="text-slate-500 dark:text-slate-400">Centro Sanitario / Académico:</span>
+                      <span className="font-bold text-slate-800 dark:text-slate-200">Universidad de Navarra</span>
                     </div>
                   </div>
                 ))}
@@ -333,10 +326,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile, onUpdateAva
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
                   <Award className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                  <span>Cursos de Especialización & Formación Continuada</span>
+                  <span>Cursos de Especialización y Formación Continuada</span>
                 </h3>
                 <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                  CV & Certificaciones Clínicas
+                  CV y Certificaciones Clínicas
                 </span>
               </div>
 

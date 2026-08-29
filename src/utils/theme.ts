@@ -28,13 +28,13 @@ export interface BgStyleConfig {
 
 export const bgThemeStyles: Record<BgThemeKey, BgStyleConfig> = {
   default: {
-    name: 'Blanco Lindo Clínico (Recomendado)',
-    description: 'Fondo blanco marfil despejado, limpio y luminoso',
-    bodyBg: 'bg-[#fafaf9]',
+    name: 'Azul Clarito Sereno (Recomendado)',
+    description: 'Fondo azul clarito limpio, suave y luminoso',
+    bodyBg: 'bg-[#f0f7fc]',
     cardBg: 'bg-white',
-    accentSectionBg: 'bg-[#f4f4f3]',
-    border: 'border-stone-200/90',
-    previewBg: 'bg-[#fafaf9] border border-stone-300',
+    accentSectionBg: 'bg-[#e2effa]',
+    border: 'border-sky-200/70',
+    previewBg: 'bg-[#f0f7fc] border border-sky-300',
   },
   'pure-white': {
     name: 'Blanco Puro Inmaculado',
@@ -46,7 +46,7 @@ export const bgThemeStyles: Record<BgThemeKey, BgStyleConfig> = {
     previewBg: 'bg-white border border-slate-300',
   },
   'warm-cream': {
-    name: 'Crema & Marfil Cálido',
+    name: 'Crema y Marfil Cálido',
     description: 'Tono marfil relajante y natural',
     bodyBg: 'bg-[#fbf9f5]',
     cardBg: 'bg-white',
@@ -66,17 +66,17 @@ export const bgThemeStyles: Record<BgThemeKey, BgStyleConfig> = {
   'cool-sky': {
     name: 'Azul Hielo Sanitario',
     description: 'Tono azul claro limpio y profesional',
-    bodyBg: 'bg-[#f3f8fc]',
+    bodyBg: 'bg-[#f0f7fc]',
     cardBg: 'bg-white',
-    accentSectionBg: 'bg-[#e7f1f9]',
-    border: 'border-[#d2e4f2]',
-    previewBg: 'bg-[#e2f0fb] border border-[#c4ddf1]',
+    accentSectionBg: 'bg-[#e2effa]',
+    border: 'border-sky-200',
+    previewBg: 'bg-[#e2f0fb] border border-sky-300',
   },
 };
 
 export const themeStyles: Record<ThemeColorKey, ThemeStyleConfig> = {
   teal: {
-    name: 'Verde Salvia & Esmeralda Clínico',
+    name: 'Verde Salvia y Esmeralda Clínico',
     primary: 'bg-emerald-700 hover:bg-emerald-800 text-white shadow-sm',
     primaryHover: 'hover:bg-emerald-800',
     primaryBorder: 'border-emerald-600',
@@ -104,7 +104,7 @@ export const themeStyles: Record<ThemeColorKey, ThemeStyleConfig> = {
     cardBorderHighlight: 'border-sky-600 ring-2 ring-sky-500/20',
   },
   slate: {
-    name: 'Grafito & Platino Minimalista',
+    name: 'Grafito y Platino Minimalista',
     primary: 'bg-slate-900 hover:bg-black text-white shadow-sm dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white',
     primaryHover: 'hover:bg-black dark:hover:bg-white',
     primaryBorder: 'border-slate-800 dark:border-slate-300',
@@ -118,7 +118,7 @@ export const themeStyles: Record<ThemeColorKey, ThemeStyleConfig> = {
     cardBorderHighlight: 'border-slate-900 ring-2 ring-slate-700/20',
   },
   sage: {
-    name: 'Oliva & Eucalipto Natural',
+    name: 'Oliva y Eucalipto Natural',
     primary: 'bg-teal-700 hover:bg-teal-800 text-white shadow-sm',
     primaryHover: 'hover:bg-teal-800',
     primaryBorder: 'border-teal-600',
@@ -132,7 +132,7 @@ export const themeStyles: Record<ThemeColorKey, ThemeStyleConfig> = {
     cardBorderHighlight: 'border-teal-600 ring-2 ring-teal-500/20',
   },
   amber: {
-    name: 'Tierra & Terracota Cálido',
+    name: 'Tierra y Terracota Cálido',
     primary: 'bg-amber-700 hover:bg-amber-800 text-white shadow-sm',
     primaryHover: 'hover:bg-amber-800',
     primaryBorder: 'border-amber-600',

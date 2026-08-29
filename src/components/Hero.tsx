@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Sparkles, Smartphone, BookOpen, Star, Stethoscope, Award, CheckCircle2, Camera } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Sparkles, Smartphone, BookOpen, Star, Stethoscope, Award, CheckCircle2, Globe, Instagram, Facebook, MessageCircle } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
 
@@ -9,7 +9,6 @@ interface HeroProps {
   onExploreApps: () => void;
   onExploreInstitutions?: () => void;
   onBookFreeValuation: () => void;
-  onUpdateAvatar?: (url: string) => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
@@ -17,7 +16,6 @@ export const Hero: React.FC<HeroProps> = ({
   onExploreRates,
   onExploreApps,
   onExploreInstitutions,
-  onUpdateAvatar,
 }) => {
   const theme = themeStyles[profile.themeColor || 'teal'];
 
@@ -39,13 +37,21 @@ export const Hero: React.FC<HeroProps> = ({
               
               <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-slate-200 border border-stone-200 dark:border-slate-700 inline-flex items-center gap-1.5">
                 <Award className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
-                <span>Univ. de Navarra</span>
+                <span>Diplomada Univ. de Navarra</span>
               </span>
+
+              <a
+                href="https://www.galarodrigueznutricion.es"
+                className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/80 inline-flex items-center gap-1.5 hover:bg-teal-100 dark:hover:bg-teal-900/80 transition-colors"
+              >
+                <Globe className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                <span>www.galarodrigueznutricion.es</span>
+              </a>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-slate-700 dark:text-slate-200 leading-[1.15]">
-              Nutrición Clínica Especializada &{' '}
+              Nutrición Clínica Especializada y{' '}
               <span className={`${theme.primaryText}`}>Soluciones E-Health</span>
             </h1>
 
@@ -58,11 +64,15 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium">
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-slate-800/80 border border-stone-200 dark:border-slate-700">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                Salud de la Mujer
+              </span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-slate-800/80 border border-stone-200 dark:border-slate-700">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                 Disfagia y Nutrición Enteral
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-slate-800/80 border border-stone-200 dark:border-slate-700">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                Reeducación Alimentaria
+                Oncología Médica
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-slate-800/80 border border-stone-200 dark:border-slate-700">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
@@ -77,46 +87,57 @@ export const Hero: React.FC<HeroProps> = ({
                 id="hero-view-rates-btn"
                 className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base shadow-sm transition-all transform active:scale-95 ${theme.primary}`}
               >
-                <span>Tarifas Consulta Online</span>
+                <span>Servicios y Consulta Online</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={onExploreInstitutions || onExploreRates}
-                id="hero-view-institutions-btn"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-bold text-sm sm:text-base border border-stone-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:bg-stone-50 dark:hover:bg-slate-750 shadow-sm transition-all"
-              >
-                <Award className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                <span>Residencias, Colegios & Charlas</span>
               </button>
 
               <button
                 onClick={onExploreApps}
                 id="hero-view-apps-btn"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-stone-200 dark:border-slate-800 bg-white/70 dark:bg-slate-800/70 hover:bg-stone-50 dark:hover:bg-slate-750 transition-all shadow-sm"
               >
                 <Smartphone className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                <span>Mis Apps E-Health</span>
+                <span>App TuNutriLens</span>
               </button>
             </div>
 
-            {/* Social Trust Footer */}
-            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            {/* Social Trust Footer with direct verified channels */}
+            <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-500 dark:text-slate-400">
+              <a
+                href={profile.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-pink-600 transition-colors font-semibold text-slate-700 dark:text-slate-300"
+              >
+                <Instagram className="w-4 h-4 text-pink-500" />
+                <span>Instagram (@galanutricion)</span>
+              </a>
+
               <a
                 href={profile.substackUrl}
                 target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-1.5 hover:text-slate-900 dark:hover:text-white transition-colors"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-amber-600 transition-colors font-semibold text-slate-700 dark:text-slate-300"
               >
                 <BookOpen className="w-4 h-4 text-amber-600" />
-                <span className="font-semibold">Substack Newsletter</span>
+                <span>Substack Newsletter</span>
               </a>
 
-              <div className="flex items-center gap-1 text-amber-500">
+              <a
+                href={profile.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-blue-600 transition-colors font-semibold text-slate-700 dark:text-slate-300"
+              >
+                <Facebook className="w-4 h-4 text-blue-600" />
+                <span>Facebook</span>
+              </a>
+
+              <div className="flex items-center gap-1 text-amber-500 pl-2 border-l border-stone-300 dark:border-slate-700">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 fill-current" />
                 ))}
-                <span className="text-xs text-slate-700 dark:text-slate-300 ml-1 font-bold">+20 Años de Experiencia</span>
+                <span className="text-xs text-slate-700 dark:text-slate-300 ml-1 font-bold">Consulta Oficial</span>
               </div>
             </div>
 
@@ -139,30 +160,6 @@ export const Hero: React.FC<HeroProps> = ({
                       className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-3 ring-teal-500/30 dark:ring-teal-400/30 shadow-md transition-transform group-hover:scale-105"
                     />
                     <span className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-800 z-10" title="Consulta Online Disponible" />
-                    
-                    {onUpdateAvatar && (
-                      <label className="absolute inset-0 rounded-full bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white cursor-pointer text-[10px] font-bold gap-0.5">
-                        <Camera className="w-4 h-4" />
-                        <span>Subir Foto</span>
-                        <input
-                          type="file"
-                          accept="image/*"
-                          className="hidden"
-                          onChange={(e) => {
-                            const file = e.target.files?.[0];
-                            if (file) {
-                              const reader = new FileReader();
-                              reader.onload = (evt) => {
-                                if (evt.target?.result) {
-                                  onUpdateAvatar(evt.target.result as string);
-                                }
-                              };
-                              reader.readAsDataURL(file);
-                            }
-                          }}
-                        />
-                      </label>
-                    )}
                   </div>
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100">
@@ -171,9 +168,14 @@ export const Hero: React.FC<HeroProps> = ({
                     <p className="text-xs text-slate-600 dark:text-slate-300 font-medium mt-0.5">
                       {profile.title}
                     </p>
-                    <span className={`inline-block mt-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold ${theme.badge}`}>
-                      {profile.colegiadorNumber}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                      <span className={`inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold ${theme.badge}`}>
+                        {profile.colegiadorNumber}
+                      </span>
+                      <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-teal-50 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-700">
+                        www.galarodrigueznutricion.es
+                      </span>
+                    </div>
                   </div>
                 </div>
 
@@ -183,7 +185,7 @@ export const Hero: React.FC<HeroProps> = ({
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1.5">
                         <Sparkles className="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400" />
-                        Ecosistema Clínico & Digital
+                        Ecosistema Clínico y Digital
                       </span>
                       <span className="text-[10px] uppercase font-bold text-stone-500 dark:text-slate-400">
                         {profile.location || 'Online'}
@@ -203,6 +205,25 @@ export const Hero: React.FC<HeroProps> = ({
                       <p className="text-slate-500 dark:text-slate-400 font-medium text-[11px]">Modalidad</p>
                       <p className="text-sm font-bold text-slate-700 dark:text-slate-200 mt-0.5">100% Online</p>
                     </div>
+                  </div>
+
+                  {/* Direct Contact Buttons inside Card */}
+                  <div className="pt-2 flex items-center justify-between gap-2 border-t border-stone-100 dark:border-slate-700/60 text-xs">
+                    <a
+                      href={`https://wa.me/${profile.whatsappNumber.replace(/[^0-9]/g, '')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 py-2 px-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-center font-bold flex items-center justify-center gap-1.5 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition-colors"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>WhatsApp Directo</span>
+                    </a>
+                    <a
+                      href={`mailto:${profile.email}`}
+                      className="flex-1 py-2 px-3 rounded-xl bg-stone-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-stone-200 dark:border-slate-700 text-center font-bold flex items-center justify-center gap-1.5 hover:bg-stone-100 dark:hover:bg-slate-800 transition-colors"
+                    >
+                      <span>{profile.email}</span>
+                    </a>
                   </div>
                 </div>
 
@@ -244,22 +265,22 @@ export const Hero: React.FC<HeroProps> = ({
               {profile.stat3Number || 'Univ. Navarra'}
             </p>
             <p className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 mt-0.5">
-              {profile.stat3Label || 'Nutrición & Dietética'}
+              {profile.stat3Label || 'Nutrición y Dietética'}
             </p>
             <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
-              {profile.stat3Subtext || 'Graduada por la Univ. de Navarra'}
+              {profile.stat3Subtext || 'Diplomada por la Univ. de Navarra'}
             </p>
           </div>
 
           <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-800/90 border border-stone-200/90 dark:border-slate-700/60 shadow-xs text-center sm:text-left">
             <p className={`text-xl sm:text-2xl font-extrabold ${theme.primaryText}`}>
-              {profile.stat4Number || '3 Apps'}
+              TuNutriLens
             </p>
             <p className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 mt-0.5">
-              {profile.stat4Label || 'Desarrollo E-Health'}
+              Innovación E-Health
             </p>
             <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
-              {profile.stat4Subtext || 'Herramientas propias de seguimiento'}
+              App clínica propia para pacientes
             </p>
           </div>
         </div>
