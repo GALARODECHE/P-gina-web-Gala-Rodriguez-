@@ -49,7 +49,7 @@ export const talksTariffList: TalkTariffItem[] = [
     title: 'Charla Temática / Webinar Online',
     subtitle: 'Divulgación científica interactiva en directo',
     price: '550 €',
-    duration: '90 minutos',
+    duration: '60 minutos',
     modality: '100% Online (Zoom / Teams / Meet)',
     targetAudience: 'Asociaciones de pacientes, AMPAS, empresas saludables y colectivos',
     description:
@@ -68,7 +68,7 @@ export const talksTariffList: TalkTariffItem[] = [
     title: 'Ponencia y Taller para Asociaciones',
     subtitle: 'Disfagia en el hogar, Oncología o Salud Hormonal',
     price: '650 €',
-    duration: '2 horas',
+    duration: '60 minutos',
     modality: 'Presencial u Online',
     targetAudience: 'Asociaciones de Pacientes (ELA, Alzheimer, Parkinson, Cáncer) y Familias',
     description:
@@ -87,7 +87,7 @@ export const talksTariffList: TalkTariffItem[] = [
     title: 'Capacitación y Taller Personal Sociosanitario',
     subtitle: 'Protocolos IDDSI, Calibración y Desnutrición',
     price: '650 €',
-    duration: '2h 30 min',
+    duration: '60 minutos',
     modality: 'Presencial (en el centro) u Online',
     targetAudience: 'Equipos de Cocina, Auxiliares de Enfermería, Terapeutas y Dirección',
     description:
@@ -215,18 +215,18 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
 📋 *TARIFAS Y FORMATOS DE PONENCIAS, TALLERES Y AUDITORÍAS:*
 
 1️⃣ *CHARLA TEMÁTICA / WEBINAR ONLINE (550 €)*
-• Duración: 90 minutos en directo (Zoom / Teams / Meet).
+• Duración: 60 minutos en directo (Zoom / Teams / Meet).
 • Preparación integral de presentación visual adaptada a la temática.
 • Hasta 100 asistentes + Turno amplio de preguntas.
 • Incluye dossier resumen descargable en PDF para los participantes.
 
 2️⃣ *PONENCIA Y TALLER PARA ASOCIACIONES Y FAMILIAS (650 €)*
-• Duración: 2 horas (Presencial u Online).
+• Duración: 60 minutos (Presencial u Online).
 • Temáticas: Disfagia y texturas en el hogar (IDDSI), Nutrición en Oncología, Salud Hormonal.
 • Enfoque 100% práctico con resolución de casos reales y guía/recetario adaptado.
 
 3️⃣ *CAPACITACIÓN TÉCNICA / TALLER PARA PERSONAL SOCIOSANITARIO (650 €)*
-• Duración: 2h 30 min (En el centro o virtual).
+• Duración: 60 minutos (En el centro o virtual).
 • Para: Equipos de Residencias, Centros de Día, Cocina y Auxiliares de Enfermería.
 • Protocolos IDDSI para disfagia, prevención de desnutrición y enriquecimiento natural.
 • Incluye certificado de aprovechamiento institucional.

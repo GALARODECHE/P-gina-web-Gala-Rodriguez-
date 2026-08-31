@@ -7,7 +7,7 @@ import { AppsSection } from './components/AppsSection';
 import { BlogSubstack } from './components/BlogSubstack';
 import { SocialHub } from './components/SocialHub';
 import { AboutSection } from './components/AboutSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
+import { FAQSection } from './components/FAQSection';
 import { ContactBookingModal } from './components/ContactBookingModal';
 import { ArticleReaderModal } from './components/ArticleReaderModal';
 import { ServiceInfographicModal } from './components/ServiceInfographicModal';
@@ -19,7 +19,6 @@ import {
   initialServices,
   initialApps,
   initialPosts,
-  initialTestimonials,
 } from './data/initialNutritionData';
 
 import {
@@ -157,8 +156,11 @@ export default function App() {
           profile={profile}
         />
 
-        {/* Patient Testimonials */}
-        <TestimonialsSection testimonials={initialTestimonials} />
+        {/* Clinical & Service FAQ Section */}
+        <FAQSection
+          profile={profile}
+          onBookClick={() => handleOpenBookingWithService()}
+        />
       </main>
 
       {/* Footer */}

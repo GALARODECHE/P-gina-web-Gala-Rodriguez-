@@ -6,7 +6,6 @@ import {
   NutritionService,
   NutritionApp,
   BlogPost,
-  TestimonialItem,
   InstagramPostPreview,
 } from '../types';
 
@@ -34,7 +33,7 @@ export const initialProfile: NutritionistProfile = {
   stat1Subtext: 'Salud de la Mujer, Disfagia y Oncología',
   stat2Number: 'Multinacionales',
   stat2Label: 'Empresas Sanitarias',
-  stat2Subtext: 'ALTER, Danone Nutricia, Ordesa, Abbott',
+  stat2Subtext: 'Danone Nutricia, Ordesa, Abbott',
   stat3Number: 'Univ. Navarra',
   stat3Label: 'Nutrición y Dietética',
   stat3Subtext: 'Diplomada por la Univ. de Navarra',
@@ -44,10 +43,6 @@ export const initialProfile: NutritionistProfile = {
 };
 
 export const initialCareerTimeline = [
-  {
-    company: 'ALTER – Línea Adubén',
-    role: 'Nutrición Enteral Adulto',
-  },
   {
     company: 'DANONE NUTRICIA',
     role: 'Especialista Hospitalaria',
@@ -98,14 +93,14 @@ export const initialServices: NutritionService[] = [
     period: 'Packs de 3 Meses · 6 Meses · 1 Año',
     isPopular: true,
     popularBadge: 'RECOMENDADO · MÁXIMA ADHERENCIA',
-    description: 'Tratamiento continuo con sesiones clínicas periódicas y soporte directo entre consultas para salud hormonal, patología digestiva, oncología o disfagia.',
+    description: 'Tratamiento continuo con sesiones clínicas periódicas y revisiones estructuradas para salud hormonal, patología digestiva, oncología o disfagia.',
     features: [
       '1ª Consulta Clínica Inicial Exhaustiva (60 min) incluida',
-      'Pack 3 Meses: 1 Sesión Inicial + 6 Revisiones (520 €)',
+      'Pack 3 Meses: 1 Sesión Inicial + 6 Revisiones quincenales (520 €)',
       'Pack 6 Meses: Seguimiento continuado (970 €) + 10% DTO. en TuNutriLens',
       'Pack 1 Año: Acompañamiento integral de 12 meses (1.850 €) + 20% DTO. suscripción anual TuNutriLens',
-      'Soporte directo continuo por WhatsApp / e-Health para dudas del día a día',
       'Reajuste dinámico de menús, pautas nutricionales y consistencias',
+      'Seguimiento clínico riguroso en cada consulta de revisión',
     ],
     idealFor: 'Salud de la mujer, trastornos digestivos/hormonales, patología oncológica, disfagia o reeducación metabólica duradera.',
     ctaText: 'Elegir Programa de Continuidad',
@@ -200,38 +195,5 @@ En consulta abordamos la causa raíz mediante un análisis minucioso de tus sín
     readTime: '5 min de lectura',
     substackUrl: 'https://galanutricion.substack.com/p/el-drama-de-la-inflamacion-abdominal',
     isFeatured: true,
-  },
-];
-
-export const initialTestimonials: TestimonialItem[] = [
-  {
-    id: 't-1',
-    name: 'Laura Fernández',
-    role: 'Paciente Consulta Online',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
-    comment: 'Llevaba años buscando una profesional especializada en salud de la mujer y problemas digestivos. Con Gala entendí las adaptaciones necesarias y el seguimiento clínico me da una tranquilidad inmensa.',
-    rating: 5,
-    serviceUsed: 'Consulta Clínica Online',
-    verifiedPatient: true,
-  },
-  {
-    id: 't-2',
-    name: 'Carlos Mendoza',
-    role: 'Paciente en Reeducación Alimentaria',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-    comment: 'La combinación de su rigor clínico con más de 20 años de experiencia y la facilidad de registrar platos con TuNutriLens hace que el seguimiento sea muy cómodo y sin agobios.',
-    rating: 5,
-    serviceUsed: 'Seguimiento Nutricional Continuo',
-    verifiedPatient: true,
-  },
-  {
-    id: 't-3',
-    name: 'Elena Gómez',
-    role: 'Lectora de Substack y Paciente',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
-    comment: 'Sigo sus artículos semanales en Substack (galanutricion.substack.com). La claridad y evidencia con la que explica la nutrición me dio la confianza para agendar mi primera consulta online.',
-    rating: 5,
-    serviceUsed: 'Primera Consulta Online',
-    verifiedPatient: true,
   },
 ];

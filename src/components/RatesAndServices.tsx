@@ -86,9 +86,9 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
 2️⃣ *PROGRAMAS CLÍNICOS DE CONTINUIDAD Y ACOMPAÑAMIENTO:*
 • 🟢 *Pack 3 Meses (520 €)*:
   - 1 Sesión Inicial (60 min) + 6 Consultas de Revisión (30-40 min).
-  - Soporte continuado por WhatsApp / e-Health y reajuste dinámico de menús.
+  - Reajuste dinámico de menús, evolución periódica y adaptación de pautas.
 • 🟡 *Programa 6 Meses (970 €)*:
-  - Seguimiento regular continuado + Soporte directo.
+  - Seguimiento regular continuado y revisiones periódicas.
   - 🎁 *10% de descuento en la suscripción a TuNutriLens*.
 • 🟣 *Programa Integral 1 Año (1.850 €)*:
   - Acompañamiento clínico integral de 12 meses.
@@ -575,7 +575,7 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                       </li>
                       <li className="flex items-start gap-1.5">
                         <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Soporte directo por WhatsApp / e-Health</span>
+                        <span>Revisiones clínicas periódicas cada 15 días</span>
                       </li>
                       <li className="flex items-start gap-1.5">
                         <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />

@@ -63,7 +63,7 @@ DATOS DEL PACIENTE:
 DETALLES DEL SERVICIO:
 • Servicio seleccionado: ${currentService?.title || 'Consulta Nutricional'}
 • Tarifa: ${currentService?.price || ''} (${currentService?.period || ''})
-• Modalidad: Consulta 100% Online (Videollamada segura)
+• Modalidad: Consulta nutricional online y formación presencial y online
 
 MOTIVO CLÍNICO Y NOTAS:
 • Motivo principal / Patología: ${primaryGoal}
@@ -80,7 +80,7 @@ Fecha de solicitud: ${new Date().toLocaleString('es-ES')}`;
 
   const getWhatsAppLink = () => {
     const text = encodeURIComponent(
-      `Hola Gala (${profile.name}), me gustaría solicitar cita online para el plan "${currentService?.title || 'Consulta Online'}".\n\nMis datos:\n- Nombre: ${clientName}\n- Email: ${clientEmail}\n- Teléfono: ${clientPhone}\n- Motivo / Patología: ${primaryGoal}\n- Modalidad: 100% Online\n- Notas: ${notes || 'Ninguna'}`
+      `Hola Gala (${profile.name}), me gustaría solicitar cita/información para "${currentService?.title || 'Consulta Nutricional'}".\n\nMis datos:\n- Nombre: ${clientName}\n- Email: ${clientEmail}\n- Teléfono: ${clientPhone}\n- Motivo / Consulta: ${primaryGoal}\n- Modalidad: Consulta nutricional online y formación presencial y online\n- Notas: ${notes || 'Ninguna'}`
     );
     const cleanNumber = profile.whatsappNumber.replace(/[^0-9]/g, '');
     return `https://wa.me/${cleanNumber}?text=${text}`;
@@ -318,11 +318,11 @@ Fecha de solicitud: ${new Date().toLocaleString('es-ES')}`;
 
               <div>
                 <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
-                  Modalidad de Consulta
+                  Modalidad
                 </label>
-                <div className="px-3.5 py-2.5 rounded-xl border border-teal-200 dark:border-teal-800 bg-teal-50/70 dark:bg-teal-950/50 text-xs sm:text-sm font-semibold text-teal-800 dark:text-teal-300 flex items-center gap-2">
-                  <Video className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                  <span>100% Online (Videollamada segura)</span>
+                <div className="px-3 py-2 rounded-xl border border-teal-200 dark:border-teal-800 bg-teal-50/70 dark:bg-teal-950/50 text-[11px] sm:text-xs font-semibold text-teal-800 dark:text-teal-300 flex items-center gap-1.5">
+                  <Video className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
+                  <span>Consulta nutricional online y formación presencial y online</span>
                 </div>
               </div>
             </div>

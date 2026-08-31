@@ -208,10 +208,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   <div className="p-3.5 rounded-2xl bg-stone-50 dark:bg-slate-900 border border-stone-200/80 dark:border-slate-700/70">
-                    <p className="font-bold text-slate-700 dark:text-slate-200 text-sm">ALTER</p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Línea Adubén</p>
-                  </div>
-                  <div className="p-3.5 rounded-2xl bg-stone-50 dark:bg-slate-900 border border-stone-200/80 dark:border-slate-700/70">
                     <p className="font-bold text-slate-700 dark:text-slate-200 text-sm">DANONE NUTRICIA</p>
                     <p className="text-xs text-slate-500 dark:text-slate-400">Especialidad Hospitalaria</p>
                   </div>
@@ -254,7 +250,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                   <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 dark:bg-slate-700 font-medium">Abbott Laboratories</span>
                   <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 dark:bg-slate-700 font-medium">Danone Nutricia</span>
                   <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 dark:bg-slate-700 font-medium">Laboratorios Ordesa</span>
-                  <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 dark:bg-slate-700 font-medium">ALTER (Línea Adubén)</span>
                   <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 dark:bg-slate-700 font-medium">Hospital de la Zarzuela</span>
                 </div>
               </div>

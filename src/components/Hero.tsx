@@ -76,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-slate-800/80 border border-stone-200 dark:border-slate-700">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                Consulta 100% Online
+                Consulta Online y Formación Presencial / Online
               </span>
             </div>
 
@@ -168,12 +168,9 @@ export const Hero: React.FC<HeroProps> = ({
                     <p className="text-xs text-slate-600 dark:text-slate-300 font-medium mt-0.5">
                       {profile.title}
                     </p>
-                    <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                    <div className="mt-2">
                       <span className={`inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold ${theme.badge}`}>
                         {profile.colegiadorNumber}
-                      </span>
-                      <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-teal-50 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-700">
-                        www.galarodrigueznutricion.es
                       </span>
                     </div>
                   </div>
@@ -196,14 +193,16 @@ export const Hero: React.FC<HeroProps> = ({
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2.5 text-xs">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                     <div className="p-3 rounded-xl bg-stone-50 dark:bg-slate-900/60 border border-stone-200/80 dark:border-slate-700/60">
                       <p className="text-slate-500 dark:text-slate-400 font-medium text-[11px]">Experiencia</p>
                       <p className="text-sm font-bold text-slate-700 dark:text-slate-200 mt-0.5">+20 Años</p>
                     </div>
                     <div className="p-3 rounded-xl bg-stone-50 dark:bg-slate-900/60 border border-stone-200/80 dark:border-slate-700/60">
                       <p className="text-slate-500 dark:text-slate-400 font-medium text-[11px]">Modalidad</p>
-                      <p className="text-sm font-bold text-slate-700 dark:text-slate-200 mt-0.5">100% Online</p>
+                      <p className="text-xs font-bold text-slate-700 dark:text-slate-200 mt-0.5 leading-snug">
+                        Consulta nutricional online y formación presencial y online
+                      </p>
                     </div>
                   </div>
 
@@ -256,7 +255,7 @@ export const Hero: React.FC<HeroProps> = ({
               {profile.stat2Label || 'Empresas Sanitarias'}
             </p>
             <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
-              {profile.stat2Subtext || 'ALTER, Danone Nutricia, Ordesa, Abbott'}
+              {profile.stat2Subtext || 'Danone Nutricia, Ordesa, Abbott'}
             </p>
           </div>
 

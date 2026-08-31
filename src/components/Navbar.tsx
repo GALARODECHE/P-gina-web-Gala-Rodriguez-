@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'instituciones', label: 'Instituciones y Charlas' },
     { id: 'apps', label: 'TuNutriLens (App)' },
     { id: 'blog', label: 'Blog y Substack' },
-    { id: 'redes', label: 'Redes' },
+    { id: 'faq', label: 'Preguntas Frecuentes' },
     { id: 'sobre-mi', label: 'Sobre Mí' },
   ];
 
@@ -39,69 +39,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-white/95 dark:bg-slate-900/95 border-b border-slate-200/80 dark:border-slate-800 transition-colors shadow-xs">
-      
-      {/* Verified Official Domain Topbar */}
-      <div className="bg-stone-100/90 dark:bg-slate-950/80 border-b border-stone-200/60 dark:border-slate-800/60 py-1.5 px-4 sm:px-6 lg:px-8 text-[11px] text-slate-600 dark:text-slate-400">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 font-bold text-teal-700 dark:text-teal-400">
-              <Globe className="w-3 h-3" />
-              <span>www.galarodrigueznutricion.es</span>
-            </span>
-            <span className="hidden sm:inline text-stone-300 dark:text-slate-700">•</span>
-            <span className="hidden sm:inline font-medium text-slate-500 dark:text-slate-400">
-              Nutrición Clínica y E-Health Especializada
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="hidden md:inline font-medium text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Redes Oficiales:
-            </span>
-            <a
-              href={profile.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-pink-600 transition-colors flex items-center gap-1 font-semibold"
-              title="Instagram @galanutricion"
-            >
-              <Instagram className="w-3.5 h-3.5 text-pink-500" />
-              <span className="hidden xs:inline">@galanutricion</span>
-            </a>
-            <a
-              href={profile.substackUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-amber-600 transition-colors flex items-center gap-1 font-semibold"
-              title="Substack Newsletter"
-            >
-              <BookOpen className="w-3.5 h-3.5 text-amber-600" />
-              <span className="hidden xs:inline">Substack</span>
-            </a>
-            <a
-              href={profile.facebookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-600 transition-colors flex items-center gap-1 font-semibold"
-              title="Facebook Gala Nutrición"
-            >
-              <Facebook className="w-3.5 h-3.5 text-blue-600" />
-              <span className="hidden md:inline">Facebook</span>
-            </a>
-            <a
-              href={`https://wa.me/${profile.whatsappNumber.replace(/[^0-9]/g, '')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-emerald-600 transition-colors flex items-center gap-1 font-semibold text-emerald-600 dark:text-emerald-400"
-              title="WhatsApp Consulta"
-            >
-              <MessageCircle className="w-3.5 h-3.5" />
-              <span className="hidden xs:inline">WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           
@@ -118,27 +55,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                 referrerPolicy="no-referrer"
                 className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-stone-200 dark:ring-slate-700 shadow-sm transition-transform group-hover:scale-105"
               />
-              <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-900" title="Disponible para Consulta Online" />
+              <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-900" title="Disponible para Consulta" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-base sm:text-lg tracking-tight text-slate-700 dark:text-slate-200 group-hover:opacity-90">
-                  {profile.name}
-                </span>
-                <span className={`hidden lg:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold ${theme.badge}`}>
-                  <ShieldCheck className="w-3 h-3" />
-                  <span>20+ Años Exp. Entornos Sanitarios</span>
-                </span>
-              </div>
-              <div className="flex items-center gap-2 text-xs">
-                <span className="text-slate-500 dark:text-slate-400 font-medium line-clamp-1">
-                  {profile.title}
-                </span>
-                <span className="hidden md:inline text-stone-300 dark:text-slate-600 font-bold">•</span>
-                <span className={`hidden md:inline text-[11px] font-bold tracking-tight ${theme.primaryText}`}>
-                  www.galarodrigueznutricion.es
-                </span>
-              </div>
+              <span className="font-bold text-base sm:text-lg tracking-tight text-slate-800 dark:text-slate-100 group-hover:opacity-90 block leading-tight">
+                {profile.name}
+              </span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                Nutrición Clínica
+              </span>
             </div>
           </button>
 
