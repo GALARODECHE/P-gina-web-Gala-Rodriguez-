@@ -1,3 +1,4 @@
+import galaFotoOficial from '../assets/images/gala_rodriguez_perfil.png';
 import tuNutriLensBanner from '../assets/images/tunutrilens_banner_real_1787570430380.jpg';
 import tuNutriLensIcon from '../assets/images/tunutrilens_icon_real_1787570446381.jpg';
 import tuNutriLensImage from '../assets/images/tunutrilens_mockup_1787427123608.jpg';
@@ -15,7 +16,7 @@ export const initialProfile: NutritionistProfile = {
   colegiadorNumber: 'Diplomada por la Universidad de Navarra',
   bio: 'Diplomada en Nutrición Humana y Dietética por la Universidad de Navarra con más de 20 años de experiencia en entornos sanitarios. Experta en salud de la mujer, disfagia y oncología.',
   extendedBio: 'Diplomada en Nutrición Humana y Dietética por la Universidad de Navarra con más de 20 años de experiencia en entornos sanitarios y alta especialización clínica como experta en salud de la mujer, disfagia, oncología, soporte nutricional enteral y reeducación alimentaria, complementada con el desarrollo de soluciones e-health para el seguimiento clínico de pacientes.',
-  avatarUrl: 'https://substack-post-media.s3.amazonaws.com/public/images/345c45f7-7a04-40d0-b243-9d97caa8d531_2749x2749.jpeg',
+  avatarUrl: galaFotoOficial,
   email: 'gala@galarodrigueznutricion.es',
   phone: '697 166 126',
   whatsappNumber: '+34697166126',
@@ -25,7 +26,7 @@ export const initialProfile: NutritionistProfile = {
   instagramUrl: 'https://www.instagram.com/galanutricion/',
   facebookUrl: 'https://www.facebook.com/galanutricion',
   substackUrl: 'https://galanutricion.substack.com',
-  linkedinUrl: 'https://www.linkedin.com/in/gala-rodriguez-echebarrieta/',
+  linkedinUrl: 'https://www.linkedin.com/in/galarodriguezechebarrieta/',
   themeColor: 'teal',
   bgTheme: 'default',
   stat1Number: '+20 Años',
