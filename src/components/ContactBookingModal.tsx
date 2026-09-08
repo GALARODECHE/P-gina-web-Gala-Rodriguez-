@@ -53,17 +53,17 @@ export const ContactBookingModal: React.FC<ContactBookingModalProps> = ({
   const targetEmail = profile.email || 'gala@galarodrigueznutricion.es';
 
   const getEmailBody = () => {
-    return `SOLICITUD DE CITA ONLINE - www.galarodrigueznutricion.es
+    return `SOLICITUD DE INFORMACIÓN Y CITA ONLINE - www.galarodrigueznutricion.es
 --------------------------------------------------
-DATOS DEL PACIENTE:
+DATOS DEL INTERESADO/A:
 • Nombre completo: ${clientName}
 • Email de contacto: ${clientEmail}
 • Teléfono / WhatsApp: ${clientPhone}
 
 DETALLES DEL SERVICIO:
 • Servicio seleccionado: ${currentService?.title || 'Consulta Nutricional'}
-• Tarifa: ${currentService?.price || ''} (${currentService?.period || ''})
-• Modalidad: Consulta nutricional online y formación presencial y online
+• Modalidad / Duración: ${currentService?.period || 'Consulta online'}
+• Modalidad de atención: Consulta nutricional online y formación presencial/online
 
 MOTIVO CLÍNICO Y NOTAS:
 • Motivo principal / Patología: ${primaryGoal}
@@ -73,14 +73,14 @@ Fecha de solicitud: ${new Date().toLocaleString('es-ES')}`;
   };
 
   const getMailtoLink = () => {
-    const subject = encodeURIComponent(`[SOLICITUD CITA ONLINE] ${clientName} - ${currentService?.title || 'Nutrición'}`);
+    const subject = encodeURIComponent(`[SOLICITUD INFORMACIÓN/CITA] ${clientName} - ${currentService?.title || 'Nutrición'}`);
     const body = encodeURIComponent(getEmailBody());
     return `mailto:${targetEmail}?subject=${subject}&body=${body}`;
   };
 
   const getWhatsAppLink = () => {
     const text = encodeURIComponent(
-      `Hola Gala (${profile.name}), me gustaría solicitar cita/información para "${currentService?.title || 'Consulta Nutricional'}".\n\nMis datos:\n- Nombre: ${clientName}\n- Email: ${clientEmail}\n- Teléfono: ${clientPhone}\n- Motivo / Consulta: ${primaryGoal}\n- Modalidad: Consulta nutricional online y formación presencial y online\n- Notas: ${notes || 'Ninguna'}`
+      `Hola Gala (${profile.name}), me gustaría solicitar información y disponibilidad de cita para "${currentService?.title || 'Consulta Nutricional'}".\n\nMis datos:\n- Nombre: ${clientName}\n- Email: ${clientEmail}\n- Teléfono: ${clientPhone}\n- Motivo / Consulta: ${primaryGoal}\n- Modalidad: Consulta nutricional online y formación presencial y online\n- Notas: ${notes || 'Ninguna'}`
     );
     const cleanNumber = profile.whatsappNumber.replace(/[^0-9]/g, '');
     return `https://wa.me/${cleanNumber}?text=${text}`;
@@ -98,7 +98,6 @@ Fecha de solicitud: ${new Date().toLocaleString('es-ES')}`;
         clientEmail,
         clientPhone,
         serviceTitle: currentService?.title,
-        price: currentService?.price,
         primaryGoal,
         notes,
       };
@@ -255,7 +254,7 @@ Fecha de solicitud: ${new Date().toLocaleString('es-ES')}`;
             {/* Service Selection */}
             <div>
               <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
-                Selecciona la Tarifa o Servicio
+                Selecciona el Servicio de Interés
               </label>
               <select
                 value={selectedServiceId}
@@ -264,7 +263,7 @@ Fecha de solicitud: ${new Date().toLocaleString('es-ES')}`;
               >
                 {services.map((s) => (
                   <option key={s.id} value={s.id}>
-                    {s.title} ({s.price} - {s.period})
+                    {s.title} {s.period ? `(${s.period})` : ''}
                   </option>
                 ))}
               </select>

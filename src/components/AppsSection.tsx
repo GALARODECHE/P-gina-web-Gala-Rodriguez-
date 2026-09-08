@@ -503,10 +503,10 @@ export const AppsSection: React.FC<AppsSectionProps> = ({
                 </div>
 
                 <a
-                  href="#tarifas"
+                  href="#servicios"
                   className="px-3.5 py-2 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-bold text-xs whitespace-nowrap transition-colors shadow-xs"
                 >
-                  Ver Tarifas
+                  Ver Servicios Clínicos
                 </a>
               </div>
 

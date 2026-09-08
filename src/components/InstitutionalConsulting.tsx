@@ -48,7 +48,7 @@ export const talksTariffList: TalkTariffItem[] = [
     id: 'talk-webinar-online',
     title: 'Charla Temática / Webinar Online',
     subtitle: 'Divulgación científica interactiva en directo',
-    price: '550 €',
+    price: 'Presupuesto a Medida',
     duration: '60 minutos',
     modality: '100% Online (Zoom / Teams / Meet)',
     targetAudience: 'Asociaciones de pacientes, AMPAS, empresas saludables y colectivos',
@@ -67,7 +67,7 @@ export const talksTariffList: TalkTariffItem[] = [
     id: 'talk-taller-asociaciones',
     title: 'Ponencia y Taller para Asociaciones',
     subtitle: 'Disfagia en el hogar, Oncología o Salud Hormonal',
-    price: '650 €',
+    price: 'Presupuesto a Medida',
     duration: '60 minutos',
     modality: 'Presencial u Online',
     targetAudience: 'Asociaciones de Pacientes (ELA, Alzheimer, Parkinson, Cáncer) y Familias',
@@ -86,7 +86,7 @@ export const talksTariffList: TalkTariffItem[] = [
     id: 'talk-capacitacion-residencias',
     title: 'Capacitación y Taller Personal Sociosanitario',
     subtitle: 'Protocolos IDDSI, Calibración y Desnutrición',
-    price: '650 €',
+    price: 'Presupuesto a Medida',
     duration: '60 minutos',
     modality: 'Presencial (en el centro) u Online',
     targetAudience: 'Equipos de Cocina, Auxiliares de Enfermería, Terapeutas y Dirección',
@@ -105,7 +105,7 @@ export const talksTariffList: TalkTariffItem[] = [
     id: 'talk-auditoria-menus',
     title: 'Auditoría y Calibración de Menús Colectivos',
     subtitle: 'Revisión técnica de dietas basales y terapéuticas',
-    price: '1.500 €',
+    price: 'Presupuesto a Medida',
     duration: 'Por ciclo estacional o servicio',
     modality: 'Servicio Técnico Visado',
     targetAudience: 'Residencias de Mayores, Colegios, Hospitales y Catering',
@@ -209,29 +209,29 @@ export const InstitutionalConsulting: React.FC<InstitutionalConsultingProps> = (
 
   const theme = themeStyles[profile.themeColor || 'teal'];
 
-  const talksWhatsappText = `*GALA RODRÍGUEZ ECHEBARRIETA — TARIFAS DE CHARLAS, PONENCIAS Y FORMACIÓN*
+  const talksWhatsappText = `*GALA RODRÍGUEZ ECHEBARRIETA — CHARLAS, PONENCIAS Y FORMACIÓN*
 _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de experiencia clínica sanitaria_
 
-📋 *TARIFAS Y FORMATOS DE PONENCIAS, TALLERES Y AUDITORÍAS:*
+📋 *FORMATOS DE PONENCIAS, TALLERES Y AUDITORÍAS:*
 
-1️⃣ *CHARLA TEMÁTICA / WEBINAR ONLINE (550 €)*
+1️⃣ *CHARLA TEMÁTICA / WEBINAR ONLINE*
 • Duración: 60 minutos en directo (Zoom / Teams / Meet).
 • Preparación integral de presentación visual adaptada a la temática.
 • Hasta 100 asistentes + Turno amplio de preguntas.
 • Incluye dossier resumen descargable en PDF para los participantes.
 
-2️⃣ *PONENCIA Y TALLER PARA ASOCIACIONES Y FAMILIAS (650 €)*
+2️⃣ *PONENCIA Y TALLER PARA ASOCIACIONES Y FAMILIAS*
 • Duración: 60 minutos (Presencial u Online).
 • Temáticas: Disfagia y texturas en el hogar (IDDSI), Nutrición en Oncología, Salud Hormonal.
 • Enfoque 100% práctico con resolución de casos reales y guía/recetario adaptado.
 
-3️⃣ *CAPACITACIÓN TÉCNICA / TALLER PARA PERSONAL SOCIOSANITARIO (650 €)*
+3️⃣ *CAPACITACIÓN TÉCNICA / TALLER PARA PERSONAL SOCIOSANITARIO*
 • Duración: 60 minutos (En el centro o virtual).
 • Para: Equipos de Residencias, Centros de Día, Cocina y Auxiliares de Enfermería.
 • Protocolos IDDSI para disfagia, prevención de desnutrición y enriquecimiento natural.
 • Incluye certificado de aprovechamiento institucional.
 
-4️⃣ *AUDITORÍA Y CALIBRACIÓN DE MENÚS COLECTIVOS (1.500 €)*
+4️⃣ *AUDITORÍA Y CALIBRACIÓN DE MENÚS COLECTIVOS*
 • Memoria técnica oficial visada por Dietista-Nutricionista colegiada.
 • Validación de dietas basales, terapéuticas, libro de alérgenos y aporte calórico/proteico.
 
@@ -241,7 +241,7 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
 📌 *CONDICIONES Y FORMA DE PAGO:*
 • 💳 *Forma de pago:* Se abonará el 50% al contratar el servicio y el 50% restante al finalizar (excepto en las Auditorías de Menús, que se abonan el 100% por adelantado).
 • ⚠️ *Política de cancelación:* Si se cancela con 24 horas o menos de antelación respecto a la fecha del taller o la charla, se cobrará el importe total (100%).
-• 🚗 *Gastos de desplazamiento:* En caso de requerir desplazamiento presencial fuera de la zona habitual, los gastos de transporte, dietas y kilometraje se cobran y presupuestan aparte.
+• 🚗 *Gastos de desplazamiento:* En caso de requerir desplazamiento presencial fuera de la zona habitual, los gastos de transporte, dietas y kilometraje se presupuestan aparte.
 • Factura oficial con firma y número de colegiación sanitaria.
 
 🌐 Web oficial: https://galarodrigueznutricion.es
@@ -304,7 +304,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
           </span>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
-            Tarifas de Charlas, Ponencias y Asesoría Institucional
+            Dossier de Charlas, Ponencias y Asesoría Institucional
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
@@ -318,7 +318,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-bold transition-all shadow-md active:scale-95 cursor-pointer"
             >
               <Printer className="w-4 h-4" />
-              <span>Imprimir / Descargar Infografía en PDF</span>
+              <span>Imprimir / Descargar Dossier en PDF</span>
             </button>
           </div>
         </div>
@@ -333,15 +333,15 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
             <div className="space-y-1.5">
               <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-teal-800/90 border border-teal-500/50 text-teal-200 text-xs font-bold uppercase tracking-wider">
                 <Presentation className="w-3.5 h-3.5" />
-                <span>INFOGRAFÍA Y DOSSIER DE HONORARIOS FORMATIVOS</span>
+                <span>DOSSIER FORMATIVO Y ASESORÍA INSTITUCIONAL</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-black tracking-tight">
-                Tarifario Oficial: Charlas, Ponencias, Talleres y Auditorías
+                Charlas, Ponencias, Talleres y Auditorías Colectivas
               </h3>
               <p className="text-xs sm:text-sm text-teal-100/90 flex flex-wrap items-center gap-x-3 gap-y-1">
                 <span>• Gala Rodríguez Echebarrieta</span>
                 <span>• Diplomada Univ. de Navarra</span>
-                <span>• Facturación oficial visada</span>
+                <span>• Presupuestos adaptados a cada entidad</span>
               </p>
             </div>
 
@@ -398,17 +398,12 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
                       </p>
                     </div>
 
-                    {/* Price Tag */}
-                    <div className="py-2 border-y border-sky-100 dark:border-slate-700">
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-3xl font-black text-slate-800 dark:text-white">
-                          {talk.price}
-                        </span>
-                        <span className="text-[11px] text-slate-500 font-medium">
-                          / sesión
-                        </span>
-                      </div>
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                    {/* Price / Budget Tag */}
+                    <div className="py-2.5 border-y border-sky-100 dark:border-slate-700">
+                      <span className="inline-block px-2.5 py-1 rounded-md bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800/60 text-teal-800 dark:text-teal-300 text-xs font-bold">
+                        Presupuesto a Medida
+                      </span>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5">
                         👥 <strong>Audiencia:</strong> {talk.targetAudience}
                       </p>
                     </div>
@@ -433,8 +428,8 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
                           : 'bg-slate-700 hover:bg-slate-800 text-white dark:bg-slate-700 dark:hover:bg-slate-600'
                       }`}
                     >
-                      <span>Solicitar {talk.title.split('/')[0]}</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Solicitar Información y Presupuesto</span>
                     </button>
                   </div>
                 </div>

@@ -88,7 +88,7 @@ export default function App() {
         <Hero
           profile={profile}
           onExploreRates={() => {
-            const el = document.getElementById('tarifas');
+            const el = document.getElementById('servicios');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
           onExploreInstitutions={() => {
@@ -105,7 +105,7 @@ export default function App() {
           }}
         />
 
-        {/* Rates & Online Services Section (Tarifas Estudiadas) */}
+        {/* Clinical Services Section */}
         <RatesAndServices
           profile={profile}
           services={services}
@@ -191,6 +191,14 @@ export default function App() {
         onClose={() => setIsInfographicOpen(false)}
         profile={profile}
         services={services}
+        onRequestInfo={(serviceTitle) => {
+          setIsInfographicOpen(false);
+          const matched = services.find((s) =>
+            s.title.toLowerCase().includes(serviceTitle?.toLowerCase() || '')
+          ) || services[0];
+          setSelectedServiceForBooking(matched);
+          setIsBookingOpen(true);
+        }}
       />
 
     </div>

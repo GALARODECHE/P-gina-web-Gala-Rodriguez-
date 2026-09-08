@@ -153,10 +153,10 @@ export const Footer: React.FC<FooterProps> = ({
               </button>
 
               <a
-                href="#tarifas"
+                href="#servicios"
                 className="block w-full py-2.5 px-4 rounded-xl border border-sky-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 font-semibold text-xs transition-colors text-center"
               >
-                Ver Tarifas y Planes
+                Ver Servicios Clínicos
               </a>
             </div>
           </div>

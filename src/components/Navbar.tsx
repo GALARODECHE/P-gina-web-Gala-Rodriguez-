@@ -21,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { id: 'hero', label: 'Inicio' },
-    { id: 'tarifas', label: 'Servicios y Consulta' },
+    { id: 'servicios', label: 'Servicios y Consulta' },
     { id: 'instituciones', label: 'Instituciones y Charlas' },
     { id: 'apps', label: 'TuNutriLens (App)' },
     { id: 'blog', label: 'Blog y Substack' },

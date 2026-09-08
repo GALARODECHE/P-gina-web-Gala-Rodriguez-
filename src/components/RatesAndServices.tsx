@@ -76,25 +76,25 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
   const shareableWhatsappText = `*GALA RODRÍGUEZ ECHEBARRIETA — CONSULTA NUTRICIONAL ONLINE*
 _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de experiencia clínica_
 
-📋 *TARIFAS Y SERVICIOS DE CONSULTA:*
+📋 *SERVICIOS Y MODALIDADES DE CONSULTA:*
 
-1️⃣ *1ª CONSULTA CLÍNICA Y DIAGNÓSTICO (90 €)*
+1️⃣ *1ª CONSULTA CLÍNICA Y DIAGNÓSTICO*
 • Duración: 60 minutos por videollamada 1 a 1.
 • Anamnesis clínica integral directa, evaluación de sintomatología y requerimientos.
 • Entrega de plan nutricional en <48h + resolución de dudas por email durante 15 días.
 
 2️⃣ *PROGRAMAS CLÍNICOS DE CONTINUIDAD Y ACOMPAÑAMIENTO:*
-• 🟢 *Pack 3 Meses (520 €)*:
+• 🟢 *Pack 3 Meses*:
   - 1 Sesión Inicial (60 min) + 6 Consultas de Revisión (30-40 min).
   - Reajuste dinámico de menús, evolución periódica y adaptación de pautas.
-• 🟡 *Programa 6 Meses (970 €)*:
+• 🟡 *Programa 6 Meses*:
   - Seguimiento regular continuado y revisiones periódicas.
   - 🎁 *10% de descuento en la suscripción a TuNutriLens*.
-• 🟣 *Programa Integral 1 Año (1.850 €)*:
+• 🟣 *Programa Integral 1 Año*:
   - Acompañamiento clínico integral de 12 meses.
   - 🎁 *20% de descuento en la suscripción anual a TuNutriLens*.
 
-3️⃣ *CONSULTA DE REVISIÓN Y EVOLUCIÓN (75 €)*
+3️⃣ *CONSULTA DE REVISIÓN Y EVOLUCIÓN*
 • Duración: 30-40 minutos por videollamada.
 • Para pacientes ya evaluados en 1ª consulta: reajuste de menús, evolución y consolidación de hábitos.
 
@@ -106,35 +106,35 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
 📌 *CONDICIONES Y METODOLOGÍA:*
 • 100% Online por videollamada segura.
 • Pauta adaptada a tus horarios, preferencias y patologías (sin dietas fotocopiadas).
-• Reserva confirmada tras agendar y abono previo por Bizum o Transferencia.
+• Solicita información personalizada o reserva tu primera cita.
 
 🌐 Web oficial: https://galarodrigueznutricion.es
 ✉️ Email: ${profile.email || 'gala@galarodrigueznutricion.es'}
 📲 WhatsApp / Tel: ${profile.phone || '+34 697 166 126'}`;
 
-  const shareableWhatsappTalks = `*GALA RODRÍGUEZ ECHEBARRIETA — TARIFAS DE CHARLAS, PONENCIAS Y FORMACIÓN*
+  const shareableWhatsappTalks = `*GALA RODRÍGUEZ ECHEBARRIETA — CHARLAS, PONENCIAS Y FORMACIÓN*
 _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de experiencia clínica sanitaria_
 
-📋 *TARIFAS Y FORMATOS DE PONENCIAS, TALLERES Y AUDITORÍAS:*
+📋 *FORMATOS DE PONENCIAS, TALLERES Y AUDITORÍAS:*
 
-1️⃣ *CHARLA TEMÁTICA / WEBINAR ONLINE (550 €)*
+1️⃣ *CHARLA TEMÁTICA / WEBINAR ONLINE*
 • Duración: 90 minutos en directo (Zoom / Teams / Meet).
 • Preparación integral de presentación visual adaptada a la temática.
 • Hasta 100 asistentes + Turno amplio de preguntas.
 • Incluye dossier resumen descargable en PDF para los participantes.
 
-2️⃣ *PONENCIA Y TALLER PARA ASOCIACIONES Y FAMILIAS (650 €)*
+2️⃣ *PONENCIA Y TALLER PARA ASOCIACIONES Y FAMILIAS*
 • Duración: 2 horas (Presencial u Online).
 • Temáticas: Disfagia y texturas en el hogar (IDDSI), Nutrición en Oncología, Salud Hormonal.
 • Enfoque 100% práctico con resolución de casos reales y guía/recetario adaptado.
 
-3️⃣ *CAPACITACIÓN TÉCNICA / TALLER PARA PERSONAL SOCIOSANITARIO (650 €)*
+3️⃣ *CAPACITACIÓN TÉCNICA / TALLER PARA PERSONAL SOCIOSANITARIO*
 • Duración: 2h 30 min (En el centro o virtual).
 • Para: Equipos de Residencias, Centros de Día, Cocina y Auxiliares de Enfermería.
 • Protocolos IDDSI para disfagia, prevención de desnutrición y enriquecimiento natural.
 • Incluye certificado de aprovechamiento institucional.
 
-4️⃣ *AUDITORÍA Y CALIBRACIÓN DE MENÚS COLECTIVOS (1.500 €)*
+4️⃣ *AUDITORÍA Y CALIBRACIÓN DE MENÚS COLECTIVOS*
 • Memoria técnica oficial visada por Dietista-Nutricionista colegiada.
 • Validación de dietas basales, terapéuticas, libro de alérgenos y aporte calórico/proteico.
 
@@ -152,7 +152,7 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
 📲 WhatsApp / Tel: ${profile.phone || '+34 697 166 126'}`;
 
   return (
-    <section id="tarifas" className="py-16 sm:py-24 border-b border-sky-200/80 dark:border-slate-800/80">
+    <section id="servicios" className="py-16 sm:py-24 border-b border-sky-200/80 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Section Header */}
@@ -208,21 +208,17 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
             const isPack = service.id === 's-pack' || service.category === 'Programa';
 
             // Dynamic values for pack based on selected tier
-            let displayPrice = service.price;
             let displayPeriod = service.period;
             let packDescription = service.description;
 
             if (isPack) {
               if (selectedProgramTier === '3m') {
-                displayPrice = '520 €';
                 displayPeriod = 'Tratamiento 3 Meses';
                 packDescription = 'Incluye 1 Sesión Inicial clínica exhaustiva (60 min) + 6 Consultas de Revisión (30-40 min) con soporte directo continuado.';
               } else if (selectedProgramTier === '6m') {
-                displayPrice = '970 €';
                 displayPeriod = 'Programa 6 Meses';
                 packDescription = 'Acompañamiento continuado regular con soporte directo prioritario + 10% de descuento en la app TuNutriLens.';
               } else {
-                displayPrice = '1.850 €';
                 displayPeriod = 'Programa Anual (12 Meses)';
                 packDescription = 'Acompañamiento clínico integral de 1 año completo para máxima adherencia y reeducación metabólica + 20% de descuento en suscripción anual TuNutriLens.';
               }
@@ -284,7 +280,7 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                           }`}
                         >
                           <div className="text-[11px]">3 Meses</div>
-                          <div className="text-[13px] font-extrabold">520 €</div>
+                          <div className="text-[11px] font-semibold text-teal-700 dark:text-teal-300">1 Ini + 6 Rev</div>
                         </button>
 
                         <button
@@ -297,8 +293,8 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                           }`}
                         >
                           <div className="text-[11px]">6 Meses</div>
-                          <div className="text-[13px] font-extrabold">970 €</div>
-                          <span className="inline-block text-[9px] text-amber-300 font-extrabold">-10% App</span>
+                          <div className="text-[11px] font-semibold text-teal-700 dark:text-teal-300">Seguimiento</div>
+                          <span className="inline-block text-[9px] text-amber-500 font-extrabold">-10% App</span>
                         </button>
 
                         <button
@@ -311,21 +307,22 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                           }`}
                         >
                           <div className="text-[11px]">1 Año</div>
-                          <div className="text-[13px] font-extrabold">1.850 €</div>
-                          <span className="inline-block text-[9px] text-amber-300 font-extrabold">-20% App</span>
+                          <div className="text-[11px] font-semibold text-teal-700 dark:text-teal-300">Integral</div>
+                          <span className="inline-block text-[9px] text-amber-500 font-extrabold">-20% App</span>
                         </button>
                       </div>
                     </div>
                   )}
 
-                  {/* Price Banner */}
+                  {/* Plan Banner / Clinical tag */}
                   <div className="my-5 pb-5 border-b border-sky-100 dark:border-slate-700/50">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-700 dark:text-white">
-                        {displayPrice}
+                    <div className="flex flex-col gap-1.5">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-800 dark:text-teal-300 text-xs font-bold w-fit">
+                        <Sparkles className="w-3 h-3 text-teal-600 dark:text-teal-400" />
+                        Atención personalizada
                       </span>
-                      <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
-                        / {displayPeriod}
+                      <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                        Modalidad: {displayPeriod}
                       </span>
                     </div>
 
@@ -375,9 +372,8 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                       if (isPack) {
                         const updatedService: NutritionService = {
                           ...service,
-                          price: displayPrice,
                           period: displayPeriod,
-                          subtitle: `${displayPeriod} · ${displayPrice}`,
+                          subtitle: `${displayPeriod} · Acompañamiento clínico`,
                         };
                         onSelectPlan(updatedService);
                       } else {
@@ -388,10 +384,11 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                     className={`w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-xs active:scale-95 flex items-center justify-center gap-2 ${
                       isPopular
                         ? `${theme.primary}`
-                        : 'bg-slate-700 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-700 dark:hover:bg-stone-100'
+                        : 'bg-teal-700 hover:bg-teal-800 text-white dark:bg-teal-600 dark:hover:bg-teal-700'
                     }`}
                   >
-                    <span>{isPack ? `Reservar ${displayPeriod} (${displayPrice})` : service.ctaText}</span>
+                    <Mail className="w-4 h-4" />
+                    <span>{isPack ? `Solicitar Información del ${displayPeriod}` : 'Solicitar Información y Cita'}</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
 
@@ -406,16 +403,16 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
         </div>
 
         {/* EMBEDDED VISUAL INFOGRAPHIC / DOSSIER SECTION */}
-        <div id="infografia-precios" className="max-w-6xl mx-auto rounded-3xl bg-white dark:bg-slate-800 border-2 border-sky-200 dark:border-slate-700 shadow-xl overflow-hidden">
+        <div id="infografia-servicios" className="max-w-6xl mx-auto rounded-3xl bg-white dark:bg-slate-800 border-2 border-sky-200 dark:border-slate-700 shadow-xl overflow-hidden">
           {/* Infographic Header Bar */}
           <div className="p-6 sm:p-8 bg-gradient-to-r from-teal-800 via-teal-700 to-slate-800 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="space-y-1">
               <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-teal-900/80 border border-teal-500/40 text-teal-200 text-xs font-bold uppercase tracking-wider">
                 <FileText className="w-3.5 h-3.5" />
-                <span>Infografía y Dossier de Tarifas</span>
+                <span>Dossier Informativo de Servicios Clínicos y Formación</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-black tracking-tight">
-                Gala Rodríguez Echebarrieta · Resumen de Honorarios y Servicios
+                Gala Rodríguez Echebarrieta · Servicios Clínicos y Ponencias
               </h3>
               <p className="text-xs sm:text-sm text-teal-100/90">
                 Diplomada Univ. Navarra · +20 años de experiencia clínica sanitaria
@@ -467,12 +464,12 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
-                Tarifas Charlas y Ponencias
+                Charlas y Formación
               </button>
             </div>
 
             <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-              💡 {infographicTab === 'talks' ? 'Formatos presenciales y online con presupuesto transparente.' : 'Tarifas cerradas sin sorpresas ni permanencias.'}
+              💡 {infographicTab === 'talks' ? 'Formatos presenciales y online con presupuesto transparente adaptado a tu entidad.' : 'Acompañamiento individualizado y planes personalizados.'}
             </p>
           </div>
 
@@ -485,141 +482,170 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                 <div className="flex items-center gap-2 border-b border-sky-200 dark:border-slate-700 pb-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-teal-600"></span>
                   <h4 className="text-sm font-bold text-slate-700 dark:text-slate-100 uppercase tracking-wider">
-                    Tarifas de Consulta Nutricional Online
+                    Servicios y Modalidades de Consulta Nutricional Online
                   </h4>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                   {/* Card 1 */}
-                  <div className="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-sky-200/90 dark:border-slate-700 space-y-3 shadow-2xs">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300">
-                        Sesión Inicial
-                      </span>
-                      <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        60 min
-                      </span>
+                  <div className="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-sky-200/90 dark:border-slate-700 space-y-3 shadow-2xs flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300">
+                          Sesión Inicial
+                        </span>
+                        <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          60 min
+                        </span>
+                      </div>
+                      <h4 className="font-bold text-base text-slate-700 dark:text-slate-100">
+                        1ª Consulta Clínica y Diagnóstico
+                      </h4>
+                      <div className="py-1">
+                        <span className="inline-block px-2.5 py-1 rounded-md bg-teal-50 dark:bg-teal-950 text-teal-800 dark:text-teal-300 text-xs font-bold">
+                          Atención individualizada
+                        </span>
+                      </div>
+                      <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 pt-2 border-t border-sky-100 dark:border-slate-700">
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Videollamada 1 a 1 de 60 min</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Anamnesis clínica integral directa</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Plan personalizado entregado en &lt;48h</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>15 días de soporte por email</span>
+                        </li>
+                      </ul>
                     </div>
-                    <h4 className="font-bold text-base text-slate-700 dark:text-slate-100">
-                      1ª Consulta Clínica y Diagnóstico
-                    </h4>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-extrabold text-teal-700 dark:text-teal-400">90 €</span>
-                      <span className="text-xs text-slate-500">/ sesión única</span>
-                    </div>
-                    <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 pt-2 border-t border-sky-100 dark:border-slate-700">
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Videollamada 1 a 1 de 60 min</span>
-                      </li>
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Anamnesis clínica integral directa</span>
-                      </li>
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Plan personalizado entregado en &lt;48h</span>
-                      </li>
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>15 días de soporte por email</span>
-                      </li>
-                    </ul>
+                    <button
+                      onClick={() => onSelectPlan(services[0])}
+                      className="w-full mt-3 py-2 px-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Solicitar Información</span>
+                    </button>
                   </div>
 
                   {/* Card 2 */}
-                  <div className="p-5 rounded-2xl bg-white dark:bg-slate-800 border-2 border-teal-600 dark:border-teal-400 space-y-3 shadow-md relative">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
-                        Acompañamiento
-                      </span>
-                      <span className="text-xs font-bold text-teal-700 dark:text-teal-400">
-                        Recomendado
-                      </span>
-                    </div>
-                    <h4 className="font-bold text-base text-slate-700 dark:text-slate-100">
-                      Programas Clínicos de Continuidad
-                    </h4>
-                    
-                    {/* Tiers summary */}
-                    <div className="space-y-1.5 py-1">
-                      <div className="flex items-center justify-between p-2 rounded-xl bg-teal-50 dark:bg-slate-900/80 border border-teal-200 dark:border-teal-900 text-xs">
-                        <span className="font-bold text-slate-800 dark:text-slate-200">Pack 3 Meses:</span>
-                        <span className="font-extrabold text-teal-700 dark:text-teal-400 text-sm">520 €</span>
+                  <div className="p-5 rounded-2xl bg-white dark:bg-slate-800 border-2 border-teal-600 dark:border-teal-400 space-y-3 shadow-md relative flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
+                          Acompañamiento
+                        </span>
+                        <span className="text-xs font-bold text-teal-700 dark:text-teal-400">
+                          Recomendado
+                        </span>
                       </div>
-                      <div className="flex items-center justify-between p-2 rounded-xl bg-teal-50 dark:bg-slate-900/80 border border-teal-200 dark:border-teal-900 text-xs">
-                        <div>
-                          <span className="font-bold text-slate-800 dark:text-slate-200">Pack 6 Meses:</span>
-                          <span className="ml-1 text-[10px] text-amber-700 dark:text-amber-400 font-bold">(-10% TuNutriLens)</span>
+                      <h4 className="font-bold text-base text-slate-700 dark:text-slate-100">
+                        Programas Clínicos de Continuidad
+                      </h4>
+                      
+                      {/* Tiers summary */}
+                      <div className="space-y-1.5 py-1">
+                        <div className="flex items-center justify-between p-2 rounded-xl bg-teal-50 dark:bg-slate-900/80 border border-teal-200 dark:border-teal-900 text-xs">
+                          <span className="font-bold text-slate-800 dark:text-slate-200">Pack 3 Meses:</span>
+                          <span className="font-semibold text-teal-700 dark:text-teal-400 text-xs">1 Inicial + 6 Revisiones</span>
                         </div>
-                        <span className="font-extrabold text-teal-700 dark:text-teal-400 text-sm">970 €</span>
-                      </div>
-                      <div className="flex items-center justify-between p-2 rounded-xl bg-teal-50 dark:bg-slate-900/80 border border-teal-200 dark:border-teal-900 text-xs">
-                        <div>
-                          <span className="font-bold text-slate-800 dark:text-slate-200">Pack 1 Año:</span>
-                          <span className="ml-1 text-[10px] text-amber-700 dark:text-amber-400 font-bold">(-20% TuNutriLens)</span>
+                        <div className="flex items-center justify-between p-2 rounded-xl bg-teal-50 dark:bg-slate-900/80 border border-teal-200 dark:border-teal-900 text-xs">
+                          <div>
+                            <span className="font-bold text-slate-800 dark:text-slate-200">Pack 6 Meses:</span>
+                            <span className="ml-1 text-[10px] text-amber-700 dark:text-amber-400 font-bold">(-10% TuNutriLens)</span>
+                          </div>
+                          <span className="font-semibold text-teal-700 dark:text-teal-400 text-xs">Seguimiento Regular</span>
                         </div>
-                        <span className="font-extrabold text-teal-700 dark:text-teal-400 text-sm">1.850 €</span>
+                        <div className="flex items-center justify-between p-2 rounded-xl bg-teal-50 dark:bg-slate-900/80 border border-teal-200 dark:border-teal-900 text-xs">
+                          <div>
+                            <span className="font-bold text-slate-800 dark:text-slate-200">Pack 1 Año:</span>
+                            <span className="ml-1 text-[10px] text-amber-700 dark:text-amber-400 font-bold">(-20% TuNutriLens)</span>
+                          </div>
+                          <span className="font-semibold text-teal-700 dark:text-teal-400 text-xs">Acompañamiento 12M</span>
+                        </div>
                       </div>
-                    </div>
 
-                    <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 pt-2 border-t border-sky-100 dark:border-slate-700">
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>1ª Consulta inicial (60 min) + Revisiones</span>
-                      </li>
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>En pack 3m: 1 inicial + 6 revisiones</span>
-                      </li>
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Revisiones clínicas periódicas cada 15 días</span>
-                      </li>
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Reajuste dinámico de menús y texturas</span>
-                      </li>
-                    </ul>
+                      <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 pt-2 border-t border-sky-100 dark:border-slate-700">
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>1ª Consulta inicial (60 min) + Revisiones</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>En pack 3m: 1 inicial + 6 revisiones</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Revisiones clínicas periódicas cada 15 días</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Reajuste dinámico de menús y texturas</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <button
+                      onClick={() => onSelectPlan(services.find(s => s.id === 's-pack') || services[1])}
+                      className="w-full mt-3 py-2 px-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Solicitar Información del Programa</span>
+                    </button>
                   </div>
 
                   {/* Card 3 */}
-                  <div className="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-sky-200/90 dark:border-slate-700 space-y-3 shadow-2xs">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">
-                        Seguimiento
-                      </span>
-                      <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        30-40 min
-                      </span>
+                  <div className="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-sky-200/90 dark:border-slate-700 space-y-3 shadow-2xs flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">
+                          Seguimiento
+                        </span>
+                        <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          30-40 min
+                        </span>
+                      </div>
+                      <h4 className="font-bold text-base text-slate-700 dark:text-slate-100">
+                        Consulta de Revisión y Evolución
+                      </h4>
+                      <div className="py-1">
+                        <span className="inline-block px-2.5 py-1 rounded-md bg-teal-50 dark:bg-teal-950 text-teal-800 dark:text-teal-300 text-xs font-bold">
+                          Seguimiento clínico
+                        </span>
+                      </div>
+                      <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 pt-2 border-t border-sky-100 dark:border-slate-700">
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Videollamada 1 a 1 de 30-40 min</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Ajuste de nutrientes, menús y recetas</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Resolución de dudas del día a día</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>Adaptación a cambios de rutina o viajes</span>
+                        </li>
+                      </ul>
                     </div>
-                    <h4 className="font-bold text-base text-slate-700 dark:text-slate-100">
-                      Consulta de Revisión y Evolución
-                    </h4>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-extrabold text-teal-700 dark:text-teal-400">75 €</span>
-                      <span className="text-xs text-slate-500">/ sesión</span>
-                    </div>
-                    <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 pt-2 border-t border-sky-100 dark:border-slate-700">
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Videollamada 1 a 1 de 30-40 min</span>
-                      </li>
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Ajuste de nutrientes, menús y recetas</span>
-                      </li>
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Resolución de dudas del día a día</span>
-                      </li>
-                      <li className="flex items-start gap-1.5">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Adaptación a cambios de rutina o viajes</span>
-                      </li>
-                    </ul>
+                    <button
+                      onClick={() => onSelectPlan(services.find(s => s.id === 's-seg') || services[2])}
+                      className="w-full mt-3 py-2 px-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Solicitar Información</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -632,7 +658,7 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
                     <h4 className="text-sm font-bold text-slate-700 dark:text-slate-100 uppercase tracking-wider">
-                      Tarifas de Charlas, Ponencias, Talleres y Auditorías
+                      Charlas, Ponencias, Talleres y Auditorías Colectivas
                     </h4>
                   </div>
                   <span className="text-xs text-amber-700 dark:text-amber-400 font-semibold hidden sm:inline">
@@ -673,11 +699,10 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                           {talk.title}
                         </h5>
 
-                        <div className="flex items-baseline gap-1 py-1 border-y border-sky-100 dark:border-slate-700">
-                          <span className="text-2xl font-black text-slate-800 dark:text-white">
-                            {talk.price}
+                        <div className="py-1 border-y border-sky-100 dark:border-slate-700">
+                          <span className="inline-block px-2 py-0.5 rounded-md bg-teal-50 dark:bg-teal-950 text-teal-800 dark:text-teal-300 text-xs font-bold">
+                            Presupuesto a Medida
                           </span>
-                          <span className="text-[10px] text-slate-500">/ sesión</span>
                         </div>
 
                         <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-tight">
@@ -694,8 +719,17 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                         </ul>
                       </div>
 
-                      <div className="pt-1 text-[10px] text-slate-500 dark:text-slate-400 bg-sky-50/60 dark:bg-slate-900/60 p-1.5 rounded-lg border border-sky-100 dark:border-slate-700">
-                        👥 {talk.targetAudience.slice(0, 45)}...
+                      <div className="space-y-2">
+                        <div className="pt-1 text-[10px] text-slate-500 dark:text-slate-400 bg-sky-50/60 dark:bg-slate-900/60 p-1.5 rounded-lg border border-sky-100 dark:border-slate-700">
+                          👥 {talk.targetAudience.slice(0, 45)}...
+                        </div>
+                        <button
+                          onClick={() => onSelectPlan({ ...services[0], title: talk.title, subtitle: `Solicitud de información: ${talk.title}` })}
+                          className="w-full py-1.5 px-2 rounded-xl bg-slate-700 hover:bg-slate-800 text-white text-xs font-bold flex items-center justify-center gap-1 transition-all cursor-pointer"
+                        >
+                          <Mail className="w-3 h-3" />
+                          <span>Solicitar Información</span>
+                        </button>
                       </div>
                     </div>
                   ))}
