@@ -310,17 +310,6 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
             Formación sanitaria rigurosa y asesoría técnica para Asociaciones de Pacientes, Residencias, Colegios y Empresas. Más de 20 años de experiencia clínica y coordinación de menús hospitalarios.
           </p>
-
-          {/* Quick Action Buttons for Talks Infographics */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-            <button
-              onClick={handlePrintTalks}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-bold transition-all shadow-md active:scale-95 cursor-pointer"
-            >
-              <Printer className="w-4 h-4" />
-              <span>Imprimir / Descargar Dossier en PDF</span>
-            </button>
-          </div>
         </div>
 
         {/* ========================================================================= */}
@@ -343,16 +332,6 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
                 <span>• Diplomada Univ. de Navarra</span>
                 <span>• Presupuestos adaptados a cada entidad</span>
               </p>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2.5">
-              <button
-                onClick={handlePrintTalks}
-                className="px-3.5 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
-              >
-                <Printer className="w-3.5 h-3.5" />
-                <span>Imprimir / PDF</span>
-              </button>
             </div>
           </div>
 

@@ -249,19 +249,11 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
 
           <div className="flex items-center gap-2">
             <button
-              onClick={handlePrint}
-              className="px-3.5 py-2 rounded-xl bg-teal-700 hover:bg-teal-600 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-2xs cursor-pointer"
-            >
-              <Printer className="w-3.5 h-3.5" />
-              <span>Imprimir / PDF</span>
-            </button>
-
-            <button
               onClick={onClose}
-              className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-sky-100 dark:hover:bg-slate-700 transition-colors ml-1 cursor-pointer"
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-200 border border-slate-200 dark:border-slate-600 transition-colors cursor-pointer"
               aria-label="Cerrar ventana"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 stroke-[2.5]" />
             </button>
           </div>
         </div>
@@ -303,78 +295,6 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                 <p className="text-[11px] text-teal-200 pt-1 border-t border-white/10">
                   Consulta Online y Charlas en toda España
                 </p>
-              </div>
-            </div>
-          </div>
-
-          {/* ========================================================================= */}
-          {/* SECTION: DEDICATED PDF DOWNLOAD & SHARE BAR (NEW HIGHLIGHTED FEATURE) */}
-          {/* ========================================================================= */}
-          <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-sky-50 via-teal-50/60 to-emerald-50 dark:from-slate-800 dark:via-teal-950/40 dark:to-slate-800 border-2 border-teal-500/40 dark:border-teal-700/60 shadow-md print:hidden space-y-4">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div className="space-y-1">
-                <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-teal-100 dark:bg-teal-900/60 text-teal-800 dark:text-teal-300 text-[11px] font-bold uppercase tracking-wider">
-                  <Download className="w-3.5 h-3.5" />
-                  <span>Descarga en PDF y Recursos para Guardar</span>
-                </div>
-                <h3 className="text-base sm:text-lg font-extrabold text-slate-800 dark:text-white">
-                  ¿Deseas guardar o compartir esta información en tu dispositivo?
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                  Descarga o imprime directamente este dossier en formato PDF para consultarlo sin conexión, adjuntarlo a tu historial médico o presentarlo en tu junta directiva, asociación o residencia.
-                </p>
-              </div>
-
-              {/* Action Buttons for PDF & Export */}
-              <div className="flex flex-wrap items-center gap-2.5 shrink-0">
-                <button
-                  onClick={handlePrint}
-                  className="px-4 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center gap-2 transition-all shadow-md active:scale-95 cursor-pointer"
-                  title="Guardar como PDF usando el diálogo de impresión"
-                >
-                  <Printer className="w-4 h-4" />
-                  <span>Guardar como PDF</span>
-                </button>
-
-                <button
-                  onClick={handleDownloadDossier}
-                  className="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-teal-300 dark:border-teal-700 hover:bg-teal-50 dark:hover:bg-slate-700 text-teal-800 dark:text-teal-200 text-xs font-bold flex items-center gap-2 transition-all shadow-xs cursor-pointer"
-                  title="Descargar resumen de texto del dossier"
-                >
-                  {pdfDownloaded ? <Check className="w-4 h-4 text-emerald-600" /> : <FileText className="w-4 h-4 text-teal-600" />}
-                  <span>{pdfDownloaded ? '¡Descargado!' : 'Descargar Dossier (.txt)'}</span>
-                </button>
-
-                <button
-                  onClick={() => handleCopyWhatsapp(activeTab === 'talks' ? shareableWhatsappTalks : shareableWhatsappClinic)}
-                  className="px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
-                  title="Copiar texto formateado para WhatsApp"
-                >
-                  {copiedLink ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                  <span>{copiedLink ? '¡Copiado!' : 'Copiar para WhatsApp'}</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Quick guide tips for saving on mobile / desktop */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-teal-200/80 dark:border-teal-900/60 text-xs text-slate-600 dark:text-slate-300">
-              <div className="flex items-start gap-2">
-                <div className="p-1 rounded-md bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 shrink-0">
-                  <Bookmark className="w-3.5 h-3.5" />
-                </div>
-                <span><strong>En Móvil (Android/iOS):</strong> Pulsa "Guardar como PDF" y selecciona "Compartir &gt; Guardar en Archivos / PDF".</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="p-1 rounded-md bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 shrink-0">
-                  <Printer className="w-3.5 h-3.5" />
-                </div>
-                <span><strong>En Ordenador:</strong> En la ventana de impresión, selecciona como destino <em>"Guardar como PDF"</em>.</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="p-1 rounded-md bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 shrink-0">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                </div>
-                <span><strong>Presupuestos a medida:</strong> Solicita tu cotización específica adaptada al volumen de sesiones o asistentes.</span>
               </div>
             </div>
           </div>

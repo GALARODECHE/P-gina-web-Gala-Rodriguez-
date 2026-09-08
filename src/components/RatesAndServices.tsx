@@ -187,18 +187,6 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
             </div>
           </div>
 
-          {/* Infographic Trigger Buttons */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-            <button
-              onClick={() => {
-                if (onOpenInfographic) onOpenInfographic();
-              }}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-bold transition-all shadow-md active:scale-95 cursor-pointer"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Abrir Infografía / Dossier en PDF</span>
-            </button>
-          </div>
         </div>
 
         {/* Pricing & Services Cards Grid */}
@@ -417,19 +405,6 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
               <p className="text-xs sm:text-sm text-teal-100/90">
                 Diplomada Univ. Navarra · +20 años de experiencia clínica sanitaria
               </p>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2.5">
-              <button
-                onClick={() => {
-                  if (onOpenInfographic) onOpenInfographic();
-                  else window.print();
-                }}
-                className="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
-              >
-                <Printer className="w-3.5 h-3.5" />
-                <span>Imprimir / PDF</span>
-              </button>
             </div>
           </div>
 
