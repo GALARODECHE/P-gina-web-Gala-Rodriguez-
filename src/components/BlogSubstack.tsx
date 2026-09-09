@@ -60,7 +60,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 dark:text-slate-200 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
             Artículos y Divulgación Nutricional
           </h2>
 

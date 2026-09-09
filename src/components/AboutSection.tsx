@@ -140,12 +140,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-100 dark:bg-orange-950/70 text-orange-950 dark:text-orange-200 border border-orange-300 dark:border-orange-800">
-            <Stethoscope className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
+          <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${theme.badge}`}>
+            <Stethoscope className="w-3.5 h-3.5" />
             <span>Trayectoria y Formación de Gala Rodríguez</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-800 dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
             Experiencia Sanitaria y Formación Académica
           </h2>
 

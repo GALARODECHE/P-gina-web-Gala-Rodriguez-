@@ -46,10 +46,9 @@ export const Hero: React.FC<HeroProps> = ({
               </span>
             </div>
 
-            {/* Main Headline - Peach highlights and clear typography */}
-            <h1 className="text-2xl sm:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight text-slate-800 dark:text-white leading-[1.2] sm:leading-[1.15]">
-              Nutrición Clínica Especializada y{' '}
-              <span className="text-[#3b6e5a] dark:text-[#9fc3b0] block sm:inline">Soluciones E-Health</span>
+            {/* Main Headline */}
+            <h1 className="text-2xl sm:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight text-[#3b6e5a] dark:text-[#9fc3b0] leading-[1.2] sm:leading-[1.15]">
+              Nutrición Clínica Especializada
             </h1>
 
             {/* Subtitle / Bio - Clear readability */}
@@ -101,9 +100,9 @@ export const Hero: React.FC<HeroProps> = ({
               <button
                 onClick={onExploreApps}
                 id="hero-view-apps-btn"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:py-3.5 rounded-xl font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 border border-slate-400 dark:border-slate-700 bg-slate-200 dark:bg-slate-800/90 hover:bg-slate-300 dark:hover:bg-slate-750 transition-all shadow-2xs cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base text-[#1f4a3b] dark:text-[#9fc3b0] bg-[#e2ede7]/90 hover:bg-[#d5e5dc] dark:bg-[#213b30]/60 dark:hover:bg-[#213b30] border border-[#3b6e5a]/50 dark:border-[#3b6e5a]/60 transition-all shadow-2xs cursor-pointer"
               >
-                <Smartphone className="w-4 h-4 text-amber-500 shrink-0" />
+                <Smartphone className="w-4 h-4 text-[#3b6e5a] dark:text-[#9fc3b0] shrink-0" />
                 <span>App TuNutriLens</span>
               </button>
             </div>
@@ -169,14 +168,14 @@ export const Hero: React.FC<HeroProps> = ({
                     <span className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 ring-2 ring-slate-200 dark:ring-slate-800 z-10" title="Consulta Online Disponible" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-base sm:text-lg font-extrabold text-slate-800 dark:text-white leading-tight">
+                    <h3 className="text-base sm:text-lg font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] leading-tight">
                       {profile.name}
                     </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 font-medium mt-0.5 leading-snug line-clamp-2 sm:line-clamp-none">
+                    <p className="text-xs text-slate-700 dark:text-slate-300 font-medium mt-0.5 leading-snug line-clamp-2 sm:line-clamp-none">
                       {profile.title}
                     </p>
                     <div className="mt-1.5">
-                      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950/80 dark:text-orange-200 dark:border-orange-800">
+                      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-[#e2ede7] text-[#1c382e] border border-[#3b6e5a]/40 dark:bg-[#213b30] dark:text-[#c5dcce] dark:border-[#2f5747]">
                         {profile.colegiadorNumber}
                       </span>
                     </div>

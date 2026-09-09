@@ -188,7 +188,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
             </span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-800 dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
             Talleres, Ponencias y Formación Especializada
           </h2>
 

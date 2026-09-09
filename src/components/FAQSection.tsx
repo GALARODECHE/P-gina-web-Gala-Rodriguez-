@@ -79,7 +79,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
               Resolución de Dudas Frecuentes
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
             Preguntas Frecuentes sobre las Consultas y Servicios
           </h2>
           <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">

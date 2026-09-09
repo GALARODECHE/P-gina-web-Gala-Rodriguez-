@@ -94,7 +94,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
               1. Consulta Clínica Individualizada
             </span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-800 dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
             Sesiones Nutricionales Online
           </h2>
           <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
@@ -298,7 +298,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
         {/* CÓMO FUNCIONA LA CONSULTA ONLINE (Paso a Paso) */}
         <div className="max-w-5xl mx-auto space-y-6 pt-4">
           <div className="text-center space-y-1.5">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-800 dark:text-white">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0]">
               ¿Cómo Funciona la Consulta Nutricional Online?
             </h3>
             <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 max-w-xl mx-auto">

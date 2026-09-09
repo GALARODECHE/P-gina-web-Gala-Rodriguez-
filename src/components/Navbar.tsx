@@ -58,13 +58,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500 ring-2 ring-slate-200 dark:ring-slate-900" title="Disponible para Consulta" />
             </div>
             <div className="min-w-0">
-              <span className="font-extrabold text-xs xs:text-sm sm:text-base lg:text-lg tracking-tight text-slate-800 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 block leading-tight truncate">
+              <span className="font-extrabold text-xs xs:text-sm sm:text-base lg:text-lg tracking-tight text-[#3b6e5a] dark:text-[#9fc3b0] group-hover:text-[#2f5747] dark:group-hover:text-white block leading-tight truncate">
                 <span className="xs:hidden">Gala R.</span>
                 <span className="hidden xs:inline sm:hidden">Gala Rodríguez</span>
                 <span className="hidden sm:inline">{profile.name}</span>
               </span>
-              <span className="text-[9px] xs:text-[10px] sm:text-xs text-orange-600 dark:text-orange-400 font-bold block leading-tight truncate">
-                Nutrición Clínica
+              <span className="text-[9px] xs:text-[10px] sm:text-xs text-slate-700 dark:text-slate-300 font-bold block leading-tight truncate">
+                Nutrición Clínica Especializada
               </span>
             </div>
           </button>
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
                 id={`nav-link-${link.id}`}
-                className="px-3 py-2 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-300 dark:hover:bg-slate-800/80 transition-colors"
+                className="px-3 py-2 rounded-lg text-xs font-bold text-[#3b6e5a] dark:text-[#9fc3b0] hover:text-[#213b30] dark:hover:text-white hover:bg-[#3b6e5a]/10 dark:hover:bg-[#3b6e5a]/20 transition-colors"
               >
                 {link.label}
               </button>
@@ -111,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               id="mobile-menu-toggle-btn"
-              className="xl:hidden p-1.5 xs:p-2 sm:p-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800 cursor-pointer"
+              className="xl:hidden p-1.5 xs:p-2 sm:p-2.5 rounded-xl text-[#3b6e5a] dark:text-[#9fc3b0] hover:bg-slate-300 dark:hover:bg-slate-800 cursor-pointer"
               aria-label="Abrir menú"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -142,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className="w-full text-left px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-800 transition-colors flex items-center justify-between"
+              className="w-full text-left px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-[#3b6e5a] dark:text-[#9fc3b0] hover:bg-[#3b6e5a]/10 dark:hover:bg-[#3b6e5a]/20 transition-colors flex items-center justify-between"
             >
               <span>{link.label}</span>
             </button>
