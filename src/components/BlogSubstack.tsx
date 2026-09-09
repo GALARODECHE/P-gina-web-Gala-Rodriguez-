@@ -50,7 +50,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="flex flex-wrap items-center justify-center gap-2">
             <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge}`}>
-              <BookOpen className="w-3.5 h-3.5" />
+              <BookOpen className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
               <span>Substack Oficial · Publicaciones Reales</span>
             </span>
 

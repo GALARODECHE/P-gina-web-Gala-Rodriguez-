@@ -90,8 +90,9 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2">
-            <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge}`}>
-              1. Consulta Clínica Individualizada
+            <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge} inline-flex items-center gap-1.5`}>
+              <Sparkles className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
+              <span>1. Consulta Clínica Individualizada</span>
             </span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
@@ -135,8 +136,8 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
               >
                 {/* Popular / Focus Badge */}
                 {isPopular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1">
-                    <Sparkles className="w-3 h-3" />
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-black uppercase tracking-wider shadow-md flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-white fill-white/20" />
                     <span>{service.popularBadge || 'RECOMENDADO · MÁXIMA ADHERENCIA'}</span>
                   </div>
                 )}
@@ -175,7 +176,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                           onClick={() => setSelectedProgramTier('3m')}
                           className={`py-1.5 text-[11px] font-bold rounded-lg transition-all cursor-pointer ${
                             selectedProgramTier === '3m'
-                              ? 'bg-orange-600 text-white shadow-2xs'
+                              ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200 dark:border-orange-800 shadow-2xs'
                               : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
                           }`}
                         >
@@ -186,7 +187,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                           onClick={() => setSelectedProgramTier('6m')}
                           className={`py-1.5 text-[11px] font-bold rounded-lg transition-all cursor-pointer ${
                             selectedProgramTier === '6m'
-                              ? 'bg-orange-600 text-white shadow-2xs'
+                              ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200 dark:border-orange-800 shadow-2xs'
                               : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
                           }`}
                         >
@@ -197,7 +198,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                           onClick={() => setSelectedProgramTier('1y')}
                           className={`py-1.5 text-[11px] font-bold rounded-lg transition-all cursor-pointer ${
                             selectedProgramTier === '1y'
-                              ? 'bg-orange-600 text-white shadow-2xs'
+                              ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200 dark:border-orange-800 shadow-2xs'
                               : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
                           }`}
                         >

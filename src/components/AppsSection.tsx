@@ -96,7 +96,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile }) => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge}`}>
-            <Smartphone className="w-3.5 h-3.5" />
+            <Smartphone className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
             <span>Innovación E-Health</span>
           </div>
 

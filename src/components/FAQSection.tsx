@@ -74,9 +74,9 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2">
-            <span className={`px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge}`}>
-              <HelpCircle className="w-3.5 h-3.5 inline mr-1" />
-              Resolución de Dudas Frecuentes
+            <span className={`px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge} inline-flex items-center gap-1.5`}>
+              <HelpCircle className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
+              <span>Resolución de Dudas Frecuentes</span>
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
@@ -98,9 +98,13 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id as any)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                activeCategory === cat.id
-                  ? `${theme.primary} shadow-xs scale-102`
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                cat.id === 'revisiones'
+                  ? activeCategory === 'revisiones'
+                    ? 'bg-orange-100 text-orange-950 border-2 border-orange-400 dark:bg-orange-950 dark:text-orange-200 dark:border-orange-700 shadow-xs scale-102 font-bold'
+                    : 'bg-orange-100/80 text-orange-950 border border-orange-300 dark:bg-orange-950/60 dark:text-orange-200 dark:border-orange-800 hover:bg-orange-200/80 font-medium'
+                  : activeCategory === cat.id
+                  ? `${theme.primary} shadow-xs scale-102 font-bold`
                   : 'bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 border border-slate-400 dark:border-slate-700/80 hover:bg-slate-300 dark:hover:bg-slate-750'
               }`}
             >

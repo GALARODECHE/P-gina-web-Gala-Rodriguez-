@@ -100,9 +100,9 @@ export const Hero: React.FC<HeroProps> = ({
               <button
                 onClick={onExploreApps}
                 id="hero-view-apps-btn"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base text-[#1f4a3b] dark:text-[#9fc3b0] bg-[#e2ede7]/90 hover:bg-[#d5e5dc] dark:bg-[#213b30]/60 dark:hover:bg-[#213b30] border border-[#3b6e5a]/50 dark:border-[#3b6e5a]/60 transition-all shadow-2xs cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-orange-100 hover:bg-orange-200/90 text-orange-950 dark:bg-orange-950/80 dark:hover:bg-orange-900/90 dark:text-orange-200 border border-orange-300 dark:border-orange-800 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
               >
-                <Smartphone className="w-4 h-4 text-[#3b6e5a] dark:text-[#9fc3b0] shrink-0" />
+                <Smartphone className="w-4 h-4 text-orange-600 dark:text-orange-400 shrink-0" />
                 <span>App TuNutriLens</span>
               </button>
             </div>
@@ -175,7 +175,7 @@ export const Hero: React.FC<HeroProps> = ({
                       {profile.title}
                     </p>
                     <div className="mt-1.5">
-                      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-[#e2ede7] text-[#1c382e] border border-[#3b6e5a]/40 dark:bg-[#213b30] dark:text-[#c5dcce] dark:border-[#2f5747]">
+                      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950/80 dark:text-orange-200 dark:border-orange-800">
                         {profile.colegiadorNumber}
                       </span>
                     </div>

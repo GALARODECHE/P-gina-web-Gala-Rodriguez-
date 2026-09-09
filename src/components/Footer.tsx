@@ -154,7 +154,7 @@ export const Footer: React.FC<FooterProps> = ({
 
               <a
                 href="#servicios"
-                className="block w-full py-2.5 px-4 rounded-xl border border-slate-400 dark:border-slate-700 bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800 font-semibold text-xs transition-colors text-center"
+                className="block w-full py-2.5 px-4 rounded-xl bg-[#3b6e5a] hover:bg-[#2f5747] active:bg-[#213b30] text-white font-bold text-xs transition-all shadow-sm hover:shadow-md text-center cursor-pointer"
               >
                 Ver Servicios Clínicos
               </a>

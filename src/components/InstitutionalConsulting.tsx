@@ -183,7 +183,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
         <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2">
             <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge} inline-flex items-center gap-1.5`}>
-              <Presentation className="w-3.5 h-3.5" />
+              <Presentation className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
               <span>2. Apartado de Talleres, Ponencias y Formación</span>
             </span>
           </div>

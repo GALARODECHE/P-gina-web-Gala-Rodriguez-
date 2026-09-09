@@ -98,7 +98,7 @@ export const themeStyles: Record<ThemeColorKey, ThemeStyleConfig> = {
     primaryBgLight: 'bg-[#e2ede7]/90 dark:bg-[#213b30]/40',
     ring: 'focus:ring-[#3b6e5a]',
     accentGradient: 'from-[#3b6e5a] to-[#518770]',
-    badge: 'bg-[#e2ede7] text-[#1c382e] border border-[#c5dcce] dark:bg-[#213b30] dark:text-[#c5dcce] dark:border-[#2f5747]',
+    badge: 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950/80 dark:text-orange-200 dark:border-orange-800',
     iconBg: 'bg-[#3b6e5a] text-white',
     iconText: 'text-[#3b6e5a] dark:text-[#9fc3b0]',
     cardBorderHighlight: 'border-[#3b6e5a] ring-2 ring-[#3b6e5a]/25',
