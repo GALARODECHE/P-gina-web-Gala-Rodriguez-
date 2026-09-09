@@ -41,7 +41,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
     {
       category: 'consulta',
       question: '¿Cómo se coordina mi plan nutricional con mis médicos especialistas?',
-      answer: 'Con más de 20 años de experiencia en entornos hospitalarios y sanitarios, elaboro planes y pautas 100% compatibles con tus tratamientos médicos (oncología, digestivo, endocrinología). Si es necesario, puedo redactar informes nutricionales para tu especialista.',
+      answer: 'Elaboro planes y pautas dietoterapéuticas 100% compatibles y seguras con tus tratamientos médicos y prescripciones farmacológicas (oncología, digestivo, endocrinología). Además, si lo requieres, puedo redactar informes de evolución clínica para tu especialista.',
     },
     {
       category: 'institucional',
@@ -50,8 +50,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
     },
     {
       category: 'institucional',
-      question: '¿Qué servicios se ofrecen a residencias, centros de día y colectividades?',
-      answer: 'Ofrezco auditoría y validación técnica de menús basales y derivaciones, protocolos de adaptación de texturas para disfagia según la escala internacional IDDSI, formación de 60 min para personal sociosanitario y asesoría en nutrición enteral.',
+      question: '¿Se pueden adaptar los contenidos y materiales al perfil específico de nuestra entidad?',
+      answer: 'Sí, totalmente. Antes de cada sesión o taller coordinamos los objetivos con el equipo organizador para personalizar el contenido, el enfoque y los casos prácticos según si los destinatarios son pacientes, cuidadores o personal sanitario.',
     },
   ];
 
@@ -68,7 +68,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
   )}`;
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-stone-50/60 dark:bg-slate-900/40 border-b border-sky-200/80 dark:border-slate-800/80 transition-colors">
+    <section id="faq" className="py-16 sm:py-24 bg-slate-300 dark:bg-slate-900/40 border-b border-slate-400/80 dark:border-slate-800/80 transition-colors">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -82,7 +82,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
             Preguntas Frecuentes sobre las Consultas y Servicios
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
             Todo lo que necesitas saber sobre el funcionamiento de las citas, pagos, revisiones quincenales y formación.
           </p>
         </div>
@@ -101,7 +101,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                 activeCategory === cat.id
                   ? `${theme.primary} shadow-xs scale-102`
-                  : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/90 dark:border-slate-700/80 hover:bg-slate-50 dark:hover:bg-slate-750'
+                  : 'bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 border border-slate-400 dark:border-slate-700/80 hover:bg-slate-300 dark:hover:bg-slate-750'
               }`}
             >
               {cat.label}
@@ -116,7 +116,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
             return (
               <div
                 key={idx}
-                className="bg-white dark:bg-slate-800/90 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-xs transition-all"
+                className="bg-slate-200 dark:bg-slate-800/90 rounded-2xl border border-slate-400 dark:border-slate-700/80 overflow-hidden shadow-xs transition-all"
               >
                 <button
                   onClick={() => toggleAccordion(idx)}
@@ -129,8 +129,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
                       isOpen
-                        ? 'bg-teal-100 dark:bg-teal-950/80 text-teal-700 dark:text-teal-300 rotate-180'
-                        : 'bg-slate-100 dark:bg-slate-700/60 text-slate-500 dark:text-slate-400'
+                        ? 'bg-amber-100 dark:bg-amber-950/80 text-amber-950 dark:text-amber-200 rotate-180'
+                        : 'bg-slate-300 dark:bg-slate-700/60 text-slate-700 dark:text-slate-400'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -138,7 +138,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-750">
+                  <div className="px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed border-t border-slate-300 dark:border-slate-750">
                     {faq.answer}
                   </div>
                 )}
@@ -148,16 +148,16 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
         </div>
 
         {/* Direct Contact Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4 text-center sm:text-left">
-            <div className="w-12 h-12 rounded-2xl bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-400 flex items-center justify-center shrink-0 hidden sm:flex">
+            <div className="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 hidden sm:flex">
               <MessageCircle className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 dark:text-white text-base">
+              <h3 className="font-bold text-slate-800 dark:text-white text-base">
                 ¿Tienes una consulta específica o caso clínico?
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-400 mt-0.5">
                 Escríbeme directamente por WhatsApp o reserva tu primera sesión online.
               </p>
             </div>
@@ -168,14 +168,14 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-teal-700 hover:bg-teal-800 text-white transition-all inline-flex items-center justify-center gap-2 shadow-xs"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-amber-600 hover:bg-amber-700 text-white transition-all inline-flex items-center justify-center gap-2 shadow-xs"
             >
               <MessageCircle className="w-4 h-4" />
               <span>Consultar por WhatsApp</span>
             </a>
             <button
               onClick={onBookClick}
-              className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-100 dark:hover:bg-white dark:text-slate-900 transition-all shadow-xs cursor-pointer"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-[#3b6e5a] hover:bg-[#2f5747] text-white transition-all shadow-xs cursor-pointer"
             >
               Pedir Cita Online
             </button>

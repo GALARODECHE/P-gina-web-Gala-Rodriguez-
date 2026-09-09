@@ -15,9 +15,9 @@ export const Footer: React.FC<FooterProps> = ({
   const theme = themeStyles[profile.themeColor || 'teal'];
 
   return (
-    <footer className="bg-[#e8f2fa] dark:bg-slate-900 text-slate-700 dark:text-slate-300 pt-16 pb-12 border-t border-sky-200/80 dark:border-slate-800 transition-colors">
+    <footer className="bg-slate-300 dark:bg-slate-900 text-slate-800 dark:text-slate-300 pt-16 pb-12 border-t border-slate-400/80 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-sky-200/80 dark:border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-400/80 dark:border-slate-800/80">
           
           {/* Brand Info (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
@@ -26,18 +26,18 @@ export const Footer: React.FC<FooterProps> = ({
                 src={profile.avatarUrl}
                 alt={profile.name}
                 referrerPolicy="no-referrer"
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-stone-200 dark:ring-slate-700 shadow-sm"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-slate-400 dark:ring-slate-700 shadow-sm"
               />
               <div>
-                <span className="font-bold text-lg text-slate-700 dark:text-white tracking-tight">
+                <span className="font-bold text-lg text-slate-800 dark:text-white tracking-tight">
                   {profile.name}
                 </span>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">{profile.title}</p>
+                <p className="text-xs text-slate-700 dark:text-slate-400 font-medium">{profile.title}</p>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
-              Diplomada en Nutrición Humana y Dietética (Univ. de Navarra). Experta en salud de la mujer, disfagia y oncología con más de 20 años de experiencia clínica.
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-400 leading-relaxed max-w-sm">
+              Consulta de nutrición clínica online para toda España y formación presencial especializada para colectivos y entidades sociosanitarias.
             </p>
 
             <div className="flex flex-wrap items-center gap-2">
@@ -47,9 +47,9 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <a
                 href="https://www.galarodrigueznutricion.es"
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-200 dark:bg-amber-950/60 text-slate-800 dark:text-amber-200 border border-slate-400 dark:border-amber-800/60"
               >
-                <Globe className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                <Globe className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
                 <span>www.galarodrigueznutricion.es</span>
               </a>
             </div>
@@ -57,10 +57,10 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Social Ecosystem */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-white">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-white">
               Ecosistema Digital
             </h4>
-            <ul className="space-y-2.5 text-xs text-slate-600 dark:text-slate-400 font-medium">
+            <ul className="space-y-2.5 text-xs text-slate-700 dark:text-slate-400 font-medium">
               <li>
                 <a
                   href={profile.substackUrl}
@@ -99,10 +99,10 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Contact Details */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-white">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-white">
               Contacto Directo
             </h4>
-            <ul className="space-y-2.5 text-xs text-slate-600 dark:text-slate-400 font-medium">
+            <ul className="space-y-2.5 text-xs text-slate-700 dark:text-slate-400 font-medium">
               <li>
                 <a
                   href={`mailto:${profile.email}`}
@@ -126,13 +126,13 @@ export const Footer: React.FC<FooterProps> = ({
                   href={`https://wa.me/${profile.whatsappNumber.replace(/[^0-9]/g, '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 hover:underline font-semibold"
+                  className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 hover:underline font-semibold"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>WhatsApp: {profile.phone}</span>
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-slate-500">
+              <li className="flex items-center gap-2 text-slate-700">
                 <MapPin className={`w-4 h-4 ${theme.primaryText}`} />
                 <span>Consulta Online (Toda España)</span>
               </li>
@@ -141,20 +141,20 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Actions */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-white">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-white">
               Consulta Online
             </h4>
             <div className="space-y-2">
               <button
                 onClick={onBookClick}
-                className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs transition-colors shadow-md text-center ${theme.primary}`}
+                className="w-full py-2.5 px-4 rounded-xl font-bold text-xs bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white transition-colors shadow-md text-center cursor-pointer"
               >
                 Pedir Cita Online
               </button>
 
               <a
                 href="#servicios"
-                className="block w-full py-2.5 px-4 rounded-xl border border-sky-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-slate-800 font-semibold text-xs transition-colors text-center"
+                className="block w-full py-2.5 px-4 rounded-xl border border-slate-400 dark:border-slate-700 bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800 font-semibold text-xs transition-colors text-center"
               >
                 Ver Servicios Clínicos
               </a>
@@ -164,11 +164,11 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Legal Disclaimer */}
-        <div className="pt-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+        <div className="pt-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 dark:text-slate-400">
           <p className="max-w-2xl">
             © {new Date().getFullYear()} {profile.name} (www.galarodrigueznutricion.es). Todos los derechos reservados. Toda la información disponible en este sitio web tiene fines de educación nutricional y orientación clínica.
           </p>
-          <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400 font-medium">
+          <div className="flex items-center gap-1 text-slate-700 dark:text-slate-400 font-medium">
             <span>Portal Oficial</span>
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-current" />
             <span>Nutrición Clínica y E-Health</span>

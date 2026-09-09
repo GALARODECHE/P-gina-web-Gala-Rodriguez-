@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import {
   Building2,
-  GraduationCap,
-  HeartHandshake,
   Users,
   UtensilsCrossed,
   Presentation,
@@ -16,14 +14,9 @@ import {
   Mail,
   FileCheck2,
   BookOpen,
-  FileText,
-  Copy,
   Check,
-  Printer,
-  Download,
   Video,
   MapPin,
-  HelpCircle,
   AlertCircle,
 } from 'lucide-react';
 import { NutritionistProfile } from '../types';
@@ -49,7 +42,7 @@ export const talksTariffList: TalkTariffItem[] = [
     title: 'Charla Temática / Webinar Online',
     subtitle: 'Divulgación científica interactiva en directo',
     price: 'Presupuesto a Medida',
-    duration: '60 minutos',
+    duration: '60 - 90 min',
     modality: '100% Online (Zoom / Teams / Meet)',
     targetAudience: 'Asociaciones de pacientes, AMPAS, empresas saludables y colectivos',
     description:
@@ -68,7 +61,7 @@ export const talksTariffList: TalkTariffItem[] = [
     title: 'Ponencia y Taller para Asociaciones',
     subtitle: 'Disfagia en el hogar, Oncología o Salud Hormonal',
     price: 'Presupuesto a Medida',
-    duration: '60 minutos',
+    duration: '60 - 120 min',
     modality: 'Presencial u Online',
     targetAudience: 'Asociaciones de Pacientes (ELA, Alzheimer, Parkinson, Cáncer) y Familias',
     description:
@@ -84,10 +77,10 @@ export const talksTariffList: TalkTariffItem[] = [
   },
   {
     id: 'talk-capacitacion-residencias',
-    title: 'Capacitación y Taller Personal Sociosanitario',
+    title: 'Capacitación Personal Sociosanitario',
     subtitle: 'Protocolos IDDSI, Calibración y Desnutrición',
     price: 'Presupuesto a Medida',
-    duration: '60 minutos',
+    duration: '2h 30 min',
     modality: 'Presencial (en el centro) u Online',
     targetAudience: 'Equipos de Cocina, Auxiliares de Enfermería, Terapeutas y Dirección',
     description:
@@ -103,7 +96,7 @@ export const talksTariffList: TalkTariffItem[] = [
   },
   {
     id: 'talk-auditoria-menus',
-    title: 'Auditoría y Calibración de Menús Colectivos',
+    title: 'Auditoría y Calibración de Menús',
     subtitle: 'Revisión técnica de dietas basales y terapéuticas',
     price: 'Presupuesto a Medida',
     duration: 'Por ciclo estacional o servicio',
@@ -112,82 +105,12 @@ export const talksTariffList: TalkTariffItem[] = [
     description:
       'Evaluación nutricional integral de ciclos de menús: aporte calórico, macronutrientes, micronutrientes, libro de alérgenos y adaptación de texturas IDDSI con memoria visada.',
     includes: [
-      'Memoria técnica oficial visada por dietista-nutricionista colegiada',
+      'Memoria técnica oficial visada por dietista-nutricionista colegiada (Col. CV02386)',
       'Calibración y propuestas de mejora nutricional por plato',
       'Revisión del libro de alérgenos y dietas derivadas',
       'Reunión técnica de entrega y asesoramiento al equipo directivo',
     ],
     badge: 'Validez Normativa Autonómica',
-  },
-];
-
-export interface InstitutionalServiceItem {
-  id: string;
-  title: string;
-  badge: string;
-  target: string;
-  format: string;
-  description: string;
-  deliverables: string[];
-  idealFor: string;
-  ctaText: string;
-  icon: any;
-}
-
-export const institutionalServicesList: InstitutionalServiceItem[] = [
-  {
-    id: 'inst-auditoria-menus',
-    title: 'Auditoría y Calibración de Menús Colectivos',
-    badge: 'Cumplimiento Normativo Sanitario',
-    target: 'Residencias de Mayores, Hospitales, Centros de Día y Catering',
-    format: 'Revisión por ciclo de temporada o convenio anual',
-    description:
-      'Validación técnico-sanitaria rigurosa de dietas basales y derivaciones terapéuticas: protocolo de disfagia con texturas IDDSI, hiposódicas, diabéticas y alérgenos. Emisión de informe técnico visado.',
-    deliverables: [
-      'Memoria técnica de revisión y calibración nutricional por ración',
-      'Protocolo de texturas IDDSI para disfagia y prevención de broncoaspiración',
-      'Pautas de enriquecimiento calórico/proteico natural contra la desnutrición',
-      'Reunión técnica con el equipo de cocina y dirección del centro',
-    ],
-    idealFor: 'Centros sociosanitarios que necesitan certificar la calidad nutricional y cumplir la normativa autonómica.',
-    ctaText: 'Solicitar Auditoría de Menús',
-    icon: UtensilsCrossed,
-  },
-  {
-    id: 'inst-ponencias-charlas',
-    title: 'Ponencias, Talleres y Charlas Formativas',
-    badge: 'Divulgación Sanitaria con Evidencia',
-    target: 'Asociaciones de Pacientes, Colegios, AMPAS y Eventos Sanitarios',
-    format: 'Sesiones de 90 a 120 min (Online o Presencial)',
-    description:
-      'Divulgación rigurosa, amena y 100% aplicable adaptada a cada audiencia: disfagia en el hogar para cuidadores, nutrición en oncología, educación alimentaria escolar o salud hormonal.',
-    deliverables: [
-      'Ponencia estructurada con casos reales y turno abierto de preguntas',
-      'Dossier resumen descargable con infografías y recetario práctico',
-      'Adaptación completa a la temática o patología requerida por la entidad',
-      'Certificado de asistencia para el personal o las familias',
-    ],
-    idealFor: 'Asociaciones de pacientes (ELA, Alzheimer, Cáncer), congresos, fundaciones y centros educativos.',
-    ctaText: 'Solicitar Charla o Taller',
-    icon: Presentation,
-  },
-  {
-    id: 'inst-direccion-nutricional',
-    title: 'Asesoría Nutricional Externa y Capacitación de Equipos',
-    badge: 'Acompañamiento Continuo 360°',
-    target: 'Grupos de Residencias, Centros Terapéuticos y Colectividades',
-    format: 'Convenio de asesoría continuada',
-    description:
-      'Dirección técnica nutricional externa sin costes de personal fijo. Supervisión continua de menús, resolución de incidencias, valoración de casos complejos y formación del personal auxiliar.',
-    deliverables: [
-      'Supervisión continua de menús estacionales y adaptaciones',
-      'Capacitación periódica a cuidadores y personal de cocina/enfermería',
-      'Asesoramiento prioritario en casos clínicos de alta complejidad',
-      'Modelos estandarizados de registro de ingesta e hidratación',
-    ],
-    idealFor: 'Instituciones que buscan excelencia clínica constante y tranquilidad en inspecciones sanitarias.',
-    ctaText: 'Solicitar Convenio de Asesoría',
-    icon: Building2,
   },
 ];
 
@@ -209,49 +132,6 @@ export const InstitutionalConsulting: React.FC<InstitutionalConsultingProps> = (
 
   const theme = themeStyles[profile.themeColor || 'teal'];
 
-  const talksWhatsappText = `*GALA RODRÍGUEZ ECHEBARRIETA — CHARLAS, PONENCIAS Y FORMACIÓN*
-_Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de experiencia clínica sanitaria_
-
-📋 *FORMATOS DE PONENCIAS, TALLERES Y AUDITORÍAS:*
-
-1️⃣ *CHARLA TEMÁTICA / WEBINAR ONLINE*
-• Duración: 60 minutos en directo (Zoom / Teams / Meet).
-• Preparación integral de presentación visual adaptada a la temática.
-• Hasta 100 asistentes + Turno amplio de preguntas.
-• Incluye dossier resumen descargable en PDF para los participantes.
-
-2️⃣ *PONENCIA Y TALLER PARA ASOCIACIONES Y FAMILIAS*
-• Duración: 60 minutos (Presencial u Online).
-• Temáticas: Disfagia y texturas en el hogar (IDDSI), Nutrición en Oncología, Salud Hormonal.
-• Enfoque 100% práctico con resolución de casos reales y guía/recetario adaptado.
-
-3️⃣ *CAPACITACIÓN TÉCNICA / TALLER PARA PERSONAL SOCIOSANITARIO*
-• Duración: 60 minutos (En el centro o virtual).
-• Para: Equipos de Residencias, Centros de Día, Cocina y Auxiliares de Enfermería.
-• Protocolos IDDSI para disfagia, prevención de desnutrición y enriquecimiento natural.
-• Incluye certificado de aprovechamiento institucional.
-
-4️⃣ *AUDITORÍA Y CALIBRACIÓN DE MENÚS COLECTIVOS*
-• Memoria técnica oficial visada por Dietista-Nutricionista colegiada.
-• Validación de dietas basales, terapéuticas, libro de alérgenos y aporte calórico/proteico.
-
-🎁 *DESCUENTO SERVICIO INTEGRAL ANUAL (1 AÑO):*
-• *15% de Descuento* en cualquiera de las opciones al contratar un servicio integral de 1 año de duración (con compromiso de pago).
-
-📌 *CONDICIONES Y FORMA DE PAGO:*
-• 💳 *Forma de pago:* Se abonará el 50% al contratar el servicio y el 50% restante al finalizar (excepto en las Auditorías de Menús, que se abonan el 100% por adelantado).
-• ⚠️ *Política de cancelación:* Si se cancela con 24 horas o menos de antelación respecto a la fecha del taller o la charla, se cobrará el importe total (100%).
-• 🚗 *Gastos de desplazamiento:* En caso de requerir desplazamiento presencial fuera de la zona habitual, los gastos de transporte, dietas y kilometraje se presupuestan aparte.
-• Factura oficial con firma y número de colegiación sanitaria.
-
-🌐 Web oficial: https://galarodrigueznutricion.es
-✉️ Email: ${profile.email || 'gala@galarodrigueznutricion.es'}
-📲 WhatsApp / Tel: ${profile.phone || '+34 697 166 126'}`;
-
-  const handlePrintTalks = () => {
-    window.print();
-  };
-
   const handleSendInstitutionInquiry = (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -271,17 +151,17 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
       // ignore
     }
 
-    const subject = encodeURIComponent(`[PROPUESTA INSTITUCIONAL] ${institutionName || 'Entidad'} - ${selectedEntityForQuote}`);
-    const body = encodeURIComponent(`SOLICITUD DE PROPUESTA TÉCNICA / CHARLAS / AUDITORÍA - www.galarodrigueznutricion.es
+    const subject = encodeURIComponent(`[PROPUESTA TALLER / INSTITUCIONAL] ${institutionName || 'Entidad'} - ${selectedEntityForQuote}`);
+    const body = encodeURIComponent(`SOLICITUD DE TALLER / PONENCIA / AUDITORÍA - www.galarodrigueznutricion.es
 --------------------------------------------------
-DATOS DE LA ENTIDAD / CENTRO:
-• Nombre del Centro: ${institutionName || 'Por especificar'}
-• Tipo de Entidad: ${selectedEntityForQuote}
+DATOS DE LA ENTIDAD / ASOCIACIÓN:
+• Entidad: ${institutionName || 'Por especificar'}
+• Tipo de Colectivo: ${selectedEntityForQuote}
 • Email de Contacto: ${contactEmail}
 • Teléfono: ${contactPhone}
 
-DETALLES DEL SERVICIO / NECESIDAD:
-• Descripción de la solicitud: ${message || 'Solicitud de charla / taller / auditoría de menús'}
+DETALLES DEL TALLER O SERVICIO:
+• Necesidad: ${message || 'Solicitud de taller o formación'}
 
 Fecha: ${new Date().toLocaleString('es-ES')}`);
 
@@ -291,452 +171,210 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
 
   return (
     <section
-      id="instituciones"
-      className="py-16 sm:py-24 border-b border-stone-200/80 dark:border-slate-800/80 transition-colors"
+      id="talleres-formacion"
+      className="relative py-14 sm:py-20 border-b border-slate-400/80 dark:border-slate-800/80 transition-colors"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Anchor alias to support legacy #instituciones links */}
+      <div id="instituciones" className="absolute -top-20" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge}`}>
-            <Building2 className="w-3.5 h-3.5" />
-            <span>Consultoría Institucional, Ponencias y Formación</span>
-          </span>
+        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-2">
+            <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge} inline-flex items-center gap-1.5`}>
+              <Presentation className="w-3.5 h-3.5" />
+              <span>2. Apartado de Talleres, Ponencias y Formación</span>
+            </span>
+          </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
-            Dossier de Charlas, Ponencias y Asesoría Institucional
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-800 dark:text-white tracking-tight">
+            Talleres, Ponencias y Formación Especializada
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Formación sanitaria rigurosa y asesoría técnica para Asociaciones de Pacientes, Residencias, Colegios y Empresas. Más de 20 años de experiencia clínica y coordinación de menús hospitalarios.
+          <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            Capacitaciones prácticas, conferencias divulgativas y asesoría técnica para asociaciones de pacientes, familias, residencias de mayores, centros de día y colectivos.
           </p>
         </div>
 
-        {/* ========================================================================= */}
-        {/* DEDICATED VISUAL INFOGRAPHIC / DOSSIER DE CHARLAS & PONENCIAS */}
-        {/* ========================================================================= */}
-        <div id="infografia-charlas" className="mt-12 max-w-6xl mx-auto rounded-3xl bg-white dark:bg-slate-800 border-2 border-teal-600 dark:border-teal-500 shadow-xl overflow-hidden">
-          
-          {/* Infographic Top Banner */}
-          <div className="p-6 sm:p-8 bg-gradient-to-r from-teal-900 via-teal-800 to-slate-900 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="space-y-1.5">
-              <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-teal-800/90 border border-teal-500/50 text-teal-200 text-xs font-bold uppercase tracking-wider">
-                <Presentation className="w-3.5 h-3.5" />
-                <span>DOSSIER FORMATIVO Y ASESORÍA INSTITUCIONAL</span>
+        {/* 4 Formatos de Talleres y Formación (Grid Claro sin duplicados) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 max-w-6xl mx-auto">
+          {talksTariffList.map((talk) => (
+            <div
+              key={talk.id}
+              className={`p-5 rounded-2xl flex flex-col justify-between space-y-4 bg-slate-200 dark:bg-slate-800 transition-all ${
+                talk.popular
+                  ? 'border-2 border-orange-500 dark:border-orange-400 shadow-md relative'
+                  : 'border border-slate-400 dark:border-slate-700 shadow-2xs hover:border-orange-400'
+              }`}
+            >
+              {talk.popular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-orange-600 text-white text-[9px] font-bold uppercase tracking-wider shadow-2xs whitespace-nowrap">
+                  ★ MÁS DEMANDADO
+                </div>
+              )}
+
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-1">
+                  <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md ${
+                    talk.popular ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200' : 'bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-300'
+                  }`}>
+                    {talk.duration}
+                  </span>
+                  <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1">
+                    <Clock className="w-3 h-3 text-orange-500" />
+                    {talk.modality.split('(')[0]}
+                  </span>
+                </div>
+
+                <div>
+                  <h4 className="font-extrabold text-base text-slate-800 dark:text-white leading-snug">
+                    {talk.title}
+                  </h4>
+                  <p className="text-xs text-orange-600 dark:text-orange-400 font-semibold mt-0.5">
+                    {talk.subtitle}
+                  </p>
+                </div>
+
+                {/* Price / Budget Tag */}
+                <div className="py-2.5 border-y border-slate-300 dark:border-slate-700">
+                  <span className="inline-block px-2.5 py-1 rounded-md bg-orange-100 dark:bg-orange-950/60 border border-orange-300 dark:border-orange-800/60 text-orange-950 dark:text-orange-200 text-xs font-bold">
+                    Presupuesto a Medida
+                  </span>
+                  <p className="text-[11px] text-slate-700 dark:text-slate-300 mt-1.5 leading-tight">
+                    👥 <strong>Audiencia:</strong> {talk.targetAudience}
+                  </p>
+                </div>
+
+                {/* Included bullets */}
+                <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                  {talk.includes.map((inc, i) => (
+                    <li key={i} className="flex items-start gap-1.5">
+                      <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span className="leading-tight">{inc}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl sm:text-2xl font-black tracking-tight">
-                Charlas, Ponencias, Talleres y Auditorías Colectivas
-              </h3>
-              <p className="text-xs sm:text-sm text-teal-100/90 flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span>• Gala Rodríguez Echebarrieta</span>
-                <span>• Diplomada Univ. de Navarra</span>
-                <span>• Presupuestos adaptados a cada entidad</span>
+
+              <div className="pt-2">
+                <button
+                  onClick={() => onOpenBooking(talk.title)}
+                  className={`w-full py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs cursor-pointer ${
+                    talk.popular
+                      ? 'bg-amber-600 hover:bg-amber-700 text-white shadow-md'
+                      : 'bg-[#3b6e5a] hover:bg-[#2f5747] text-white'
+                  }`}
+                >
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>Solicitar Taller / Presupuesto</span>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Descuento Anual 15% */}
+        <div className="max-w-5xl mx-auto p-4 sm:p-5 rounded-2xl bg-orange-50/90 dark:bg-orange-950/40 border border-orange-300 dark:border-orange-800/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+          <div className="flex items-start sm:items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-orange-500 text-white shrink-0 shadow-2xs">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="font-extrabold text-sm sm:text-base text-slate-800 dark:text-white flex items-center gap-2 flex-wrap">
+                <span>15% de Descuento en Servicio Integral Anual (1 Año)</span>
+                <span className="px-2 py-0.5 rounded-full bg-orange-200 dark:bg-orange-900 text-orange-950 dark:text-orange-200 text-[10px] font-black uppercase">
+                  Todas las opciones
+                </span>
+              </h4>
+              <p className="text-xs text-slate-700 dark:text-slate-300 mt-0.5">
+                Aplicable en asesoría continuada de 1 año con compromiso de pago (auditorías periódicas, formación recurrente y soporte institucional).
               </p>
             </div>
           </div>
-
-          {/* Infographic Main Content Grid with Transparent Rates */}
-          <div className="p-6 sm:p-8 space-y-8 bg-sky-50/40 dark:bg-slate-900/50">
-            
-            {/* 4 Clear Tariff Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-              {talksTariffList.map((talk) => (
-                <div
-                  key={talk.id}
-                  className={`p-5 rounded-2xl flex flex-col justify-between space-y-4 bg-white dark:bg-slate-800 transition-all ${
-                    talk.popular
-                      ? 'border-2 border-teal-600 dark:border-teal-400 shadow-md relative'
-                      : 'border border-sky-200/90 dark:border-slate-700 shadow-2xs'
-                  }`}
-                >
-                  {talk.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-teal-700 text-white text-[9px] font-bold uppercase tracking-wider shadow-2xs whitespace-nowrap">
-                      ★ MÁS DEMANDADO
-                    </div>
-                  )}
-
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between gap-1">
-                      <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md ${
-                        talk.popular ? 'bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300' : 'bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300'
-                      }`}>
-                        {talk.duration}
-                      </span>
-                      <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {talk.modality.split('(')[0]}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h4 className="font-extrabold text-base text-slate-800 dark:text-slate-100 leading-snug">
-                        {talk.title}
-                      </h4>
-                      <p className="text-xs text-teal-700 dark:text-teal-400 font-semibold mt-0.5">
-                        {talk.subtitle}
-                      </p>
-                    </div>
-
-                    {/* Price / Budget Tag */}
-                    <div className="py-2.5 border-y border-sky-100 dark:border-slate-700">
-                      <span className="inline-block px-2.5 py-1 rounded-md bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800/60 text-teal-800 dark:text-teal-300 text-xs font-bold">
-                        Presupuesto a Medida
-                      </span>
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5">
-                        👥 <strong>Audiencia:</strong> {talk.targetAudience}
-                      </p>
-                    </div>
-
-                    {/* Included bullets */}
-                    <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
-                      {talk.includes.map((inc, i) => (
-                        <li key={i} className="flex items-start gap-1.5">
-                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                          <span className="leading-tight">{inc}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-2">
-                    <button
-                      onClick={() => onOpenBooking(talk.title)}
-                      className={`w-full py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs ${
-                        talk.popular
-                          ? 'bg-teal-700 hover:bg-teal-800 text-white'
-                          : 'bg-slate-700 hover:bg-slate-800 text-white dark:bg-slate-700 dark:hover:bg-slate-600'
-                      }`}
-                    >
-                      <Mail className="w-3.5 h-3.5" />
-                      <span>Solicitar Información y Presupuesto</span>
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Annual Integral Service 15% Discount Banner */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-teal-500/10 to-emerald-500/15 border border-amber-300 dark:border-amber-700/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
-              <div className="flex items-start sm:items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-amber-500 text-white shrink-0 shadow-xs">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-sm sm:text-base text-slate-800 dark:text-slate-100 flex items-center gap-2">
-                    <span>15% de Descuento en Servicio Integral Anual (1 Año)</span>
-                    <span className="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 text-[10px] font-black uppercase">
-                      Todas las opciones
-                    </span>
-                  </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
-                    Aplicable en asesoría continuada de 1 año con compromiso de pago (auditorías periódicas, ciclos estacionales, formación recurrente y soporte institucional).
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => onOpenBooking('Servicio Integral Anual (15% Dto)')}
-                className="px-4 py-2 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold shrink-0 transition-all shadow-xs"
-              >
-                Consultar Plan Anual
-              </button>
-            </div>
-
-            {/* Infographic Summary: Formats, Modality & Conditions */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-              <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-sky-200/80 dark:border-slate-700 space-y-1.5">
-                <div className="flex items-center gap-2 font-bold text-teal-700 dark:text-teal-400">
-                  <Video className="w-4 h-4" />
-                  <span>Modalidad Online (En toda España)</span>
-                </div>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Realización a través de plataforma interactiva (Meet / Zoom / Teams) con soporte audiovisual y entrega de material digital en PDF.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-sky-200/80 dark:border-slate-700 space-y-1.5">
-                <div className="flex items-center gap-2 font-bold text-amber-700 dark:text-amber-400">
-                  <MapPin className="w-4 h-4" />
-                  <span>Modalidad Presencial</span>
-                </div>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                  En centros de día, residencias, sedes de asociaciones o colegios (gastos de transporte, kilometraje y dietas aparte fuera de la zona habitual).
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-sky-200/80 dark:border-slate-700 space-y-1.5">
-                <div className="flex items-center gap-2 font-bold text-indigo-700 dark:text-indigo-400">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>Certificación y Facturación</span>
-                </div>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Emisión de factura oficial profesional y certificados de asistencia/aprovechamiento con firma y número de colegiación sanitaria.
-                </p>
-              </div>
-            </div>
-
-            {/* Conditions & Policies for Institutional Services */}
-            <div className="p-5 rounded-2xl bg-amber-50/70 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/40 text-xs space-y-2">
-              <h4 className="font-bold text-amber-900 dark:text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
-                <AlertCircle className="w-4 h-4 text-amber-600" />
-                <span>Condiciones de Pago, Reserva y Cancelación</span>
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-slate-700 dark:text-slate-300 leading-relaxed">
-                <p>
-                  💳 <strong>Forma de pago:</strong> Se abonará el <strong>50% al contratar</strong> los servicios y el <strong>50% restante al finalizar</strong>, excepto en las <strong>Auditorías de Menús</strong>, que se abonan el <strong>100% por adelantado</strong>.
-                </p>
-                <p>
-                  ⚠️ <strong>Política de cancelación:</strong> Si se cancela con <strong>24 horas o menos</strong> de antelación respecto a la fecha del taller o la charla, se cobrará el <strong>importe total (100%)</strong>.
-                </p>
-                <p>
-                  🎁 <strong>Compromiso Anual:</strong> 15% de descuento en cualquiera de las opciones al contratar un servicio integral de 1 año de duración (con compromiso de pago).
-                </p>
-                <p>
-                  🚗 <strong>Desplazamientos:</strong> En formaciones y ponencias presenciales que requieran traslado fuera de la zona habitual, los gastos de kilometraje, transporte y dietas se cobran y presupuestan aparte.
-                </p>
-              </div>
-            </div>
-
-          </div>
+          <button
+            onClick={() => onOpenBooking('Servicio Integral Anual de Talleres (15% Dto)')}
+            className="px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold shrink-0 transition-all shadow-2xs cursor-pointer"
+          >
+            Consultar Plan Anual
+          </button>
         </div>
 
-        {/* Value Highlights Grid */}
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-stone-200 dark:border-slate-700 shadow-2xs flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-teal-50 text-teal-700 dark:bg-teal-950 dark:text-teal-300 shrink-0">
-              <UtensilsCrossed className="w-5 h-5" />
+        {/* Condiciones Claras de Talleres y Formación */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div className="p-4 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 space-y-1.5 shadow-2xs">
+            <div className="flex items-center gap-2 font-bold text-orange-600 dark:text-orange-400">
+              <Video className="w-4 h-4" />
+              <span>Modalidad Online y Presencial</span>
             </div>
-            <div>
-              <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">Revisión de Menús</p>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400">Basales y adaptados IDDSI</p>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-stone-200 dark:border-slate-700 shadow-2xs flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300 shrink-0">
-              <Presentation className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">Charlas y Talleres</p>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400">Asociaciones y Familias</p>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-stone-200 dark:border-slate-700 shadow-2xs flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 shrink-0">
-              <FileCheck2 className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">Informes Técnicos</p>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400">Memoria y Calibración</p>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-stone-200 dark:border-slate-700 shadow-2xs flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 shrink-0">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">Garantía Sanitaria</p>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400">Univ. de Navarra</p>
-            </div>
-          </div>
-        </div>
-
-        {/* 3 Main B2B Services Cards (Clean, Professional y Elegant) */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch max-w-6xl mx-auto">
-          {institutionalServicesList.map((service, index) => {
-            const Icon = service.icon;
-            const isFeatured = index === 1;
-
-            return (
-              <div
-                key={service.id}
-                className={`flex flex-col justify-between rounded-3xl p-6 sm:p-7 bg-white dark:bg-slate-800 transition-all duration-200 ${
-                  isFeatured
-                    ? `border-2 ${theme.primaryBorder} shadow-lg relative`
-                    : 'border border-stone-200/90 dark:border-slate-700/80 shadow-xs hover:border-stone-300'
-                }`}
-              >
-                {isFeatured && (
-                  <div className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-0.5 rounded-full ${theme.primary} text-[11px] font-bold uppercase tracking-wider shadow-xs flex items-center gap-1`}>
-                    <Sparkles className="w-3 h-3" />
-                    <span>ALTA DEMANDA FORMATIVA</span>
-                  </div>
-                )}
-
-                <div className="space-y-4">
-                  {/* Top Badge & Format */}
-                  <div className="flex items-center justify-between gap-2">
-                    <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${
-                      isFeatured ? theme.badge : 'bg-stone-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
-                    }`}>
-                      {service.badge}
-                    </span>
-
-                    <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {service.format}
-                    </span>
-                  </div>
-
-                  {/* Header Title */}
-                  <div className="flex items-start gap-3">
-                    <div className={`p-2.5 rounded-xl ${theme.badge} shrink-0 mt-0.5`}>
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-700 dark:text-slate-100 leading-snug">
-                        {service.title}
-                      </h3>
-                      <p className="text-xs font-semibold text-teal-700 dark:text-teal-400 mt-1">
-                        {service.target}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
-                    {service.description}
-                  </p>
-
-                  {/* Deliverables Checklist */}
-                  <div className="space-y-2.5 pt-3 border-t border-stone-100 dark:border-slate-700/60">
-                    <p className="text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider">
-                      Servicios y Entregables Incluidos:
-                    </p>
-                    <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
-                      {service.deliverables.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Bottom CTA */}
-                <div className="mt-6 pt-4 border-t border-stone-100 dark:border-slate-700/60 space-y-2">
-                  <button
-                    onClick={() => onOpenBooking(service.title)}
-                    className={`w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xs transition-all active:scale-95 ${
-                      isFeatured
-                        ? theme.primary
-                        : 'bg-slate-700 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-700 dark:hover:bg-stone-100'
-                    }`}
-                  >
-                    <span>{service.ctaText}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-
-                  <p className="text-[11px] text-center text-slate-500 dark:text-slate-400">
-                    <strong className="font-semibold text-slate-600 dark:text-slate-300">Ideal para:</strong> {service.idealFor}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Formats & Temáticas de Charlas (Elegante y Sintético) */}
-        <div className="mt-16 max-w-5xl mx-auto p-6 sm:p-8 rounded-3xl bg-stone-50/80 dark:bg-slate-800/60 border border-stone-200/80 dark:border-slate-700/70">
-          <div className="text-center max-w-2xl mx-auto space-y-2 mb-8">
-            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 uppercase tracking-wider">
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>Temáticas Formativas Más Solicitadas</span>
-            </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100">
-              Ponencias Adaptadas al Perfil de tu Audiencia
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-              Contenido adaptado con rigor científico, lenguaje accesible y herramientas prácticas
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+              Talleres virtuales por Zoom/Teams para toda España o presenciales en la sede de la entidad. En desplazamientos fuera de zona habitual, gastos de transporte y dietas aparte.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-stone-200 dark:border-slate-700 space-y-2">
-              <div className="flex items-center gap-2 text-teal-700 dark:text-teal-400 font-bold text-xs uppercase tracking-wide">
-                <HeartHandshake className="w-4 h-4" />
-                <span>Para Asociaciones y Familias</span>
-              </div>
-              <h4 className="font-bold text-sm text-slate-800 dark:text-slate-200">
-                Disfagia y Alimentación en el Hogar
-              </h4>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Técnicas de texturas seguras, prevención de atragantamientos, recetas atractivas y pautas para personas con ELA, Alzheimer o Parkinson.
-              </p>
+          <div className="p-4 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 space-y-1.5 shadow-2xs">
+            <div className="flex items-center gap-2 font-bold text-orange-600 dark:text-orange-400">
+              <ShieldCheck className="w-4 h-4" />
+              <span>Forma de Pago y Validez</span>
             </div>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+              50% al contratar el taller y 50% al finalizar (en auditorías de menús se abona el 100% por adelantado). Factura oficial con colegiación sanitaria (Col. CV02386).
+            </p>
+          </div>
 
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-stone-200 dark:border-slate-700 space-y-2">
-              <div className="flex items-center gap-2 text-amber-700 dark:text-amber-400 font-bold text-xs uppercase tracking-wide">
-                <Users className="w-4 h-4" />
-                <span>Para Personal Sociosanitario</span>
-              </div>
-              <h4 className="font-bold text-sm text-slate-800 dark:text-slate-200">
-                Capacitación en Enriquecimiento y IDDSI
-              </h4>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Formación práctica para auxiliares de enfermería y personal de cocina en la prevención de la desnutrición clínica en residencias.
-              </p>
+          <div className="p-4 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 space-y-1.5 shadow-2xs">
+            <div className="flex items-center gap-2 font-bold text-orange-600 dark:text-orange-400">
+              <AlertCircle className="w-4 h-4" />
+              <span>Política de Cancelación</span>
             </div>
-
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-stone-200 dark:border-slate-700 space-y-2">
-              <div className="flex items-center gap-2 text-indigo-700 dark:text-indigo-400 font-bold text-xs uppercase tracking-wide">
-                <GraduationCap className="w-4 h-4" />
-                <span>Para Colegios, AMPAS y Empresas</span>
-              </div>
-              <h4 className="font-bold text-sm text-slate-800 dark:text-slate-200">
-                Educación Alimentaria y Salud Integral
-              </h4>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Desmontando mitos de redes sociales, desayunos y meriendas saludables, salud digestiva y gestión energética en el día a día.
-              </p>
-            </div>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+              Por reserva de agenda y preparación de material exclusivo, si se cancela con 24 horas o menos respecto a la fecha del taller, se cobrará el 100% del importe.
+            </p>
           </div>
         </div>
 
-        {/* Direct Institutional Proposal & Quote Form Box */}
-        <div className="mt-14 max-w-4xl mx-auto rounded-3xl bg-white dark:bg-slate-800 border border-stone-200 dark:border-slate-700 p-6 sm:p-9 shadow-sm">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Formulario de Solicitud de Propuesta para Entidades */}
+        <div className="max-w-5xl mx-auto rounded-3xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-md p-4.5 sm:p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             
             {/* Left Info */}
             <div className="lg:col-span-6 space-y-4">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-orange-100 dark:bg-orange-950 text-orange-950 dark:text-orange-200 border border-orange-300 dark:border-orange-800">
+                <Sparkles className="w-3.5 h-3.5 text-orange-600" />
                 <span>Presupuestos y Propuestas a Medida</span>
               </div>
 
-              <h3 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100">
-                ¿Necesitas una propuesta para tu centro o entidad?
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-800 dark:text-white">
+                ¿Deseas organizar un taller o ponencia en tu entidad?
               </h3>
 
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Diseñamos convenios personalizados y presupuestos adaptados al volumen de menús, número de asistentes o alcance formativo.
+              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Diseñamos propuestas personalizadas y presupuestos adaptados al formato (presencial u online), número de asistentes y objetivos específicos de tu colectivo.
               </p>
 
-              <div className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+              <div className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-teal-600" />
-                  <span>Emisión de facturas y convenios marco de colaboración</span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>Emisión de factura y convenios de colaboración oficial</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-teal-600" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>Modalidad presencial u online según localización</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-teal-600" />
-                  <span>Respuesta y valoración técnica en menos de 48 horas</span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>Respuesta y valoración en menos de 24-48 horas</span>
                 </div>
               </div>
 
               <div className="pt-2">
-                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                  Contacto directo con Gala Rodríguez:{' '}
-                  <a href={`mailto:${profile.email}`} className="text-teal-700 dark:text-teal-400 font-bold hover:underline">
+                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">
+                  Contacto directo:{' '}
+                  <a href={`mailto:${profile.email}`} className="text-orange-600 dark:text-orange-400 font-bold hover:underline">
                     {profile.email}
                   </a>{' '}
                   o al{' '}
-                  <a href={`tel:${profile.phone}`} className="text-teal-700 dark:text-teal-400 font-bold hover:underline">
+                  <a href={`tel:${profile.phone}`} className="text-orange-600 dark:text-orange-400 font-bold hover:underline">
                     {profile.phone}
                   </a>
                 </p>
@@ -744,79 +382,79 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
             </div>
 
             {/* Right Quick Quote Form */}
-            <div className="lg:col-span-6 bg-stone-50 dark:bg-slate-900 p-5 sm:p-6 rounded-2xl border border-stone-200 dark:border-slate-700">
+            <div className="lg:col-span-6 bg-slate-300 dark:bg-slate-900/80 p-4 sm:p-6 rounded-2xl border border-slate-400 dark:border-slate-700">
               {isQuoteSent ? (
                 <div className="text-center py-6 space-y-3">
                   <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
-                  <h4 className="font-bold text-slate-800 dark:text-slate-100 text-base">
+                  <h4 className="font-bold text-slate-800 dark:text-white text-base">
                     ¡Solicitud de Propuesta Recibida!
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-400">
+                  <p className="text-xs text-slate-700 dark:text-slate-400">
                     Me pondré en contacto con la dirección de {institutionName || 'su centro'} en menos de 24-48 horas.
                   </p>
                   <div className="space-y-2 pt-2">
                     <button
                       onClick={() => {
-                        const text = `Hola Gala, represento a una entidad (${selectedEntityForQuote}) y nos gustaría solicitar información y propuesta institucional.%0A%0A- Entidad: ${institutionName || 'Por especificar'}%0A- Contacto: ${contactEmail} / ${contactPhone}%0A- Necesidad: ${message || 'Auditoría / Charlas / Asesoría'}`;
+                        const text = `Hola Gala, represento a una entidad (${selectedEntityForQuote}) y nos gustaría solicitar información sobre un taller / formación.%0A%0A- Entidad: ${institutionName || 'Por especificar'}%0A- Contacto: ${contactEmail} / ${contactPhone}%0A- Necesidad: ${message || 'Taller / Ponencia'}`;
                         const cleanNumber = profile.whatsappNumber.replace(/[^0-9]/g, '');
                         window.open(`https://wa.me/${cleanNumber}?text=${text}`, '_blank');
                       }}
-                      className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-xs"
+                      className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-2xs cursor-pointer"
                     >
                       <MessageCircle className="w-4 h-4" />
                       <span>Notificar por WhatsApp</span>
                     </button>
                     <a
-                      href={`mailto:${profile.email || 'gala@galarodrigueznutricion.es'}?subject=${encodeURIComponent(`[PROPUESTA INSTITUCIONAL] ${institutionName || 'Entidad'}`)}&body=${encodeURIComponent(`Solicitud de propuesta enviada para ${institutionName || 'Entidad'}. Contacto: ${contactEmail} / ${contactPhone}`)}`}
-                      className="w-full py-2 rounded-xl bg-stone-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-xs flex items-center justify-center gap-2 hover:bg-stone-300 dark:hover:bg-slate-700 transition-colors"
+                      href={`mailto:${profile.email || 'gala@galarodrigueznutricion.es'}?subject=${encodeURIComponent(`[PROPUESTA TALLER] ${institutionName || 'Entidad'}`)}&body=${encodeURIComponent(`Solicitud de taller para ${institutionName || 'Entidad'}. Contacto: ${contactEmail} / ${contactPhone}`)}`}
+                      className="w-full py-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-xs flex items-center justify-center gap-2 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
                     >
-                      <Mail className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                      <Mail className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
                       <span>Abrir en mi Correo ({profile.email})</span>
                     </a>
                   </div>
                 </div>
               ) : (
                 <form onSubmit={handleSendInstitutionInquiry} className="space-y-3 text-xs">
-                  <h4 className="font-bold text-slate-800 dark:text-slate-100 text-sm">
-                    Solicitud Rápida de Propuesta
+                  <h4 className="font-bold text-slate-800 dark:text-white text-sm">
+                    Solicitud Rápida de Propuesta de Taller
                   </h4>
 
                   <div>
-                    <label className="block text-slate-600 dark:text-slate-400 font-semibold mb-1">
-                      Tipo de Entidad
+                    <label className="block text-slate-800 dark:text-slate-300 font-semibold mb-1">
+                      Tipo de Colectivo o Entidad
                     </label>
                     <select
                       value={selectedEntityForQuote}
                       onChange={(e) => setSelectedEntityForQuote(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border border-stone-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-medium"
+                      className="w-full px-3 py-2 rounded-xl border border-slate-400 dark:border-slate-700 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-medium cursor-pointer text-base sm:text-xs"
                     >
+                      <option value="Asociación de Enfermos">Asociación de Pacientes / Familiares</option>
                       <option value="Residencia de Mayores">Residencia de Mayores / Centro Geriátrico</option>
                       <option value="Centro de Día">Centro de Día / Terapéutico</option>
-                      <option value="Asociación de Enfermos">Asociación de Enfermos / Familiares</option>
                       <option value="Colegio o Escuela Infantil">Colegio, Escuela Infantil o AMPA</option>
-                      <option value="Empresa o Catering">Empresa de Catering / Colectividades</option>
-                      <option value="Otra Entidad">Otra Entidad Sanitaria / Social</option>
+                      <option value="Empresa o Colectivo">Empresa Saludable / Colectivo</option>
+                      <option value="Particular / Familia">Particular / Familia</option>
                     </select>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <div>
-                      <label className="block text-slate-600 dark:text-slate-400 font-semibold mb-1">
-                        Nombre de la Entidad *
+                      <label className="block text-slate-800 dark:text-slate-300 font-semibold mb-1">
+                        Nombre de la Entidad o Colectivo *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Ej: Residencia San José"
+                        placeholder="Ej: Asociación Alzheimer / Colegio"
                         value={institutionName}
                         onChange={(e) => setInstitutionName(e.target.value)}
-                        className="w-full px-3 py-2 rounded-xl border border-stone-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200"
+                        className="w-full px-3 py-2 rounded-xl border border-slate-400 dark:border-slate-700 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-base sm:text-xs"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-600 dark:text-slate-400 font-semibold mb-1">
+                      <label className="block text-slate-800 dark:text-slate-300 font-semibold mb-1">
                         Teléfono de Contacto *
                       </label>
                       <input
@@ -825,44 +463,44 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
                         placeholder="Ej: 600 000 000"
                         value={contactPhone}
                         onChange={(e) => setContactPhone(e.target.value)}
-                        className="w-full px-3 py-2 rounded-xl border border-stone-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200"
+                        className="w-full px-3 py-2 rounded-xl border border-slate-400 dark:border-slate-700 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-base sm:text-xs"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-slate-600 dark:text-slate-400 font-semibold mb-1">
+                    <label className="block text-slate-800 dark:text-slate-300 font-semibold mb-1">
                       Email de Contacto *
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="direccion@centro.com"
+                      placeholder="contacto@asociacion.org"
                       value={contactEmail}
                       onChange={(e) => setContactEmail(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border border-stone-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200"
+                      className="w-full px-3 py-2 rounded-xl border border-slate-400 dark:border-slate-700 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-base sm:text-xs"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-slate-600 dark:text-slate-400 font-semibold mb-1">
-                      ¿Qué necesidad o servicio desean consultar?
+                    <label className="block text-slate-800 dark:text-slate-300 font-semibold mb-1">
+                      ¿Qué taller o temática desean consultar?
                     </label>
                     <textarea
                       rows={2}
-                      placeholder="Ej: Charla sobre disfagia para familiares, revisión de menús basales o capacitación para el equipo..."
+                      placeholder="Ej: Taller práctico de disfagia en el hogar para familiares, ponencia online sobre nutrición oncológica..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border border-stone-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 resize-none"
+                      className="w-full px-3 py-2 rounded-xl border border-slate-400 dark:border-slate-700 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 resize-none text-base sm:text-xs"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className={`w-full py-2.5 rounded-xl font-bold text-xs shadow-xs flex items-center justify-center gap-2 ${theme.primary}`}
+                    className="w-full py-2.5 rounded-xl font-bold text-xs shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white transition-all"
                   >
                     <Send className="w-3.5 h-3.5" />
-                    <span>Solicitar Propuesta y Presupuesto</span>
+                    <span>Solicitar Propuesta y Presupuesto de Taller</span>
                   </button>
                 </form>
               )}

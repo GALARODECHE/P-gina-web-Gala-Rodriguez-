@@ -5,7 +5,6 @@ import { RatesAndServices } from './components/RatesAndServices';
 import { InstitutionalConsulting } from './components/InstitutionalConsulting';
 import { AppsSection } from './components/AppsSection';
 import { BlogSubstack } from './components/BlogSubstack';
-import { SocialHub } from './components/SocialHub';
 import { AboutSection } from './components/AboutSection';
 import { FAQSection } from './components/FAQSection';
 import { ContactBookingModal } from './components/ContactBookingModal';
@@ -42,6 +41,16 @@ export default function App() {
     }
   });
 
+  // Clean up any stale data-palette
+  useEffect(() => {
+    document.documentElement.removeAttribute('data-palette');
+    try {
+      localStorage.removeItem('selected_palette');
+    } catch {
+      // ignore
+    }
+  }, []);
+
   // Modal States
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedServiceForBooking, setSelectedServiceForBooking] = useState<NutritionService | null>(null);
@@ -72,7 +81,7 @@ export default function App() {
   const currentBg = bgThemeStyles[profile.bgTheme || 'default'];
 
   return (
-    <div className={`min-h-screen ${currentBg.bodyBg} text-slate-700 dark:text-slate-200 font-sans transition-colors duration-200 antialiased selection:bg-teal-600 selection:text-white`}>
+    <div className={`min-h-screen ${currentBg.bodyBg} text-slate-700 dark:text-slate-200 font-sans transition-colors duration-200 antialiased selection:bg-amber-500 selection:text-white`}>
       
       {/* Header Navigation */}
       <Navbar
@@ -88,11 +97,11 @@ export default function App() {
         <Hero
           profile={profile}
           onExploreRates={() => {
-            const el = document.getElementById('servicios');
+            const el = document.getElementById('sesiones-online') || document.getElementById('servicios');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
           onExploreInstitutions={() => {
-            const el = document.getElementById('instituciones');
+            const el = document.getElementById('talleres-formacion') || document.getElementById('instituciones');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
           onExploreApps={() => {
@@ -144,11 +153,6 @@ export default function App() {
           profile={profile}
           posts={posts}
           onReadPost={(post) => setReadingPost(post)}
-        />
-
-        {/* Social Media & Community Hub (IG, FB, Substack) */}
-        <SocialHub
-          profile={profile}
         />
 
         {/* About & Methodology */}

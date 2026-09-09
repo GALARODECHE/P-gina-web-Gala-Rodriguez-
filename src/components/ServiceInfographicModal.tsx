@@ -66,7 +66,7 @@ export const ServiceInfographicModal: React.FC<ServiceInfographicModalProps> = (
 
   const handleDownloadDossier = () => {
     const textContent = `GALA RODRÍGUEZ ECHEBARRIETA — DOSSIER INFORMATIVO DE SERVICIOS
-Diplomada en Nutrición Humana y Dietética (Universidad de Navarra) · Colegiada Sanitaria
+Diplomada en Nutrición Humana y Dietética (Universidad de Navarra) · Colegiada Sanitaria CV02386
 Web Oficial: https://galarodrigueznutricion.es
 Teléfono / WhatsApp: ${profile.phone || '+34 697 166 126'}
 Email: ${profile.email || 'gala@galarodrigueznutricion.es'}
@@ -194,63 +194,66 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
   const getTalkIcon = (talkId: string) => {
     switch (talkId) {
       case 't-webinar':
-        return <Monitor className="w-5 h-5 text-teal-600 dark:text-teal-400" />;
+        return <Monitor className="w-5 h-5 text-orange-600 dark:text-orange-400" />;
       case 't-asociaciones':
         return <Users className="w-5 h-5 text-amber-600 dark:text-amber-400" />;
       case 't-residencias':
-        return <GraduationCap className="w-5 h-5 text-teal-700 dark:text-teal-300" />;
+        return <GraduationCap className="w-5 h-5 text-emerald-700 dark:text-emerald-300" />;
       case 't-auditoria':
         return <Scale className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />;
       default:
-        return <Presentation className="w-5 h-5 text-teal-600" />;
+        return <Presentation className="w-5 h-5 text-orange-600" />;
     }
   };
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6 print:p-0 print:bg-white print:static animate-in fade-in">
-      <div className="relative w-full max-w-5xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-sky-200 dark:border-slate-800 overflow-hidden flex flex-col max-h-[92vh] print:max-h-none print:shadow-none print:border-none print:w-full print:rounded-none">
+      <div className="relative w-full max-w-5xl bg-slate-200 dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-400 dark:border-slate-800 overflow-hidden flex flex-col max-h-[92vh] print:max-h-none print:shadow-none print:border-none print:w-full print:rounded-none">
         
         {/* Modal Action Bar (Hidden when printing) */}
-        <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-3.5 bg-sky-50 dark:bg-slate-800/90 border-b border-sky-200 dark:border-slate-700/80 print:hidden shrink-0">
+        <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-3.5 bg-slate-300 dark:bg-slate-800/90 border-b border-slate-400 dark:border-slate-700/80 print:hidden shrink-0">
           
           {/* Tab Selector */}
-          <div className="flex items-center gap-1.5 p-1 bg-white dark:bg-slate-900 rounded-xl border border-sky-200 dark:border-slate-700 text-xs">
+          <div className="flex items-center gap-1 p-1 bg-slate-200 dark:bg-slate-900 rounded-xl border border-slate-400 dark:border-slate-700 text-xs overflow-x-auto max-w-[calc(100%-48px)] sm:max-w-none">
             <button
               onClick={() => setActiveTab('all')}
-              className={`px-3 py-1.5 rounded-lg font-bold transition-colors cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-lg font-bold transition-colors cursor-pointer whitespace-nowrap ${
                 activeTab === 'all'
-                  ? 'bg-teal-700 text-white shadow-xs'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-orange-600 text-white shadow-xs'
+                  : 'text-slate-800 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
             >
-              Dossier Completo
+              <span className="xs:hidden">Dossier</span>
+              <span className="hidden xs:inline">Dossier Completo</span>
             </button>
             <button
               onClick={() => setActiveTab('clinic')}
-              className={`px-3 py-1.5 rounded-lg font-bold transition-colors cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-lg font-bold transition-colors cursor-pointer whitespace-nowrap ${
                 activeTab === 'clinic'
-                  ? 'bg-teal-700 text-white shadow-xs'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-orange-600 text-white shadow-xs'
+                  : 'text-slate-800 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
             >
-              Consulta Online
+              <span className="xs:hidden">Clínica</span>
+              <span className="hidden xs:inline">Consulta Online</span>
             </button>
             <button
               onClick={() => setActiveTab('talks')}
-              className={`px-3 py-1.5 rounded-lg font-bold transition-colors cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-lg font-bold transition-colors cursor-pointer whitespace-nowrap ${
                 activeTab === 'talks'
-                  ? 'bg-teal-700 text-white shadow-xs'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-orange-600 text-white shadow-xs'
+                  : 'text-slate-800 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
             >
-              Charlas y Ponencias
+              <span className="xs:hidden">Charlas</span>
+              <span className="hidden xs:inline">Charlas y Ponencias</span>
             </button>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-200 border border-slate-200 dark:border-slate-600 transition-colors cursor-pointer"
+              className="p-2 rounded-xl bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 border border-slate-400 dark:border-slate-600 transition-colors cursor-pointer"
               aria-label="Cerrar ventana"
             >
               <X className="w-5 h-5 stroke-[2.5]" />
@@ -262,37 +265,38 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
         <div className="overflow-y-auto p-6 sm:p-10 space-y-8 print:p-0 print:overflow-visible print:text-black">
           
           {/* Header Banner */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-teal-900 via-teal-800 to-slate-900 text-white relative overflow-hidden shadow-md print:bg-teal-900 print:text-white">
+          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 border border-orange-500/30 text-white relative overflow-hidden shadow-md print:bg-slate-900 print:text-white">
             <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-800/80 border border-teal-600/50 text-teal-200 text-xs font-bold uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/80 border border-orange-500/50 text-orange-200 text-xs font-bold uppercase tracking-wider">
                   <Stethoscope className="w-3.5 h-3.5" />
                   <span>Dossier Informativo de Servicios Clínicos y Formación</span>
                 </div>
                 <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                   Gala Rodríguez Echebarrieta
                 </h1>
-                <p className="text-sm sm:text-base text-teal-100 font-medium">
+                <p className="text-sm sm:text-base text-slate-200 font-medium">
                   Diplomada en Nutrición Humana y Dietética por la Universidad de Navarra
                 </p>
-                <p className="text-xs text-teal-200/90 flex flex-wrap items-center gap-x-3 gap-y-1 pt-1">
-                  <span>• +20 años de experiencia clínica sanitaria</span>
+                <p className="text-xs text-orange-200/90 flex flex-wrap items-center gap-x-3 gap-y-1 pt-1">
+                  <span className="font-bold text-white bg-white/10 px-2 py-0.5 rounded-md">Col. Sanitaria CV02386</span>
+                  <span>• +20 años de experiencia clínica</span>
                   <span>• Salud de la Mujer y Hormonal</span>
                   <span>• Oncología y Disfagia (IDDSI)</span>
                   <span>• Ponencias y Formación Institucional</span>
                 </p>
               </div>
 
-              <div className="shrink-0 p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-xs space-y-1.5 text-teal-50 sm:text-right">
+              <div className="shrink-0 p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-xs space-y-1.5 text-slate-100 sm:text-right">
                 <p className="font-bold text-white flex items-center sm:justify-end gap-1.5">
-                  <Phone className="w-3.5 h-3.5" />
+                  <Phone className="w-3.5 h-3.5 text-orange-400" />
                   <span>{profile.phone}</span>
                 </p>
                 <p className="flex items-center sm:justify-end gap-1.5">
-                  <Mail className="w-3.5 h-3.5" />
+                  <Mail className="w-3.5 h-3.5 text-orange-400" />
                   <span>{profile.email}</span>
                 </p>
-                <p className="text-[11px] text-teal-200 pt-1 border-t border-white/10">
+                <p className="text-[11px] text-orange-200 pt-1 border-t border-white/10">
                   Consulta Online y Charlas en toda España
                 </p>
               </div>
@@ -302,9 +306,9 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
           {/* Section 1: Modalidades de Consulta (Shown on 'all' and 'clinic') */}
           {(activeTab === 'all' || activeTab === 'clinic') && (
             <div className="space-y-4">
-              <div className="flex items-center gap-2 border-b border-sky-200 dark:border-slate-700 pb-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-teal-600"></span>
-                <h2 className="text-lg font-bold text-slate-700 dark:text-slate-100 uppercase tracking-wider">
+              <div className="flex items-center gap-2 border-b border-slate-400 dark:border-slate-700 pb-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">
                   1. Servicios de Consulta Nutricional Online Individual
                 </h2>
               </div>
@@ -312,18 +316,18 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 
                 {/* Card 1: 1ª Consulta */}
-                <div className="p-6 rounded-3xl bg-[#f4f9fd] dark:bg-slate-800/80 border border-sky-200 dark:border-slate-700 flex flex-col justify-between space-y-4 print:border-stone-400 hover:border-teal-400 transition-all shadow-2xs">
+                <div className="p-6 rounded-3xl bg-slate-300 dark:bg-slate-800/80 border border-slate-400 dark:border-slate-700 flex flex-col justify-between space-y-4 print:border-stone-400 hover:border-orange-500 transition-all shadow-2xs">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="p-2 rounded-xl bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300">
+                        <div className="p-2 rounded-xl bg-orange-100 dark:bg-orange-950 text-orange-950 dark:text-orange-200">
                           <Stethoscope className="w-4 h-4" />
                         </div>
-                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300">
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-orange-100 text-orange-950 dark:bg-orange-950 dark:text-orange-200">
                           Sesión Inicial
                         </span>
                       </div>
-                      <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                      <span className="text-xs font-semibold text-slate-700 dark:text-slate-400 flex items-center gap-1">
                         <Clock className="w-3.5 h-3.5" />
                         60 min
                       </span>
@@ -334,17 +338,17 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                     </h3>
 
                     <div className="py-1">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-teal-50 dark:bg-teal-950 text-teal-800 dark:text-teal-300 text-xs font-bold border border-teal-200 dark:border-teal-800">
-                        <Sparkles className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 text-xs font-bold border border-emerald-200 dark:border-emerald-800">
+                        <Sparkles className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                         Atención individualizada
                       </span>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                       Evaluación clínica integral exhaustiva y diseño de tu pauta terapéutica personalizada entregada en &lt;48 horas.
                     </p>
 
-                    <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300 pt-3 border-t border-sky-200 dark:border-slate-700">
+                    <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300 pt-3 border-t border-slate-400 dark:border-slate-700">
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span>Videollamada 1 a 1 en directo de 60 min</span>
@@ -365,13 +369,13 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                   </div>
 
                   <div className="space-y-3 pt-2">
-                    <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900/60 p-2.5 rounded-xl border border-sky-200/60 dark:border-slate-700/60">
+                    <div className="text-[11px] font-medium text-slate-700 dark:text-slate-400 bg-slate-200 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-400 dark:border-slate-700/60">
                       🎯 <strong>Para quién:</strong> Nuevos pacientes que buscan evaluación completa y pauta clara desde el primer momento.
                     </div>
 
                     <button
                       onClick={() => handleActionClick('1ª Consulta Clínica y Diagnóstico')}
-                      className="w-full py-2.5 px-3.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer print:hidden"
+                      className="w-full py-2.5 px-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer print:hidden"
                     >
                       <Mail className="w-3.5 h-3.5" />
                       <span>Solicitar Información y Cita</span>
@@ -380,8 +384,8 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                 </div>
 
                 {/* Card 2: Programa Completo */}
-                <div className="p-6 rounded-3xl bg-white dark:bg-slate-800 border-2 border-teal-600 dark:border-teal-500 shadow-md flex flex-col justify-between space-y-4 relative print:border-teal-700">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3.5 py-0.5 rounded-full bg-teal-700 text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-2xs">
+                <div className="p-6 rounded-3xl bg-slate-200 dark:bg-slate-800 border-2 border-orange-500 dark:border-orange-500 shadow-md flex flex-col justify-between space-y-4 relative print:border-orange-700">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3.5 py-0.5 rounded-full bg-orange-600 text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-2xs">
                     <Sparkles className="w-3 h-3" />
                     <span>MÁXIMA ADHERENCIA</span>
                   </div>
@@ -389,14 +393,14 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="p-2 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">
+                        <div className="p-2 rounded-xl bg-orange-100 dark:bg-orange-950 text-orange-950 dark:text-orange-200">
                           <Flame className="w-4 h-4" />
                         </div>
-                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-orange-100 text-orange-950 dark:bg-orange-950 dark:text-orange-200">
                           Acompañamiento
                         </span>
                       </div>
-                      <span className="text-xs font-bold text-teal-700 dark:text-teal-400">
+                      <span className="text-xs font-bold text-orange-600 dark:text-orange-400">
                         3 m · 6 m · 1 Año
                       </span>
                     </div>
@@ -407,14 +411,14 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                     
                     {/* Tiers Visual Grid */}
                     <div className="space-y-1.5 py-1">
-                      <div className="flex items-center justify-between p-2 rounded-xl bg-teal-50 dark:bg-slate-900/80 border border-teal-200 dark:border-teal-900 text-xs">
+                      <div className="flex items-center justify-between p-2 rounded-xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-orange-950 text-xs">
                         <div className="flex items-center gap-1.5">
-                          <Target className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />
+                          <Target className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
                           <span className="font-bold text-slate-800 dark:text-slate-200">Pack 3 Meses:</span>
                         </div>
-                        <span className="font-semibold text-teal-700 dark:text-teal-400 text-xs">1 Inicial + 6 Revisiones</span>
+                        <span className="font-semibold text-orange-600 dark:text-orange-400 text-xs">1 Inicial + 6 Revisiones</span>
                       </div>
-                      <div className="flex items-center justify-between p-2 rounded-xl bg-teal-50 dark:bg-slate-900/80 border border-teal-200 dark:border-teal-900 text-xs">
+                      <div className="flex items-center justify-between p-2 rounded-xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-orange-950 text-xs">
                         <div className="flex items-center gap-1.5">
                           <Award className="w-3.5 h-3.5 text-amber-600" />
                           <div>
@@ -422,9 +426,9 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                             <span className="ml-1 text-[10px] text-amber-700 dark:text-amber-400 font-bold">(-10% TuNutriLens)</span>
                           </div>
                         </div>
-                        <span className="font-semibold text-teal-700 dark:text-teal-400 text-xs">Seguimiento Regular</span>
+                        <span className="font-semibold text-orange-600 dark:text-orange-400 text-xs">Seguimiento Regular</span>
                       </div>
-                      <div className="flex items-center justify-between p-2 rounded-xl bg-teal-50 dark:bg-slate-900/80 border border-teal-200 dark:border-teal-900 text-xs">
+                      <div className="flex items-center justify-between p-2 rounded-xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-orange-950 text-xs">
                         <div className="flex items-center gap-1.5">
                           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                           <div>
@@ -432,15 +436,15 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                             <span className="ml-1 text-[10px] text-amber-700 dark:text-amber-400 font-bold">(-20% TuNutriLens)</span>
                           </div>
                         </div>
-                        <span className="font-semibold text-teal-700 dark:text-teal-400 text-xs">Acompañamiento 12M</span>
+                        <span className="font-semibold text-orange-600 dark:text-orange-400 text-xs">Acompañamiento 12M</span>
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                       Especialmente indicado para salud hormonal, oncología, patología digestiva o disfagia con soporte continuado.
                     </p>
 
-                    <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300 pt-3 border-t border-sky-200 dark:border-slate-700">
+                    <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300 pt-3 border-t border-slate-400 dark:border-slate-700">
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span>1ª Consulta inicial exhaustiva (60 min) incluida</span>
@@ -461,13 +465,13 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                   </div>
 
                   <div className="space-y-3 pt-2">
-                    <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400 bg-sky-50 dark:bg-slate-900/60 p-2.5 rounded-xl border border-sky-200/60 dark:border-slate-700/60">
+                    <div className="text-[11px] font-medium text-slate-700 dark:text-slate-400 bg-slate-300 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-400 dark:border-slate-700/60">
                       🎯 <strong>Para quién:</strong> Procesos que requieren reeducación metabólica duradera o acompañamiento clínico estrecho.
                     </div>
 
                     <button
                       onClick={() => handleActionClick('Programas Clínicos de Continuidad')}
-                      className="w-full py-2.5 px-3.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer print:hidden"
+                      className="w-full py-2.5 px-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer print:hidden"
                     >
                       <Mail className="w-3.5 h-3.5" />
                       <span>Solicitar Información del Programa</span>
@@ -476,18 +480,18 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                 </div>
 
                 {/* Card 3: Revisión */}
-                <div className="p-6 rounded-3xl bg-[#f4f9fd] dark:bg-slate-800/80 border border-sky-200 dark:border-slate-700 flex flex-col justify-between space-y-4 print:border-stone-400 hover:border-teal-400 transition-all shadow-2xs">
+                <div className="p-6 rounded-3xl bg-slate-300 dark:bg-slate-800/80 border border-slate-400 dark:border-slate-700 flex flex-col justify-between space-y-4 print:border-stone-400 hover:border-orange-500 transition-all shadow-2xs">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="p-2 rounded-xl bg-sky-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
+                        <div className="p-2 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
                           <FileCheck2 className="w-4 h-4" />
                         </div>
-                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-sky-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-300">
                           Revisión
                         </span>
                       </div>
-                      <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                      <span className="text-xs font-semibold text-slate-700 dark:text-slate-400 flex items-center gap-1">
                         <Clock className="w-3.5 h-3.5" />
                         30-40 min
                       </span>
@@ -498,17 +502,17 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                     </h3>
 
                     <div className="py-1">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-teal-50 dark:bg-teal-950 text-teal-800 dark:text-teal-300 text-xs font-bold border border-teal-200 dark:border-teal-800">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 text-xs font-bold border border-emerald-200 dark:border-emerald-800">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                         Seguimiento clínico
                       </span>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                       Evaluación del progreso clínico, ajuste de nutrientes, adaptación a cambios y resolución de dudas prácticas.
                     </p>
 
-                    <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300 pt-3 border-t border-sky-200 dark:border-slate-700">
+                    <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300 pt-3 border-t border-slate-400 dark:border-slate-700">
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span>Videollamada 1 a 1 de 30-40 min</span>
@@ -529,13 +533,13 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                   </div>
 
                   <div className="space-y-3 pt-2">
-                    <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900/60 p-2.5 rounded-xl border border-sky-200/60 dark:border-slate-700/60">
+                    <div className="text-[11px] font-medium text-slate-700 dark:text-slate-400 bg-slate-200 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-400 dark:border-slate-700/60">
                       🎯 <strong>Para quién:</strong> Pacientes que ya han realizado la 1ª Consulta y buscan acompañamiento periódico.
                     </div>
 
                     <button
                       onClick={() => handleActionClick('Consulta de Revisión y Evolución')}
-                      className="w-full py-2.5 px-3.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer print:hidden"
+                      className="w-full py-2.5 px-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer print:hidden"
                     >
                       <Mail className="w-3.5 h-3.5" />
                       <span>Solicitar Información</span>
@@ -546,34 +550,34 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
               </div>
 
               {/* Step-by-Step Clinical Process Inside Infographic */}
-              <div className="p-6 rounded-3xl bg-[#f4f9fd] dark:bg-slate-800/50 border border-sky-200 dark:border-slate-700 space-y-4">
-                <h3 className="text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-teal-600" />
+              <div className="p-6 rounded-3xl bg-slate-300 dark:bg-slate-800/50 border border-slate-400 dark:border-slate-700 space-y-4">
+                <h3 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-orange-600" />
                   <span>Metodología Directa de Consulta Online:</span>
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
-                  <div className="p-3.5 bg-white dark:bg-slate-800 rounded-2xl border border-sky-100 dark:border-slate-700 shadow-2xs">
-                    <span className="font-black text-teal-700 text-sm">01. Solicitud</span>
-                    <p className="text-slate-600 dark:text-slate-300 mt-1">
+                  <div className="p-3.5 bg-slate-200 dark:bg-slate-800 rounded-2xl border border-slate-400 dark:border-slate-700 shadow-2xs">
+                    <span className="font-black text-orange-600 dark:text-orange-400 text-sm">01. Solicitud</span>
+                    <p className="text-slate-700 dark:text-slate-300 mt-1">
                       Eliges el servicio y solicitas día y hora según tu disponibilidad.
                     </p>
                   </div>
-                  <div className="p-3.5 bg-white dark:bg-slate-800 rounded-2xl border border-sky-100 dark:border-slate-700 shadow-2xs">
-                    <span className="font-black text-teal-700 text-sm">02. Videollamada</span>
-                    <p className="text-slate-600 dark:text-slate-300 mt-1">
+                  <div className="p-3.5 bg-slate-200 dark:bg-slate-800 rounded-2xl border border-slate-400 dark:border-slate-700 shadow-2xs">
+                    <span className="font-black text-orange-600 dark:text-orange-400 text-sm">02. Videollamada</span>
+                    <p className="text-slate-700 dark:text-slate-300 mt-1">
                       Sesión 1 a 1 analizando hábitos, síntomas y objetivos clínicos.
                     </p>
                   </div>
-                  <div className="p-3.5 bg-white dark:bg-slate-800 rounded-2xl border border-sky-100 dark:border-slate-700 shadow-2xs">
-                    <span className="font-black text-teal-700 text-sm">03. Pauta (&lt;48h)</span>
-                    <p className="text-slate-600 dark:text-slate-300 mt-1">
+                  <div className="p-3.5 bg-slate-200 dark:bg-slate-800 rounded-2xl border border-slate-400 dark:border-slate-700 shadow-2xs">
+                    <span className="font-black text-orange-600 dark:text-orange-400 text-sm">03. Pauta (&lt;48h)</span>
+                    <p className="text-slate-700 dark:text-slate-300 mt-1">
                       Recibes tu plan nutricional completo, recetas y pautas prácticas.
                     </p>
                   </div>
-                  <div className="p-3.5 bg-white dark:bg-slate-800 rounded-2xl border border-sky-100 dark:border-slate-700 shadow-2xs">
-                    <span className="font-black text-teal-700 text-sm">04. Acompañamiento</span>
-                    <p className="text-slate-600 dark:text-slate-300 mt-1">
+                  <div className="p-3.5 bg-slate-200 dark:bg-slate-800 rounded-2xl border border-slate-400 dark:border-slate-700 shadow-2xs">
+                    <span className="font-black text-orange-600 dark:text-orange-400 text-sm">04. Acompañamiento</span>
+                    <p className="text-slate-700 dark:text-slate-300 mt-1">
                       Resolución de dudas continua y revisiones periódicas de evolución.
                     </p>
                   </div>
@@ -585,14 +589,14 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
           {/* Section 2: Charlas, Ponencias y Formación (Shown on 'all' and 'talks') */}
           {(activeTab === 'all' || activeTab === 'talks') && (
             <div className="space-y-4 pt-2">
-              <div className="flex items-center justify-between border-b border-sky-200 dark:border-slate-700 pb-2">
+              <div className="flex items-center justify-between border-b border-slate-400 dark:border-slate-700 pb-2">
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
-                  <h2 className="text-lg font-bold text-slate-700 dark:text-slate-100 uppercase tracking-wider">
+                  <span className="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
+                  <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">
                     2. Catálogo de Charlas, Ponencias, Talleres y Auditorías
                   </h2>
                 </div>
-                <span className="text-xs font-semibold text-amber-700 dark:text-amber-400 hidden sm:inline">
+                <span className="text-xs font-semibold text-orange-600 dark:text-orange-400 hidden sm:inline">
                   Para Asociaciones, Residencias, Colegios y Empresas
                 </span>
               </div>
@@ -602,14 +606,14 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                 {talksTariffList.map((talk) => (
                   <div
                     key={talk.id}
-                    className={`p-5 rounded-3xl flex flex-col justify-between space-y-3 bg-[#f4f9fd] dark:bg-slate-800/80 transition-all ${
+                    className={`p-5 rounded-3xl flex flex-col justify-between space-y-3 bg-slate-300 dark:bg-slate-800/80 transition-all ${
                       talk.popular
-                        ? 'border-2 border-amber-600 dark:border-amber-500 shadow-md relative bg-white dark:bg-slate-800'
-                        : 'border border-sky-200 dark:border-slate-700 shadow-2xs'
+                        ? 'border-2 border-orange-500 dark:border-orange-500 shadow-md relative bg-slate-200 dark:bg-slate-800'
+                        : 'border border-slate-400 dark:border-slate-700 shadow-2xs'
                     }`}
                   >
                     {talk.popular && (
-                      <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-amber-700 text-white text-[8px] font-bold uppercase tracking-wider whitespace-nowrap shadow-xs">
+                      <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-orange-600 text-white text-[8px] font-bold uppercase tracking-wider whitespace-nowrap shadow-xs">
                         ★ MÁS DEMANDADO
                       </div>
                     )}
@@ -617,16 +621,16 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                     <div className="space-y-2.5">
                       <div className="flex items-center justify-between gap-1">
                         <div className="flex items-center gap-1.5">
-                          <div className="p-1.5 rounded-lg bg-white dark:bg-slate-700 border border-sky-100 dark:border-slate-600">
+                          <div className="p-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 border border-slate-400 dark:border-slate-600">
                             {getTalkIcon(talk.id)}
                           </div>
                           <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md ${
-                            talk.popular ? 'bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300' : 'bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300'
+                            talk.popular ? 'bg-amber-100 text-amber-950 dark:bg-amber-950 dark:text-amber-200' : 'bg-emerald-100 text-emerald-950 dark:bg-emerald-950 dark:text-emerald-200'
                           }`}>
                             {talk.duration}
                           </span>
                         </div>
-                        <span className="text-[10px] font-semibold text-slate-500 flex items-center gap-0.5">
+                        <span className="text-[10px] font-semibold text-slate-700 flex items-center gap-0.5">
                           <Clock className="w-3 h-3" />
                           {talk.modality.split('(')[0]}
                         </span>
@@ -636,17 +640,17 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                         {talk.title}
                       </h4>
 
-                      <div className="py-1 border-y border-sky-100 dark:border-slate-700">
-                        <span className="inline-block px-2 py-0.5 rounded-md bg-teal-50 dark:bg-teal-950 text-teal-800 dark:text-teal-300 text-xs font-bold">
+                      <div className="py-1 border-y border-slate-400 dark:border-slate-700">
+                        <span className="inline-block px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950 text-amber-950 dark:text-amber-300 text-xs font-bold">
                           Presupuesto a Medida
                         </span>
                       </div>
 
-                      <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-tight">
+                      <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-tight">
                         {talk.description}
                       </p>
 
-                      <ul className="space-y-1.5 text-[11px] text-slate-600 dark:text-slate-300 pt-1">
+                      <ul className="space-y-1.5 text-[11px] text-slate-700 dark:text-slate-300 pt-1">
                         {talk.includes.slice(0, 3).map((inc, i) => (
                           <li key={i} className="flex items-start gap-1.5">
                             <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
@@ -657,13 +661,13 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                     </div>
 
                     <div className="space-y-2 pt-2">
-                      <div className="text-[10px] text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900/60 p-2 rounded-xl border border-sky-100 dark:border-slate-700">
+                      <div className="text-[10px] text-slate-700 dark:text-slate-400 bg-slate-200 dark:bg-slate-900/60 p-2 rounded-xl border border-slate-400 dark:border-slate-700">
                         👥 {talk.targetAudience.slice(0, 48)}...
                       </div>
 
                       <button
                         onClick={() => handleActionClick(talk.title)}
-                        className="w-full py-2 px-2.5 rounded-xl bg-slate-700 hover:bg-slate-800 text-white text-xs font-bold flex items-center justify-center gap-1 transition-all cursor-pointer print:hidden"
+                        className="w-full py-2 px-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center justify-center gap-1 transition-all cursor-pointer print:hidden"
                       >
                         <Mail className="w-3 h-3" />
                         <span>Solicitar Información</span>
@@ -674,7 +678,7 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
               </div>
 
               {/* Annual Integral Service 15% Discount Banner */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-teal-500/10 to-emerald-500/15 border border-amber-300 dark:border-amber-700/60 flex items-center justify-between gap-3 shadow-xs">
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-300 dark:bg-slate-800 border border-slate-400 dark:border-amber-500/60 flex items-center justify-between gap-3 shadow-xs">
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 rounded-xl bg-amber-500 text-white shrink-0 shadow-xs">
                     <Sparkles className="w-5 h-5" />
@@ -682,11 +686,11 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                   <div>
                     <h4 className="font-extrabold text-xs sm:text-sm text-slate-800 dark:text-slate-100 flex items-center gap-2">
                       <span>15% de Descuento en Servicio Integral Anual (1 Año)</span>
-                      <span className="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 text-[9px] font-black uppercase">
+                      <span className="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-950 dark:text-amber-300 text-[9px] font-black uppercase">
                         Convenio Colectivo
                       </span>
                     </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                    <p className="text-xs text-slate-700 dark:text-slate-300 mt-0.5">
                       Válido para convenios formativos continuados y consultoría institucional de 1 año con compromiso de pago.
                     </p>
                   </div>
@@ -696,12 +700,12 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
           )}
 
           {/* Section 4: Condiciones Generales y Política de Cancelación */}
-          <div className="p-5 rounded-2xl bg-amber-50/70 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/40 text-xs space-y-2">
-            <h4 className="font-bold text-amber-900 dark:text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
+          <div className="p-5 rounded-2xl bg-slate-300 dark:bg-amber-950/20 border border-slate-400 dark:border-amber-900/40 text-xs space-y-2">
+            <h4 className="font-bold text-slate-800 dark:text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
               <AlertCircle className="w-4 h-4 text-amber-600" />
               <span>Condiciones del Servicio, Pagos y Política de Cancelación</span>
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-slate-800 dark:text-slate-300 leading-relaxed">
               <p>
                 • 💳 <strong>Forma de pago:</strong> Se abonará el <strong>50% al contratar</strong> los servicios y el <strong>50% restante al finalizar</strong>, excepto en las <strong>Auditorías de Menús</strong>, que se abonan el <strong>100% por adelantado</strong>.
               </p>
@@ -714,18 +718,18 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
               <p>
                 • 📄 <strong>Facturación Oficial:</strong> Emisión de factura desglosada y documentación técnica con firma y número de colegiación sanitaria.
               </p>
-              <p className="sm:col-span-2 pt-1 text-amber-900 dark:text-amber-300 font-medium">
+              <p className="sm:col-span-2 pt-1 text-slate-800 dark:text-amber-300 font-medium">
                 • 🚗 <strong>Gastos de desplazamiento:</strong> En formaciones y ponencias presenciales que requieran traslado fuera de la zona habitual, los gastos de transporte, kilometraje y dietas se cobran y presupuestan aparte.
               </p>
             </div>
           </div>
 
           {/* Footer of Infographic */}
-          <div className="pt-4 border-t border-sky-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-3">
+          <div className="pt-4 border-t border-slate-400 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-700 dark:text-slate-400 gap-3">
             <p>
               © {new Date().getFullYear()} Gala Rodríguez Echebarrieta · Nutrición Humana y Dietética (Univ. de Navarra)
             </p>
-            <div className="flex items-center gap-4 font-semibold text-teal-700 dark:text-teal-400">
+            <div className="flex items-center gap-4 font-semibold text-amber-600 dark:text-amber-400">
               <span>{profile.email}</span>
               <span>{profile.phone}</span>
               <span>www.galarodrigueznutricion.es</span>

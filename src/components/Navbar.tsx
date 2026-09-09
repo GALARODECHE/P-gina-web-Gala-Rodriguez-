@@ -21,12 +21,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { id: 'hero', label: 'Inicio' },
-    { id: 'servicios', label: 'Servicios y Consulta' },
-    { id: 'instituciones', label: 'Instituciones y Charlas' },
+    { id: 'sesiones-online', label: 'Sesiones Online' },
+    { id: 'talleres-formacion', label: 'Talleres y Formación' },
     { id: 'apps', label: 'TuNutriLens (App)' },
-    { id: 'blog', label: 'Blog y Substack' },
-    { id: 'faq', label: 'Preguntas Frecuentes' },
+    { id: 'blog', label: 'Blog y Artículos' },
     { id: 'sobre-mi', label: 'Sobre Mí' },
+    { id: 'faq', label: 'Preguntas Frecuentes' },
   ];
 
   const handleNavClick = (id: string) => {
@@ -38,14 +38,14 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-white/95 dark:bg-slate-900/95 border-b border-slate-200/80 dark:border-slate-800 transition-colors shadow-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-slate-200/95 dark:bg-slate-900/95 border-b border-slate-400/80 dark:border-slate-800 transition-colors shadow-xs">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-20 gap-1.5 sm:gap-2">
           
-          {/* Logo & Brand */}
+          {/* Logo & Brand - Mobile optimized without overflowing */}
           <button
             onClick={() => handleNavClick('hero')}
-            className="flex items-center gap-3 text-left focus:outline-none group"
+            className="flex items-center gap-2 sm:gap-3 text-left focus:outline-none group min-w-0"
             id="brand-logo-btn"
           >
             <div className="relative shrink-0">
@@ -53,15 +53,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 src={profile.avatarUrl}
                 alt={profile.name}
                 referrerPolicy="no-referrer"
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-stone-200 dark:ring-slate-700 shadow-sm transition-transform group-hover:scale-105"
+                className="w-8 h-8 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-slate-400 dark:ring-slate-700 shadow-xs transition-transform group-hover:scale-105"
               />
-              <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-900" title="Disponible para Consulta" />
+              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500 ring-2 ring-slate-200 dark:ring-slate-900" title="Disponible para Consulta" />
             </div>
-            <div>
-              <span className="font-bold text-base sm:text-lg tracking-tight text-slate-800 dark:text-slate-100 group-hover:opacity-90 block leading-tight">
-                {profile.name}
+            <div className="min-w-0">
+              <span className="font-extrabold text-xs xs:text-sm sm:text-base lg:text-lg tracking-tight text-slate-800 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 block leading-tight truncate">
+                <span className="xs:hidden">Gala R.</span>
+                <span className="hidden xs:inline sm:hidden">Gala Rodríguez</span>
+                <span className="hidden sm:inline">{profile.name}</span>
               </span>
-              <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+              <span className="text-[9px] xs:text-[10px] sm:text-xs text-orange-600 dark:text-orange-400 font-bold block leading-tight truncate">
                 Nutrición Clínica
               </span>
             </div>
@@ -74,44 +76,45 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
                 id={`nav-link-${link.id}`}
-                className="px-3 py-2 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors"
+                className="px-3 py-2 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-300 dark:hover:bg-slate-800/80 transition-colors"
               >
                 {link.label}
               </button>
             ))}
           </nav>
 
-          {/* Right Action Tools */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          {/* Right Action Tools - Scaled for mobile screens */}
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             
             {/* Dark Mode Toggle */}
             <button
               onClick={onToggleDarkMode}
               id="theme-toggle-btn"
-              className="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="p-1.5 xs:p-2 sm:p-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               title={isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+              aria-label="Cambiar tema visual"
             >
-              {isDarkMode ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5" />}
+              {isDarkMode ? <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
             </button>
 
-            {/* Primary Booking CTA */}
+            {/* Primary Booking CTA - Acento Naranja Substack (Amber) */}
             <button
               onClick={() => onBookClick()}
               id="header-book-cta"
-              className={`inline-flex items-center gap-2 px-4 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-md transition-all active:scale-95 ${theme.primary}`}
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white shadow-xs transition-all active:scale-95 whitespace-nowrap cursor-pointer hover:shadow-md"
             >
-              <Calendar className="w-4 h-4" />
-              <span>Pedir Cita Online</span>
+              <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+              <span>Pedir Cita<span className="hidden sm:inline"> Online</span></span>
             </button>
 
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               id="mobile-menu-toggle-btn"
-              className="xl:hidden p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="xl:hidden p-1.5 xs:p-2 sm:p-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800 cursor-pointer"
               aria-label="Abrir menú"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
 
           </div>
@@ -120,17 +123,31 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-6 space-y-2 animate-in slide-in-from-top-2">
+        <div className="xl:hidden border-b border-slate-400 dark:border-slate-800 bg-slate-200 dark:bg-slate-900 px-4 pt-2 pb-6 space-y-2 max-h-[calc(100vh-3.75rem)] overflow-y-auto overscroll-contain animate-in slide-in-from-top-2">
+          
+          <div className="pt-1 pb-2">
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                onBookClick();
+              }}
+              className="w-full py-3 px-4 rounded-xl text-xs font-bold bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Pedir Cita Nutricional Online</span>
+            </button>
+          </div>
+
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className="w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-between"
+              className="w-full text-left px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-800 transition-colors flex items-center justify-between"
             >
               <span>{link.label}</span>
             </button>
           ))}
-          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-around text-xs font-bold text-slate-600 dark:text-slate-300">
+          <div className="pt-3 border-t border-slate-300 dark:border-slate-800 flex items-center justify-around text-xs font-bold text-slate-700 dark:text-slate-300">
             <a href={profile.instagramUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-pink-600">
               <Instagram className="w-4 h-4" /> Instagram
             </a>

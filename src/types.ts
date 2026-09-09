@@ -1,4 +1,4 @@
-export type ThemeColorKey = 'teal' | 'navy' | 'slate' | 'sage' | 'amber';
+export type ThemeColorKey = 'peach' | 'teal' | 'navy' | 'slate' | 'sage' | 'amber';
 export type BgThemeKey = 'default' | 'pure-white' | 'warm-cream' | 'soft-mint' | 'cool-sky';
 
 export interface NutritionService {
@@ -145,7 +145,7 @@ export interface NutritionistProfile {
   bizumPaymentPhone?: string;
   ibanAccount?: string;
   stripePaymentBaseUrl?: string;
-  themeColor: 'teal' | 'navy' | 'slate' | 'sage' | 'amber';
+  themeColor: ThemeColorKey;
   bgTheme?: 'default' | 'pure-white' | 'warm-cream' | 'soft-mint' | 'cool-sky';
   stat1Number?: string;
   stat1Label?: string;

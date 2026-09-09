@@ -43,7 +43,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
   };
 
   return (
-    <section id="blog" className="py-16 sm:py-24 border-b border-stone-200/80 dark:border-slate-800/80">
+    <section id="blog" className="py-16 sm:py-24 border-b border-slate-400/80 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -54,53 +54,53 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
               <span>Substack Oficial · Publicaciones Reales</span>
             </span>
 
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 text-xs font-semibold border border-amber-300/40">
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-300 text-xs font-semibold border border-amber-300/40">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span>galanutricion.substack.com</span>
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-700 dark:text-slate-200 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 dark:text-slate-200 tracking-tight">
             Artículos y Divulgación Nutricional
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300">
             Mis artículos reales publicados en Substack sobre nutrición clínica, salud de la mujer, mitos y hábitos saludables.
           </p>
         </div>
 
         {/* Substack Newsletter Banner */}
-        <div className="mt-10 max-w-4xl mx-auto p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-slate-900/10 border border-amber-500/20 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1.5 text-center md:text-left">
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center justify-center md:justify-start gap-1">
+        <div className="mt-10 max-w-4xl mx-auto p-4 sm:p-8 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-md flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6">
+          <div className="space-y-1.5 text-center md:text-left w-full md:w-auto">
+            <span className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 flex items-center justify-center md:justify-start gap-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
               Boletín Semanal en Substack
             </span>
-            <h3 className="text-lg sm:text-xl font-bold text-slate-700 dark:text-slate-200">
+            <h3 className="text-base sm:text-xl font-bold text-slate-800 dark:text-slate-200">
               Recibe mis nuevos artículos directamente en tu email
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
               Sin spam ni dietas milagro. Ciencia, hábitos sostenibles y reflexiones de consulta.
             </p>
           </div>
 
           {isSubscribed ? (
-            <div className="p-3 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-bold text-center">
+            <div className="p-3 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-bold text-center w-full md:w-auto">
               ¡Redirigiendo a la suscripción de Substack!
             </div>
           ) : (
-            <form onSubmit={handleSubscribe} className="flex w-full md:w-auto items-center gap-2">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row w-full md:w-auto items-stretch sm:items-center gap-2">
               <input
                 type="email"
                 required
                 placeholder="tu@correo.com"
                 value={subscriberEmail}
                 onChange={(e) => setSubscriberEmail(e.target.value)}
-                className="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500 min-w-[200px]"
+                className="px-3.5 py-2.5 rounded-xl border border-slate-400 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500 w-full sm:w-60 min-w-0"
               />
               <button
                 type="submit"
-                className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition-colors flex items-center gap-1.5 flex-shrink-0"
+                className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition-colors flex items-center justify-center gap-1.5 shrink-0 cursor-pointer"
               >
                 <span>Suscribirme</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -112,7 +112,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
         {/* Search & Categories Bar */}
         <div className="mt-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold text-slate-400 flex items-center gap-1 mr-1">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1 mr-1">
               <Filter className="w-3.5 h-3.5" />
               <span>Categoría:</span>
             </span>
@@ -123,7 +123,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                   selectedCategory === cat
                     ? 'bg-amber-600 text-white shadow-sm'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                    : 'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700'
                 }`}
               >
                 {cat}
@@ -132,21 +132,21 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
           </div>
 
           <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
             <input
               type="text"
               placeholder="Buscar en los artículos..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-400 dark:border-slate-700 bg-slate-200 dark:bg-slate-900 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
           </div>
         </div>
 
         {/* Posts Cards Grid */}
         {filteredPosts.length === 0 ? (
-          <div className="mt-12 text-center p-12 rounded-3xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700">
-            <p className="text-slate-500 dark:text-slate-400 text-sm">
+          <div className="mt-12 text-center p-12 rounded-3xl bg-slate-200 dark:bg-slate-800/40 border border-slate-400 dark:border-slate-700">
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
               No se encontraron artículos con el criterio de búsqueda seleccionado.
             </p>
             <button
@@ -161,7 +161,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
             {filteredPosts.map((post) => (
               <div
                 key={post.id}
-                className="group rounded-2xl bg-white dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/70 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group rounded-2xl bg-slate-200 dark:bg-slate-800/60 border border-slate-400 dark:border-slate-700/70 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Cover Image */}
@@ -186,7 +186,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
 
                   {/* Body Content */}
                   <div className="p-6 space-y-3">
-                    <div className="flex items-center gap-3 text-xs text-slate-400">
+                    <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />
                         {post.publishDate}
@@ -202,17 +202,17 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
                       {post.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 line-clamp-3 leading-relaxed">
                       {post.summary}
                     </p>
                   </div>
                 </div>
 
                 {/* Action Bar */}
-                <div className="p-6 pt-0 flex items-center justify-between text-xs border-t border-slate-100 dark:border-slate-700/50 mt-4">
+                <div className="p-6 pt-0 flex items-center justify-between text-xs border-t border-slate-300 dark:border-slate-700/50 mt-4">
                   <button
                     onClick={() => onReadPost(post)}
-                    className="font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1 py-1"
+                    className="font-bold text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1 py-1"
                   >
                     <span>Leer Artículo</span>
                   </button>
@@ -222,7 +222,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
                       href={post.substackUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white font-medium flex items-center gap-1 py-1"
+                      className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-medium flex items-center gap-1 py-1"
                       title="Abrir en Substack oficial"
                     >
                       <span>En Substack</span>
