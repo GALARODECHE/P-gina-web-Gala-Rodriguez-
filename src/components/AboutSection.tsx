@@ -135,7 +135,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
   ];
 
   return (
-    <section id="sobre-mi" className="py-14 sm:py-20 border-b border-slate-400/80 dark:border-slate-800/80">
+    <section id="sobre-mi" className="py-14 sm:py-20 border-b border-black/5 dark:border-slate-800/80 bg-transparent transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         
         {/* Section Header */}

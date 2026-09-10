@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({
   const theme = themeStyles[profile.themeColor || 'teal'];
 
   return (
-    <section id="hero" className="relative overflow-hidden pt-6 pb-12 sm:pt-14 sm:pb-20 border-b border-stone-200/80 dark:border-slate-800/80">
+    <section id="hero" className="relative overflow-hidden pt-6 pb-12 sm:pt-14 sm:pb-20 border-b border-black/5 dark:border-slate-800/80 bg-transparent">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">

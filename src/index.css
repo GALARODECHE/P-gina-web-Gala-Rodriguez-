@@ -34,25 +34,45 @@
 
 :root {
   color-scheme: light;
-  /* Paleta Verde Salvia & Piedra Permanente con Acento Substack Amber */
+  /* Paleta Verde Salvia & Melocotón Luminoso con Acento Substack Amber */
   --palette-primary: #3b6e5a;
   --palette-primary-hover: #2f5747;
   --palette-accent-orange: #d97706;
   --palette-accent-orange-hover: #b45309;
-  --bg-stone: #dce4df;
-  --card-stone: #ecf2ee;
-  --border-stone: #b6c4bc;
+  
+  /* Fondos Luminosos: Degradado continuo unificado de Verde Salvia Claro a Melocotón Suave */
+  --bg-peach-light: #fff0e4;
+  --bg-sage-light: #d6eee1;
+  --card-stone: #ffffff;
+  --border-stone: #eedfd5;
+}
+
+:not(.dark) body,
+:not(.dark) #root,
+:not(.dark) .app-unified-gradient {
+  background: linear-gradient(
+    180deg,
+    #d6eee1 0%,
+    #def2e7 10%,
+    #e5f5ed 20%,
+    #ecf7f2 32%,
+    #f2f9f5 44%,
+    #f7fbf8 55%,
+    #faf8f4 67%,
+    #fdf5ed 78%,
+    #fef2e8 89%,
+    #fff0e4 100%
+  ) !important;
+  background-attachment: scroll;
 }
 
 html {
-  background-color: var(--bg-stone, #dce4df);
   color: #1e293b;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--bg-stone, #dce4df);
   color: #1e293b;
   min-height: 100vh;
   overflow-x: hidden;
@@ -60,10 +80,16 @@ body {
 }
 
 :not(.dark) .bg-slate-300 {
-  background-color: var(--bg-stone, #dce4df);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 :not(.dark) .bg-slate-200 {
-  background-color: var(--card-stone, #ecf2ee);
+  background-color: var(--card-stone, #ffffff);
+}
+
+:not(.dark) .border-slate-400,
+:not(.dark) .border-slate-400\/80,
+:not(.dark) .border-slate-400\/90 {
+  border-color: #eddcd1;
 }
 

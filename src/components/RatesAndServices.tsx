@@ -81,7 +81,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
   ];
 
   return (
-    <section id="sesiones-online" className="relative py-14 sm:py-20 border-b border-slate-400/80 dark:border-slate-800/80">
+    <section id="sesiones-online" className="relative py-14 sm:py-20 border-b border-black/5 dark:border-slate-800/80 bg-transparent transition-colors">
       {/* Anchor alias to support legacy #servicios links */}
       <div id="servicios" className="absolute -top-20" />
 

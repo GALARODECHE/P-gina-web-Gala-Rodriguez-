@@ -81,7 +81,7 @@ export default function App() {
   const currentBg = bgThemeStyles[profile.bgTheme || 'default'];
 
   return (
-    <div className={`min-h-screen ${currentBg.bodyBg} text-slate-700 dark:text-slate-200 font-sans transition-colors duration-200 antialiased selection:bg-amber-500 selection:text-white`}>
+    <div className={`min-h-screen app-unified-gradient dark:bg-slate-950 text-slate-700 dark:text-slate-200 font-sans transition-colors duration-200 antialiased selection:bg-amber-500 selection:text-white`}>
       
       {/* Header Navigation */}
       <Navbar

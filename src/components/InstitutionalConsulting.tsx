@@ -172,7 +172,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
   return (
     <section
       id="talleres-formacion"
-      className="relative py-14 sm:py-20 border-b border-slate-400/80 dark:border-slate-800/80 transition-colors"
+      className="relative py-14 sm:py-20 border-b border-black/5 dark:border-slate-800/80 bg-transparent transition-colors"
     >
       {/* Anchor alias to support legacy #instituciones links */}
       <div id="instituciones" className="absolute -top-20" />

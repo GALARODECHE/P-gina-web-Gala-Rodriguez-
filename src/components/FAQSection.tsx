@@ -68,7 +68,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
   )}`;
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-slate-300 dark:bg-slate-900/40 border-b border-slate-400/80 dark:border-slate-800/80 transition-colors">
+    <section id="faq" className="py-16 sm:py-24 bg-transparent dark:bg-slate-900/40 border-b border-black/5 dark:border-slate-800/80 transition-colors">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

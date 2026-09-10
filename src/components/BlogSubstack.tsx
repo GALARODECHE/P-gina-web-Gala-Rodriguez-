@@ -43,7 +43,7 @@ export const BlogSubstack: React.FC<BlogSubstackProps> = ({
   };
 
   return (
-    <section id="blog" className="py-16 sm:py-24 border-b border-slate-400/80 dark:border-slate-800/80">
+    <section id="blog" className="py-16 sm:py-24 border-b border-black/5 dark:border-slate-800/80 bg-transparent transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

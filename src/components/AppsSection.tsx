@@ -89,7 +89,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile }) => {
   return (
     <section
       id="apps"
-      className="py-16 sm:py-24 border-b border-slate-400/80 dark:border-slate-800/80 bg-slate-300 dark:bg-slate-900/40 transition-colors"
+      className="py-16 sm:py-24 border-b border-black/5 dark:border-slate-800/80 bg-transparent transition-colors"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
