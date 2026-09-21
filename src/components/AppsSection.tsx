@@ -18,22 +18,35 @@ import {
   Check,
   Clock,
   ArrowRight,
+  Globe,
+  ExternalLink,
 } from 'lucide-react';
 import { NutritionApp, NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
-import appIconImg from '../assets/images/icon-512.png';
+import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
+import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
+import tuNutriLensMockup from '../assets/images/tunutrilens_mockup_1787427123608.jpg';
 
 interface AppsSectionProps {
   profile: NutritionistProfile;
   apps?: NutritionApp[];
+  onOpenTuNutriLens?: () => void;
 }
 
-export const AppsSection: React.FC<AppsSectionProps> = ({ profile }) => {
+export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutriLens }) => {
   const theme = themeStyles[profile.themeColor || 'teal'];
   const [isExpanded, setIsExpanded] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [interestProfile, setInterestProfile] = useState('paciente');
+
+  const handleImageFallback = (e: React.SyntheticEvent<HTMLImageElement>, fallbackUrl: string) => {
+    const target = e.currentTarget;
+    if (!target.dataset.fallbackApplied) {
+      target.dataset.fallbackApplied = 'true';
+      target.src = fallbackUrl;
+    }
+  };
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [storedEmail, setStoredEmail] = useState<string | null>(null);
 
@@ -109,25 +122,84 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile }) => {
           </p>
         </div>
 
+        {/* Banner Gráfico Destacado Oficial (1024x500) */}
+        <div className="rounded-3xl overflow-hidden border border-slate-400 dark:border-slate-700 shadow-md group bg-slate-900">
+          {onOpenTuNutriLens ? (
+            <button
+              type="button"
+              onClick={onOpenTuNutriLens}
+              title="Abrir TuNutriLens (con retorno a servicios)"
+              className="block w-full relative overflow-hidden text-left cursor-pointer"
+            >
+              <img
+                src={tuNutriLensBanner}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png')}
+                alt="TuNutriLens - Escanea tus platos en 2 segundos. Calorías, Macronutrientes y Comida Real"
+                loading="eager"
+                decoding="async"
+                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.015]"
+              />
+            </button>
+          ) : (
+            <a
+              href="https://www.tunutrilens.es"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Ir a www.tunutrilens.es - Escáner nutricional inteligente"
+              className="block relative overflow-hidden"
+            >
+              <img
+                src={tuNutriLensBanner}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png')}
+                alt="TuNutriLens - Escanea tus platos en 2 segundos. Calorías, Macronutrientes y Comida Real"
+                loading="eager"
+                decoding="async"
+                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.015]"
+              />
+            </a>
+          )}
+        </div>
+
         {/* Main App Presentation Card */}
         <div className="rounded-3xl p-4.5 xs:p-6 sm:p-8 lg:p-10 bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-sm transition-all hover:shadow-md">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 text-center sm:text-left">
             
-            {/* App Icon Image */}
+            {/* App Icon Image - Foto original TuNutriLens */}
             <div className="relative shrink-0">
-              <img
-                src={appIconImg}
-                alt="Icono oficial de la app TuNutriLens"
-                referrerPolicy="no-referrer"
-                className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl object-cover shadow-lg ring-4 ring-orange-500/25 dark:ring-orange-400/25"
-                onError={(e) => {
-                  // Fallback to public path if needed
-                  const target = e.currentTarget;
-                  if (!target.src.endsWith('/icon-512.png')) {
-                    target.src = '/icon-512.png';
-                  }
-                }}
-              />
+              {onOpenTuNutriLens ? (
+                <button
+                  type="button"
+                  onClick={onOpenTuNutriLens}
+                  title="Abrir app TuNutriLens con retorno directo"
+                  className="block group cursor-pointer"
+                >
+                  <img
+                    src={tuNutriLensIcon}
+                    onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                    alt="Foto original oficial de la app TuNutriLens"
+                    loading="eager"
+                    decoding="async"
+                    className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl object-cover shadow-lg ring-4 ring-orange-500/25 dark:ring-orange-400/25 transition-transform group-hover:scale-105"
+                  />
+                </button>
+              ) : (
+                <a
+                  href="https://www.tunutrilens.es"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Abrir web oficial TuNutriLens"
+                  className="block group"
+                >
+                  <img
+                    src={tuNutriLensIcon}
+                    onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                    alt="Foto original oficial de la app TuNutriLens"
+                    loading="eager"
+                    decoding="async"
+                    className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl object-cover shadow-lg ring-4 ring-orange-500/25 dark:ring-orange-400/25 transition-transform group-hover:scale-105"
+                  />
+                </a>
+              )}
               <span className="absolute -bottom-1 -right-1 bg-amber-400 text-slate-950 p-1.5 rounded-full shadow-xs">
                 <Sparkles className="w-4 h-4" />
               </span>
@@ -140,6 +212,27 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile }) => {
                   <ShieldCheck className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
                   <span>App Oficial E-Health</span>
                 </span>
+                {onOpenTuNutriLens ? (
+                  <button
+                    type="button"
+                    onClick={onOpenTuNutriLens}
+                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold text-emerald-950 dark:text-emerald-200 bg-emerald-100 hover:bg-emerald-200 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 transition-colors cursor-pointer"
+                  >
+                    <Globe className="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400" />
+                    <span>www.tunutrilens.es</span>
+                  </button>
+                ) : (
+                  <a
+                    href="https://www.tunutrilens.es"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold text-emerald-950 dark:text-emerald-200 bg-emerald-100 hover:bg-emerald-200 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 transition-colors"
+                  >
+                    <Globe className="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400" />
+                    <span>www.tunutrilens.es</span>
+                    <ExternalLink className="w-3 h-3 opacity-70" />
+                  </a>
+                )}
                 <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold text-amber-900 dark:text-amber-300 bg-amber-100 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800/60">
                   <Clock className="w-3.5 h-3.5" />
                   <span>En fase de lanzamiento</span>
@@ -154,28 +247,58 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile }) => {
                 Inteligencia visual aplicada a la nutrición clínica: reconocimiento fotográfico de platos, cálculo de energía y macronutrientes, y validación de texturas para disfagia.
               </p>
 
-              {/* Botón "Próximamente disponible" que despliega la información */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+              {/* Botones de acción: Visitar web oficial y Pre-registro */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                {onOpenTuNutriLens ? (
+                  <button
+                    type="button"
+                    onClick={onOpenTuNutriLens}
+                    id="btn-visit-tunutrilens-web"
+                    className="px-6 py-3 rounded-2xl bg-[#2f5747] hover:bg-[#234336] active:bg-[#1a3026] text-white font-bold text-sm sm:text-base transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2.5 cursor-pointer"
+                  >
+                    <img
+                      src={tuNutriLensIcon}
+                      onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                      alt="TuNutriLens"
+                      loading="eager"
+                      className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-white/30"
+                    />
+                    <span>Explorar App: www.tunutrilens.es</span>
+                  </button>
+                ) : (
+                  <a
+                    href="https://www.tunutrilens.es"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    id="btn-visit-tunutrilens-web"
+                    className="px-6 py-3 rounded-2xl bg-[#2f5747] hover:bg-[#234336] active:bg-[#1a3026] text-white font-bold text-sm sm:text-base transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2.5 cursor-pointer"
+                  >
+                    <img
+                      src={tuNutriLensIcon}
+                      onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                      alt="TuNutriLens"
+                      loading="eager"
+                      className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-white/30"
+                    />
+                    <span>Visitar web: www.tunutrilens.es</span>
+                    <ExternalLink className="w-4 h-4 text-emerald-300 opacity-80" />
+                  </a>
+                )}
+
                 <button
                   type="button"
                   id="btn-tunutrilens-toggle"
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-bold text-sm sm:text-base transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2.5 cursor-pointer"
+                  className="px-5 py-3 rounded-2xl bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-bold text-sm sm:text-base transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2.5 cursor-pointer"
                 >
                   <Clock className="w-4 h-4 text-orange-200" />
-                  <span>Próximamente disponible</span>
+                  <span>{isExpanded ? 'Ocultar funciones' : 'Ver funciones y avisarme'}</span>
                   {isExpanded ? (
                     <ChevronUp className="w-4 h-4 ml-1 text-orange-200" />
                   ) : (
                     <ChevronDown className="w-4 h-4 ml-1 text-orange-200" />
                   )}
                 </button>
-
-                <span className="text-xs text-slate-700 dark:text-slate-400">
-                  {isExpanded
-                    ? 'Información y pre-registro desplegados'
-                    : 'Haz clic para ver funciones y pre-registrarte'}
-                </span>
               </div>
             </div>
 
@@ -249,6 +372,32 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile }) => {
                     </p>
                   </div>
 
+                </div>
+
+                {/* Vista previa de la interfaz en acción */}
+                <div className="pt-3">
+                  <div className="rounded-2xl overflow-hidden border border-slate-400 dark:border-slate-700 bg-slate-900 shadow-md">
+                    <div className="px-4 py-3 bg-slate-800 border-b border-slate-700 flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <Camera className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <span className="text-xs sm:text-sm font-bold text-white">
+                          Interfaz TuNutriLens en Pantalla
+                        </span>
+                      </div>
+                      <span className="text-[11px] text-emerald-300 font-bold bg-emerald-950/80 border border-emerald-700/60 px-2.5 py-0.5 rounded-full">
+                        Escaneo y Análisis en Tiempo Real
+                      </span>
+                    </div>
+                    <div className="relative bg-slate-950 flex items-center justify-center p-2 sm:p-4">
+                      <img
+                        src={tuNutriLensMockup}
+                        onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png')}
+                        alt="Pantalla de la app TuNutriLens mostrando el análisis nutricional fotográfico"
+                        loading="lazy"
+                        className="max-h-[460px] w-auto max-w-full rounded-xl object-contain shadow-2xl"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -391,6 +540,66 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile }) => {
             </div>
           )}
 
+        </div>
+
+        {/* Banner web oficial TuNutriLens */}
+        <div className="rounded-3xl p-5 sm:p-6 bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <img
+              src={tuNutriLensIcon}
+              onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+              alt="TuNutriLens"
+              loading="eager"
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover ring-2 ring-emerald-500/30 shrink-0"
+            />
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-950 dark:bg-emerald-950 dark:text-emerald-300">
+                  Portal Oficial
+                </span>
+                <span className="text-xs text-slate-600 dark:text-slate-400">www.tunutrilens.es</span>
+              </div>
+              <h4 className="text-base sm:text-lg font-bold text-slate-800 dark:text-white">
+                Página web oficial de TuNutriLens
+              </h4>
+              <p className="text-xs text-slate-700 dark:text-slate-300">
+                Accede a toda la información sobre el análisis visual de platos, texturas y soporte clínico e-health.
+              </p>
+            </div>
+          </div>
+          {onOpenTuNutriLens ? (
+            <button
+              type="button"
+              onClick={onOpenTuNutriLens}
+              className="w-full md:w-auto px-6 py-3 rounded-xl bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-bold text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+            >
+              <img
+                src={tuNutriLensIcon}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                alt="TuNutriLens"
+                loading="eager"
+                className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-white/30"
+              />
+              <span>Abrir App TuNutriLens</span>
+            </button>
+          ) : (
+            <a
+              href="https://www.tunutrilens.es"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto px-6 py-3 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+            >
+              <img
+                src={tuNutriLensIcon}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                alt="TuNutriLens"
+                loading="eager"
+                className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-white/30"
+              />
+              <span>Abrir www.tunutrilens.es</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+            </a>
+          )}
         </div>
 
       </div>

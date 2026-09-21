@@ -1,7 +1,8 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Sparkles, Smartphone, BookOpen, Star, Stethoscope, Award, CheckCircle2, Globe, Instagram, Facebook, MessageCircle, Mail } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Sparkles, Smartphone, BookOpen, Star, Stethoscope, Award, CheckCircle2, Globe, Instagram, Facebook, MessageCircle, Mail, ExternalLink } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
+import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
 
 interface HeroProps {
   profile: NutritionistProfile;
@@ -9,6 +10,7 @@ interface HeroProps {
   onExploreApps: () => void;
   onExploreInstitutions?: () => void;
   onBookFreeValuation: () => void;
+  onOpenTuNutriLens?: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
@@ -16,6 +18,8 @@ export const Hero: React.FC<HeroProps> = ({
   onExploreRates,
   onExploreApps,
   onExploreInstitutions,
+  onBookFreeValuation,
+  onOpenTuNutriLens,
 }) => {
   const theme = themeStyles[profile.themeColor || 'teal'];
 
@@ -97,14 +101,46 @@ export const Hero: React.FC<HeroProps> = ({
                 </button>
               )}
 
-              <button
-                onClick={onExploreApps}
-                id="hero-view-apps-btn"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-orange-100 hover:bg-orange-200/90 text-orange-950 dark:bg-orange-950/80 dark:hover:bg-orange-900/90 dark:text-orange-200 border border-orange-300 dark:border-orange-800 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
-              >
-                <Smartphone className="w-4 h-4 text-orange-600 dark:text-orange-400 shrink-0" />
-                <span>App TuNutriLens</span>
-              </button>
+              {onOpenTuNutriLens ? (
+                <button
+                  type="button"
+                  onClick={onOpenTuNutriLens}
+                  id="hero-view-apps-btn"
+                  className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-orange-100 hover:bg-orange-200/90 text-orange-950 dark:bg-orange-950/80 dark:hover:bg-orange-900/90 dark:text-orange-200 border border-orange-300 dark:border-orange-800 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
+                  title="Abrir app TuNutriLens con retorno directo a servicios"
+                >
+                  <img
+                    src={tuNutriLensIcon}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                    }}
+                    alt="TuNutriLens"
+                    loading="eager"
+                    className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-orange-400/50"
+                  />
+                  <span>App TuNutriLens</span>
+                </button>
+              ) : (
+                <a
+                  href="https://www.tunutrilens.es"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="hero-view-apps-btn"
+                  className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-orange-100 hover:bg-orange-200/90 text-orange-950 dark:bg-orange-950/80 dark:hover:bg-orange-900/90 dark:text-orange-200 border border-orange-300 dark:border-orange-800 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
+                >
+                  <img
+                    src={tuNutriLensIcon}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                    }}
+                    alt="TuNutriLens"
+                    loading="eager"
+                    className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-orange-400/50"
+                  />
+                  <span>App TuNutriLens</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                </a>
+              )}
             </div>
 
             {/* Social Trust Footer with direct verified channels */}
@@ -156,29 +192,32 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Profile Card Frame - Responsive padding and sizing */}
               <div className="relative rounded-3xl bg-slate-200 dark:bg-slate-800/95 border border-slate-400 dark:border-slate-700 shadow-md p-4 sm:p-7 space-y-4 sm:space-y-6">
                 
-                {/* Photo & Identity */}
-                <div className="flex items-center gap-3.5 pb-4 border-b border-slate-300 dark:border-slate-700/60">
-                  <div className="relative group shrink-0">
-                    <img
-                      src={profile.avatarUrl}
-                      alt={profile.name}
-                      referrerPolicy="no-referrer"
-                      className="w-16 h-16 sm:w-22 sm:h-22 rounded-full object-cover ring-3 ring-orange-400/40 dark:ring-orange-400/30 shadow-md transition-transform group-hover:scale-105"
-                    />
-                    <span className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 ring-2 ring-slate-200 dark:ring-slate-800 z-10" title="Consulta Online Disponible" />
+                {/* Identity without app logo next to her name */}
+                <div className="pb-4 border-b border-slate-300 dark:border-slate-700/60 space-y-2.5">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-[#3b6e5a]/15 text-[#213b30] dark:bg-[#9fc3b0]/20 dark:text-[#9fc3b0] border border-[#3b6e5a]/30">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                      <span>Consulta Sanitaria Oficial</span>
+                    </span>
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-emerald-100 text-emerald-950 dark:bg-emerald-950/80 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-800">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      <span>Online Disponible</span>
+                    </span>
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="text-base sm:text-lg font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] leading-tight">
+
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] leading-tight">
                       {profile.name}
                     </h3>
-                    <p className="text-xs text-slate-700 dark:text-slate-300 font-medium mt-0.5 leading-snug line-clamp-2 sm:line-clamp-none">
+                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium mt-1 leading-snug">
                       {profile.title}
                     </p>
-                    <div className="mt-1.5">
-                      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950/80 dark:text-orange-200 dark:border-orange-800">
-                        {profile.colegiadorNumber}
-                      </span>
-                    </div>
+                  </div>
+
+                  <div className="pt-0.5 flex flex-wrap items-center gap-2">
+                    <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950/80 dark:text-orange-200 dark:border-orange-800">
+                      {profile.colegiadorNumber}
+                    </span>
                   </div>
                 </div>
 

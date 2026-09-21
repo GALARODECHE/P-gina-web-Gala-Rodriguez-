@@ -45,8 +45,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
     },
     {
       category: 'institucional',
-      question: '¿Cómo se estructuran las charlas, talleres y capacitaciones de 60 minutos?',
-      answer: 'Las ponencias y talleres tienen una duración de 60 minutos y se realizan tanto en modalidad presencial como online (vía Zoom/Meet/Teams). Incluyen soporte audiovisual interactivo, turno de resolución de dudas en directo y un dossier resumen en PDF para los asistentes.',
+      question: '¿Cómo se estructuran las charlas (60 min) y los talleres/ponencias (90 min)?',
+      answer: 'Las charlas online y capacitaciones técnicas tienen una duración de 60 minutos, mientras que los talleres y ponencias en asociaciones se estructuran en 90 minutos. Se realizan tanto en modalidad presencial como online (vía Zoom/Meet/Teams), e incluyen soporte interactivo, turno de preguntas en directo y material/dossier resumen en PDF para los asistentes.',
     },
     {
       category: 'institucional',

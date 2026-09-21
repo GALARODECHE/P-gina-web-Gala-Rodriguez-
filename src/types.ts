@@ -138,6 +138,7 @@ export interface NutritionistProfile {
   location: string;
   websiteUrl?: string;
   websiteDomain?: string;
+  tunutrilensUrl?: string;
   instagramUrl: string;
   facebookUrl: string;
   substackUrl: string;

@@ -14,6 +14,12 @@ import {
   Mail,
   HelpCircle,
   FileCheck,
+  FileText,
+  Download,
+  Share2,
+  Tag,
+  Scale,
+  Award,
 } from 'lucide-react';
 import { NutritionistProfile, NutritionService } from '../types';
 import { themeStyles } from '../utils/theme';
@@ -22,7 +28,6 @@ interface RatesAndServicesProps {
   profile: NutritionistProfile;
   services: NutritionService[];
   onSelectPlan: (service: NutritionService) => void;
-  onOpenInfographic?: () => void;
 }
 
 export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
@@ -208,33 +213,70 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                     </div>
                   )}
 
-                  {/* Plan Banner */}
-                  <div className="my-4 pb-4 border-b border-slate-300 dark:border-slate-700/50">
-                    <div className="flex flex-col gap-1">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-orange-100 dark:bg-orange-950/60 border border-orange-300 dark:border-orange-800 text-orange-950 dark:text-orange-200 text-xs font-bold w-fit">
-                        <Sparkles className="w-3 h-3 text-orange-600 dark:text-orange-400" />
-                        Videollamada 1 a 1
-                      </span>
-                      <span className="text-xs font-semibold text-slate-700 dark:text-slate-400">
-                        Modalidad: {displayPeriod}
+                  {/* Price Infographic Block */}
+                  <div className="my-4 p-3.5 rounded-2xl bg-slate-300/80 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700 space-y-2">
+                    <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+                          {isPack ? (
+                            selectedProgramTier === '3m' ? 'Pack 3 Meses' : selectedProgramTier === '6m' ? 'Pack 6 Meses' : 'Pack Anual (12m)'
+                          ) : (
+                            'Tarifa bajo consulta'
+                          )}
+                        </span>
+                        <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">
+                          {isPack ? (
+                            selectedProgramTier === '3m' ? '/ trimestral' : selectedProgramTier === '6m' ? '/ semestral' : '/ anual'
+                          ) : (
+                            service.id === 's-prim' ? '/ sesión 60 min' : '/ sesión 30-40 min'
+                          )}
+                        </span>
+                      </div>
+
+                      {/* Mini Infographic Badge */}
+                      {isPack ? (
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950 text-emerald-900 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
+                          {selectedProgramTier === '3m' ? 'Acompañamiento' : selectedProgramTier === '6m' ? 'Continuidad' : 'Atención integral'}
+                        </span>
+                      ) : (
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-orange-100 dark:bg-orange-950 text-orange-950 dark:text-orange-200 border border-orange-300 dark:border-orange-800">
+                          {service.id === 's-prim' ? 'Entrega <48h' : 'Seguimiento'}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-300 font-medium">
+                      <Sparkles className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400 shrink-0" />
+                      <span>
+                        {isPack ? (
+                          selectedProgramTier === '3m'
+                            ? '1 Inicial (60 min) + 6 Revisiones periódicas'
+                            : selectedProgramTier === '6m'
+                            ? '1 Inicial + 12 Revisiones quincenales continuadas'
+                            : '1 Inicial + 24 Revisiones anuales completas'
+                        ) : service.id === 's-prim' ? (
+                          'Diagnóstico integral + 15 días de soporte por email'
+                        ) : (
+                          'Ajuste de menús, analíticas y evolución clínica'
+                        )}
                       </span>
                     </div>
 
                     {isPack && selectedProgramTier === '6m' && (
-                      <div className="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-orange-100/90 dark:bg-orange-950/60 border border-orange-300 dark:border-orange-800 text-[10px] font-bold text-orange-950 dark:text-orange-300">
+                      <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-orange-100/90 dark:bg-orange-950/60 border border-orange-300 dark:border-orange-800 text-[10px] font-bold text-orange-950 dark:text-orange-300">
                         <Sparkles className="w-3 h-3 text-orange-600" />
-                        <span>Incluye 10% DTO en la app TuNutriLens</span>
+                        <span>Incluye acceso preferente en la app TuNutriLens</span>
                       </div>
                     )}
 
                     {isPack && selectedProgramTier === '1y' && (
-                      <div className="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-orange-100/90 dark:bg-orange-950/60 border border-orange-300 dark:border-orange-800 text-[10px] font-bold text-orange-950 dark:text-orange-300">
+                      <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-orange-100/90 dark:bg-orange-950/60 border border-orange-300 dark:border-orange-800 text-[10px] font-bold text-orange-950 dark:text-orange-300">
                         <Sparkles className="w-3 h-3 text-orange-600" />
-                        <span>Incluye 20% DTO en suscripción anual TuNutriLens</span>
+                        <span>Incluye suscripción anual preferente TuNutriLens</span>
                       </div>
                     )}
 
-                    <p className="text-xs mt-2 leading-relaxed text-slate-600 dark:text-slate-300">
+                    <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-300 pt-1 border-t border-slate-400/40 dark:border-slate-800">
                       {packDescription}
                     </p>
                   </div>
@@ -294,6 +336,181 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
               </div>
             );
           })}
+        </div>
+
+        {/* INFOGRAFÍA VISUAL COMPARATIVA DE TARIFAS */}
+        <div className="max-w-6xl mx-auto p-5 sm:p-8 rounded-3xl bg-slate-300/90 dark:bg-slate-800/80 border-2 border-orange-400/50 dark:border-orange-500/40 shadow-md space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-400 dark:border-slate-700 pb-4">
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-orange-100 dark:bg-orange-950 text-orange-900 dark:text-orange-200 text-xs font-bold uppercase tracking-wider">
+                <FileText className="w-3.5 h-3.5 text-orange-600" />
+                <span>Infografía Oficial de Servicios Clínicos</span>
+              </div>
+              <h3 className="text-lg sm:text-2xl font-extrabold text-slate-800 dark:text-white">
+                Resumen Infográfico de Modalidades Clínicas
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                Consulta Online 100% individualizada · Factura oficial sanitaria (Colegiada CV02386)
+              </p>
+            </div>
+          </div>
+
+          {/* Infographic Comparison Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            
+            {/* Infographic Item 1 */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-slate-200 dark:bg-slate-900/90 border border-slate-400 dark:border-slate-700 flex flex-col justify-between space-y-3">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-md bg-orange-100 text-orange-950 dark:bg-orange-950 dark:text-orange-200">
+                    Sesión Inicial
+                  </span>
+                  <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1">
+                    <Clock className="w-3 h-3 text-orange-500" />
+                    60 min
+                  </span>
+                </div>
+                <h4 className="font-bold text-base text-slate-800 dark:text-white">
+                  1ª Consulta y Diagnóstico
+                </h4>
+                <div className="flex items-baseline gap-1 py-1">
+                  <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">Tarifa bajo consulta</span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">/ sesión 60 min</span>
+                </div>
+                <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Videollamada 1 a 1 de 60 minutos</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Plan personalizado entregado en &lt;48h</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>15 días de resolución de dudas por email</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                onClick={() => onSelectPlan(services[0])}
+                className="w-full py-2 px-3 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all cursor-pointer text-center"
+              >
+                Solicitar 1ª Cita
+              </button>
+            </div>
+
+            {/* Infographic Item 2 */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-slate-200 dark:bg-slate-900/90 border-2 border-orange-500 dark:border-orange-500 shadow-md flex flex-col justify-between space-y-3 relative">
+              <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-orange-600 text-white text-[9px] font-black uppercase tracking-wider whitespace-nowrap shadow-xs">
+                ★ MÁXIMA ADHERENCIA
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between pt-1">
+                  <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-md bg-orange-100 text-orange-950 dark:bg-orange-950 dark:text-orange-200">
+                    Acompañamiento
+                  </span>
+                  <span className="text-xs font-bold text-orange-600 dark:text-orange-400">
+                    Packs de 3m · 6m · 12m
+                  </span>
+                </div>
+                <h4 className="font-bold text-base text-slate-800 dark:text-white">
+                  Programas de Continuidad
+                </h4>
+                <div className="flex items-baseline gap-1 py-1">
+                  <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">Presupuesto a medida</span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">/ packs continuos</span>
+                </div>
+                <div className="space-y-1 p-2 bg-slate-300 dark:bg-slate-800 rounded-xl text-xs">
+                  <div className="flex justify-between font-semibold">
+                    <span>Pack 3 Meses:</span>
+                    <span className="font-bold text-orange-600 dark:text-orange-400">1 Inicial + 6 Revisiones</span>
+                  </div>
+                  <div className="flex justify-between font-semibold">
+                    <span>Pack 6 Meses:</span>
+                    <span className="font-bold text-orange-600 dark:text-orange-400">Seguimiento semestral</span>
+                  </div>
+                  <div className="flex justify-between font-semibold">
+                    <span>Pack 12 Meses:</span>
+                    <span className="font-bold text-orange-600 dark:text-orange-400">Acompañamiento anual</span>
+                  </div>
+                </div>
+                <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>1ª Consulta exhaustiva (60 min) incluida</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Revisiones periódicas y reajuste continuo</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                onClick={() => onSelectPlan(services[1] || services[0])}
+                className="w-full py-2 px-3 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all cursor-pointer text-center"
+              >
+                Solicitar Programa Continuo
+              </button>
+            </div>
+
+            {/* Infographic Item 3 */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-slate-200 dark:bg-slate-900/90 border border-slate-400 dark:border-slate-700 flex flex-col justify-between space-y-3">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-md bg-slate-300 text-slate-800 dark:bg-slate-700 dark:text-slate-300">
+                    Seguimiento
+                  </span>
+                  <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1">
+                    <Clock className="w-3 h-3 text-orange-500" />
+                    30-40 min
+                  </span>
+                </div>
+                <h4 className="font-bold text-base text-slate-800 dark:text-white">
+                  Consulta de Revisión
+                </h4>
+                <div className="flex items-baseline gap-1 py-1">
+                  <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">Tarifa bajo consulta</span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">/ revisión suelta</span>
+                </div>
+                <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Videollamada 1 a 1 de 30-40 minutos</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Ajuste de nutrientes, menús y pautas</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Para pacientes ya en tratamiento activo</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                onClick={() => onSelectPlan(services[2] || services[0])}
+                className="w-full py-2 px-3 rounded-xl bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white text-xs font-bold transition-all cursor-pointer text-center"
+              >
+                Solicitar Revisión
+              </button>
+            </div>
+
+          </div>
+
+          <div className="pt-3 border-t border-slate-400 dark:border-slate-700 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-700 dark:text-slate-300">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Garantía de confidencialidad y atención 100% personalizada</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FileCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Factura médica con IVA exento según Art. 20 Ley IVA</span>
+            </div>
+          </div>
         </div>
 
         {/* CÓMO FUNCIONA LA CONSULTA ONLINE (Paso a Paso) */}

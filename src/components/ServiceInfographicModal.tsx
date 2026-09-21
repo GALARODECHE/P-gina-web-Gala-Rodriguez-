@@ -65,7 +65,7 @@ export const ServiceInfographicModal: React.FC<ServiceInfographicModalProps> = (
   };
 
   const handleDownloadDossier = () => {
-    const textContent = `GALA RODRÍGUEZ ECHEBARRIETA — DOSSIER INFORMATIVO DE SERVICIOS
+    const textContent = `GALA RODRÍGUEZ ECHEBARRIETA — GUÍA INFORMATIVA DE SERVICIOS
 Diplomada en Nutrición Humana y Dietética (Universidad de Navarra) · Colegiada Sanitaria CV02386
 Web Oficial: https://galarodrigueznutricion.es
 Teléfono / WhatsApp: ${profile.phone || '+34 697 166 126'}
@@ -75,34 +75,36 @@ Email: ${profile.email || 'gala@galarodrigueznutricion.es'}
 1. CONSULTA NUTRICIONAL CLÍNICA ONLINE INDIVIDUAL
 ============================================================
 • 1ª Consulta Clínica y Diagnóstico Integral (60 min):
+  - Tarifa: Tarifa bajo consulta
   - Videollamada 1 a 1 de 60 minutos con análisis clínico exhaustivo.
   - Evaluación de analíticas, estilo de vida y requerimientos.
   - Plan 100% individualizado entregado en <48h + 15 días de soporte directo por email.
 
 • Programas Clínicos de Continuidad y Acompañamiento:
-  - Pack 3 Meses: 1 Sesión Inicial (60 min) + 6 Revisiones (30-40 min) con soporte continuado.
-  - Pack 6 Meses: Seguimiento regular + 10% de descuento en la app TuNutriLens.
-  - Pack Anual (12 Meses): Acompañamiento integral + 20% de descuento en suscripción anual TuNutriLens.
+  - Pack 3 Meses: 1 Sesión Inicial (60 min) + 6 Revisiones (30-40 min) · Tarifa bajo consulta con bonificación.
+  - Pack 6 Meses: Seguimiento regular semestral continuado.
+  - Pack Anual (12 Meses): Acompañamiento integral anual.
 
 • Consulta de Revisión y Evolución (30-40 min):
+  - Tarifa: Tarifa bajo consulta
   - Videollamada de seguimiento para reajuste de pautas, menús y consolidación de hábitos.
 
 ============================================================
 2. CHARLAS, PONENCIAS Y FORMACIÓN INSTITUCIONAL
 ============================================================
-• Charla Temática / Webinar Online (60 min en directo, hasta 100 asistentes + turno de preguntas).
-• Ponencia y Taller Práctico para Asociaciones y Familias (Presencial u Online con recetario adaptado).
-• Capacitación Técnica para Personal Sociosanitario (Residencias, Centros de Día, IDDSI en disfagia).
-• Auditoría y Calibración de Menús Colectivos (Memoria técnica oficial colegiada).
+• Charla Temática / Webinar Online (60 min): Presupuesto a medida (En directo, hasta 100 asistentes + turno de preguntas).
+• Ponencia y Taller Práctico para Asociaciones y Familias (90 min): Presupuesto a medida (Presencial u Online con recetario adaptado).
+• Capacitación Técnica para Personal Sociosanitario (60 min): Presupuesto a medida (Residencias, Centros de Día, IDDSI en disfagia).
+• Auditoría y Calibración de Menús Colectivos: Presupuesto a medida (Memoria técnica oficial visada por dietista-nutricionista colegiada).
 
-* Descuento del 15% al contratar servicio integral anual para entidades o instituciones.
+* Bonificación especial al convenir servicio continuado anual para entidades o instituciones.
 * Presupuestos personalizados a medida sin compromiso.
 `;
     const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'Dossier_Servicios_Gala_Rodriguez_Nutricion.txt';
+    link.download = 'Guia_Servicios_Gala_Rodriguez_Nutricion.txt';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -111,33 +113,31 @@ Email: ${profile.email || 'gala@galarodrigueznutricion.es'}
     setTimeout(() => setPdfDownloaded(false), 3000);
   };
 
-  const shareableWhatsappClinic = `*GALA RODRÍGUEZ ECHEBARRIETA — CONSULTA NUTRICIONAL ONLINE*
+  const shareableWhatsappClinic = `*GALA RODRÍGUEZ ECHEBARRIETA — GUÍA DE CONSULTA NUTRICIONAL ONLINE*
 _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de experiencia clínica_
 
-📋 *SERVICIOS Y MODALIDADES DE CONSULTA CLÍNICA:*
+📋 *SERVICIOS DE CONSULTA CLÍNICA:*
 
 1️⃣ *1ª CONSULTA CLÍNICA Y DIAGNÓSTICO INTEGRAL*
-• Duración: 60 minutos por videollamada 1 a 1.
-• Anamnesis clínica integral directa, evaluación de objetivos y requerimientos.
+• Tarifa: *Bajo consulta* (Sesión de 60 minutos por videollamada 1 a 1).
+• Anamnesis clínica integral directa, evaluación de objetivos y analíticas.
 • Entrega de plan nutricional 100% individualizado (<48h) + resolución de dudas por email durante 15 días.
 
 2️⃣ *PROGRAMAS CLÍNICOS DE CONTINUIDAD Y ACOMPAÑAMIENTO:*
 • 🟢 *Pack 3 Meses*:
-  - 1 Sesión Inicial (60 min) + 6 Consultas de Revisión (30-40 min).
+  - 1 Sesión Inicial (60 min) + 6 Consultas de Revisión (30-40 min) con bonificación de continuidad.
   - Reajuste dinámico de menús, evolución quincenal y adaptación de pautas.
 • 🟡 *Programa 6 Meses*:
   - Seguimiento regular continuado y revisiones periódicas.
-  - Incluye 10% de descuento en la app TuNutriLens.
-• 🟣 *Programa Integral 1 Año*:
-  - Acompañamiento clínico integral de 12 meses.
-  - Incluye 20% de descuento en la suscripción anual a TuNutriLens.
+• 🟣 *Programa Integral 12 Meses*:
+  - Acompañamiento clínico integral de 1 año completo.
 
 3️⃣ *CONSULTA DE REVISIÓN Y EVOLUCIÓN*
-• Duración: 30-40 minutos por videollamada.
+• Tarifa: *Bajo consulta* (Sesión de 30-40 minutos por videollamada).
 • Reajuste de menús, evolución clínica y consolidación de hábitos duraderos.
 
 📌 *CONDICIONES:*
-• 100% Online por videollamada segura. Factura oficial colegiada y presupuestos a medida.
+• 100% Online por videollamada segura. Factura oficial sanitaria (Col. CV02386) y presupuestos a medida.
 
 🌐 Web oficial: https://galarodrigueznutricion.es
 ✉️ Email: ${profile.email || 'gala@galarodrigueznutricion.es'}
@@ -146,29 +146,26 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
   const shareableWhatsappTalks = `*GALA RODRÍGUEZ ECHEBARRIETA — CHARLAS, PONENCIAS Y FORMACIÓN*
 _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de experiencia clínica sanitaria_
 
-📋 *FORMATOS DE PONENCIAS, TALLERES Y AUDITORÍAS:*
+📋 *GUÍA OFICIAL DE FORMACIÓN Y CONSULTORÍA:*
 
-1️⃣ *CHARLA TEMÁTICA / WEBINAR ONLINE*
-• Duración: 60 minutos en directo (Zoom / Teams / Meet).
-• Hasta 100 asistentes + Turno amplio de preguntas.
-• Incluye dossier resumen descargable para los participantes.
+1️⃣ *CHARLA TEMÁTICA / WEBINAR ONLINE (60 MIN)*
+• Modalidad: *Presupuesto a medida*
+• Hasta 100 asistentes en directo + Turno amplio de preguntas y dossier resumen en PDF.
 
-2️⃣ *PONENCIA Y TALLER PARA ASOCIACIONES Y FAMILIAS*
-• Duración: 60 minutos (Presencial u Online).
-• Temáticas: Disfagia y texturas en el hogar (IDDSI), Nutrición en Oncología, Salud Hormonal.
-• Enfoque 100% práctico con guía/recetario adaptado.
+2️⃣ *PONENCIA Y TALLER PARA ASOCIACIONES Y FAMILIAS (90 MIN)*
+• Modalidad: *Presupuesto a medida* (Presencial u Online).
+• Temáticas: Disfagia y texturas (IDDSI), Nutrición Oncológica, Salud Hormonal con guía y recetario.
 
-3️⃣ *CAPACITACIÓN TÉCNICA / TALLER PARA PERSONAL SOCIOSANITARIO*
-• Para: Equipos de Residencias, Centros de Día, Cocina y Auxiliares de Enfermería.
-• Protocolos IDDSI para disfagia, prevención de desnutrición y enriquecimiento natural.
-• Certificado de aprovechamiento institucional.
+3️⃣ *CAPACITACIÓN TÉCNICA PERSONAL SOCIOSANITARIO (60 MIN)*
+• Modalidad: *Presupuesto a medida*
+• Para: Equipos de Residencias, Centros de Día, Cocina y Auxiliares. Protocolos IDDSI y desnutrición.
 
 4️⃣ *AUDITORÍA Y CALIBRACIÓN DE MENÚS COLECTIVOS*
-• Memoria técnica oficial visada por Dietista-Nutricionista colegiada.
-• Validación de dietas basales, terapéuticas, libro de alérgenos y calibración nutricional.
+• Modalidad: *Presupuesto a medida*
+• Memoria técnica oficial visada por Dietista-Nutricionista colegiada (Col. CV02386).
 
-🎁 *DESCUENTO SERVICIO INTEGRAL ANUAL (1 AÑO):*
-• 15% de Descuento al contratar servicio integral de 1 año.
+🎁 *BONIFICACIÓN CONVENIO ANUAL:*
+• Condiciones preferentes al convenir servicio continuado para entidades e instituciones.
 
 🌐 Web oficial: https://galarodrigueznutricion.es
 ✉️ Email: ${profile.email || 'gala@galarodrigueznutricion.es'}
@@ -250,7 +247,34 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
             </button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <button
+              onClick={handleDownloadDossier}
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-100 border border-slate-400 dark:border-slate-600 text-xs font-bold transition-colors cursor-pointer shadow-2xs"
+              title="Descargar Dossier Completo en archivo de texto"
+            >
+              {pdfDownloaded ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Download className="w-3.5 h-3.5" />}
+              <span className="hidden sm:inline">{pdfDownloaded ? '¡Descargado!' : 'Descargar Dossier'}</span>
+            </button>
+
+            <button
+              onClick={handlePrint}
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-100 border border-slate-400 dark:border-slate-600 text-xs font-bold transition-colors cursor-pointer shadow-2xs"
+              title="Imprimir o Guardar como PDF"
+            >
+              <Printer className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Imprimir / PDF</span>
+            </button>
+
+            <button
+              onClick={() => handleCopyWhatsapp(activeTab === 'talks' ? shareableWhatsappTalks : shareableWhatsappClinic)}
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors cursor-pointer shadow-2xs"
+              title="Copiar tarifas para compartir por WhatsApp"
+            >
+              {copiedLink ? <Check className="w-3.5 h-3.5" /> : <Share2 className="w-3.5 h-3.5" />}
+              <span className="hidden sm:inline">{copiedLink ? '¡Copiado!' : 'Compartir'}</span>
+            </button>
+
             <button
               onClick={onClose}
               className="p-2 rounded-xl bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 border border-slate-400 dark:border-slate-600 transition-colors cursor-pointer"
@@ -337,7 +361,17 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                       1ª Consulta Clínica y Diagnóstico
                     </h3>
 
-                    <div className="py-1">
+                    {/* Tarifa Oficial */}
+                    <div className="py-1 flex items-baseline gap-2">
+                      <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                        Tarifa bajo consulta
+                      </span>
+                      <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">
+                        / sesión 60 min
+                      </span>
+                    </div>
+
+                    <div className="py-0.5">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 text-xs font-bold border border-emerald-200 dark:border-emerald-800">
                         <Sparkles className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                         Atención individualizada
@@ -408,6 +442,16 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                     <h3 className="font-bold text-lg text-slate-800 dark:text-slate-100">
                       Programas Clínicos de Continuidad
                     </h3>
+
+                    {/* Tarifa Oficial Programa */}
+                    <div className="py-1 flex items-baseline gap-2">
+                      <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                        Presupuesto a medida
+                      </span>
+                      <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">
+                        / pack clínico integral
+                      </span>
+                    </div>
                     
                     {/* Tiers Visual Grid */}
                     <div className="space-y-1.5 py-1">
@@ -416,27 +460,34 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                           <Target className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
                           <span className="font-bold text-slate-800 dark:text-slate-200">Pack 3 Meses:</span>
                         </div>
-                        <span className="font-semibold text-orange-600 dark:text-orange-400 text-xs">1 Inicial + 6 Revisiones</span>
+                        <div className="text-right">
+                          <span className="font-extrabold text-slate-900 dark:text-white text-xs">1 Inicial + 6 Revisiones</span>
+                          <span className="text-[10px] text-emerald-700 dark:text-emerald-400 font-bold ml-1">(Bonificado)</span>
+                        </div>
                       </div>
                       <div className="flex items-center justify-between p-2 rounded-xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-orange-950 text-xs">
                         <div className="flex items-center gap-1.5">
                           <Award className="w-3.5 h-3.5 text-amber-600" />
                           <div>
                             <span className="font-bold text-slate-800 dark:text-slate-200">Pack 6 Meses:</span>
-                            <span className="ml-1 text-[10px] text-amber-700 dark:text-amber-400 font-bold">(-10% TuNutriLens)</span>
                           </div>
                         </div>
-                        <span className="font-semibold text-orange-600 dark:text-orange-400 text-xs">Seguimiento Regular</span>
+                        <div className="text-right">
+                          <span className="font-extrabold text-slate-900 dark:text-white text-xs">Seguimiento semestral</span>
+                          <span className="text-[10px] text-emerald-700 dark:text-emerald-400 font-bold ml-1">(Continuidad)</span>
+                        </div>
                       </div>
                       <div className="flex items-center justify-between p-2 rounded-xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-orange-950 text-xs">
                         <div className="flex items-center gap-1.5">
                           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                           <div>
-                            <span className="font-bold text-slate-800 dark:text-slate-200">Pack 1 Año:</span>
-                            <span className="ml-1 text-[10px] text-amber-700 dark:text-amber-400 font-bold">(-20% TuNutriLens)</span>
+                            <span className="font-bold text-slate-800 dark:text-slate-200">Pack 12 Meses:</span>
                           </div>
                         </div>
-                        <span className="font-semibold text-orange-600 dark:text-orange-400 text-xs">Acompañamiento 12M</span>
+                        <div className="text-right">
+                          <span className="font-extrabold text-slate-900 dark:text-white text-xs">Acompañamiento anual</span>
+                          <span className="text-[10px] text-emerald-700 dark:text-emerald-400 font-bold ml-1">(Integral)</span>
+                        </div>
                       </div>
                     </div>
 
@@ -455,7 +506,7 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Revisiones quincenales para consolidar resultados</span>
+                        <span>Revisiones periódicas para consolidar resultados</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -501,7 +552,17 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                       Consulta de Revisión y Evolución
                     </h3>
 
-                    <div className="py-1">
+                    {/* Tarifa Oficial Revisión */}
+                    <div className="py-1 flex items-baseline gap-2">
+                      <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                        Tarifa bajo consulta
+                      </span>
+                      <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">
+                        / revisión (30-40 min)
+                      </span>
+                    </div>
+
+                    <div className="py-0.5">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 text-xs font-bold border border-emerald-200 dark:border-emerald-800">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                         Seguimiento clínico
@@ -640,9 +701,12 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                         {talk.title}
                       </h4>
 
-                      <div className="py-1 border-y border-slate-400 dark:border-slate-700">
-                        <span className="inline-block px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950 text-amber-950 dark:text-amber-300 text-xs font-bold">
-                          Presupuesto a Medida
+                      <div className="py-1 border-y border-slate-400 dark:border-slate-700 flex items-baseline justify-between gap-1 flex-wrap">
+                        <span className="text-base font-black text-slate-900 dark:text-white">
+                          {talk.price}
+                        </span>
+                        <span className="inline-block px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950 text-amber-950 dark:text-amber-300 text-[10px] font-bold">
+                          A Medida
                         </span>
                       </div>
 

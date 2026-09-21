@@ -9,7 +9,7 @@ import { AboutSection } from './components/AboutSection';
 import { FAQSection } from './components/FAQSection';
 import { ContactBookingModal } from './components/ContactBookingModal';
 import { ArticleReaderModal } from './components/ArticleReaderModal';
-import { ServiceInfographicModal } from './components/ServiceInfographicModal';
+import { TuNutriLensModal } from './components/TuNutriLensModal';
 import { Footer } from './components/Footer';
 import { bgThemeStyles } from './utils/theme';
 
@@ -55,7 +55,7 @@ export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedServiceForBooking, setSelectedServiceForBooking] = useState<NutritionService | null>(null);
   const [readingPost, setReadingPost] = useState<BlogPost | null>(null);
-  const [isInfographicOpen, setIsInfographicOpen] = useState(false);
+  const [isTuNutriLensOpen, setIsTuNutriLensOpen] = useState(false);
 
   // Sync Dark Mode class
   useEffect(() => {
@@ -78,6 +78,16 @@ export default function App() {
     setIsBookingOpen(true);
   };
 
+  const handleReturnToServicesFromApp = () => {
+    setIsTuNutriLensOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById('sesiones-online') || document.getElementById('servicios');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 50);
+  };
+
   const currentBg = bgThemeStyles[profile.bgTheme || 'default'];
 
   return (
@@ -89,6 +99,7 @@ export default function App() {
         isDarkMode={isDarkMode}
         onToggleDarkMode={() => setIsDarkMode(!isDarkMode)}
         onBookClick={() => handleOpenBookingWithService()}
+        onOpenTuNutriLens={() => setIsTuNutriLensOpen(true)}
       />
 
       {/* Main Content */}
@@ -96,6 +107,7 @@ export default function App() {
         {/* Hero Section */}
         <Hero
           profile={profile}
+          onOpenTuNutriLens={() => setIsTuNutriLensOpen(true)}
           onExploreRates={() => {
             const el = document.getElementById('sesiones-online') || document.getElementById('servicios');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -119,7 +131,6 @@ export default function App() {
           profile={profile}
           services={services}
           onSelectPlan={(service) => handleOpenBookingWithService(service)}
-          onOpenInfographic={() => setIsInfographicOpen(true)}
         />
 
         {/* Institutional Consulting & Training (Residencias, Colegios, Centros de Día, Asociaciones) */}
@@ -146,6 +157,7 @@ export default function App() {
         <AppsSection
           profile={profile}
           apps={apps}
+          onOpenTuNutriLens={() => setIsTuNutriLensOpen(true)}
         />
 
         {/* Blog & Substack Section (Unificación) */}
@@ -171,6 +183,7 @@ export default function App() {
       <Footer
         profile={profile}
         onBookClick={() => handleOpenBookingWithService()}
+        onOpenTuNutriLens={() => setIsTuNutriLensOpen(true)}
       />
 
       {/* Booking Modal */}
@@ -189,20 +202,12 @@ export default function App() {
         profile={profile}
       />
 
-      {/* Service Infographic & Pricing Dossier Modal */}
-      <ServiceInfographicModal
-        isOpen={isInfographicOpen}
-        onClose={() => setIsInfographicOpen(false)}
-        profile={profile}
-        services={services}
-        onRequestInfo={(serviceTitle) => {
-          setIsInfographicOpen(false);
-          const matched = services.find((s) =>
-            s.title.toLowerCase().includes(serviceTitle?.toLowerCase() || '')
-          ) || services[0];
-          setSelectedServiceForBooking(matched);
-          setIsBookingOpen(true);
-        }}
+      {/* TuNutriLens In-App Modal with Return Navigation */}
+      <TuNutriLensModal
+        isOpen={isTuNutriLensOpen}
+        onClose={() => setIsTuNutriLensOpen(false)}
+        onGoToServices={handleReturnToServicesFromApp}
+        onBookAppointment={() => handleOpenBookingWithService()}
       />
 
     </div>

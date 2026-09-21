@@ -1,7 +1,5 @@
-import galaFotoOficial from '../assets/images/gala_rodriguez_perfil.png';
-import tuNutriLensBanner from '../assets/images/tunutrilens_banner_real_1787570430380.jpg';
-import tuNutriLensIcon from '../assets/images/tunutrilens_icon_real_1787570446381.jpg';
-import tuNutriLensImage from '../assets/images/tunutrilens_mockup_1787427123608.jpg';
+import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
+import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
 import {
   NutritionistProfile,
   NutritionService,
@@ -16,13 +14,14 @@ export const initialProfile: NutritionistProfile = {
   colegiadorNumber: 'Col. Oficial Sanitaria CV02386',
   bio: 'Acompañamiento clínico integral y personalizado basado en la evidencia científica para optimizar tu salud, abordar patologías complejas y consolidar hábitos sostenibles.',
   extendedBio: 'Dietista-Nutricionista con más de dos décadas de práctica en hospitales de referencia, laboratorios líderes en nutrición médica y centros sociosanitarios. Especialización en salud hormonal femenina, disfagia, oncología y soporte nutricional.',
-  avatarUrl: galaFotoOficial,
+  avatarUrl: '',
   email: 'gala@galarodrigueznutricion.es',
   phone: '697 166 126',
   whatsappNumber: '+34697166126',
   location: 'Online',
   websiteUrl: 'https://www.galarodrigueznutricion.es',
   websiteDomain: 'www.galarodrigueznutricion.es',
+  tunutrilensUrl: 'https://www.tunutrilens.es',
   instagramUrl: 'https://www.instagram.com/galanutricion/',
   facebookUrl: 'https://www.facebook.com/galanutricion',
   substackUrl: 'https://galanutricion.substack.com',
@@ -71,7 +70,7 @@ export const initialServices: NutritionService[] = [
     id: 's-prim',
     title: 'Primera Consulta Clínica y Diagnóstico',
     subtitle: 'Evaluación clínica individualizada · 60 min (Videollamada 1 a 1)',
-    price: '',
+    price: 'Tarifa bajo consulta',
     period: 'Sesión Inicial 60 min',
     isPopular: false,
     description: 'Consulta clínica inicial individualizada por videollamada. Evaluamos en profundidad tus hábitos, horarios, historial y necesidades para diseñar tu pauta nutricional 100% personalizada con entrega en <48h.',
@@ -89,19 +88,19 @@ export const initialServices: NutritionService[] = [
   {
     id: 's-pack',
     title: 'Programa Clínico de Continuidad y Acompañamiento',
-    subtitle: '1 Sesión Inicial (60 min) + Revisiones clínicas periódicas con soporte directo',
-    price: '',
-    period: 'Packs de 3 Meses · 6 Meses · 1 Año',
+    subtitle: '1 Sesión Inicial (60 min) + Revisiones periódicas con soporte continuado',
+    price: 'Tarifa bajo consulta',
+    period: 'Packs de 3 Meses · 6 Meses · 12 Meses',
     isPopular: true,
     popularBadge: 'RECOMENDADO · MÁXIMA ADHERENCIA',
-    description: 'Tratamiento continuo con sesiones clínicas periódicas y revisiones estructuradas para salud hormonal, patología digestiva, oncología o disfagia.',
+    description: 'Tratamiento continuo con sesiones clínicas periódicas y revisiones estructuradas para consolidar cambios definitivos en patologías y reeducación alimentaria.',
     features: [
       '1ª Consulta Clínica Inicial Exhaustiva (60 min) incluida',
-      'Pack 3 Meses: 1 Sesión Inicial + 6 Revisiones quincenales con soporte directo',
-      'Pack 6 Meses: Seguimiento continuado con revisiones periódicas + 10% DTO. en TuNutriLens',
-      'Pack 1 Año: Acompañamiento integral de 12 meses + 20% DTO. suscripción anual TuNutriLens',
+      'Pack 3 Meses: 1 Sesión Inicial + 6 Revisiones (acompañamiento trimestral)',
+      'Pack 6 Meses: Seguimiento regular semestral (mayor consolidación de hábitos)',
+      'Pack 12 Meses: Acompañamiento integral anual continuado',
       'Reajuste dinámico de menús, pautas nutricionales y consistencias',
-      'Seguimiento clínico riguroso en cada consulta de revisión',
+      'Seguimiento clínico riguroso y resolución de dudas entre sesiones',
     ],
     idealFor: 'Salud de la mujer, trastornos digestivos/hormonales, patología oncológica, disfagia o reeducación metabólica duradera.',
     ctaText: 'Solicitar Información del Programa',
@@ -111,7 +110,7 @@ export const initialServices: NutritionService[] = [
     id: 's-seg',
     title: 'Consulta de Revisión y Evolución',
     subtitle: 'Seguimiento clínico para pacientes ya en tratamiento',
-    price: '',
+    price: 'Tarifa bajo consulta',
     period: 'Sesión de Revisión (30-40 min)',
     isPopular: false,
     description: 'Revisión periódica de la evolución, reajuste de menús y nutrientes, evaluación de tolerancia y resolución de dudas para consolidar resultados.',
@@ -138,7 +137,7 @@ export const initialApps: NutritionApp[] = [
     iconUrl: tuNutriLensIcon,
     iconName: 'Eye',
     tags: ['Análisis Fotográfico IA', 'Adaptación Disfagia (IDDSI)', 'Nutrición Enteral y Clínica', 'E-Health PWA y Móvil'],
-    webAppUrl: '#',
+    webAppUrl: 'https://www.tunutrilens.es',
     usersCount: 'Solución E-Health Especializada',
     rating: 5.0,
     features: [

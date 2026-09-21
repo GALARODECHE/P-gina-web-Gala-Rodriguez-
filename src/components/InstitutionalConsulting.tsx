@@ -18,6 +18,7 @@ import {
   Video,
   MapPin,
   AlertCircle,
+  FileText,
 } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
@@ -41,8 +42,8 @@ export const talksTariffList: TalkTariffItem[] = [
     id: 'talk-webinar-online',
     title: 'Charla Temática / Webinar Online',
     subtitle: 'Divulgación científica interactiva en directo',
-    price: 'Presupuesto a Medida',
-    duration: '60 - 90 min',
+    price: 'Presupuesto a medida',
+    duration: '60 min',
     modality: '100% Online (Zoom / Teams / Meet)',
     targetAudience: 'Asociaciones de pacientes, AMPAS, empresas saludables y colectivos',
     description:
@@ -60,8 +61,8 @@ export const talksTariffList: TalkTariffItem[] = [
     id: 'talk-taller-asociaciones',
     title: 'Ponencia y Taller para Asociaciones',
     subtitle: 'Disfagia en el hogar, Oncología o Salud Hormonal',
-    price: 'Presupuesto a Medida',
-    duration: '60 - 120 min',
+    price: 'Presupuesto a medida',
+    duration: '90 min',
     modality: 'Presencial u Online',
     targetAudience: 'Asociaciones de Pacientes (ELA, Alzheimer, Parkinson, Cáncer) y Familias',
     description:
@@ -79,8 +80,8 @@ export const talksTariffList: TalkTariffItem[] = [
     id: 'talk-capacitacion-residencias',
     title: 'Capacitación Personal Sociosanitario',
     subtitle: 'Protocolos IDDSI, Calibración y Desnutrición',
-    price: 'Presupuesto a Medida',
-    duration: '2h 30 min',
+    price: 'Presupuesto a medida',
+    duration: '60 min',
     modality: 'Presencial (en el centro) u Online',
     targetAudience: 'Equipos de Cocina, Auxiliares de Enfermería, Terapeutas y Dirección',
     description:
@@ -98,7 +99,7 @@ export const talksTariffList: TalkTariffItem[] = [
     id: 'talk-auditoria-menus',
     title: 'Auditoría y Calibración de Menús',
     subtitle: 'Revisión técnica de dietas basales y terapéuticas',
-    price: 'Presupuesto a Medida',
+    price: 'Presupuesto a medida',
     duration: 'Por ciclo estacional o servicio',
     modality: 'Servicio Técnico Visado',
     targetAudience: 'Residencias de Mayores, Colegios, Hospitales y Catering',
@@ -238,9 +239,14 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
 
                 {/* Price / Budget Tag */}
                 <div className="py-2.5 border-y border-slate-300 dark:border-slate-700">
-                  <span className="inline-block px-2.5 py-1 rounded-md bg-orange-100 dark:bg-orange-950/60 border border-orange-300 dark:border-orange-800/60 text-orange-950 dark:text-orange-200 text-xs font-bold">
-                    Presupuesto a Medida
-                  </span>
+                  <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                    <span className="text-xl font-black text-slate-900 dark:text-white">
+                      {talk.price}
+                    </span>
+                    <span className="inline-block px-2 py-0.5 rounded-md bg-orange-100 dark:bg-orange-950/60 border border-orange-300 dark:border-orange-800/60 text-orange-950 dark:text-orange-200 text-[11px] font-bold">
+                      {talk.duration}
+                    </span>
+                  </div>
                   <p className="text-[11px] text-slate-700 dark:text-slate-300 mt-1.5 leading-tight">
                     👥 <strong>Audiencia:</strong> {talk.targetAudience}
                   </p>

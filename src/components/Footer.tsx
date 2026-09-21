@@ -1,16 +1,19 @@
 import React from 'react';
-import { ShieldCheck, Heart, Instagram, Facebook, BookOpen, Mail, MapPin, Phone, Globe, MessageCircle } from 'lucide-react';
+import { ShieldCheck, Heart, Instagram, Facebook, BookOpen, Mail, MapPin, Phone, Globe, MessageCircle, ExternalLink } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
+import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
 
 interface FooterProps {
   profile: NutritionistProfile;
   onBookClick: () => void;
+  onOpenTuNutriLens?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   profile,
   onBookClick,
+  onOpenTuNutriLens,
 }) => {
   const theme = themeStyles[profile.themeColor || 'teal'];
 
@@ -21,19 +24,11 @@ export const Footer: React.FC<FooterProps> = ({
           
           {/* Brand Info (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <img
-                src={profile.avatarUrl}
-                alt={profile.name}
-                referrerPolicy="no-referrer"
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-slate-400 dark:ring-slate-700 shadow-sm"
-              />
-              <div>
-                <span className="font-bold text-lg text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
-                  {profile.name}
-                </span>
-                <p className="text-xs text-slate-700 dark:text-slate-400 font-medium">{profile.title}</p>
-              </div>
+            <div>
+              <span className="font-bold text-lg text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight block">
+                {profile.name}
+              </span>
+              <p className="text-xs text-slate-700 dark:text-slate-400 font-medium">{profile.title}</p>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-400 leading-relaxed max-w-sm">
@@ -45,13 +40,37 @@ export const Footer: React.FC<FooterProps> = ({
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>{profile.colegiadorNumber}</span>
               </div>
-              <a
-                href="https://www.galarodrigueznutricion.es"
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-200 dark:bg-amber-950/60 text-slate-800 dark:text-amber-200 border border-slate-400 dark:border-amber-800/60"
-              >
-                <Globe className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
-                <span>www.galarodrigueznutricion.es</span>
-              </a>
+              {onOpenTuNutriLens ? (
+                <button
+                  type="button"
+                  onClick={onOpenTuNutriLens}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-orange-100 dark:bg-orange-950/70 text-orange-950 dark:text-orange-200 border border-orange-300 dark:border-orange-800/60 hover:bg-orange-200 transition-colors cursor-pointer"
+                  title="Abrir app TuNutriLens (con retorno directo)"
+                >
+                  <img
+                    src={tuNutriLensIcon}
+                    alt="TuNutriLens"
+                    className="w-3.5 h-3.5 rounded-sm object-contain shrink-0"
+                  />
+                  <span>App TuNutriLens</span>
+                </button>
+              ) : (
+                <a
+                  href="https://www.tunutrilens.es"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-orange-100 dark:bg-orange-950/70 text-orange-950 dark:text-orange-200 border border-orange-300 dark:border-orange-800/60 hover:bg-orange-200 transition-colors"
+                  title="Página oficial de la app TuNutriLens"
+                >
+                  <img
+                    src={tuNutriLensIcon}
+                    alt="TuNutriLens"
+                    className="w-3.5 h-3.5 rounded-sm object-contain shrink-0"
+                  />
+                  <span>www.tunutrilens.es</span>
+                  <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+                </a>
+              )}
             </div>
           </div>
 
@@ -61,6 +80,37 @@ export const Footer: React.FC<FooterProps> = ({
               Ecosistema Digital
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-700 dark:text-slate-400 font-medium">
+              <li>
+                {onOpenTuNutriLens ? (
+                  <button
+                    type="button"
+                    onClick={onOpenTuNutriLens}
+                    className="hover:text-orange-600 dark:hover:text-orange-400 transition-colors flex items-center gap-2 font-bold text-slate-900 dark:text-white cursor-pointer text-left"
+                  >
+                    <img
+                      src={tuNutriLensIcon}
+                      alt="TuNutriLens"
+                      className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-orange-400/40"
+                    />
+                    <span>TuNutriLens (App Oficial)</span>
+                  </button>
+                ) : (
+                  <a
+                    href="https://www.tunutrilens.es"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-600 dark:hover:text-orange-400 transition-colors flex items-center gap-2 font-bold text-slate-900 dark:text-white"
+                  >
+                    <img
+                      src={tuNutriLensIcon}
+                      alt="TuNutriLens"
+                      className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-orange-400/40"
+                    />
+                    <span>Web App: www.tunutrilens.es</span>
+                    <ExternalLink className="w-3 h-3 text-orange-400" />
+                  </a>
+                )}
+              </li>
               <li>
                 <a
                   href={profile.substackUrl}

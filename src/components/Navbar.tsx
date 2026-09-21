@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Menu, X, Moon, Sun, Calendar, ShieldCheck, Instagram, Facebook, BookOpen, MessageCircle, Globe } from 'lucide-react';
+import { Menu, X, Moon, Sun, Calendar, ShieldCheck, Instagram, Facebook, BookOpen, MessageCircle, Globe, FileText, ExternalLink } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
+import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
 
 interface NavbarProps {
   profile: NutritionistProfile;
   isDarkMode: boolean;
   onToggleDarkMode: () => void;
   onBookClick: (serviceTitle?: string) => void;
+  onOpenTuNutriLens?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -15,6 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   isDarkMode,
   onToggleDarkMode,
   onBookClick,
+  onOpenTuNutriLens,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const theme = themeStyles[profile.themeColor || 'teal'];
@@ -42,20 +45,14 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-20 gap-1.5 sm:gap-2">
           
-          {/* Logo & Brand - Mobile optimized without overflowing */}
+          {/* Logo & Brand - Nombre profesional sin logo de la app al lado */}
           <button
             onClick={() => handleNavClick('hero')}
-            className="flex items-center gap-2 sm:gap-3 text-left focus:outline-none group min-w-0"
+            className="flex items-center gap-2.5 text-left focus:outline-none group min-w-0"
             id="brand-logo-btn"
           >
-            <div className="relative shrink-0">
-              <img
-                src={profile.avatarUrl}
-                alt={profile.name}
-                referrerPolicy="no-referrer"
-                className="w-8 h-8 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-white/40 dark:ring-slate-700 shadow-xs transition-transform group-hover:scale-105"
-              />
-              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-400 ring-2 ring-[#2f5747] dark:ring-slate-900" title="Disponible para Consulta" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center text-white font-extrabold text-xs sm:text-sm shrink-0 shadow-xs group-hover:bg-white/25 transition-colors">
+              GR
             </div>
             <div className="min-w-0">
               <span className="font-extrabold text-xs xs:text-sm sm:text-base lg:text-lg tracking-tight text-white group-hover:text-emerald-200 dark:text-[#9fc3b0] dark:group-hover:text-white block leading-tight truncate">
@@ -97,6 +94,49 @@ export const Navbar: React.FC<NavbarProps> = ({
               {isDarkMode ? <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
             </button>
 
+            {/* Direct Link to TuNutriLens modal with official icon */}
+            {onOpenTuNutriLens ? (
+              <button
+                type="button"
+                onClick={onOpenTuNutriLens}
+                id="header-tunutrilens-btn"
+                className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800 border border-orange-400/40 transition-all shadow-xs cursor-pointer"
+                title="Abrir app TuNutriLens (con opción de retorno directo)"
+              >
+                <img
+                  src={tuNutriLensIcon}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                  }}
+                  alt="TuNutriLens App"
+                  loading="eager"
+                  className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-white/30"
+                />
+                <span>App TuNutriLens</span>
+              </button>
+            ) : (
+              <a
+                href="https://www.tunutrilens.es"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="header-tunutrilens-btn"
+                className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800 border border-orange-400/40 transition-all shadow-xs cursor-pointer"
+                title="Web oficial de la app TuNutriLens"
+              >
+                <img
+                  src={tuNutriLensIcon}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                  }}
+                  alt="TuNutriLens App"
+                  loading="eager"
+                  className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-white/30"
+                />
+                <span>App TuNutriLens</span>
+                <ExternalLink className="w-3 h-3 opacity-80" />
+              </a>
+            )}
+
             {/* Primary Booking CTA - Acento Naranja Substack (Amber) */}
             <button
               onClick={() => onBookClick()}
@@ -125,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       {isMobileMenuOpen && (
         <div className="xl:hidden border-b border-[#234336] dark:border-slate-800 bg-[#27493c] dark:bg-slate-900 px-4 pt-2 pb-6 space-y-2 max-h-[calc(100vh-3.75rem)] overflow-y-auto overscroll-contain animate-in slide-in-from-top-2">
           
-          <div className="pt-1 pb-2">
+          <div className="pt-1 pb-2 space-y-2">
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);
@@ -136,6 +176,47 @@ export const Navbar: React.FC<NavbarProps> = ({
               <Calendar className="w-4 h-4" />
               <span>Pedir Cita Nutricional Online</span>
             </button>
+
+            {onOpenTuNutriLens ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  onOpenTuNutriLens();
+                }}
+                className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <img
+                  src={tuNutriLensIcon}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                  }}
+                  alt="TuNutriLens App"
+                  loading="eager"
+                  className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-white/30"
+                />
+                <span>Abrir App TuNutriLens</span>
+              </button>
+            ) : (
+              <a
+                href="https://www.tunutrilens.es"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-orange-600 hover:bg-orange-700 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <img
+                  src={tuNutriLensIcon}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                  }}
+                  alt="TuNutriLens App"
+                  loading="eager"
+                  className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-white/30"
+                />
+                <span>Web Oficial App: www.tunutrilens.es</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+            )}
           </div>
 
           {navLinks.map((link) => (
