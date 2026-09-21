@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 type="button"
                 onClick={onOpenTuNutriLens}
                 id="header-tunutrilens-btn"
-                className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800 border border-orange-400/40 transition-all shadow-xs cursor-pointer"
+                className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 border border-emerald-400/40 transition-all shadow-xs cursor-pointer"
                 title="Abrir app TuNutriLens (con opción de retorno directo)"
               >
                 <img
@@ -120,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 id="header-tunutrilens-btn"
-                className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800 border border-orange-400/40 transition-all shadow-xs cursor-pointer"
+                className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 border border-emerald-400/40 transition-all shadow-xs cursor-pointer"
                 title="Web oficial de la app TuNutriLens"
               >
                 <img
@@ -184,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setIsMobileMenuOpen(false);
                   onOpenTuNutriLens();
                 }}
-                className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
               >
                 <img
                   src={tuNutriLensIcon}
@@ -202,7 +202,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 href="https://www.tunutrilens.es"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-orange-600 hover:bg-orange-700 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
               >
                 <img
                   src={tuNutriLensIcon}

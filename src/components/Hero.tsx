@@ -106,8 +106,8 @@ export const Hero: React.FC<HeroProps> = ({
                   type="button"
                   onClick={onOpenTuNutriLens}
                   id="hero-view-apps-btn"
-                  className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-orange-100 hover:bg-orange-200/90 text-orange-950 dark:bg-orange-950/80 dark:hover:bg-orange-900/90 dark:text-orange-200 border border-orange-300 dark:border-orange-800 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
-                  title="Abrir app TuNutriLens con retorno directo a servicios"
+                  className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-emerald-50 hover:bg-emerald-100 text-emerald-950 dark:bg-emerald-950/70 dark:hover:bg-emerald-900/80 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
+                  title="TuNutriLens: Tu Nutricionista de bolsillo"
                 >
                   <img
                     src={tuNutriLensIcon}
@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = ({
                     }}
                     alt="TuNutriLens"
                     loading="eager"
-                    className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-orange-400/50"
+                    className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-emerald-500/40"
                   />
                   <span>App TuNutriLens</span>
                 </button>
@@ -126,7 +126,7 @@ export const Hero: React.FC<HeroProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   id="hero-view-apps-btn"
-                  className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-orange-100 hover:bg-orange-200/90 text-orange-950 dark:bg-orange-950/80 dark:hover:bg-orange-900/90 dark:text-orange-200 border border-orange-300 dark:border-orange-800 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-emerald-50 hover:bg-emerald-100 text-emerald-950 dark:bg-emerald-950/70 dark:hover:bg-emerald-900/80 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
                 >
                   <img
                     src={tuNutriLensIcon}
@@ -135,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({
                     }}
                     alt="TuNutriLens"
                     loading="eager"
-                    className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-orange-400/50"
+                    className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-emerald-500/40"
                   />
                   <span>App TuNutriLens</span>
                   <ExternalLink className="w-3.5 h-3.5 opacity-70" />

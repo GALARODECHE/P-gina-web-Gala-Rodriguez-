@@ -95,12 +95,12 @@ export const TuNutriLensModal: React.FC<TuNutriLensModalProps> = ({
               <div>
                 <div className="flex items-center gap-1.5">
                   <span className="font-extrabold text-sm text-white">TuNutriLens</span>
-                  <span className="px-1.5 py-0.2 rounded-sm bg-orange-500/80 text-[10px] font-bold uppercase tracking-wider text-white">
+                  <span className="px-1.5 py-0.5 rounded-md bg-emerald-500/90 text-[10px] font-bold uppercase tracking-wider text-white">
                     App Oficial
                   </span>
                 </div>
                 <p className="text-[11px] text-emerald-200 leading-none">
-                  Por Gala Rodríguez Echebarrieta
+                  Tu Nutricionista de bolsillo
                 </p>
               </div>
             </div>
@@ -160,7 +160,7 @@ export const TuNutriLensModal: React.FC<TuNutriLensModalProps> = ({
         <div className="flex items-center gap-2">
           <ShieldCheck className="w-4 h-4 text-emerald-300 shrink-0" />
           <span>
-            Estás explorando <strong>TuNutriLens</strong> (salud digital). Tu navegación principal y servicios clínicos de nutrición siguen activos.
+            Estás explorando <strong>TuNutriLens</strong> (Tu Nutricionista de bolsillo). Tu navegación principal y servicios clínicos de nutrición siguen activos.
           </span>
         </div>
         <button
@@ -175,12 +175,12 @@ export const TuNutriLensModal: React.FC<TuNutriLensModalProps> = ({
       <div className="relative flex-1 w-full bg-slate-900 overflow-hidden">
         {isLoading && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-slate-900 z-10 text-white">
-            <Loader2 className="w-8 h-8 text-orange-500 animate-spin" />
+            <Loader2 className="w-8 h-8 text-emerald-400 animate-spin" />
             <p className="text-sm font-semibold text-slate-300">
               Cargando www.tunutrilens.es...
             </p>
-            <p className="text-xs text-slate-500">
-              Escáner nutricional inteligente por Gala Rodríguez
+            <p className="text-xs text-slate-400">
+              Tu Nutricionista de bolsillo por Gala Rodríguez
             </p>
           </div>
         )}
@@ -193,16 +193,16 @@ export const TuNutriLensModal: React.FC<TuNutriLensModalProps> = ({
                 onError={(e) => {
                   (e.currentTarget as HTMLImageElement).src = '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
                 }}
-                alt="TuNutriLens - Escáner nutricional inteligente"
+                alt="TuNutriLens - Tu Nutricionista de bolsillo"
                 loading="eager"
                 className="w-full h-auto object-cover"
               />
             </div>
             <p className="text-base font-bold text-slate-200">
-              TuNutriLens: Escáner Inteligente de Platos y Nutrición
+              TuNutriLens · Tu Nutricionista de bolsillo
             </p>
-            <p className="text-xs text-slate-400 max-w-md">
-              Puedes abrirla directamente en una pestaña nueva o volver a la web principal de servicios de nutrición de Gala Rodríguez.
+            <p className="text-xs text-slate-300 max-w-md leading-relaxed">
+              TuNutriLens no es una calculadora de calorías aburrida: es tu asistente visual inteligente para aprender a comer con criterio científico, sin culpas ni restricciones absurdas.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <a

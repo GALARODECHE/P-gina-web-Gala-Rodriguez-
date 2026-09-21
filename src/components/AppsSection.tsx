@@ -20,12 +20,15 @@ import {
   ArrowRight,
   Globe,
   ExternalLink,
+  Search,
+  Refrigerator,
+  BarChart3,
+  Wheat,
 } from 'lucide-react';
 import { NutritionApp, NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
 import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
 import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
-import tuNutriLensMockup from '../assets/images/tunutrilens_mockup_1787427123608.jpg';
 
 interface AppsSectionProps {
   profile: NutritionistProfile;
@@ -109,16 +112,16 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge}`}>
-            <Smartphone className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
-            <span>Innovación E-Health</span>
+            <Smartphone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+            <span>App Oficial</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
-            TuNutriLens: ¡Nutre Tu Vida!
+            Tu Nutricionista de bolsillo
           </h2>
 
           <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
-            Aplicación de salud digital y nutrición clínica desarrollada por <strong>Gala Rodríguez Echebarrieta</strong> para conectar la alimentación diaria con tu seguimiento en consulta.
+            TuNutriLens no es una calculadora de calorías aburrida: es tu asistente visual inteligente para aprender a comer con criterio científico, sin culpas ni restricciones absurdas.
           </p>
         </div>
 
@@ -179,7 +182,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
                     alt="Foto original oficial de la app TuNutriLens"
                     loading="eager"
                     decoding="async"
-                    className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl object-cover shadow-lg ring-4 ring-orange-500/25 dark:ring-orange-400/25 transition-transform group-hover:scale-105"
+                    className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl object-cover shadow-lg ring-4 ring-emerald-500/30 dark:ring-emerald-400/30 transition-transform group-hover:scale-105"
                   />
                 </button>
               ) : (
@@ -196,7 +199,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
                     alt="Foto original oficial de la app TuNutriLens"
                     loading="eager"
                     decoding="async"
-                    className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl object-cover shadow-lg ring-4 ring-orange-500/25 dark:ring-orange-400/25 transition-transform group-hover:scale-105"
+                    className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl object-cover shadow-lg ring-4 ring-emerald-500/30 dark:ring-emerald-400/30 transition-transform group-hover:scale-105"
                   />
                 </a>
               )}
@@ -240,11 +243,11 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-black text-slate-800 dark:text-white tracking-tight">
-                TuNutriLens
+                Tu Nutricionista de bolsillo
               </h3>
 
               <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                Inteligencia visual aplicada a la nutrición clínica: reconocimiento fotográfico de platos, cálculo de energía y macronutrientes, y validación de texturas para disfagia.
+                TuNutriLens no es una calculadora de calorías aburrida: es tu asistente visual inteligente para aprender a comer con criterio científico, sin culpas ni restricciones absurdas.
               </p>
 
               {/* Botones de acción: Visitar web oficial y Pre-registro */}
@@ -308,96 +311,87 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
           {isExpanded && (
             <div className="mt-8 pt-8 border-t border-slate-400 dark:border-slate-700 space-y-8 animate-fadeIn">
               
-              {/* Bloque 1: ¿Qué es TuNutriLens y funcionalidades? */}
+              {/* Bloque 1: ✨ LO QUE PUEDES HACER CON TUNUTRILENS */}
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <Eye className="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                  <h4 className="text-lg sm:text-xl font-bold text-slate-800 dark:text-white">
-                    ¿Cómo te ayudará TuNutriLens en tu día a día?
+                  <Sparkles className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <h4 className="text-lg sm:text-xl font-black text-slate-800 dark:text-white tracking-tight">
+                    ✨ LO QUE PUEDES HACER CON TUNUTRILENS:
                   </h4>
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                  TuNutriLens nace de la experiencia clínica de Gala Rodríguez para resolver el mayor reto de cualquier tratamiento nutricional: la adherencia real y la comunicación fluida entre paciente y profesional sanitario.
+                  TuNutriLens no es una calculadora de calorías aburrida: es tu asistente visual inteligente para aprender a comer con criterio científico, sin culpas ni restricciones absurdas.
                 </p>
 
-                {/* Grid de 4 pilares */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                {/* Grid con las 5 funciones clave */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-2">
                   
-                  <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700/80 space-y-1.5">
+                  {/* 1. Lente Plato */}
+                  <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700/80 space-y-2">
                     <div className="flex items-center gap-2 font-bold text-xs sm:text-sm text-slate-800 dark:text-white">
-                      <div className="p-1.5 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                      <div className="p-1.5 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 shrink-0">
                         <Camera className="w-4 h-4" />
                       </div>
-                      <span>Escáner Inteligente con IA</span>
+                      <span>📸 1. Escáner Inteligente de Platos (Lente Plato)</span>
                     </div>
                     <p className="text-xs text-slate-700 dark:text-slate-400 leading-relaxed">
-                      Fotografía tu plato y obtén al instante una estimación rigurosa de calorías, distribución de macronutrientes y calidad de los ingredientes.
+                      Apunta tu cámara a tu comida casera o de restaurante. La IA desglosa al instante ingredientes, calorías reales y equilibrio de macronutrientes.
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700/80 space-y-1.5">
+                  {/* 2. Lente Súper */}
+                  <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700/80 space-y-2">
                     <div className="flex items-center gap-2 font-bold text-xs sm:text-sm text-slate-800 dark:text-white">
-                      <div className="p-1.5 rounded-lg bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200">
-                        <UtensilsCrossed className="w-4 h-4 text-orange-600" />
+                      <div className="p-1.5 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 shrink-0">
+                        <Search className="w-4 h-4" />
                       </div>
-                      <span>Texturas y Disfagia (IDDSI)</span>
+                      <span>🔍 2. Detector de Trampas en el Supermercado (Lente Súper)</span>
                     </div>
                     <p className="text-xs text-slate-700 dark:text-slate-400 leading-relaxed">
-                      Algoritmos orientados a pacientes con problemas de deglución o personas mayores para evaluar viscosidades y evitar atragantamientos.
+                      Escanea envases y tablas nutricionales. Descubre qué estás comprando de verdad, desmitificando reclamos engañosos como &quot;0% azúcares&quot; o &quot;rico en fibra&quot;.
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700/80 space-y-1.5">
+                  {/* 3. Lente Nevera */}
+                  <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700/80 space-y-2">
                     <div className="flex items-center gap-2 font-bold text-xs sm:text-sm text-slate-800 dark:text-white">
-                      <div className="p-1.5 rounded-lg bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">
-                        <Calendar className="w-4 h-4" />
+                      <div className="p-1.5 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 shrink-0">
+                        <Refrigerator className="w-4 h-4" />
                       </div>
-                      <span>Diario Nutricional Sincronizado</span>
+                      <span>🧊 3. Aprovecha tu Nevera (Lente Nevera)</span>
                     </div>
                     <p className="text-xs text-slate-700 dark:text-slate-400 leading-relaxed">
-                      Registro continuo de ingestas, sensaciones digestivas y evolución calórica compartido directamente con la consulta de Gala.
+                      ¿No sabes qué cocinar? Fotografía tus ingredientes sueltos y recibe sugerencias de recetas saludables en segundos, reduciendo el desperdicio.
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700/80 space-y-1.5">
+                  {/* 4. Diario y Semáforo */}
+                  <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700/80 space-y-2">
                     <div className="flex items-center gap-2 font-bold text-xs sm:text-sm text-slate-800 dark:text-white">
-                      <div className="p-1.5 rounded-lg bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
-                        <Layers className="w-4 h-4" />
+                      <div className="p-1.5 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 shrink-0">
+                        <BarChart3 className="w-4 h-4" />
                       </div>
-                      <span>Supermercado Lens</span>
+                      <span>📊 4. Diario y Semáforo Nutricional Diario</span>
                     </div>
                     <p className="text-xs text-slate-700 dark:text-slate-400 leading-relaxed">
-                      Semáforo nutricional en tiempo real para leer códigos de barras, detectar ultraprocesados y tomar mejores decisiones en la compra.
+                      Registra tus comidas con un clic y visualiza tu equilibrio semanal (proteínas, grasas saludables, fibra) sin obsesionarte con números rígidos.
                     </p>
                   </div>
 
-                </div>
-
-                {/* Vista previa de la interfaz en acción */}
-                <div className="pt-3">
-                  <div className="rounded-2xl overflow-hidden border border-slate-400 dark:border-slate-700 bg-slate-900 shadow-md">
-                    <div className="px-4 py-3 bg-slate-800 border-b border-slate-700 flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <Camera className="w-4 h-4 text-emerald-400 shrink-0" />
-                        <span className="text-xs sm:text-sm font-bold text-white">
-                          Interfaz TuNutriLens en Pantalla
-                        </span>
+                  {/* 5. Filtros Clínicos Personalizados */}
+                  <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700/80 space-y-2 sm:col-span-2 lg:col-span-2">
+                    <div className="flex items-center gap-2 font-bold text-xs sm:text-sm text-slate-800 dark:text-white">
+                      <div className="p-1.5 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 shrink-0">
+                        <Wheat className="w-4 h-4" />
                       </div>
-                      <span className="text-[11px] text-emerald-300 font-bold bg-emerald-950/80 border border-emerald-700/60 px-2.5 py-0.5 rounded-full">
-                        Escaneo y Análisis en Tiempo Real
-                      </span>
+                      <span>🌾 5. Filtros Clínicos Personalizados</span>
                     </div>
-                    <div className="relative bg-slate-950 flex items-center justify-center p-2 sm:p-4">
-                      <img
-                        src={tuNutriLensMockup}
-                        onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png')}
-                        alt="Pantalla de la app TuNutriLens mostrando el análisis nutricional fotográfico"
-                        loading="lazy"
-                        className="max-h-[460px] w-auto max-w-full rounded-xl object-contain shadow-2xl"
-                      />
-                    </div>
+                    <p className="text-xs text-slate-700 dark:text-slate-400 leading-relaxed">
+                      Adapta todas las recomendaciones a tu estilo de vida: sin gluten (celiaquía), sin lactosa, opciones vegetarianas o control glucémico.
+                    </p>
                   </div>
+
                 </div>
               </div>
 
@@ -509,9 +503,9 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
                         onChange={(e) => setInterestProfile(e.target.value)}
                         className="w-full px-3.5 py-2.5 rounded-xl text-base sm:text-sm bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
                       >
-                        <option value="paciente">Soy paciente o particular (quiero mejorar mi alimentación)</option>
+                        <option value="paciente">Soy paciente o particular (quiero aprender a comer con criterio científico)</option>
                         <option value="profesional">Soy profesional sanitario o centro de salud</option>
-                        <option value="familiar">Soy familiar o cuidador de persona con disfagia o mayores</option>
+                        <option value="familiar">Soy familiar o quiero mejorar la alimentación en mi hogar</option>
                         <option value="asociacion">Represento a una asociación o empresa</option>
                       </select>
                     </div>
@@ -560,10 +554,10 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
                 <span className="text-xs text-slate-600 dark:text-slate-400">www.tunutrilens.es</span>
               </div>
               <h4 className="text-base sm:text-lg font-bold text-slate-800 dark:text-white">
-                Página web oficial de TuNutriLens
+                Tu Nutricionista de bolsillo · TuNutriLens
               </h4>
               <p className="text-xs text-slate-700 dark:text-slate-300">
-                Accede a toda la información sobre el análisis visual de platos, texturas y soporte clínico e-health.
+                TuNutriLens no es una calculadora de calorías aburrida: es tu asistente visual inteligente para aprender a comer con criterio científico, sin culpas ni restricciones absurdas.
               </p>
             </div>
           </div>
