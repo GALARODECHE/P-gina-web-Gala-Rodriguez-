@@ -1,4 +1,4 @@
-import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
+import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg';
 import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
 import {
   NutritionistProfile,

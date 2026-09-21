@@ -23,37 +23,27 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
     {
       company: 'Hospital de la Zarzuela',
       role: 'Nutrición Clínica Hospitalaria',
-      period: 'Atención a Pacientes Agudos',
-      description:
-        'Valoración nutricional a pie de cama, diseño de dietoterapias adaptadas a patologías complejas y coordinación multidisciplinar con los equipos médicos de planta.',
+      area: 'Atención a Pacientes Agudos',
     },
     {
       company: 'Abbott Laboratories',
       role: 'Nutrición Enteral Adulto y Pediatría',
-      period: 'Especialista de Producto Clínico',
-      description:
-        'Asesoramiento técnico en formulaciones de soporte nutricional enteral, requerimientos metabólicos específicos y formación a profesionales sanitarios hospitalarios.',
+      area: 'Especialista de Producto Clínico',
     },
     {
       company: 'Danone Nutricia',
       role: 'Especialidad Hospitalaria y Soporte Nutricional',
-      period: 'División Nutrición Médica Avanzada',
-      description:
-        'Desarrollo e implantación de protocolos de nutrición clínica, disfagia y soporte metabólico en servicios hospitalarios y residencias sociosanitarias.',
+      area: 'División Nutrición Médica Avanzada',
     },
     {
       company: 'Laboratorios Ordesa',
       role: 'Nutrición Enteral Adulto',
-      period: 'Línea de Nutrición Médica',
-      description:
-        'Formación técnica y soporte en dietas de textura modificada, productos específicos para desnutrición asociada a la enfermedad y geriatría.',
+      area: 'Línea de Nutrición Médica',
     },
     {
       company: 'Mediterránea de Catering',
       role: 'Coordinación y Calibración Nutricional',
-      period: 'Restauración Colectiva y Centros Sanitarios',
-      description:
-        'Revisión, calibración nutricional y adaptación de dietas basales y terapéuticas en centros sanitarios, colegios y colectividades.',
+      area: 'Restauración Colectiva y Centros Sanitarios',
     },
   ];
 
@@ -73,64 +63,56 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
       title: 'Avances en Disfagia Orofaríngea en el nuevo entorno clínico',
       institution: 'Formación Sanitaria Especializada · 10 horas',
       area: 'Disfagia y Deglución',
-      description:
-        'Abordaje clínico avanzado, diagnóstico y adaptación de texturas y viscosidades en disfagia orofaríngea según protocolo IDDSI.',
     },
     {
-      title: 'XX Edición de la Jornada de actualización: "Nutrición y piel: Evidencia científica y aplicación práctica"',
+      title: 'XX Edición de la Jornada de actualización en Nutrición: "Nutrición y piel: Evidencia científica y aplicación práctica"',
       institution: 'Universidad de Navarra · 5 horas',
       area: 'Nutrición y Dermatología',
-      description:
-        'Evidencia científica y aplicación práctica del impacto nutricional en la regeneración celular y la salud dérmica.',
     },
     {
       title: 'Monográfico de Nutrición y Menopausia',
       institution: 'Academia AIZEA · 5 horas',
       area: 'Salud de la Mujer y Menopausia',
-      description:
-        'Abordaje dietético, metabólico y de estilo de vida en la perimenopausia, menopausia y regulación hormonal.',
     },
     {
       title: 'La cocina como aliada en la nutrición clínica: descubre el mundo de las texturas',
-      institution: 'Barcelona · Formación Práctica IDDSI',
+      institution: 'Barcelona · Formación Práctica en Texturas',
       area: 'Texturas y Gastronomía Clínica',
-      description:
-        'Técnicas de modificación y adecuación de texturas para una alimentación segura, nutritiva y apetecible.',
     },
     {
       title: 'Ponente en: I Curso teórico-práctico de Nutrición para Enfermería Geriátrica',
       institution: 'Docencia Sanitaria Especializada',
       area: 'Docencia y Geriatría',
-      description:
-        'Impartición docente sobre valoración del estado nutricional y cuidados dietéticos en el paciente mayor.',
     },
     {
       title: 'I Curso Nestlé Nutrition para residencias geriátricas: "El anciano y su entorno"',
       institution: 'Nestlé Nutrition · Madrid',
       area: 'Geriatría y Residencias',
-      description:
-        'Estrategias de valoración geriátrica, prevención de desnutrición y optimización del soporte alimentario institucional.',
     },
     {
       title: 'Intervención nutricional y Asesoramiento dietético en la Insuficiencia Renal Crónica',
       institution: 'Universidad de Navarra',
       area: 'Nefrología y Dietoterapia',
-      description:
-        'Manejo dietoterápico integral, control de electrolitos, balance proteico y pautas clínicas en patología renal.',
     },
     {
       title: 'Nutrición y Dietética: Últimas perspectivas',
       institution: 'Universidad Complutense · 100 horas lectivas',
       area: 'Nutrición Clínica Avanzada',
-      description:
-        'Actualización científica integral en dietoterapia, metabolismo, nutrición avanzada y práctica clínica basada en evidencia.',
     },
     {
       title: 'Aula Nestlé de actualidad en Nutrición: Las Proteínas',
       institution: 'Aula Nestlé · Madrid',
       area: 'Proteínas y Metabolismo',
-      description:
-        'Actualización sobre el metabolismo proteico, requerimientos específicos y soporte en estados catabólicos.',
+    },
+    {
+      title: 'II Jornada Nacional de Obesidad y factores de riesgo cardiovascular',
+      institution: 'Formación Sanitaria Especializada',
+      area: 'Obesidad y Riesgo Cardiovascular',
+    },
+    {
+      title: 'Participación en trabajo de campo: Encuestas alimentarias en Residencias Geriátricas',
+      institution: 'Investigación y Trabajo de Campo Nutricional',
+      area: 'Investigación y Geriatría',
     },
   ];
 
@@ -141,7 +123,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${theme.badge}`}>
-            <Stethoscope className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
+            <Stethoscope className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>Trayectoria y Formación de Gala Rodríguez</span>
           </div>
 
@@ -190,28 +172,29 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
         {/* TAB 1: Experiencia en Entornos Sanitarios */}
         {activeTab === 'experience' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 divide-y divide-slate-300 dark:divide-slate-700/70 overflow-hidden shadow-2xs">
               {careerPositions.map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-2xs flex flex-col justify-between space-y-3"
+                  className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-slate-300/40 dark:hover:bg-slate-700/30 transition-colors"
                 >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-orange-100 dark:bg-orange-950 text-orange-950 dark:text-orange-200 border border-orange-300 dark:border-orange-800/60">
-                        {item.period}
-                      </span>
-                      <Building2 className="w-4 h-4 text-slate-500" />
+                  <div className="flex items-center gap-3.5">
+                    <div className="p-2.5 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 shrink-0">
+                      <Building2 className="w-5 h-5" />
                     </div>
-                    <h3 className="font-extrabold text-base text-slate-800 dark:text-white">
-                      {item.company}
-                    </h3>
-                    <p className="text-xs font-semibold text-orange-600 dark:text-orange-400">
-                      {item.role}
-                    </p>
-                    <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed pt-1">
-                      {item.description}
-                    </p>
+                    <div>
+                      <h3 className="font-extrabold text-base text-slate-800 dark:text-white">
+                        {item.company}
+                      </h3>
+                      <p className="text-xs sm:text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+                        {item.role}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="sm:text-right pl-11 sm:pl-0">
+                    <span className="inline-flex px-3 py-1 rounded-lg text-xs font-semibold bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-200">
+                      {item.area}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -223,7 +206,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Experiencia contrastada en hospitales docentes, laboratorios farmacéuticos y centros de día</span>
               </div>
-              <span className="font-bold text-orange-600 dark:text-orange-400">
+              <span className="font-bold text-emerald-700 dark:text-emerald-400">
                 Universidad de Navarra · CV02386
               </span>
             </div>
@@ -236,7 +219,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
             {/* Titulación Universitaria */}
             <div className="space-y-3">
               <h3 className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                <GraduationCap className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+                <GraduationCap className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Titulación Sanitaria Oficial</span>
               </h3>
               
@@ -262,43 +245,44 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
               </div>
             </div>
 
-            {/* Cursos Certificados */}
-            <div className="space-y-3">
+            {/* Cursos Certificados en formato listado */}
+            <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 flex items-center gap-2">
                   <Award className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                  <span>Cursos de Especialización y Formación Continuada</span>
+                  <span>Listado de Cursos y Formación Continuada</span>
                 </h3>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">
-                  9 Certificaciones Sanitarias
+                  {certifiedCoursesList.length} Cursos Certificados
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 divide-y divide-slate-300 dark:divide-slate-700/70 overflow-hidden shadow-2xs">
                 {certifiedCoursesList.map((course, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-2xs space-y-2 flex flex-col justify-between"
+                    className="p-3.5 sm:p-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-slate-300/40 dark:hover:bg-slate-700/30 transition-colors"
                   >
-                    <div className="space-y-1.5">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-300">
+                    <div className="flex items-start gap-3">
+                      <div className="p-1.5 rounded-lg bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 shrink-0 mt-0.5">
+                        <Award className="w-4 h-4" />
+                      </div>
+                      <div className="space-y-0.5">
+                        <h5 className="text-xs sm:text-sm font-bold text-slate-800 dark:text-white leading-snug">
+                          {course.title}
+                        </h5>
+                        <p className="text-[11px] sm:text-xs font-medium text-slate-600 dark:text-slate-400">
+                          {course.institution}
+                        </p>
+                      </div>
+                    </div>
+                    {course.area && (
+                      <div className="sm:text-right shrink-0 pl-8 sm:pl-0">
+                        <span className="inline-flex px-2.5 py-0.5 rounded text-[10px] sm:text-xs font-bold bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-300">
                           {course.area}
                         </span>
-                        <span className="text-[10px] font-bold text-orange-600 dark:text-orange-400">
-                          Certificado
-                        </span>
                       </div>
-                      <h5 className="text-xs font-bold text-slate-800 dark:text-white leading-snug">
-                        {course.title}
-                      </h5>
-                      <p className="text-[11px] font-semibold text-slate-600 dark:text-slate-400">
-                        {course.institution}
-                      </p>
-                      <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed pt-0.5">
-                        {course.description}
-                      </p>
-                    </div>
+                    )}
                   </div>
                 ))}
               </div>

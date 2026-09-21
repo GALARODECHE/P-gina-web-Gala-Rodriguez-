@@ -28,7 +28,7 @@ import {
 import { NutritionApp, NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
 import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
-import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
+import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg';
 
 interface AppsSectionProps {
   profile: NutritionistProfile;
@@ -136,7 +136,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
             >
               <img
                 src={tuNutriLensBanner}
-                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png')}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg')}
                 alt="TuNutriLens - Escanea tus platos en 2 segundos. Calorías, Macronutrientes y Comida Real"
                 loading="eager"
                 decoding="async"
@@ -153,7 +153,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
             >
               <img
                 src={tuNutriLensBanner}
-                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png')}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg')}
                 alt="TuNutriLens - Escanea tus platos en 2 segundos. Calorías, Macronutrientes y Comida Real"
                 loading="eager"
                 decoding="async"
@@ -565,7 +565,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
             <button
               type="button"
               onClick={onOpenTuNutriLens}
-              className="w-full md:w-auto px-6 py-3 rounded-xl bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-bold text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+              className="w-full md:w-auto px-6 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 text-white font-bold text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer"
             >
               <img
                 src={tuNutriLensIcon}
@@ -581,7 +581,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
               href="https://www.tunutrilens.es"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:w-auto px-6 py-3 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+              className="w-full md:w-auto px-6 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 text-white font-bold text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer"
             >
               <img
                 src={tuNutriLensIcon}

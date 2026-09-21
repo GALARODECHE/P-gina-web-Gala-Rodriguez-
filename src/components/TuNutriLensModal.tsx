@@ -10,7 +10,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
-import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
+import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg';
 
 interface TuNutriLensModalProps {
   isOpen: boolean;
@@ -191,7 +191,7 @@ export const TuNutriLensModal: React.FC<TuNutriLensModalProps> = ({
               <img
                 src={tuNutriLensBanner}
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
+                  (e.currentTarget as HTMLImageElement).src = '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg';
                 }}
                 alt="TuNutriLens - Tu Nutricionista de bolsillo"
                 loading="eager"
@@ -209,7 +209,7 @@ export const TuNutriLensModal: React.FC<TuNutriLensModalProps> = ({
                 href="https://www.tunutrilens.es"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-md"
+                className="px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-md"
               >
                 <span>Abrir www.tunutrilens.es</span>
                 <ExternalLink className="w-3.5 h-3.5" />
