@@ -80,9 +80,16 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
               {post.summary}
             </p>
 
-            <div className="whitespace-pre-line text-slate-800 dark:text-slate-300">
-              {post.content}
-            </div>
+            {post.content.includes('<') ? (
+              <div
+                className="text-slate-800 dark:text-slate-300 space-y-4 [&>p]:leading-relaxed [&>h3]:text-lg [&>h3]:font-bold [&>h3]:text-slate-900 dark:[&>h3]:text-white [&>ul]:list-disc [&>ul]:pl-5 [&>figure]:my-4 [&>figure]:rounded-2xl [&>figure]:overflow-hidden [&_img]:rounded-xl [&_img]:max-w-full"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            ) : (
+              <div className="whitespace-pre-line text-slate-800 dark:text-slate-300">
+                {post.content}
+              </div>
+            )}
           </div>
 
           {/* Substack Call to Action Box */}

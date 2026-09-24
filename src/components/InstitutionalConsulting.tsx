@@ -26,7 +26,7 @@ import { themeStyles } from '../utils/theme';
 export interface TalkTariffItem {
   id: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   price: string;
   duration: string;
   modality: string;
@@ -60,7 +60,6 @@ export const talksTariffList: TalkTariffItem[] = [
   {
     id: 'talk-taller-asociaciones',
     title: 'Ponencia y Taller para Asociaciones',
-    subtitle: 'Disfagia en el hogar, Oncología o Salud Hormonal',
     price: 'Presupuesto a medida',
     duration: '90 min',
     modality: 'Presencial u Online',
@@ -232,9 +231,11 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
                   <h4 className="font-extrabold text-base text-slate-800 dark:text-white leading-snug">
                     {talk.title}
                   </h4>
-                  <p className="text-xs text-orange-600 dark:text-orange-400 font-semibold mt-0.5">
-                    {talk.subtitle}
-                  </p>
+                  {talk.subtitle && (
+                    <p className="text-xs text-orange-600 dark:text-orange-400 font-semibold mt-0.5">
+                      {talk.subtitle}
+                    </p>
+                  )}
                 </div>
 
                 {/* Price / Budget Tag */}

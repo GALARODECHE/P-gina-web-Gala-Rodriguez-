@@ -153,51 +153,6 @@ export const initialApps: NutritionApp[] = [
   },
 ];
 
-export const initialPosts: BlogPost[] = [
-  {
-    id: 'post-real-1',
-    title: 'Por qué decidí mirar más allá del plato: Mi camino de la nutrición al bienestar integral',
-    category: 'Bienestar y Hábitos',
-    summary: 'Hola, soy Gala. Te cuento cómo tras más de 20 años en entornos sanitarios y una década de yoga integré la nutrición con el cuidado consciente "Inside-Out".',
-    content: `Si hace unos años me hubieran preguntado en qué consiste mi trabajo como nutricionista, probablemente habría respondido hablando de macronutrientes, calorías y bioquímica. Al fin y al cabo, esa es la ciencia en la que me formé en la Universidad de Navarra y la base de mi profesión sanitaria.
+import { snapshotPosts } from './substackPostsSnapshot';
 
-Sin embargo, la vida y el paso del tiempo me han enseñado que la salud real es un tejido mucho más complejo. El cuerpo no es un compartimento estanco; es un reflejo de cómo tratamos a nuestra mente, de cómo gestionamos el estrés, de cómo nos movemos y de cómo nos cuidamos de dentro hacia fuera.
-
-En este espacio fusiono la ciencia de la nutrición clínica con el bienestar consciente, el cuidado de la piel y el equilibrio vital.`,
-    coverImage: 'https://substackcdn.com/image/fetch/$s_!Ki0r!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F345c45f7-7a04-40d0-b243-9d97caa8d531_2749x2749.jpeg',
-    publishDate: '17 Jul 2026',
-    readTime: '5 min de lectura',
-    substackUrl: 'https://galanutricion.substack.com/p/por-que-decidi-mirar-mas-alla-del',
-    isFeatured: true,
-  },
-  {
-    id: 'post-real-2',
-    title: 'La verdad de la Kombucha...',
-    category: 'Salud y Digestión',
-    summary: 'Análisis nutricional riguroso sobre la kombucha, su impacto en la microbiota intestinal y lo que realmente dice la evidencia científica.',
-    content: `La kombucha se ha convertido en una de las bebidas de moda bajo la promesa de mejorar la salud digestiva y repoblar la microbiota. Pero, ¿qué hay de cierto y qué es puro marketing?
-
-La kombucha es el resultado de la fermentación de té azucarado mediante un cultivo simbiótico de bacterias y levaduras (SCOBY). Durante este proceso se generan ácidos orgánicos, pequeñas trazas de vitaminas del grupo B y compuestos antioxidantes.
-
-Sin embargo, no toda la kombucha comercial es igual: muchas marcas añaden azúcares añadidos tras la fermentación o pasteurizan el producto (eliminando los microorganismos vivos). Para una salud digestiva óptima, la base siempre debe ser una alimentación rica en fibra diversa, legumbres, hortalizas y alimentos fermentados tradicionales.`,
-    coverImage: 'https://substackcdn.com/image/fetch/$s_!27xB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fee4fefa3-fb00-4981-a203-307d0194a01a_1408x768.png',
-    publishDate: '10 Ago 2026',
-    readTime: '5 min de lectura',
-    substackUrl: 'https://galanutricion.substack.com/p/la-verdad-de-la-kombucha',
-    isFeatured: true,
-  },
-  {
-    id: 'post-real-3',
-    title: 'El drama de la inflamación abdominal diaria',
-    category: 'Salud y Digestión',
-    summary: '¿Te levantas con el vientre plano y terminas el día con hinchazón molesta? Causas clínicas frecuentes y abordaje nutricional.',
-    content: `La distensión abdominal frecuente no es algo que debas normalizar. Puede deberse a múltiples factores: disbiosis intestinal, intolerancias alimentarias no diagnosticadas, comer con prisa y estrés, falta de masticación adecuada o un exceso de fibra fermentable (FODMAPs) en momentos de inflamación.
-
-En consulta abordamos la causa raíz mediante un análisis minucioso de tus síntomas digestivos para devolver la tranquilidad a tu día a día.`,
-    coverImage: 'https://substackcdn.com/image/fetch/$s_!2V_M!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcced0fc8-3611-4ca9-95b1-e4657d11132c_1407x768.png',
-    publishDate: '06 Ago 2026',
-    readTime: '5 min de lectura',
-    substackUrl: 'https://galanutricion.substack.com/p/el-drama-de-la-inflamacion-abdominal',
-    isFeatured: true,
-  },
-];
+export const initialPosts: BlogPost[] = snapshotPosts;

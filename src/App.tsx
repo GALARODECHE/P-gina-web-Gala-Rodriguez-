@@ -23,11 +23,14 @@ import {
   NutritionService,
   BlogPost,
 } from './types';
+import { fetchLiveSubstackPosts } from './services/substackService';
 
 export default function App() {
   const profile = initialProfile;
   const services = initialServices;
-  const posts = initialPosts;
+  const [posts, setPosts] = useState<BlogPost[]>(initialPosts);
+  const [isSyncingSubstack, setIsSyncingSubstack] = useState(false);
+  const [lastUpdatedSubstack, setLastUpdatedSubstack] = useState<number | null>(null);
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     try {
@@ -63,6 +66,52 @@ export default function App() {
       localStorage.setItem('theme_mode', 'light');
     }
   }, [isDarkMode]);
+
+  // Real-time Substack Feed Sync & Auto-polling
+  const loadSubstackFeed = async (force = false) => {
+    setIsSyncingSubstack(true);
+    try {
+      const result = await fetchLiveSubstackPosts(force);
+      if (result.posts && result.posts.length > 0) {
+        setPosts(result.posts);
+        setLastUpdatedSubstack(result.timestamp);
+      }
+    } catch (e) {
+      console.warn('Error loading live Substack feed:', e);
+    } finally {
+      setIsSyncingSubstack(false);
+    }
+  };
+
+  useEffect(() => {
+    // Initial fetch
+    loadSubstackFeed(false);
+
+    // Continuous auto-update polling every 60 seconds
+    const interval = setInterval(() => {
+      loadSubstackFeed(true);
+    }, 60000);
+
+    // Auto-update when user switches back to this tab
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        loadSubstackFeed(true);
+      }
+    };
+
+    const handleFocus = () => {
+      loadSubstackFeed(true);
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('focus', handleFocus);
+
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleFocus);
+    };
+  }, []);
 
   // Quick Action Handlers
   const handleOpenBookingWithService = (service?: NutritionService) => {
@@ -154,6 +203,9 @@ export default function App() {
           profile={profile}
           posts={posts}
           onReadPost={(post) => setReadingPost(post)}
+          onRefreshFeed={() => loadSubstackFeed(true)}
+          isSyncing={isSyncingSubstack}
+          lastUpdated={lastUpdatedSubstack}
         />
 
         {/* About & Methodology */}

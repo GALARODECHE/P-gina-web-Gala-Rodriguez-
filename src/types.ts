@@ -103,6 +103,8 @@ export interface BlogPost {
   readTime: string;
   substackUrl?: string;
   isFeatured?: boolean;
+  isLatest?: boolean;
+  rawTimestamp?: number;
   likesCount?: number;
 }
 
