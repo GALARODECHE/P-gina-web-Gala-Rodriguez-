@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Moon, Sun, Calendar, ShieldCheck, Instagram, Facebook, BookOpen, MessageCircle, Globe, FileText, ExternalLink } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
-import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
+import tuNutriLensIcon from '../assets/images/tunutrilens_logo.svg';
 
 interface NavbarProps {
   profile: NutritionistProfile;
@@ -103,9 +103,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 title="Abrir app TuNutriLens (con opción de retorno directo)"
               >
                 <img
-                  src={`${tuNutriLensIcon}?v=20260924_final`}
+                  src={`${tuNutriLensIcon}?v=20260924_svg`}
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
+                    (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
                   }}
                   alt="TuNutriLens App"
                   loading="eager"
@@ -123,9 +123,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 title="Web oficial de la app TuNutriLens"
               >
                 <img
-                  src={`${tuNutriLensIcon}?v=20260924_final`}
+                  src={`${tuNutriLensIcon}?v=20260924_svg`}
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
+                    (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
                   }}
                   alt="TuNutriLens App"
                   loading="eager"
@@ -186,9 +186,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
               >
                 <img
-                  src={`${tuNutriLensIcon}?v=20260924_final`}
+                  src={`${tuNutriLensIcon}?v=20260924_svg`}
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
+                    (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
                   }}
                   alt="TuNutriLens App"
                   loading="eager"
@@ -204,9 +204,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
               >
                 <img
-                  src={`${tuNutriLensIcon}?v=20260924_final`}
+                  src={`${tuNutriLensIcon}?v=20260924_svg`}
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
+                    (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
                   }}
                   alt="TuNutriLens App"
                   loading="eager"

@@ -1,5 +1,5 @@
 import tuNutriLensBannerRaw from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
-import tuNutriLensIconRaw from '../assets/images/TuNutriLens-App-Icon-512x512.png';
+import tuNutriLensIconRaw from '../assets/images/tunutrilens_logo.svg';
 
 const tuNutriLensBanner = `${tuNutriLensBannerRaw}?v=20260924_final`;
 const tuNutriLensIcon = `${tuNutriLensIconRaw}?v=20260924_final`;

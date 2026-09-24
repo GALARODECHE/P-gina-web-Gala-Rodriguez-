@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, ShieldCheck, Sparkles, Smartphone, BookOpen, Star, Stethoscope, Award, CheckCircle2, Globe, Instagram, Facebook, MessageCircle, Mail, ExternalLink } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
-import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
+import tuNutriLensIcon from '../assets/images/tunutrilens_logo.svg';
 
 interface HeroProps {
   profile: NutritionistProfile;
@@ -110,9 +110,9 @@ export const Hero: React.FC<HeroProps> = ({
                   title="TuNutriLens: Tu Nutricionista de bolsillo"
                 >
                   <img
-                    src={`${tuNutriLensIcon}?v=20260924_final`}
+                    src={`${tuNutriLensIcon}?v=20260924_svg`}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
+                      (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
                     }}
                     alt="TuNutriLens"
                     loading="eager"
@@ -129,9 +129,9 @@ export const Hero: React.FC<HeroProps> = ({
                   className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-emerald-50 hover:bg-emerald-100 text-emerald-950 dark:bg-emerald-950/70 dark:hover:bg-emerald-900/80 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
                 >
                   <img
-                    src={`${tuNutriLensIcon}?v=20260924_final`}
+                    src={`${tuNutriLensIcon}?v=20260924_svg`}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
+                      (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
                     }}
                     alt="TuNutriLens"
                     loading="eager"

@@ -9,11 +9,11 @@ import {
   RefreshCw,
   ShieldCheck,
 } from 'lucide-react';
-import tuNutriLensIconRaw from '../assets/images/TuNutriLens-App-Icon-512x512.png';
+import tuNutriLensIconRaw from '../assets/images/tunutrilens_logo.svg';
 import tuNutriLensBannerRaw from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
 
-const tuNutriLensIcon = `${tuNutriLensIconRaw}?v=20260924_final`;
-const tuNutriLensBanner = `${tuNutriLensBannerRaw}?v=20260924_final`;
+const tuNutriLensIcon = `${tuNutriLensIconRaw}?v=20260924_svg`;
+const tuNutriLensBanner = `${tuNutriLensBannerRaw}?v=20260924_svg`;
 
 interface TuNutriLensModalProps {
   isOpen: boolean;
@@ -89,7 +89,7 @@ export const TuNutriLensModal: React.FC<TuNutriLensModalProps> = ({
               <img
                 src={tuNutriLensIcon}
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
+                  (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
                 }}
                 alt="TuNutriLens"
                 loading="eager"
