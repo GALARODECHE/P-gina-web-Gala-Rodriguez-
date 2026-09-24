@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { RatesAndServices } from './components/RatesAndServices';
 import { InstitutionalConsulting } from './components/InstitutionalConsulting';
-import { AppsSection } from './components/AppsSection';
 import { BlogSubstack } from './components/BlogSubstack';
 import { AboutSection } from './components/AboutSection';
 import { FAQSection } from './components/FAQSection';
@@ -16,21 +15,18 @@ import { bgThemeStyles } from './utils/theme';
 import {
   initialProfile,
   initialServices,
-  initialApps,
   initialPosts,
 } from './data/initialNutritionData';
 
 import {
   NutritionistProfile,
   NutritionService,
-  NutritionApp,
   BlogPost,
 } from './types';
 
 export default function App() {
   const profile = initialProfile;
   const services = initialServices;
-  const apps = initialApps;
   const posts = initialPosts;
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
@@ -153,13 +149,6 @@ export default function App() {
           }}
         />
 
-        {/* Developed Apps Section (Apps Propias) */}
-        <AppsSection
-          profile={profile}
-          apps={apps}
-          onOpenTuNutriLens={() => setIsTuNutriLensOpen(true)}
-        />
-
         {/* Blog & Substack Section (Unificación) */}
         <BlogSubstack
           profile={profile}
@@ -183,7 +172,6 @@ export default function App() {
       <Footer
         profile={profile}
         onBookClick={() => handleOpenBookingWithService()}
-        onOpenTuNutriLens={() => setIsTuNutriLensOpen(true)}
       />
 
       {/* Booking Modal */}

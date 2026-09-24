@@ -2,7 +2,6 @@ import React from 'react';
 import { ShieldCheck, Heart, Instagram, Facebook, BookOpen, Mail, MapPin, Phone, Globe, MessageCircle, ExternalLink } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
-import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
 
 interface FooterProps {
   profile: NutritionistProfile;
@@ -13,7 +12,6 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({
   profile,
   onBookClick,
-  onOpenTuNutriLens,
 }) => {
   const theme = themeStyles[profile.themeColor || 'teal'];
 
@@ -40,43 +38,6 @@ export const Footer: React.FC<FooterProps> = ({
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>{profile.colegiadorNumber}</span>
               </div>
-              {onOpenTuNutriLens ? (
-                <button
-                  type="button"
-                  onClick={onOpenTuNutriLens}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-950 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-800/60 hover:bg-emerald-200 transition-colors cursor-pointer"
-                  title="Abrir app TuNutriLens (con retorno directo)"
-                >
-                  <img
-                    src={`${tuNutriLensIcon}?v=20260924_final`}
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
-                    }}
-                    alt="TuNutriLens"
-                    className="w-3.5 h-3.5 rounded-sm object-contain shrink-0 ring-1 ring-emerald-500/30"
-                  />
-                  <span>App TuNutriLens</span>
-                </button>
-              ) : (
-                <a
-                  href="https://www.tunutrilens.es"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-950 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-800/60 hover:bg-emerald-200 transition-colors"
-                  title="Página oficial de la app TuNutriLens"
-                >
-                  <img
-                    src={`${tuNutriLensIcon}?v=20260924_final`}
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
-                    }}
-                    alt="TuNutriLens"
-                    className="w-3.5 h-3.5 rounded-sm object-contain shrink-0 ring-1 ring-emerald-500/30"
-                  />
-                  <span>www.tunutrilens.es</span>
-                  <ExternalLink className="w-2.5 h-2.5 opacity-70" />
-                </a>
-              )}
             </div>
           </div>
 
@@ -86,43 +47,6 @@ export const Footer: React.FC<FooterProps> = ({
               Ecosistema Digital
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-700 dark:text-slate-400 font-medium">
-              <li>
-                {onOpenTuNutriLens ? (
-                  <button
-                    type="button"
-                    onClick={onOpenTuNutriLens}
-                    className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 font-bold text-slate-900 dark:text-white cursor-pointer text-left"
-                  >
-                    <img
-                      src={`${tuNutriLensIcon}?v=20260924_final`}
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
-                      }}
-                      alt="TuNutriLens"
-                      className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-emerald-500/40"
-                    />
-                    <span>TuNutriLens (App Oficial)</span>
-                  </button>
-                ) : (
-                  <a
-                    href="https://www.tunutrilens.es"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 font-bold text-slate-900 dark:text-white"
-                  >
-                    <img
-                      src={`${tuNutriLensIcon}?v=20260924_final`}
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
-                      }}
-                      alt="TuNutriLens"
-                      className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-emerald-500/40"
-                    />
-                    <span>Web App: www.tunutrilens.es</span>
-                    <ExternalLink className="w-3 h-3 text-emerald-400" />
-                  </a>
-                )}
-              </li>
               <li>
                 <a
                   href={profile.substackUrl}

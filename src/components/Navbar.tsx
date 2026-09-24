@@ -26,7 +26,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'hero', label: 'Inicio' },
     { id: 'sesiones-online', label: 'Sesiones Online' },
     { id: 'talleres-formacion', label: 'Talleres y Formación' },
-    { id: 'apps', label: 'TuNutriLens (App)' },
     { id: 'blog', label: 'Blog y Artículos' },
     { id: 'sobre-mi', label: 'Sobre Mí' },
     { id: 'faq', label: 'Preguntas Frecuentes' },
