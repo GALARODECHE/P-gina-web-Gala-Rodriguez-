@@ -9,8 +9,11 @@ import {
   RefreshCw,
   ShieldCheck,
 } from 'lucide-react';
-import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
-import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg';
+import tuNutriLensIconRaw from '../assets/images/TuNutriLens-App-Icon-512x512.png';
+import tuNutriLensBannerRaw from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
+
+const tuNutriLensIcon = `${tuNutriLensIconRaw}?v=20260924_final`;
+const tuNutriLensBanner = `${tuNutriLensBannerRaw}?v=20260924_final`;
 
 interface TuNutriLensModalProps {
   isOpen: boolean;
@@ -86,7 +89,7 @@ export const TuNutriLensModal: React.FC<TuNutriLensModalProps> = ({
               <img
                 src={tuNutriLensIcon}
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                  (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
                 }}
                 alt="TuNutriLens"
                 loading="eager"
@@ -191,7 +194,7 @@ export const TuNutriLensModal: React.FC<TuNutriLensModalProps> = ({
               <img
                 src={tuNutriLensBanner}
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg';
+                  (e.currentTarget as HTMLImageElement).src = '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png?v=20260924_final';
                 }}
                 alt="TuNutriLens - Tu Nutricionista de bolsillo"
                 loading="eager"

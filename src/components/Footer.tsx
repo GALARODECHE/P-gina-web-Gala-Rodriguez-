@@ -48,9 +48,9 @@ export const Footer: React.FC<FooterProps> = ({
                   title="Abrir app TuNutriLens (con retorno directo)"
                 >
                   <img
-                    src={tuNutriLensIcon}
+                    src={`${tuNutriLensIcon}?v=20260924_final`}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
                     }}
                     alt="TuNutriLens"
                     className="w-3.5 h-3.5 rounded-sm object-contain shrink-0 ring-1 ring-emerald-500/30"
@@ -66,9 +66,9 @@ export const Footer: React.FC<FooterProps> = ({
                   title="Página oficial de la app TuNutriLens"
                 >
                   <img
-                    src={tuNutriLensIcon}
+                    src={`${tuNutriLensIcon}?v=20260924_final`}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
                     }}
                     alt="TuNutriLens"
                     className="w-3.5 h-3.5 rounded-sm object-contain shrink-0 ring-1 ring-emerald-500/30"
@@ -94,9 +94,9 @@ export const Footer: React.FC<FooterProps> = ({
                     className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 font-bold text-slate-900 dark:text-white cursor-pointer text-left"
                   >
                     <img
-                      src={tuNutriLensIcon}
+                      src={`${tuNutriLensIcon}?v=20260924_final`}
                       onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                        (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
                       }}
                       alt="TuNutriLens"
                       className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-emerald-500/40"
@@ -111,9 +111,9 @@ export const Footer: React.FC<FooterProps> = ({
                     className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 font-bold text-slate-900 dark:text-white"
                   >
                     <img
-                      src={tuNutriLensIcon}
+                      src={`${tuNutriLensIcon}?v=20260924_final`}
                       onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                        (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
                       }}
                       alt="TuNutriLens"
                       className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-emerald-500/40"

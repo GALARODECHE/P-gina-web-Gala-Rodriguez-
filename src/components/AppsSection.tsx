@@ -27,8 +27,11 @@ import {
 } from 'lucide-react';
 import { NutritionApp, NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
-import tuNutriLensIcon from '../assets/images/TuNutriLens-App-Icon-512x512.png';
-import tuNutriLensBanner from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg';
+import tuNutriLensIconRaw from '../assets/images/TuNutriLens-App-Icon-512x512.png';
+import tuNutriLensBannerRaw from '../assets/images/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png';
+
+const tuNutriLensIcon = `${tuNutriLensIconRaw}?v=20260924_final`;
+const tuNutriLensBanner = `${tuNutriLensBannerRaw}?v=20260924_final`;
 
 interface AppsSectionProps {
   profile: NutritionistProfile;
@@ -136,7 +139,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
             >
               <img
                 src={tuNutriLensBanner}
-                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg')}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png?v=20260924_final')}
                 alt="TuNutriLens - Escanea tus platos en 2 segundos. Calorías, Macronutrientes y Comida Real"
                 loading="eager"
                 decoding="async"
@@ -153,7 +156,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
             >
               <img
                 src={tuNutriLensBanner}
-                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.jpg')}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens_Elemento_Grafico_Destacado_1024x500.png?v=20260924_final')}
                 alt="TuNutriLens - Escanea tus platos en 2 segundos. Calorías, Macronutrientes y Comida Real"
                 loading="eager"
                 decoding="async"
@@ -178,7 +181,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
                 >
                   <img
                     src={tuNutriLensIcon}
-                    onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                    onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png?v=20260924_final')}
                     alt="Foto original oficial de la app TuNutriLens"
                     loading="eager"
                     decoding="async"
@@ -195,7 +198,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
                 >
                   <img
                     src={tuNutriLensIcon}
-                    onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                    onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png?v=20260924_final')}
                     alt="Foto original oficial de la app TuNutriLens"
                     loading="eager"
                     decoding="async"
@@ -261,7 +264,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
                   >
                     <img
                       src={tuNutriLensIcon}
-                      onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                      onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png?v=20260924_final')}
                       alt="TuNutriLens"
                       loading="eager"
                       className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-white/30"
@@ -278,7 +281,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
                   >
                     <img
                       src={tuNutriLensIcon}
-                      onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                      onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png?v=20260924_final')}
                       alt="TuNutriLens"
                       loading="eager"
                       className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-white/30"
@@ -541,7 +544,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
           <div className="flex items-center gap-4">
             <img
               src={tuNutriLensIcon}
-              onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+              onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png?v=20260924_final')}
               alt="TuNutriLens"
               loading="eager"
               className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover ring-2 ring-emerald-500/30 shrink-0"
@@ -569,7 +572,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
             >
               <img
                 src={tuNutriLensIcon}
-                onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png?v=20260924_final')}
                 alt="TuNutriLens"
                 loading="eager"
                 className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-white/30"
@@ -585,7 +588,7 @@ export const AppsSection: React.FC<AppsSectionProps> = ({ profile, onOpenTuNutri
             >
               <img
                 src={tuNutriLensIcon}
-                onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png')}
+                onError={(e) => handleImageFallback(e, '/TuNutriLens-App-Icon-512x512.png?v=20260924_final')}
                 alt="TuNutriLens"
                 loading="eager"
                 className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-white/30"

@@ -110,9 +110,9 @@ export const Hero: React.FC<HeroProps> = ({
                   title="TuNutriLens: Tu Nutricionista de bolsillo"
                 >
                   <img
-                    src={tuNutriLensIcon}
+                    src={`${tuNutriLensIcon}?v=20260924_final`}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
                     }}
                     alt="TuNutriLens"
                     loading="eager"
@@ -129,9 +129,9 @@ export const Hero: React.FC<HeroProps> = ({
                   className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-emerald-50 hover:bg-emerald-100 text-emerald-950 dark:bg-emerald-950/70 dark:hover:bg-emerald-900/80 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
                 >
                   <img
-                    src={tuNutriLensIcon}
+                    src={`${tuNutriLensIcon}?v=20260924_final`}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png';
+                      (e.currentTarget as HTMLImageElement).src = '/TuNutriLens-App-Icon-512x512.png?v=20260924_final';
                     }}
                     alt="TuNutriLens"
                     loading="eager"
