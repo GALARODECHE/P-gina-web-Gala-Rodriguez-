@@ -97,7 +97,7 @@ DATOS DEL INTERESADO/A:
 DETALLES DEL SERVICIO:
 • Servicio seleccionado: ${currentService?.title || 'Consulta Nutricional'}
 • Modalidad / Duración: ${currentService?.period || 'Consulta online'}
-• Modalidad de atención: Consulta nutricional online y formación presencial/online
+• Modalidad de atención: Consulta nutricional online y formaciones 100% online
 
 MOTIVO CLÍNICO Y NOTAS:
 • Motivo principal / Patología: ${primaryGoal}
@@ -114,7 +114,7 @@ Fecha de solicitud: ${new Date().toLocaleString('es-ES')}`;
 
   const getWhatsAppLink = () => {
     const text = encodeURIComponent(
-      `Hola Gala (${profile.name}), me gustaría solicitar información y disponibilidad de cita para "${currentService?.title || 'Consulta Nutricional'}".\n\nMis datos:\n- Nombre: ${clientName}\n- Email: ${clientEmail}\n- Teléfono: ${clientPhone}\n- Motivo / Consulta: ${primaryGoal}\n- Modalidad: Consulta nutricional online y formación presencial y online\n- Notas: ${notes || 'Ninguna'}`
+      `Hola Gala (${profile.name}), me gustaría solicitar información y disponibilidad de cita para "${currentService?.title || 'Consulta Nutricional'}".\n\nMis datos:\n- Nombre: ${clientName}\n- Email: ${clientEmail}\n- Teléfono: ${clientPhone}\n- Motivo / Consulta: ${primaryGoal}\n- Modalidad: Consulta nutricional online y formaciones 100% online\n- Notas: ${notes || 'Ninguna'}`
     );
     const cleanNumber = profile.whatsappNumber.replace(/[^0-9]/g, '');
     return `https://wa.me/${cleanNumber}?text=${text}`;
@@ -374,7 +374,7 @@ Fecha de solicitud: ${new Date().toLocaleString('es-ES')}`;
                   </label>
                   <div className="px-3 py-2 rounded-xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50/80 dark:bg-emerald-950/50 text-[11px] sm:text-xs font-semibold text-emerald-900 dark:text-emerald-300 flex items-center gap-1.5">
                     <Video className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
-                    <span className="truncate">Consulta nutricional online y formación</span>
+                    <span className="truncate">Consulta y formaciones 100% online</span>
                   </div>
                 </div>
               </div>

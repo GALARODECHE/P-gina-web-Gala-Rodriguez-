@@ -76,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-200 dark:bg-slate-800/90 border border-slate-400 dark:border-slate-700 shadow-2xs">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Consulta Online y Formación</span>
+                <span>Consulta y Formación 100% Online</span>
               </span>
             </div>
 
@@ -97,7 +97,7 @@ export const Hero: React.FC<HeroProps> = ({
                   id="hero-view-talks-btn"
                   className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base text-[#1f4a3b] dark:text-[#9fc3b0] bg-[#e2ede7]/90 hover:bg-[#d5e5dc] dark:bg-[#213b30]/60 dark:hover:bg-[#213b30] border border-[#3b6e5a]/50 dark:border-[#3b6e5a]/60 transition-all shadow-2xs cursor-pointer"
                 >
-                  <span>2. Talleres y Formación</span>
+                  <span>2. Talleres y Formación Online</span>
                 </button>
               )}
 
@@ -246,7 +246,7 @@ export const Hero: React.FC<HeroProps> = ({
                     <div className="p-2.5 sm:p-3 rounded-xl bg-slate-300 dark:bg-slate-900/60 border border-slate-400/80 dark:border-slate-700/60">
                       <p className="text-slate-600 dark:text-slate-400 font-medium text-[11px]">Entidades</p>
                       <p className="text-xs font-bold text-slate-800 dark:text-slate-200 mt-0.5 leading-snug">
-                        Talleres y Formación
+                        Formación 100% Online
                       </p>
                     </div>
                   </div>

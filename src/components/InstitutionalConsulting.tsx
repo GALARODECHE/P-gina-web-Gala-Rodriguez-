@@ -62,7 +62,7 @@ export const talksTariffList: TalkTariffItem[] = [
     title: 'Ponencia y Taller para Asociaciones',
     price: 'Presupuesto a medida',
     duration: '90 min',
-    modality: 'Presencial u Online',
+    modality: '100% Online en Directo',
     targetAudience: 'Asociaciones de Pacientes (ELA, Alzheimer, Parkinson, Cáncer) y Familias',
     description:
       'Elaboración de contenidos específicos y recetarios adaptados, impartición clínica práctica, demostración de texturas y resolución de dudas directas.',
@@ -81,7 +81,7 @@ export const talksTariffList: TalkTariffItem[] = [
     subtitle: 'Protocolos IDDSI, Calibración y Desnutrición',
     price: 'Presupuesto a medida',
     duration: '60 min',
-    modality: 'Presencial (en el centro) u Online',
+    modality: '100% Online en Directo',
     targetAudience: 'Equipos de Cocina, Auxiliares de Enfermería, Terapeutas y Dirección',
     description:
       'Formación técnica de alto impacto para residencias y centros de día: preparación de protocolos IDDSI, estandarización de texturas, prevención de broncoaspiraciones y fichas de enriquecimiento.',
@@ -184,16 +184,16 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
           <div className="inline-flex items-center gap-2">
             <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge} inline-flex items-center gap-1.5`}>
               <Presentation className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
-              <span>2. Apartado de Talleres, Ponencias y Formación</span>
+              <span>2. Apartado de Talleres, Ponencias y Formación 100% Online</span>
             </span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] tracking-tight">
-            Talleres, Ponencias y Formación Especializada
+            Talleres, Ponencias y Formación Online Especializada
           </h2>
 
           <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Capacitaciones prácticas, conferencias divulgativas y asesoría técnica para asociaciones de pacientes, familias, residencias de mayores, centros de día y colectivos.
+            Capacitaciones prácticas, conferencias divulgativas y asesoría técnica para asociaciones de pacientes, familias, residencias de mayores, centros de día y colectivos. Todas las formaciones se realizan en modalidad 100% online en directo para toda España.
           </p>
         </div>
 
@@ -312,10 +312,10 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
           <div className="p-4 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 space-y-1.5 shadow-2xs">
             <div className="flex items-center gap-2 font-bold text-orange-600 dark:text-orange-400">
               <Video className="w-4 h-4" />
-              <span>Modalidad Online y Presencial</span>
+              <span>Modalidad 100% Online</span>
             </div>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              Talleres virtuales por Zoom/Teams para toda España o presenciales en la sede de la entidad. En desplazamientos fuera de zona habitual, gastos de transporte y dietas aparte.
+              Todas las formaciones, charlas y talleres se imparten en directo de forma 100% online (vía Zoom, Microsoft Teams o Google Meet) para cualquier entidad de España, garantizando máxima flexibilidad y sin costes de desplazamiento.
             </p>
           </div>
 
@@ -356,7 +356,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
               </h3>
 
               <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                Diseñamos propuestas personalizadas y presupuestos adaptados al formato (presencial u online), número de asistentes y objetivos específicos de tu colectivo.
+                Diseñamos propuestas personalizadas y presupuestos adaptados al formato 100% online en directo, número de asistentes y objetivos específicos de tu colectivo.
               </p>
 
               <div className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
@@ -366,7 +366,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Modalidad presencial u online según localización</span>
+                  <span>Modalidad 100% online en directo para toda España</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />

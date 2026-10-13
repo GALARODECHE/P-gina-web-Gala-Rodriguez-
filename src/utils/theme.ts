@@ -28,13 +28,13 @@ export interface BgStyleConfig {
 
 export const bgThemeStyles: Record<BgThemeKey, BgStyleConfig> = {
   default: {
-    name: 'Degradado Verde Claro a Melocotón Continuo',
-    description: 'Degradado progresivo unificado desde verde claro en la parte superior hasta melocotón suave al final de la web',
+    name: 'Fondo Crema Melocotón Luminoso',
+    description: 'Fondo uniforme y continuo en toda la web (#fff8f1)',
     bodyBg: 'app-unified-gradient dark:bg-slate-950',
     cardBg: 'bg-white',
     accentSectionBg: 'bg-transparent',
     border: 'border-[#eedfd5]',
-    previewBg: 'bg-gradient-to-b from-[#d6eee1] to-[#fff0e4] border border-[#d6eee1]',
+    previewBg: 'bg-[#fff8f1] border border-[#eddcd1]',
   },
   'pure-white': {
     name: 'Melocotón Luminoso Puro',

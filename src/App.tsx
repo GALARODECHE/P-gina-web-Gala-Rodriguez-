@@ -40,11 +40,15 @@ export default function App() {
     }
   });
 
-  // Clean up any stale data-palette
+  // Clean up any stale data-palette & load uniform bg if set
   useEffect(() => {
     document.documentElement.removeAttribute('data-palette');
     try {
       localStorage.removeItem('selected_palette');
+      const savedBg = localStorage.getItem('gala_custom_bg');
+      if (savedBg) {
+        document.documentElement.style.setProperty('--bg-page-uniform', savedBg);
+      }
     } catch {
       // ignore
     }

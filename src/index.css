@@ -40,8 +40,9 @@
   --palette-accent-orange: #d97706;
   --palette-accent-orange-hover: #b45309;
   
-  /* Fondos Luminosos: Degradado continuo unificado de Verde Salvia Claro a Melocotón Suave */
-  --bg-peach-light: #fff0e4;
+  /* Fondo Uniforme en toda la web (sin degradados) */
+  --bg-page-uniform: #fff8f1;
+  --bg-peach-light: #fff8f1;
   --bg-sage-light: #d6eee1;
   --card-stone: #ffffff;
   --border-stone: #eedfd5;
@@ -50,20 +51,9 @@
 :not(.dark) body,
 :not(.dark) #root,
 :not(.dark) .app-unified-gradient {
-  background: linear-gradient(
-    180deg,
-    #d6eee1 0%,
-    #def2e7 10%,
-    #e5f5ed 20%,
-    #ecf7f2 32%,
-    #f2f9f5 44%,
-    #f7fbf8 55%,
-    #faf8f4 67%,
-    #fdf5ed 78%,
-    #fef2e8 89%,
-    #fff0e4 100%
-  ) !important;
-  background-attachment: scroll;
+  background-color: var(--bg-page-uniform, #fff8f1) !important;
+  background-image: none !important;
+  background: var(--bg-page-uniform, #fff8f1) !important;
 }
 
 html {

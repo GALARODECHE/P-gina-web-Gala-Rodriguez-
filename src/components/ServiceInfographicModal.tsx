@@ -90,12 +90,12 @@ Email: ${profile.email || 'gala@galarodrigueznutricion.es'}
   - Videollamada de seguimiento para reajuste de pautas, menús y consolidación de hábitos.
 
 ============================================================
-2. CHARLAS, PONENCIAS Y FORMACIÓN INSTITUCIONAL
+2. CHARLAS, PONENCIAS Y FORMACIÓN INSTITUCIONAL (100% ONLINE)
 ============================================================
-• Charla Temática / Webinar Online (60 min): Presupuesto a medida (En directo, hasta 100 asistentes + turno de preguntas).
-• Ponencia y Taller Práctico para Asociaciones y Familias (90 min): Presupuesto a medida (Presencial u Online con recetario adaptado).
-• Capacitación Técnica para Personal Sociosanitario (60 min): Presupuesto a medida (Residencias, Centros de Día, IDDSI en disfagia).
-• Auditoría y Calibración de Menús Colectivos: Presupuesto a medida (Memoria técnica oficial visada por dietista-nutricionista colegiada).
+• Charla Temática / Webinar Online (60 min): Presupuesto a medida (En directo por Zoom/Teams/Meet, hasta 100 asistentes + turno de preguntas).
+• Ponencia y Taller Práctico para Asociaciones y Familias (90 min): Presupuesto a medida (100% Online en directo con recetario adaptado).
+• Capacitación Técnica para Personal Sociosanitario (60 min): Presupuesto a medida (100% Online en directo para Residencias, Centros de Día, IDDSI en disfagia).
+• Auditoría y Calibración de Menús Colectivos: Presupuesto a medida (Servicio telemático con memoria técnica oficial visada por dietista-nutricionista colegiada).
 
 * Bonificación especial al convenir servicio continuado anual para entidades o instituciones.
 * Presupuestos personalizados a medida sin compromiso.
@@ -143,25 +143,25 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
 ✉️ Email: ${profile.email || 'gala@galarodrigueznutricion.es'}
 📲 WhatsApp / Tel: ${profile.phone || '+34 697 166 126'}`;
 
-  const shareableWhatsappTalks = `*GALA RODRÍGUEZ ECHEBARRIETA — CHARLAS, PONENCIAS Y FORMACIÓN*
+  const shareableWhatsappTalks = `*GALA RODRÍGUEZ ECHEBARRIETA — CHARLAS, PONENCIAS Y FORMACIÓN 100% ONLINE*
 _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de experiencia clínica sanitaria_
 
-📋 *GUÍA OFICIAL DE FORMACIÓN Y CONSULTORÍA:*
+📋 *GUÍA OFICIAL DE FORMACIÓN Y CONSULTORÍA (MODALIDAD 100% ONLINE):*
 
 1️⃣ *CHARLA TEMÁTICA / WEBINAR ONLINE (60 MIN)*
-• Modalidad: *Presupuesto a medida*
+• Modalidad: *100% Online en directo* (Presupuesto a medida)
 • Hasta 100 asistentes en directo + Turno amplio de preguntas y dossier resumen en PDF.
 
 2️⃣ *PONENCIA Y TALLER PARA ASOCIACIONES Y FAMILIAS (90 MIN)*
-• Modalidad: *Presupuesto a medida* (Presencial u Online).
+• Modalidad: *100% Online en directo* (Presupuesto a medida)
 • Temáticas: Disfagia y texturas (IDDSI), Nutrición Oncológica, Salud Hormonal con guía y recetario.
 
 3️⃣ *CAPACITACIÓN TÉCNICA PERSONAL SOCIOSANITARIO (60 MIN)*
-• Modalidad: *Presupuesto a medida*
+• Modalidad: *100% Online en directo* (Presupuesto a medida)
 • Para: Equipos de Residencias, Centros de Día, Cocina y Auxiliares. Protocolos IDDSI y desnutrición.
 
 4️⃣ *AUDITORÍA Y CALIBRACIÓN DE MENÚS COLECTIVOS*
-• Modalidad: *Presupuesto a medida*
+• Modalidad: *Servicio Telemático* (Presupuesto a medida)
 • Memoria técnica oficial visada por Dietista-Nutricionista colegiada (Col. CV02386).
 
 🎁 *BONIFICACIÓN CONVENIO ANUAL:*
@@ -783,7 +783,7 @@ _Diplomada en Nutrición Humana y Dietética (Univ. de Navarra) | +20 años de e
                 • 📄 <strong>Facturación Oficial:</strong> Emisión de factura desglosada y documentación técnica con firma y número de colegiación sanitaria.
               </p>
               <p className="sm:col-span-2 pt-1 text-slate-800 dark:text-amber-300 font-medium">
-                • 🚗 <strong>Gastos de desplazamiento:</strong> En formaciones y ponencias presenciales que requieran traslado fuera de la zona habitual, los gastos de transporte, kilometraje y dietas se cobran y presupuestan aparte.
+                • 💻 <strong>Modalidad 100% Online:</strong> Todas las formaciones, ponencias y talleres se imparten en directo por vía telemática (Zoom, Teams, Meet) para cualquier entidad o colectivo de España, sin costes de desplazamiento.
               </p>
             </div>
           </div>

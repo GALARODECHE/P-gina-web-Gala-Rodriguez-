@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navLinks = [
     { id: 'hero', label: 'Inicio' },
     { id: 'sesiones-online', label: 'Sesiones Online' },
-    { id: 'talleres-formacion', label: 'Talleres y Formación' },
+    { id: 'talleres-formacion', label: 'Talleres y Formación Online' },
     { id: 'blog', label: 'Blog y Artículos' },
     { id: 'sobre-mi', label: 'Sobre Mí' },
     { id: 'faq', label: 'Preguntas Frecuentes' },

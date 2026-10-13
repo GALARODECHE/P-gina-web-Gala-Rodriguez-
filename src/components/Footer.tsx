@@ -1,5 +1,5 @@
-import React from 'react';
-import { ShieldCheck, Heart, Instagram, Facebook, BookOpen, Mail, MapPin, Phone, Globe, MessageCircle, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShieldCheck, Heart, Instagram, Facebook, BookOpen, Mail, MapPin, Phone, Globe, MessageCircle, ExternalLink, Palette } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
 
@@ -14,6 +14,30 @@ export const Footer: React.FC<FooterProps> = ({
   onBookClick,
 }) => {
   const theme = themeStyles[profile.themeColor || 'teal'];
+
+  const [currentBg, setCurrentBg] = useState<string>(() => {
+    try {
+      return localStorage.getItem('gala_custom_bg') || '#fff8f1';
+    } catch {
+      return '#fff8f1';
+    }
+  });
+
+  const bgPresets = [
+    { label: 'Melocotón Luminoso', hex: '#fff8f1' },
+    { label: 'Melocotón Crema', hex: '#fff0e4' },
+    { label: 'Marfil Suave', hex: '#fefaf6' },
+    { label: 'Lino Neutro', hex: '#f5f2eb' },
+    { label: 'Blanco Puro', hex: '#ffffff' },
+  ];
+
+  const handleApplyBg = (colorHex: string) => {
+    setCurrentBg(colorHex);
+    document.documentElement.style.setProperty('--bg-page-uniform', colorHex);
+    try {
+      localStorage.setItem('gala_custom_bg', colorHex);
+    } catch {}
+  };
 
   return (
     <footer className="bg-transparent dark:bg-slate-900 text-slate-800 dark:text-slate-300 pt-16 pb-12 border-t border-black/5 dark:border-slate-800 transition-colors">
@@ -30,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-400 leading-relaxed max-w-sm">
-              Consulta de nutrición clínica online para toda España y formación presencial especializada para colectivos y entidades sociosanitarias.
+              Consulta de nutrición clínica online para toda España y formación online especializada para colectivos y entidades sociosanitarias.
             </p>
 
             <div className="flex flex-wrap items-center gap-2">
@@ -149,8 +173,44 @@ export const Footer: React.FC<FooterProps> = ({
 
         </div>
 
+        {/* Selector de Tono Uniforme de Fondo */}
+        <div className="pt-6 border-t border-black/5 dark:border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+            <Palette className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
+            <span className="font-semibold">Fondo uniforme de la web:</span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-1.5">
+            {bgPresets.map((preset) => (
+              <button
+                key={preset.hex}
+                type="button"
+                onClick={() => handleApplyBg(preset.hex)}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all border cursor-pointer ${
+                  currentBg.toLowerCase() === preset.hex.toLowerCase()
+                    ? 'border-amber-600 bg-white dark:bg-slate-800 text-amber-950 dark:text-white shadow-xs font-bold ring-1 ring-amber-500/30'
+                    : 'border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 hover:bg-white'
+                }`}
+                title={`Cambiar fondo a ${preset.label} (${preset.hex})`}
+              >
+                <span className="w-2.5 h-2.5 rounded-full border border-black/20 shrink-0" style={{ backgroundColor: preset.hex }} />
+                <span>{preset.label}</span>
+              </button>
+            ))}
+            <label className="px-2 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 cursor-pointer border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 hover:bg-white">
+              <input
+                type="color"
+                value={currentBg}
+                onChange={(e) => handleApplyBg(e.target.value)}
+                className="w-3.5 h-3.5 rounded cursor-pointer border-0 p-0"
+                title="Elegir cualquier color personalizado"
+              />
+              <span className="hidden sm:inline">Personalizado</span>
+            </label>
+          </div>
+        </div>
+
         {/* Legal Disclaimer */}
-        <div className="pt-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 dark:text-slate-400">
+        <div className="pt-6 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 dark:text-slate-400">
           <p className="max-w-2xl">
             © {new Date().getFullYear()} {profile.name} (www.galarodrigueznutricion.es). Todos los derechos reservados. Toda la información disponible en este sitio web tiene fines de educación nutricional y orientación clínica.
           </p>

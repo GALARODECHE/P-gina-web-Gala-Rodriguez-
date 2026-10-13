@@ -23,8 +23,8 @@ Ejercicio profesional por cuenta propia de la actividad sanitaria de **Nutrició
 2. **Consultoría y Asesoramiento Técnico para Instituciones y Colectividades:**
    * Revisión, diseño y validación técnico-sanitaria de menús basales y dietas terapéuticas para residencias geriátricas, colegios, centros de día y catering sanitario.
    * Calibración nutricional y protocolos de hidratación y texturas seguras.
-3. **Formación y Docencia Sanitaria:**
-   * Impartición de charlas, talleres prácticos y ponencias formativas para asociaciones de pacientes, familias, cuidadores y personal sociosanitario.
+3. **Formación y Docencia Sanitaria (100% Online):**
+   * Impartición telemática en directo de charlas, talleres prácticos y ponencias formativas para asociaciones de pacientes, familias, cuidadores y personal sociosanitario a través de plataformas de videoconferencia (Zoom, Teams, Meet).
 4. **Desarrollo y Gestión de Plataformas Tecnológicas e-Health:**
    * Software y herramientas digitales de cálculo nutricional, monitorización de ingestas, registro de parámetros clínicos y adherencia terapéutica.
 
@@ -40,9 +40,9 @@ Ejercicio profesional por cuenta propia de la actividad sanitaria de **Nutrició
 
 ### 2. DÓNDE SE DESARROLLARÁ
 
-* **Sede y Despacho Profesional:** Modalidad mixta con base en el domicilio particular de la titular (afectando la parte proporcional del inmueble para despacho profesional y desarrollo tecnológico, conforme a la normativa del IRPF).
-* **Canal Online / Telemedicina:** Atención a pacientes a nivel nacional e internacional a través de videoconsulta cifrada, plataforma web interactiva y software clínico propio.
-* **Canal Itinerante / Presencial:** Desplazamiento a centros residenciales, auditorios de colegios profesionales y sedes de asociaciones para auditorías de cocina, talleres formativos y ponencias.
+* **Sede y Despacho Profesional:** Modalidad telemática con base en el domicilio particular de la titular (afectando la parte proporcional del inmueble para despacho profesional y desarrollo tecnológico, conforme a la normativa del IRPF).
+* **Canal Online / Telemedicina y Formación:** Atención a pacientes a nivel nacional e internacional a través de videoconsulta cifrada, plataforma web interactiva y software clínico propio. Todas las formaciones, ponencias y talleres se imparten de forma 100% online en directo sin requerir traslados.
+* **Canal de Consultoría Técnica:** Auditorías y calibración de menús y dietas terapéuticas para residencias y entidades sociosanitarias.
 
 ---
 
