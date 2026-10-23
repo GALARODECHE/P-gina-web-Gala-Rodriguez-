@@ -13,7 +13,7 @@ import {
 
 export const initialProfile: NutritionistProfile = {
   name: 'Gala Rodríguez Echebarrieta',
-  title: 'Diplomada en Nutrición Humana y Dietética · Experta en Salud de la Mujer, Disfagia y Oncología',
+  title: 'Diplomada en Nutrición Humana y Dietética',
   colegiadorNumber: 'Col. Oficial Sanitaria CV02386',
   bio: 'Acompañamiento clínico integral y personalizado basado en la evidencia científica para optimizar tu salud, abordar patologías complejas y consolidar hábitos sostenibles.',
   extendedBio: 'Dietista-Nutricionista con más de dos décadas de práctica en hospitales de referencia, laboratorios líderes en nutrición médica y centros sociosanitarios. Especialización en salud hormonal femenina, disfagia, oncología y soporte nutricional.',
