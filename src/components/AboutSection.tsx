@@ -138,7 +138,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
 
         {/* Tab Navigation - Fully responsive on mobile without overflowing */}
         <div className="flex justify-center w-full">
-          <div className="flex flex-col xs:flex-row w-full max-w-lg p-1 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-2xs gap-1">
+          <div className="flex flex-col xs:flex-row w-full max-w-lg p-1 rounded-2xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 shadow-2xs gap-1">
             <button
               type="button"
               onClick={() => setActiveTab('experience')}
@@ -172,11 +172,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
         {/* TAB 1: Experiencia en Entornos Sanitarios */}
         {activeTab === 'experience' && (
           <div className="space-y-6">
-            <div className="rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 divide-y divide-slate-300 dark:divide-slate-700/70 overflow-hidden shadow-2xs">
+            <div className="rounded-2xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 divide-y divide-stone-200/80 dark:divide-slate-800 overflow-hidden shadow-xs">
               {careerPositions.map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-slate-300/40 dark:hover:bg-slate-700/30 transition-colors"
+                  className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-stone-50 dark:hover:bg-slate-800/40 transition-colors"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="p-2.5 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 shrink-0">
@@ -192,7 +192,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                     </div>
                   </div>
                   <div className="sm:text-right pl-11 sm:pl-0">
-                    <span className="inline-flex px-3 py-1 rounded-lg text-xs font-semibold bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-200">
+                    <span className="inline-flex px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
                       {item.area}
                     </span>
                   </div>
@@ -201,7 +201,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
             </div>
 
             {/* Quality seal badge */}
-            <div className="p-4 rounded-2xl bg-slate-300 dark:bg-slate-800/70 border border-slate-400 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-800 dark:text-slate-300">
+            <div className="p-4 rounded-2xl bg-stone-50 dark:bg-slate-950 border border-stone-200/90 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-800 dark:text-slate-300">
               <div className="flex items-center gap-2 font-medium">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Experiencia contrastada en hospitales docentes, laboratorios farmacéuticos y centros de día</span>
@@ -223,7 +223,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                 <span>Titulación Sanitaria Oficial</span>
               </h3>
               
-              <div className="p-5 sm:p-6 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-2xs space-y-2">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 shadow-xs space-y-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className={`px-2.5 py-0.5 rounded text-[10px] font-bold ${theme.badge}`}>
                     Diplomada Universitaria
@@ -257,11 +257,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                 </span>
               </div>
 
-              <div className="rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 divide-y divide-slate-300 dark:divide-slate-700/70 overflow-hidden shadow-2xs">
+              <div className="rounded-2xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 divide-y divide-stone-200/80 dark:divide-slate-800 overflow-hidden shadow-xs">
                 {certifiedCoursesList.map((course, idx) => (
                   <div
                     key={idx}
-                    className="p-3.5 sm:p-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-slate-300/40 dark:hover:bg-slate-700/30 transition-colors"
+                    className="p-3.5 sm:p-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-stone-50 dark:hover:bg-slate-800/40 transition-colors"
                   >
                     <div className="flex items-start gap-3">
                       <div className="p-1.5 rounded-lg bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 shrink-0 mt-0.5">
@@ -278,7 +278,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                     </div>
                     {course.area && (
                       <div className="sm:text-right shrink-0 pl-8 sm:pl-0">
-                        <span className="inline-flex px-2.5 py-0.5 rounded text-[10px] sm:text-xs font-bold bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-300">
+                        <span className="inline-flex px-2.5 py-0.5 rounded text-[10px] sm:text-xs font-bold bg-stone-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
                           {course.area}
                         </span>
                       </div>

@@ -120,11 +120,11 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
             return (
               <div
                 key={idx}
-                className="bg-slate-200 dark:bg-slate-800/90 rounded-2xl border border-slate-400 dark:border-slate-700/80 overflow-hidden shadow-xs transition-all"
+                className="bg-white dark:bg-slate-900 rounded-2xl border border-stone-200/90 dark:border-slate-800 overflow-hidden shadow-xs transition-all hover:border-amber-400/60"
               >
                 <button
                   onClick={() => toggleAccordion(idx)}
-                  className="w-full px-5 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between gap-4 focus:outline-hidden"
+                  className="w-full px-5 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between gap-4 focus:outline-hidden cursor-pointer"
                   aria-expanded={isOpen}
                 >
                   <span className="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base leading-snug">
@@ -134,7 +134,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
                       isOpen
                         ? 'bg-amber-100 dark:bg-amber-950/80 text-amber-950 dark:text-amber-200 rotate-180'
-                        : 'bg-slate-300 dark:bg-slate-700/60 text-slate-700 dark:text-slate-400'
+                        : 'bg-stone-100 dark:bg-slate-800 text-slate-700 dark:text-slate-400'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -142,7 +142,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed border-t border-slate-300 dark:border-slate-750">
+                  <div className="px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed border-t border-stone-100 dark:border-slate-800">
                     {faq.answer}
                   </div>
                 )}
@@ -152,7 +152,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ profile, onBookClick }) 
         </div>
 
         {/* Direct Contact Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4 text-center sm:text-left">
             <div className="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 hidden sm:flex">
               <MessageCircle className="w-6 h-6" />

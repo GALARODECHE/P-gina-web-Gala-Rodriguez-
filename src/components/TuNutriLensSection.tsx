@@ -22,7 +22,7 @@ export const TuNutriLensSection: React.FC<TuNutriLensSectionProps> = ({
   return (
     <section id="app-tunutrilens" className="py-14 sm:py-20 border-b border-black/5 dark:border-slate-800/80 bg-transparent transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-slate-200 dark:bg-slate-800/90 border border-slate-400 dark:border-slate-700 shadow-sm p-6 sm:p-10 overflow-hidden relative">
+        <div className="rounded-3xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 shadow-md p-6 sm:p-10 overflow-hidden relative">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             

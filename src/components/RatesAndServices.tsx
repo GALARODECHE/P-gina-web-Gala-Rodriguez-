@@ -143,10 +143,10 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
             return (
               <div
                 key={service.id}
-                className={`relative rounded-3xl flex flex-col justify-between p-4.5 xs:p-5 sm:p-7 transition-all duration-200 ${
+                className={`relative rounded-3xl flex flex-col justify-between p-5 xs:p-6 sm:p-8 transition-all duration-200 ${
                   isPopular
-                    ? 'bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-white shadow-md border-2 border-amber-500 ring-2 ring-amber-400/25 transform md:-translate-y-1'
-                    : 'bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-400 dark:border-slate-700/80 shadow-2xs hover:border-[#3b6e5a]'
+                    ? 'bg-white dark:bg-slate-900 text-slate-800 dark:text-white shadow-xl shadow-amber-950/10 border-2 border-amber-500 ring-4 ring-amber-400/15 transform md:-translate-y-1'
+                    : 'bg-white dark:bg-slate-900 text-slate-800 dark:text-white border border-stone-200/90 dark:border-slate-800 shadow-md shadow-stone-900/5 hover:border-[#3b6e5a] hover:shadow-lg'
                 }`}
               >
                 {/* Popular / Focus Badge */}
@@ -163,7 +163,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                     <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md ${
                       isPopular
                         ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950/80 dark:text-orange-200 dark:border-orange-800'
-                        : 'bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-300'
+                        : 'bg-stone-100 dark:bg-slate-800 text-slate-800 dark:text-slate-300 border border-stone-200/80 dark:border-slate-700'
                     }`}>
                       {service.category}
                     </span>
@@ -181,7 +181,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
 
                   {/* Sub-selector for continuity packs */}
                   {isPack && (
-                    <div className="mt-3 p-1.5 rounded-xl bg-slate-300 dark:bg-slate-900 border border-slate-400 dark:border-slate-700">
+                    <div className="mt-3 p-1.5 rounded-xl bg-stone-50 dark:bg-slate-950 border border-stone-200 dark:border-slate-800">
                       <p className="text-[10px] font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400 mb-1 text-center">
                         Duración del Acompañamiento:
                       </p>
@@ -192,7 +192,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                           className={`py-1.5 text-[11px] font-bold rounded-lg transition-all cursor-pointer ${
                             selectedProgramTier === '3m'
                               ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200 dark:border-orange-800 shadow-2xs'
-                              : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                              : 'text-slate-700 dark:text-slate-300 hover:bg-stone-200/60 dark:hover:bg-slate-800'
                           }`}
                         >
                           3 Meses
@@ -203,7 +203,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                           className={`py-1.5 text-[11px] font-bold rounded-lg transition-all cursor-pointer ${
                             selectedProgramTier === '6m'
                               ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200 dark:border-orange-800 shadow-2xs'
-                              : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                              : 'text-slate-700 dark:text-slate-300 hover:bg-stone-200/60 dark:hover:bg-slate-800'
                           }`}
                         >
                           6 Meses
@@ -214,7 +214,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                           className={`py-1.5 text-[11px] font-bold rounded-lg transition-all cursor-pointer ${
                             selectedProgramTier === '1y'
                               ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200 dark:border-orange-800 shadow-2xs'
-                              : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                              : 'text-slate-700 dark:text-slate-300 hover:bg-stone-200/60 dark:hover:bg-slate-800'
                           }`}
                         >
                           1 Año
@@ -224,7 +224,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                   )}
 
                   {/* Price Infographic Block */}
-                  <div className="my-4 p-3.5 rounded-2xl bg-slate-300/80 dark:bg-slate-900/80 border border-slate-400 dark:border-slate-700 space-y-2">
+                  <div className="my-4 p-3.5 rounded-2xl bg-stone-50/90 dark:bg-slate-950/80 border border-stone-200/90 dark:border-slate-800 space-y-2">
                     <div className="flex items-baseline justify-between gap-2 flex-wrap">
                       <div className="flex items-baseline gap-1.5">
                         <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
@@ -353,7 +353,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
               return (
                 <div
                   key={i}
-                  className="p-4 sm:p-5 rounded-2xl bg-slate-200 dark:bg-slate-800/80 border border-slate-400 dark:border-slate-700 flex flex-col justify-between space-y-3 shadow-2xs"
+                  className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 flex flex-col justify-between space-y-3 shadow-xs"
                 >
                   <div className="flex items-center justify-between">
                     <div className={`p-2 rounded-xl ${theme.badge}`}>
@@ -378,8 +378,8 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
         </div>
 
         {/* ÁREAS CLÍNICAS TRATADAS EN SESIONES ONLINE */}
-        <div className="max-w-5xl mx-auto p-4 sm:p-8 rounded-3xl bg-slate-300/80 dark:bg-slate-800/60 border border-slate-400 dark:border-slate-700/80 space-y-6 shadow-2xs">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-400 dark:border-slate-700 pb-4">
+        <div className="max-w-5xl mx-auto p-5 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 space-y-6 shadow-sm">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-stone-200 dark:border-slate-800 pb-4">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">
                 Especialidades Sanitarias
@@ -396,7 +396,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {mainFocusAreas.map((area, idx) => (
-              <div key={idx} className="p-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 space-y-1">
+              <div key={idx} className="p-3.5 rounded-xl bg-stone-50 dark:bg-slate-950/80 border border-stone-200/80 dark:border-slate-800 space-y-1">
                 <h4 className="font-bold text-sm text-slate-800 dark:text-white flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-orange-500 shrink-0" />
                   <span>{area.title}</span>
@@ -409,7 +409,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
           </div>
 
           {/* OTRAS ÁREAS DE CONSULTA (Disfagia, Oncología, Nutrición Enteral) */}
-          <div className="pt-4 border-t border-slate-400/80 dark:border-slate-700/80 space-y-3">
+          <div className="pt-4 border-t border-stone-200 dark:border-slate-800 space-y-3">
             <div className="flex items-center gap-2">
               <span className="text-xs sm:text-sm font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] uppercase tracking-wider">
                 Otras áreas de consulta especializada
@@ -417,7 +417,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {otherClinicalAreas.map((area, idx) => (
-                <div key={idx} className="p-3 rounded-xl bg-slate-200/90 dark:bg-slate-800/80 border border-slate-400 dark:border-slate-700 space-y-1">
+                <div key={idx} className="p-3 rounded-xl bg-stone-50 dark:bg-slate-950/80 border border-stone-200/80 dark:border-slate-800 space-y-1">
                   <h5 className="font-bold text-xs text-slate-800 dark:text-white flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
                     <span>{area.title}</span>

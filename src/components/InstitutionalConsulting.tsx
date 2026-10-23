@@ -205,10 +205,10 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
           {talksTariffList.map((talk) => (
             <div
               key={talk.id}
-              className={`p-5 rounded-2xl flex flex-col justify-between space-y-4 bg-slate-200 dark:bg-slate-800 transition-all ${
+              className={`p-5 sm:p-6 rounded-2xl flex flex-col justify-between space-y-4 bg-white dark:bg-slate-900 transition-all ${
                 talk.popular
-                  ? 'border-2 border-orange-500 dark:border-orange-400 shadow-md relative'
-                  : 'border border-slate-400 dark:border-slate-700 shadow-2xs hover:border-orange-400'
+                  ? 'border-2 border-orange-500 dark:border-orange-400 shadow-lg shadow-orange-950/5 relative'
+                  : 'border border-stone-200/90 dark:border-slate-800 shadow-sm hover:border-orange-400 hover:shadow-md'
               }`}
             >
               {talk.popular && (
@@ -220,7 +220,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-1">
                   <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md ${
-                    talk.popular ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200' : 'bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-300'
+                    talk.popular ? 'bg-orange-100 text-orange-950 border border-orange-300 dark:bg-orange-950 dark:text-orange-200' : 'bg-stone-100 dark:bg-slate-800 text-slate-800 dark:text-slate-300 border border-stone-200/70'
                   }`}>
                     {talk.duration}
                   </span>
@@ -242,7 +242,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
                 </div>
 
                 {/* Price / Budget Tag */}
-                <div className="py-2.5 border-y border-slate-300 dark:border-slate-700">
+                <div className="py-2.5 border-y border-stone-200 dark:border-slate-800">
                   <div className="flex items-baseline justify-between gap-2 flex-wrap">
                     <span className="text-xl font-black text-slate-900 dark:text-white">
                       {talk.price}
@@ -311,8 +311,9 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
         </div>
 
         {/* Condiciones Claras de Talleres y Formación */}
+        {/* Condiciones Claras de Talleres y Formación */}
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <div className="p-4 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 space-y-1.5 shadow-2xs">
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 space-y-1.5 shadow-xs">
             <div className="flex items-center gap-2 font-bold text-orange-600 dark:text-orange-400">
               <Video className="w-4 h-4" />
               <span>Modalidad 100% Online</span>
@@ -322,7 +323,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 space-y-1.5 shadow-2xs">
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 space-y-1.5 shadow-xs">
             <div className="flex items-center gap-2 font-bold text-orange-600 dark:text-orange-400">
               <ShieldCheck className="w-4 h-4" />
               <span>Forma de Pago y Validez</span>
@@ -332,7 +333,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 space-y-1.5 shadow-2xs">
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 space-y-1.5 shadow-xs">
             <div className="flex items-center gap-2 font-bold text-orange-600 dark:text-orange-400">
               <AlertCircle className="w-4 h-4" />
               <span>Política de Cancelación</span>
@@ -344,7 +345,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
         </div>
 
         {/* Formulario de Solicitud de Propuesta para Entidades */}
-        <div className="max-w-5xl mx-auto rounded-3xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 shadow-md p-4.5 sm:p-8">
+        <div className="max-w-5xl mx-auto rounded-3xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 shadow-md p-5 sm:p-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             
             {/* Left Info */}
@@ -392,7 +393,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
             </div>
 
             {/* Right Quick Quote Form */}
-            <div className="lg:col-span-6 bg-slate-300 dark:bg-slate-900/80 p-4 sm:p-6 rounded-2xl border border-slate-400 dark:border-slate-700">
+            <div className="lg:col-span-6 bg-stone-50 dark:bg-slate-950/80 p-4 sm:p-6 rounded-2xl border border-stone-200/90 dark:border-slate-800">
               {isQuoteSent ? (
                 <div className="text-center py-6 space-y-3">
                   <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">

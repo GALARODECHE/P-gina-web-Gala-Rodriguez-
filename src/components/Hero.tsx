@@ -119,10 +119,10 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Profile Card Frame - Responsive padding and sizing */}
-              <div className="relative rounded-3xl bg-slate-200 dark:bg-slate-800/95 border border-slate-400 dark:border-slate-700 shadow-md p-4 sm:p-7 space-y-4 sm:space-y-6">
+              <div className="relative rounded-3xl bg-white dark:bg-slate-900 border border-stone-200/90 dark:border-slate-800 shadow-xl shadow-stone-900/5 p-5 sm:p-7 space-y-4 sm:space-y-6">
                 
                 {/* Identity header */}
-                <div className="pb-4 border-b border-slate-300 dark:border-slate-700/60 space-y-2.5">
+                <div className="pb-4 border-b border-stone-200 dark:border-slate-800 space-y-2.5">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-[#3b6e5a]/15 text-[#213b30] dark:bg-[#9fc3b0]/20 dark:text-[#9fc3b0] border border-[#3b6e5a]/30">
                       <ShieldCheck className="w-3.5 h-3.5" />
@@ -168,7 +168,7 @@ export const Hero: React.FC<HeroProps> = ({
                   </div>
 
                   {/* Actions */}
-                  <div className="pt-3 border-t border-slate-300 dark:border-slate-700/60 space-y-2.5">
+                  <div className="pt-3 border-t border-stone-200 dark:border-slate-800 space-y-2.5">
                     <button
                       onClick={onExploreRates}
                       className="w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
