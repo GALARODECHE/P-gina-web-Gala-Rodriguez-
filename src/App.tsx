@@ -3,11 +3,10 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { RatesAndServices } from './components/RatesAndServices';
 import { InstitutionalConsulting } from './components/InstitutionalConsulting';
-import { BlogSubstack } from './components/BlogSubstack';
 import { AboutSection } from './components/AboutSection';
 import { FAQSection } from './components/FAQSection';
+import { TuNutriLensSection } from './components/TuNutriLensSection';
 import { ContactBookingModal } from './components/ContactBookingModal';
-import { ArticleReaderModal } from './components/ArticleReaderModal';
 import { TuNutriLensModal } from './components/TuNutriLensModal';
 import { Footer } from './components/Footer';
 import { bgThemeStyles } from './utils/theme';
@@ -15,22 +14,15 @@ import { bgThemeStyles } from './utils/theme';
 import {
   initialProfile,
   initialServices,
-  initialPosts,
 } from './data/initialNutritionData';
 
 import {
-  NutritionistProfile,
   NutritionService,
-  BlogPost,
 } from './types';
-import { fetchLiveSubstackPosts } from './services/substackService';
 
 export default function App() {
   const profile = initialProfile;
   const services = initialServices;
-  const [posts, setPosts] = useState<BlogPost[]>(initialPosts);
-  const [isSyncingSubstack, setIsSyncingSubstack] = useState(false);
-  const [lastUpdatedSubstack, setLastUpdatedSubstack] = useState<number | null>(null);
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     try {
@@ -57,7 +49,6 @@ export default function App() {
   // Modal States
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedServiceForBooking, setSelectedServiceForBooking] = useState<NutritionService | null>(null);
-  const [readingPost, setReadingPost] = useState<BlogPost | null>(null);
   const [isTuNutriLensOpen, setIsTuNutriLensOpen] = useState(false);
 
   // Sync Dark Mode class
@@ -70,52 +61,6 @@ export default function App() {
       localStorage.setItem('theme_mode', 'light');
     }
   }, [isDarkMode]);
-
-  // Real-time Substack Feed Sync & Auto-polling
-  const loadSubstackFeed = async (force = false) => {
-    setIsSyncingSubstack(true);
-    try {
-      const result = await fetchLiveSubstackPosts(force);
-      if (result.posts && result.posts.length > 0) {
-        setPosts(result.posts);
-        setLastUpdatedSubstack(result.timestamp);
-      }
-    } catch (e) {
-      console.warn('Error loading live Substack feed:', e);
-    } finally {
-      setIsSyncingSubstack(false);
-    }
-  };
-
-  useEffect(() => {
-    // Initial fetch
-    loadSubstackFeed(false);
-
-    // Continuous auto-update polling every 60 seconds
-    const interval = setInterval(() => {
-      loadSubstackFeed(true);
-    }, 60000);
-
-    // Auto-update when user switches back to this tab
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        loadSubstackFeed(true);
-      }
-    };
-
-    const handleFocus = () => {
-      loadSubstackFeed(true);
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('focus', handleFocus);
-
-    return () => {
-      clearInterval(interval);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('focus', handleFocus);
-    };
-  }, []);
 
   // Quick Action Handlers
   const handleOpenBookingWithService = (service?: NutritionService) => {
@@ -137,6 +82,13 @@ export default function App() {
     }, 50);
   };
 
+  const scrollToInstitutions = () => {
+    const el = document.getElementById('talleres-formacion') || document.getElementById('instituciones');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const currentBg = bgThemeStyles[profile.bgTheme || 'default'];
 
   return (
@@ -156,22 +108,15 @@ export default function App() {
         {/* Hero Section */}
         <Hero
           profile={profile}
-          onOpenTuNutriLens={() => setIsTuNutriLensOpen(true)}
           onExploreRates={() => {
             const el = document.getElementById('sesiones-online') || document.getElementById('servicios');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
-          onExploreInstitutions={() => {
-            const el = document.getElementById('talleres-formacion') || document.getElementById('instituciones');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          }}
-          onExploreApps={() => {
-            const el = document.getElementById('apps');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          }}
+          onExploreApps={() => setIsTuNutriLensOpen(true)}
+          onExploreInstitutions={scrollToInstitutions}
           onBookFreeValuation={() => {
-            const freeService = services.find((s) => s.id === 's-val') || services[0];
-            handleOpenBookingWithService(freeService);
+            const featuredProg = services.find((s) => s.id === 's-pack') || services[0];
+            handleOpenBookingWithService(featuredProg);
           }}
         />
 
@@ -182,7 +127,7 @@ export default function App() {
           onSelectPlan={(service) => handleOpenBookingWithService(service)}
         />
 
-        {/* Institutional Consulting & Training (Residencias, Colegios, Centros de Día, Asociaciones) */}
+        {/* Talleres, Ponencias y Formación para Entidades (Restaurado en el flujo principal) */}
         <InstitutionalConsulting
           profile={profile}
           onOpenBooking={(topic) => {
@@ -190,8 +135,8 @@ export default function App() {
               id: 'inst-custom',
               title: topic,
               subtitle: 'Servicios a Instituciones y Colectividades',
-              price: 'A Medida / Suscripción',
-              period: 'Mensual o Por Proyecto',
+              price: 'Presupuesto a medida',
+              period: 'Por Proyecto o Sesión',
               description: 'Asesoría técnica para residencias, centros de día, colegios o asociaciones.',
               features: ['Revisión de menús basales y adaptados', 'Talleres y ponencias', 'Cumplimiento normativo e informe oficial'],
               idealFor: 'Instituciones y colectividades sanitarias/educativas',
@@ -202,19 +147,15 @@ export default function App() {
           }}
         />
 
-        {/* Blog & Substack Section (Unificación) */}
-        <BlogSubstack
-          profile={profile}
-          posts={posts}
-          onReadPost={(post) => setReadingPost(post)}
-          onRefreshFeed={() => loadSubstackFeed(true)}
-          isSyncing={isSyncingSubstack}
-          lastUpdated={lastUpdatedSubstack}
-        />
-
         {/* About & Methodology */}
         <AboutSection
           profile={profile}
+        />
+
+        {/* App TuNutriLens (Sección al final de la página) */}
+        <TuNutriLensSection
+          profile={profile}
+          onOpenTuNutriLens={() => setIsTuNutriLensOpen(true)}
         />
 
         {/* Clinical & Service FAQ Section */}
@@ -228,6 +169,8 @@ export default function App() {
       <Footer
         profile={profile}
         onBookClick={() => handleOpenBookingWithService()}
+        onOpenTuNutriLens={() => setIsTuNutriLensOpen(true)}
+        onOpenInstitutions={scrollToInstitutions}
       />
 
       {/* Booking Modal */}
@@ -237,13 +180,6 @@ export default function App() {
         profile={profile}
         services={services}
         initialService={selectedServiceForBooking}
-      />
-
-      {/* Article Reader Modal */}
-      <ArticleReaderModal
-        post={readingPost}
-        onClose={() => setReadingPost(null)}
-        profile={profile}
       />
 
       {/* TuNutriLens In-App Modal with Return Navigation */}

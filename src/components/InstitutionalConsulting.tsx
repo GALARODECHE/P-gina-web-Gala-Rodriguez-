@@ -117,11 +117,13 @@ export const talksTariffList: TalkTariffItem[] = [
 interface InstitutionalConsultingProps {
   profile: NutritionistProfile;
   onOpenBooking: (serviceTitle: string) => void;
+  onClose?: () => void;
 }
 
 export const InstitutionalConsulting: React.FC<InstitutionalConsultingProps> = ({
   profile,
   onOpenBooking,
+  onClose,
 }) => {
   const [selectedEntityForQuote, setSelectedEntityForQuote] = useState<string>('Asociación de Enfermos');
   const [institutionName, setInstitutionName] = useState('');
@@ -177,6 +179,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
       {/* Anchor alias to support legacy #instituciones links */}
       <div id="instituciones" className="absolute -top-20" />
 
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
         {/* Section Header */}
@@ -184,7 +187,7 @@ Fecha: ${new Date().toLocaleString('es-ES')}`);
           <div className="inline-flex items-center gap-2">
             <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.badge} inline-flex items-center gap-1.5`}>
               <Presentation className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
-              <span>2. Apartado de Talleres, Ponencias y Formación 100% Online</span>
+              <span>Talleres, Ponencias y Formación para Entidades</span>
             </span>
           </div>
 

@@ -24,11 +24,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { id: 'hero', label: 'Inicio' },
-    { id: 'sesiones-online', label: 'Sesiones Online' },
-    { id: 'talleres-formacion', label: 'Talleres y Formación Online' },
-    { id: 'blog', label: 'Blog y Artículos' },
-    { id: 'sobre-mi', label: 'Sobre Mí' },
-    { id: 'faq', label: 'Preguntas Frecuentes' },
+    { id: 'sesiones-online', label: 'Consultas' },
+    { id: 'talleres-formacion', label: 'Talleres y Formación' },
+    { id: 'sobre-mi', label: 'Sobre mí' },
+    { id: 'faq', label: 'Preguntas frecuentes' },
   ];
 
   const handleNavClick = (id: string) => {
@@ -93,57 +92,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               {isDarkMode ? <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
             </button>
 
-            {/* Direct Link to TuNutriLens modal with official icon */}
-            {onOpenTuNutriLens ? (
-              <button
-                type="button"
-                onClick={onOpenTuNutriLens}
-                id="header-tunutrilens-btn"
-                className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 border border-emerald-400/40 transition-all shadow-xs cursor-pointer"
-                title="Abrir app TuNutriLens (con opción de retorno directo)"
-              >
-                <img
-                  src={`${tuNutriLensIcon}?v=20260924_svg`}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
-                  }}
-                  alt="TuNutriLens App"
-                  loading="eager"
-                  className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-white/30"
-                />
-                <span>App TuNutriLens</span>
-              </button>
-            ) : (
-              <a
-                href="https://www.tunutrilens.es"
-                target="_blank"
-                rel="noopener noreferrer"
-                id="header-tunutrilens-btn"
-                className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 border border-emerald-400/40 transition-all shadow-xs cursor-pointer"
-                title="Web oficial de la app TuNutriLens"
-              >
-                <img
-                  src={`${tuNutriLensIcon}?v=20260924_svg`}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
-                  }}
-                  alt="TuNutriLens App"
-                  loading="eager"
-                  className="w-4 h-4 rounded-md object-contain shrink-0 ring-1 ring-white/30"
-                />
-                <span>App TuNutriLens</span>
-                <ExternalLink className="w-3 h-3 opacity-80" />
-              </a>
-            )}
-
             {/* Primary Booking CTA - Acento Naranja Substack (Amber) */}
             <button
               onClick={() => onBookClick()}
               id="header-book-cta"
-              className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white shadow-xs transition-all active:scale-95 whitespace-nowrap cursor-pointer hover:shadow-md"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white shadow-xs transition-all active:scale-95 whitespace-nowrap cursor-pointer hover:shadow-md"
             >
               <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
-              <span>Pedir Cita<span className="hidden sm:inline"> Online</span></span>
+              <span>Reserva tu consulta</span>
             </button>
 
             {/* Mobile Menu Toggle */}
@@ -170,52 +126,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setIsMobileMenuOpen(false);
                 onBookClick();
               }}
-              className="w-full py-3 px-4 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white shadow-sm flex items-center justify-center gap-2 cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
-              <span>Pedir Cita Nutricional Online</span>
+              <span>Reserva tu consulta</span>
             </button>
-
-            {onOpenTuNutriLens ? (
-              <button
-                type="button"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  onOpenTuNutriLens();
-                }}
-                className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <img
-                  src={`${tuNutriLensIcon}?v=20260924_svg`}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
-                  }}
-                  alt="TuNutriLens App"
-                  loading="eager"
-                  className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-white/30"
-                />
-                <span>Abrir App TuNutriLens</span>
-              </button>
-            ) : (
-              <a
-                href="https://www.tunutrilens.es"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <img
-                  src={`${tuNutriLensIcon}?v=20260924_svg`}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
-                  }}
-                  alt="TuNutriLens App"
-                  loading="eager"
-                  className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-white/30"
-                />
-                <span>Web Oficial App: www.tunutrilens.es</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-              </a>
-            )}
           </div>
 
           {navLinks.map((link) => (

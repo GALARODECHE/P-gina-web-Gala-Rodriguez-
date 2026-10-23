@@ -61,22 +61,37 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
     },
   ];
 
-  const clinicalAreas = [
+  const mainFocusAreas = [
     {
-      title: 'Salud de la Mujer y Hormonal',
-      desc: 'Abordaje integral en perimenopausia, menopausia, síndrome de ovario poliquístico (SOP), fertilidad y salud tiroidea.',
+      title: 'Sueño y Descanso Nocturno',
+      desc: 'Crononutrición aplicada, optimización circadiana y estrategias dietéticas para reducir despertares y lograr un sueño reparador.',
     },
     {
-      title: 'Disfagia y Nutrición Enteral',
-      desc: 'Adaptación de texturas seguras (protocolo IDDSI), prevención de atragantamientos y enriquecimiento natural contra la desnutrición.',
+      title: 'Energía y Menopausia 40+',
+      desc: 'Manejo nutricional de la fatiga, modulación de síntomas de perimenopausia y transición hormonal con rigor clínico.',
     },
     {
-      title: 'Soporte en Paciente Oncológico',
-      desc: 'Manejo de náuseas, mucositis, alteración del gusto y preservación de masa muscular durante tratamientos oncológicos.',
+      title: 'Salud Ósea y Muscular',
+      desc: 'Prevención activa de osteopenia y osteoporosis: biodisponibilidad de calcio, vitamina D, minerales y preservación de masa magra.',
     },
     {
-      title: 'Salud Digestiva y Reeducación',
-      desc: 'Pautas para SIBO, colon irritable, disbiosis, reflujo y construcción de hábitos alimentarios saludables para toda la vida.',
+      title: 'Salud Digestiva y Metabólica',
+      desc: 'Digestiones pesadas, hinchazón abdominal, microbiota y reeducación alimentaria individualizada según tus analíticas.',
+    },
+  ];
+
+  const otherClinicalAreas = [
+    {
+      title: 'Disfagia y Adaptación de Texturas (Protocolo IDDSI)',
+      desc: 'Seguridad deglutoria, estandarización de consistencias, prevención de atragantamientos y enriquecimiento natural.',
+    },
+    {
+      title: 'Soporte Nutricional en Paciente Oncológico',
+      desc: 'Manejo de náuseas, mucositis, alteración del gusto y preservación de masa muscular durante tratamientos.',
+    },
+    {
+      title: 'Nutrición Enteral y Casos Clínicos Complejos',
+      desc: 'Más de dos décadas de especialización técnica hospitalaria en nutrición médica especializada.',
     },
   ];
 
@@ -363,14 +378,14 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
         </div>
 
         {/* ÁREAS CLÍNICAS TRATADAS EN SESIONES ONLINE */}
-        <div className="max-w-5xl mx-auto p-4 sm:p-8 rounded-3xl bg-slate-300/80 dark:bg-slate-800/60 border border-slate-400 dark:border-slate-700/80 space-y-5 shadow-2xs">
+        <div className="max-w-5xl mx-auto p-4 sm:p-8 rounded-3xl bg-slate-300/80 dark:bg-slate-800/60 border border-slate-400 dark:border-slate-700/80 space-y-6 shadow-2xs">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-400 dark:border-slate-700 pb-4">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">
                 Especialidades Sanitarias
               </span>
               <h3 className="text-lg sm:text-xl font-extrabold text-slate-800 dark:text-white mt-0.5">
-                Patologías y Objetivos Tratados en Consulta Online
+                Salud de la Mujer a partir de los 40
               </h3>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-emerald-800 dark:text-emerald-300 font-bold bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-200/80 dark:border-emerald-800">
@@ -380,7 +395,7 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {clinicalAreas.map((area, idx) => (
+            {mainFocusAreas.map((area, idx) => (
               <div key={idx} className="p-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-400 dark:border-slate-700 space-y-1">
                 <h4 className="font-bold text-sm text-slate-800 dark:text-white flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-orange-500 shrink-0" />
@@ -391,6 +406,28 @@ export const RatesAndServices: React.FC<RatesAndServicesProps> = ({
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* OTRAS ÁREAS DE CONSULTA (Disfagia, Oncología, Nutrición Enteral) */}
+          <div className="pt-4 border-t border-slate-400/80 dark:border-slate-700/80 space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="text-xs sm:text-sm font-extrabold text-[#3b6e5a] dark:text-[#9fc3b0] uppercase tracking-wider">
+                Otras áreas de consulta especializada
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {otherClinicalAreas.map((area, idx) => (
+                <div key={idx} className="p-3 rounded-xl bg-slate-200/90 dark:bg-slate-800/80 border border-slate-400 dark:border-slate-700 space-y-1">
+                  <h5 className="font-bold text-xs text-slate-800 dark:text-white flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                    <span>{area.title}</span>
+                  </h5>
+                  <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-snug">
+                    {area.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Garantías y Condiciones de Sesión */}

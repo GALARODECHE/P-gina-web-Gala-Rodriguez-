@@ -1,8 +1,7 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Sparkles, Smartphone, BookOpen, Star, Stethoscope, Award, CheckCircle2, Globe, Instagram, Facebook, MessageCircle, Mail, ExternalLink } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Sparkles, Star, Award, CheckCircle2, Instagram, MessageCircle, BookOpen } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
-import tuNutriLensIcon from '../assets/images/tunutrilens_logo.svg';
 
 interface HeroProps {
   profile: NutritionistProfile;
@@ -57,90 +56,30 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Subtitle / Bio - Clear readability */}
             <p className="text-sm sm:text-base lg:text-lg text-slate-700 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              {profile.bio}
+              Acompañamiento clínico integral y personalizado basado en la evidencia científica para optimizar tu salud, abordar patologías complejas y consolidar hábitos sostenibles.
             </p>
 
-            {/* Key Clinical Focus Pills */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-slate-800 dark:text-slate-200 font-medium">
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-200 dark:bg-slate-800/90 border border-slate-400 dark:border-slate-700 shadow-2xs">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Salud de la Mujer</span>
-              </span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-200 dark:bg-slate-800/90 border border-slate-400 dark:border-slate-700 shadow-2xs">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Disfagia y Nutrición Enteral</span>
-              </span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-200 dark:bg-slate-800/90 border border-slate-400 dark:border-slate-700 shadow-2xs">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Oncología Médica</span>
-              </span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-200 dark:bg-slate-800/90 border border-slate-400 dark:border-slate-700 shadow-2xs">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Consulta y Formación 100% Online</span>
-              </span>
-            </div>
-
-            {/* Action Buttons - Coherent: 1. Sesiones Online (Naranja Substack), 2. Talleres (Verde Salvia), 3. App */}
+            {/* Action Buttons: 1. Naranja (Reserva), 2. Secundario WhatsApp */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-2">
               <button
                 onClick={onExploreRates}
-                id="hero-view-rates-btn"
+                id="hero-reserve-cta-btn"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white shadow-md hover:shadow-lg transition-all transform active:scale-95 cursor-pointer"
               >
-                <span>1. Sesiones Nutricionales Online</span>
+                <span>Reserva tu primera consulta</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
-              {onExploreInstitutions && (
-                <button
-                  onClick={onExploreInstitutions}
-                  id="hero-view-talks-btn"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base text-[#1f4a3b] dark:text-[#9fc3b0] bg-[#e2ede7]/90 hover:bg-[#d5e5dc] dark:bg-[#213b30]/60 dark:hover:bg-[#213b30] border border-[#3b6e5a]/50 dark:border-[#3b6e5a]/60 transition-all shadow-2xs cursor-pointer"
-                >
-                  <span>2. Talleres y Formación Online</span>
-                </button>
-              )}
-
-              {onOpenTuNutriLens ? (
-                <button
-                  type="button"
-                  onClick={onOpenTuNutriLens}
-                  id="hero-view-apps-btn"
-                  className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-emerald-50 hover:bg-emerald-100 text-emerald-950 dark:bg-emerald-950/70 dark:hover:bg-emerald-900/80 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
-                  title="TuNutriLens: Tu Nutricionista de bolsillo"
-                >
-                  <img
-                    src={`${tuNutriLensIcon}?v=20260924_svg`}
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
-                    }}
-                    alt="TuNutriLens"
-                    loading="eager"
-                    className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-emerald-500/40"
-                  />
-                  <span>App TuNutriLens</span>
-                </button>
-              ) : (
-                <a
-                  href="https://www.tunutrilens.es"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  id="hero-view-apps-btn"
-                  className="inline-flex items-center justify-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base bg-emerald-50 hover:bg-emerald-100 text-emerald-950 dark:bg-emerald-950/70 dark:hover:bg-emerald-900/80 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
-                >
-                  <img
-                    src={`${tuNutriLensIcon}?v=20260924_svg`}
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/tunutrilens_logo.svg';
-                    }}
-                    alt="TuNutriLens"
-                    loading="eager"
-                    className="w-5 h-5 rounded-md object-contain shrink-0 ring-1 ring-emerald-500/40"
-                  />
-                  <span>App TuNutriLens</span>
-                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-                </a>
-              )}
+              <a
+                href={`https://wa.me/${profile.whatsappNumber.replace(/[^0-9]/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                id="hero-whatsapp-btn"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl font-bold text-xs sm:text-base text-emerald-800 dark:text-emerald-200 bg-white hover:bg-emerald-50 dark:bg-slate-800 dark:hover:bg-slate-700/80 border border-emerald-300 dark:border-emerald-700 transition-all shadow-xs hover:shadow-md cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <span>Escríbeme por WhatsApp</span>
+              </a>
             </div>
 
             {/* Social Trust Footer with direct verified channels */}
@@ -162,17 +101,7 @@ export const Hero: React.FC<HeroProps> = ({
                 className="flex items-center gap-1.5 hover:text-amber-600 transition-colors font-semibold text-slate-700 dark:text-slate-300"
               >
                 <BookOpen className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>Substack Newsletter</span>
-              </a>
-
-              <a
-                href={profile.facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-blue-600 transition-colors font-semibold text-slate-700 dark:text-slate-300"
-              >
-                <Facebook className="w-4 h-4 text-blue-600 shrink-0" />
-                <span>Facebook</span>
+                <span>Substack</span>
               </a>
 
               <div className="flex items-center gap-1 text-amber-500 sm:pl-2 sm:border-l border-stone-300 dark:border-slate-700">
@@ -192,7 +121,7 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Profile Card Frame - Responsive padding and sizing */}
               <div className="relative rounded-3xl bg-slate-200 dark:bg-slate-800/95 border border-slate-400 dark:border-slate-700 shadow-md p-4 sm:p-7 space-y-4 sm:space-y-6">
                 
-                {/* Identity without app logo next to her name */}
+                {/* Identity header */}
                 <div className="pb-4 border-b border-slate-300 dark:border-slate-700/60 space-y-2.5">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-[#3b6e5a]/15 text-[#213b30] dark:bg-[#9fc3b0]/20 dark:text-[#9fc3b0] border border-[#3b6e5a]/30">
@@ -221,54 +150,41 @@ export const Hero: React.FC<HeroProps> = ({
                   </div>
                 </div>
 
-                {/* Key Pillars */}
-                <div className="space-y-3">
-                  <div className="p-3.5 sm:p-4 rounded-2xl bg-slate-300 dark:bg-slate-900/60 border border-slate-400/80 dark:border-slate-700/60 space-y-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                        <Sparkles className="w-3.5 h-3.5 text-orange-500 shrink-0" />
-                        Atención Clínica 1 a 1
-                      </span>
-                      <span className="text-[10px] uppercase font-bold text-orange-600 dark:text-orange-400">
-                        {profile.location || 'Online'}
-                      </span>
+                {/* Clinical Consultation Highlights & Actions */}
+                <div className="space-y-3 pt-1">
+                  <div className="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                    <div className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <span>Atención clínica 1 a 1 personalizada por videollamada</span>
                     </div>
-                    <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed pt-0.5">
-                      Videollamada directa, confidencial y plan nutricional individualizado adaptado a tus analíticas y estilo de vida.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-2 text-xs">
-                    <div className="p-2.5 sm:p-3 rounded-xl bg-slate-300 dark:bg-slate-900/60 border border-slate-400/80 dark:border-slate-700/60">
-                      <p className="text-slate-600 dark:text-slate-400 font-medium text-[11px]">Pacientes</p>
-                      <p className="text-xs font-bold text-slate-800 dark:text-slate-200 mt-0.5">Consulta Online</p>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <span>Plan adaptado a tus analíticas, estilo de vida y objetivos</span>
                     </div>
-                    <div className="p-2.5 sm:p-3 rounded-xl bg-slate-300 dark:bg-slate-900/60 border border-slate-400/80 dark:border-slate-700/60">
-                      <p className="text-slate-600 dark:text-slate-400 font-medium text-[11px]">Entidades</p>
-                      <p className="text-xs font-bold text-slate-800 dark:text-slate-200 mt-0.5 leading-snug">
-                        Formación 100% Online
-                      </p>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <span>Sin dietas restrictivas ni soluciones milagro</span>
                     </div>
                   </div>
 
-                  {/* Direct Contact Buttons inside Card */}
-                  <div className="pt-2 flex items-center justify-between gap-2 border-t border-slate-300 dark:border-slate-700/60 text-xs">
+                  {/* Actions */}
+                  <div className="pt-3 border-t border-slate-300 dark:border-slate-700/60 space-y-2.5">
+                    <button
+                      onClick={onExploreRates}
+                      className="w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <span>Reserva tu consulta</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+
                     <a
                       href={`https://wa.me/${profile.whatsappNumber.replace(/[^0-9]/g, '')}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-2 px-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-center font-bold flex items-center justify-center gap-1.5 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition-colors"
+                      className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 text-center font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors shadow-2xs"
                     >
-                      <MessageCircle className="w-3.5 h-3.5 shrink-0" />
-                      <span>WhatsApp</span>
-                    </a>
-                    <a
-                      href={`mailto:${profile.email}`}
-                      className="flex-1 py-2 px-2.5 rounded-xl bg-slate-300 dark:bg-slate-900 text-slate-800 dark:text-slate-300 border border-slate-400 dark:border-slate-700 text-center font-bold flex items-center justify-center gap-1.5 hover:bg-slate-400/50 dark:hover:bg-slate-800 transition-colors min-w-0"
-                    >
-                      <Mail className="w-3.5 h-3.5 shrink-0" />
-                      <span className="truncate xs:hidden">Email</span>
-                      <span className="hidden xs:inline truncate">{profile.email}</span>
+                      <MessageCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                      <span>Escríbeme por WhatsApp</span>
                     </a>
                   </div>
                 </div>
@@ -278,57 +194,6 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
           </div>
 
-        </div>
-
-        {/* Global Key Stats Bar */}
-        <div className="mt-10 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 pt-6 sm:pt-8 border-t border-slate-400/80 dark:border-slate-800/80">
-          <div className="p-3 xs:p-4 sm:p-5 rounded-2xl bg-slate-200 dark:bg-slate-800/90 border border-slate-400/90 dark:border-slate-700/60 shadow-xs text-center sm:text-left min-w-0">
-            <p className={`text-base xs:text-lg sm:text-2xl font-extrabold ${theme.primaryText} truncate`}>
-              {profile.stat1Number || '+20 Años'}
-            </p>
-            <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5 truncate">
-              {profile.stat1Label || 'Entornos Sanitarios'}
-            </p>
-            <p className="text-[10px] xs:text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
-              {profile.stat1Subtext || 'Nutrición enteral y disfagia'}
-            </p>
-          </div>
-
-          <div className="p-3 xs:p-4 sm:p-5 rounded-2xl bg-slate-200 dark:bg-slate-800/90 border border-slate-400/90 dark:border-slate-700/60 shadow-xs text-center sm:text-left min-w-0">
-            <p className="text-base xs:text-lg sm:text-2xl font-extrabold text-slate-800 dark:text-slate-200 truncate">
-              {profile.stat2Number || 'Multinacionales'}
-            </p>
-            <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5 truncate">
-              {profile.stat2Label || 'Empresas Sanitarias'}
-            </p>
-            <p className="text-[10px] xs:text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
-              {profile.stat2Subtext || 'Danone Nutricia, Ordesa, Abbott'}
-            </p>
-          </div>
-
-          <div className="p-3 xs:p-4 sm:p-5 rounded-2xl bg-slate-200 dark:bg-slate-800/90 border border-slate-400/90 dark:border-slate-700/60 shadow-xs text-center sm:text-left min-w-0">
-            <p className="text-base xs:text-lg sm:text-2xl font-extrabold text-slate-800 dark:text-slate-200 truncate">
-              {profile.stat3Number || 'Univ. Navarra'}
-            </p>
-            <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5 truncate">
-              {profile.stat3Label || 'Nutrición y Dietética'}
-            </p>
-            <p className="text-[10px] xs:text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
-              {profile.stat3Subtext || 'Diplomada por la Univ. de Navarra'}
-            </p>
-          </div>
-
-          <div className="p-3 xs:p-4 sm:p-5 rounded-2xl bg-slate-200 dark:bg-slate-800/90 border border-slate-400/90 dark:border-slate-700/60 shadow-xs text-center sm:text-left min-w-0">
-            <p className={`text-base xs:text-lg sm:text-2xl font-extrabold ${theme.primaryText} truncate`}>
-              {profile.stat4Number || '100% A Medida'}
-            </p>
-            <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5 truncate">
-              {profile.stat4Label || 'Pautas Clínicas'}
-            </p>
-            <p className="text-[10px] xs:text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
-              {profile.stat4Subtext || 'Entrega individualizada en <48h'}
-            </p>
-          </div>
         </div>
 
       </div>

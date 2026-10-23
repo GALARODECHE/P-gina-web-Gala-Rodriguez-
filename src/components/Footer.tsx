@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Heart, Instagram, Facebook, BookOpen, Mail, MapPin, Phone, Globe, MessageCircle, ExternalLink, Palette } from 'lucide-react';
+import { ShieldCheck, Heart, Instagram, BookOpen, Mail, MapPin, Phone, Globe, MessageCircle, ExternalLink, Palette, Smartphone, Presentation } from 'lucide-react';
 import { NutritionistProfile } from '../types';
 import { themeStyles } from '../utils/theme';
 
@@ -7,11 +7,14 @@ interface FooterProps {
   profile: NutritionistProfile;
   onBookClick: () => void;
   onOpenTuNutriLens?: () => void;
+  onOpenInstitutions?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   profile,
   onBookClick,
+  onOpenTuNutriLens,
+  onOpenInstitutions,
 }) => {
   const theme = themeStyles[profile.themeColor || 'teal'];
 
@@ -73,17 +76,6 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2.5 text-xs text-slate-700 dark:text-slate-400 font-medium">
               <li>
                 <a
-                  href={profile.substackUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors flex items-center gap-2"
-                >
-                  <BookOpen className="w-4 h-4 text-amber-500" />
-                  <span>Substack Newsletter</span>
-                </a>
-              </li>
-              <li>
-                <a
                   href={profile.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -95,15 +87,39 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href={profile.facebookUrl}
+                  href={profile.substackUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-sky-600 dark:hover:text-sky-400 transition-colors flex items-center gap-2"
+                  className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors flex items-center gap-2"
                 >
-                  <Facebook className="w-4 h-4 text-sky-500" />
-                  <span>Facebook (Gala Nutrición)</span>
+                  <BookOpen className="w-4 h-4 text-amber-500" />
+                  <span>Substack (Gala Rodríguez)</span>
                 </a>
               </li>
+              {onOpenTuNutriLens && (
+                <li>
+                  <button
+                    type="button"
+                    onClick={onOpenTuNutriLens}
+                    className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 cursor-pointer text-left"
+                  >
+                    <Smartphone className="w-4 h-4 text-emerald-500" />
+                    <span>App TuNutriLens</span>
+                  </button>
+                </li>
+              )}
+              {onOpenInstitutions && (
+                <li>
+                  <button
+                    type="button"
+                    onClick={onOpenInstitutions}
+                    className="hover:text-[#3b6e5a] dark:hover:text-[#9fc3b0] transition-colors flex items-center gap-2 cursor-pointer text-left"
+                  >
+                    <Presentation className="w-4 h-4 text-[#3b6e5a]" />
+                    <span>Talleres y Formación para Entidades</span>
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -159,11 +175,11 @@ export const Footer: React.FC<FooterProps> = ({
                 onClick={onBookClick}
                 className="w-full py-2.5 px-4 rounded-xl font-bold text-xs bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white transition-colors shadow-md text-center cursor-pointer"
               >
-                Pedir Cita Online
+                Reserva tu consulta
               </button>
 
               <a
-                href="#servicios"
+                href="#sesiones-online"
                 className="block w-full py-2.5 px-4 rounded-xl bg-[#3b6e5a] hover:bg-[#2f5747] active:bg-[#213b30] text-white font-bold text-xs transition-all shadow-sm hover:shadow-md text-center cursor-pointer"
               >
                 Ver Servicios Clínicos
